@@ -1,0 +1,25 @@
+from django.utils import simplejson
+from dajaxice.decorators import dajaxice_register
+import random
+from dajax.core import Dajax
+#for getting the house object:
+from projects.models import Town
+#need the next line to get an object and i just didn't care whether render_to response is there as well (copy paste):
+from django.shortcuts import render_to_response, get_object_or_404
+
+
+@dajaxice_register
+def my_town(request, text):    
+    town = get_object_or_404(Town, id=1)
+    town.name=text
+    town.save()
+    return simplejson.dumps({'message':'Sie wohnen in %s' % text})
+
+
+@dajaxice_register
+def randomize(request):
+    dajax = Dajax()
+    dajax.assign('#result','value',10)
+    return dajax.json()
+
+
