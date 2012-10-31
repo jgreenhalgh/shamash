@@ -51,7 +51,7 @@
 		<p>
 			Ihre Solaranlage beginnt hier:
 		</p>
-		<form action="/project/panel/" method="post" style="margin-top:60px;">
+		<form action="/panel/" method="post" style="margin-top:60px;">
 			 {% csrf_token %} <label class="suchlabel">
 			<input type="text" id="address" class="suchtxtinput" name="address"></input>
 			<script type="text/javascript">
