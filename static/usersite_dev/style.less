@@ -1,0 +1,56 @@
+// WEITERE NORMILZE FUNKTIONEN
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	min-height: 100%;
+}
+
+// USERSITE
+
+@blau1: #3b8bc9; 		// Blau
+@blau2: #f0f3f5;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
+
+@grau1: #3b8bc9; 		//	Grau fuer Hintergrund von Navigationsleiste
+@grau2: #dde3e4;		// Trennliniengrau fuer Navigationsleiste Blau (blau2)
+@grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
+@grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
+
+@sidebar-width: 270px;
+@footer-header-hoehe: 10px;
+
+
+body {
+margin: 0;
+padding: @footer-header-hoehe 0px @footer-header-hoehe @sidebar-width;
+}
+
+
+#sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: @sidebar-width;
+	height: 100%;
+	background-color:red;
+}
+
+
+.smallbox_a {
+	background-color: @grau3;
+	border-color: @grau4;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.smallbox_b_white_bg {
+	background-color: @grau4;
+	border-color: @grau4;
+	border-style: solid;
+	border-width: 1px;
+}
+
