@@ -1,217 +1,34 @@
-/*---------------------------------------------------
-    LESS Elements 0.6
-  ---------------------------------------------------
-    A set of useful LESS mixins by Dmitry Fadeyev
-    Special thanks for mixin suggestions to:
-      Kris Van Herzeele,
-      Benoit Adam,
-      Portenart Emile-Victor,
-      Ryan Faerman
-
-    More info at: http://lesselements.com
------------------------------------------------------*/
-.devborder {
-  border-color: #ff8463;
-  border-style: solid;
-  border-width: 2px;
-}
-.helveticafont {
-  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
-}
-.background_sidebar_shadow {
-  background-image: url("img/sidebar_rightshadow.png");
-  background-position: right;
-  background-repeat: repeat-y;
-}
-.solidborder {
-  border-color: #c7d0d3;
-  border-style: solid;
-  border-width: 1px;
-}
-.smallbox_a {
-  background-color: #fafbfc;
-  border-color: #c7d0d3;
-  border-style: solid;
-  border-width: 1px;
-}
-.smallbox_b_white_bg {
-  background-color: #c7d0d3;
-  border-color: #c7d0d3;
-  border-style: solid;
-  border-width: 1px;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-html {
-  height: 100%;
-  min-height: 100%;
-}
-body {
-  margin: 10px 0px 10px 280px;
-}
-#sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 270px;
-  height: 100%;
-  background-color: #f9f9f9;
-  background-image: url("img/sidebar_rightshadow.png");
-  background-position: right;
-  background-repeat: repeat-y;
-}
-.sidebartop {
-  background-color: #3b8bc9;
-  width: 100%;
-  font-size: 25px;
-  font-style: italic;
-  font-weight: bold;
-  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
-  text-align: center;
-  color: #fff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-image: url("img/sidebar_rightshadow.png");
-  background-position: right;
-  background-repeat: repeat-y;
-}
-.sidebartop a {
-  text-decoration: none;
-  color: #fff;
-}
-.sidebartop a:hover {
-  text-decoration: none;
-  color: red;
-}
-.projectchooser-in-sidebar {
-  text-align: center;
-  background-color: #f0f3f5;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-image: url("img/sidebar_rightshadow.png");
-  background-position: right;
-  background-repeat: repeat-y;
-  padding-left: 20px;
-  border-bottom: 1px solid #dde3e4;
-}
-.projectchooser-in-sidebar p {
-  text-align: center;
-  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
-  font-size: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #637379;
-  background-color: #fafbfc;
-  border-color: #c7d0d3;
-  border-style: solid;
-  border-width: 1px;
-  width: 230px;
-}
-.projectchooser-in-sidebar p img {
-  padding-left: 5px;
-}
-.projectchooser-in-sidebar p a,
-.projectchooser-in-sidebar p a:visited {
-  text-decoration: none;
-  color: #637379;
-}
-.projectchooser-in-sidebar p a:hover {
-  text-decoration: none;
-  color: #3b8bc9;
-}
-#navigationleft {
-  margin-top: 100px;
-}
-#navigationleft ul a,
-#navigationleft ul a:visited {
-  text-decoration: none;
-}
-#navigationleft ul li {
-  padding-left: 50px;
-  color: #141a1b;
-  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
-  font-size: 16px;
-  line-height: 49px;
-  border-bottom: solid 1px #dde3e4;
-}
-#navigationleft ul li .offertenrot {
-  background-color: red;
-  padding: 3px;
-  font-size: 8px;
-  color: #fff;
-  margin-bottom: -10px;
-}
-#navigationleft ul .sidebar_uebersicht {
-  background-image: url(img/sidebar_uebersicht_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 12;
-}
-#navigationleft ul .sidebar_uebersicht:hover {
-  background-image: url(img/sidebar_uebersicht_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 -28;
-}
-#navigationleft ul .sidebar_entwicklung {
-  background-image: url(img/sidebar_projektentwicklung_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 12;
-}
-#navigationleft ul .sidebar_entwicklung:hover {
-  background-image: url(img/sidebar_projektentwicklung_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 -28;
-}
-#navigationleft ul .sidebar_bearbeiten {
-  background-image: url(img/sidebar_edit_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 12;
-}
-#navigationleft ul .sidebar_bearbeiten:hover {
-  background-image: url(img/sidebar_edit_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 -28;
-}
-#navigationleft ul .sidebar_finden {
-  background-image: url(img/sidebar_finden_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 12;
-}
-#navigationleft ul .sidebar_finden:hover {
-  background-image: url(img/sidebar_finden_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 -28;
-}
-#navigationleft ul .sidebar_vergleichen {
-  background-image: url(img/sidebar_uebersicht_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 12;
-}
-#navigationleft ul .sidebar_vergleichen:hover {
-  background-image: url(img/sidebar_uebersicht_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 -28;
-}
-#navigationleft ul .sidebar_offerten {
-  background-image: url(img/sidebar_offerten_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 12;
-}
-#navigationleft ul .sidebar_offerten:hover {
-  background-image: url(img/sidebar_offerten_icon.png);
-  background-repeat: no-repeat;
-  background-position: 20 -28;
-}
-#navigationleft ul li:hover {
-  background-color: #637379;
-  -moz-opacity: 0.6;
-  -khtml-opacity: 0.6;
-  -webkit-opacity: 0.6;
-  opacity: 0.6;
-  background-image: url("img/sidebar_rightshadow.png");
-  background-position: right;
-  background-repeat: repeat-y;
-  color: #fff;
-}
+.devborder{border-color:#ff8463;border-style:solid;border-width:2px;}
+.helveticafont{font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;}
+.background_sidebar_shadow{background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;}
+.solidborder{border-color:#c7d0d3;border-style:solid;border-width:1px;}
+.smallbox_a{background-color:#fafbfc;border-color:#c7d0d3;border-style:solid;border-width:1px;}
+.smallbox_b_white_bg{background-color:#c7d0d3;border-color:#c7d0d3;border-style:solid;border-width:1px;}
+*{margin:0;padding:0;}
+html{height:100%;min-height:100%;}
+body{margin:10px 0px 10px 280px;}
+#sidebar{position:fixed;left:0;top:0;bottom:0;width:270px;height:100%;background-color:#f9f9f9;background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;}
+.sidebartop{background-color:#3b8bc9;width:100%;font-size:25px;font-style:italic;font-weight:bold;font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;text-align:center;color:#fff;padding-top:20px;padding-bottom:20px;background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;}.sidebartop a{text-decoration:none;color:#fff;}
+.sidebartop a:hover{text-decoration:none;color:red;}
+.projectchooser-in-sidebar{text-align:center;background-color:#f0f3f5;padding-top:20px;padding-bottom:20px;background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;padding-left:20px;border-bottom:1px solid #dde3e4;}.projectchooser-in-sidebar p{text-align:center;font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;font-size:15px;padding-top:10px;padding-bottom:10px;color:#637379;background-color:#fafbfc;border-color:#c7d0d3;border-style:solid;border-width:1px;width:230px;}.projectchooser-in-sidebar p img{padding-left:5px;}
+.projectchooser-in-sidebar p a,.projectchooser-in-sidebar p a:visited{text-decoration:none;color:#637379;}
+.projectchooser-in-sidebar p a:hover{text-decoration:none;color:#3b8bc9;}
+.projectchooser-in-sidebar p img{border:0;}
+#navigationleft{margin-top:100px;}#navigationleft ul a,#navigationleft ul a:visited{text-decoration:none;}
+#navigationleft ul li{padding-left:50px;color:#141a1b;font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;font-size:16px;line-height:49px;border-bottom:solid 1px #dde3e4;}#navigationleft ul li .offertenrot{background-color:red;padding:3px;font-size:8px;color:#fff;margin-bottom:-10px;}
+#navigationleft ul .sidebar_uebersicht{background-image:url(img/sidebar_uebersicht_icon.png);background-repeat:no-repeat;background-position:20px 12px;}
+#navigationleft ul .sidebar_uebersicht:hover{background-image:url(img/sidebar_uebersicht_icon.png);background-repeat:no-repeat;background-position:20px -28px;}
+#navigationleft ul .sidebar_entwicklung{background-image:url(img/sidebar_projektentwicklung_icon.png);background-repeat:no-repeat;background-position:20px 12px;}
+#navigationleft ul .sidebar_entwicklung:hover{background-image:url(img/sidebar_projektentwicklung_icon.png);background-repeat:no-repeat;background-position:20px -28px;}
+#navigationleft ul .sidebar_bearbeiten{background-image:url(img/sidebar_edit_icon.png);background-repeat:no-repeat;background-position:20px 12px;}
+#navigationleft ul .sidebar_bearbeiten:hover{background-image:url(img/sidebar_edit_icon.png);background-repeat:no-repeat;background-position:20px -28px;}
+#navigationleft ul .sidebar_finden{background-image:url(img/sidebar_finden_icon.png);background-repeat:no-repeat;background-position:20px 12px;}
+#navigationleft ul .sidebar_finden:hover{background-image:url(img/sidebar_finden_icon.png);background-repeat:no-repeat;background-position:20px -28px;}
+#navigationleft ul .sidebar_vergleichen{background-image:url(img/sidebar_uebersicht_icon.png);background-repeat:no-repeat;background-position:20px 12px;}
+#navigationleft ul .sidebar_vergleichen:hover{background-image:url(img/sidebar_uebersicht_icon.png);background-repeat:no-repeat;background-position:20px -28px;}
+#navigationleft ul .sidebar_offerten{background-image:url(img/sidebar_offerten_icon.png);background-repeat:no-repeat;background-position:20px 12px;}
+#navigationleft ul .sidebar_offerten:hover{background-image:url(img/sidebar_offerten_icon.png);background-repeat:no-repeat;background-position:20px -28px;}
+#navigationleft ul li:hover{background-color:#637379;-moz-opacity:0.6;-khtml-opacity:0.6;-webkit-opacity:0.6;opacity:0.6;background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;color:#fff;}
+#content{width:100%;height:100%;border-color:#ff8463;border-style:solid;border-width:2px;overflow:hidden;background:green;min-width:400px;}
+#anzeigelinks{border-color:#ff8463;border-style:solid;border-width:2px;width:49%;height:100%;float:left;}
+#anbieterrechts{border-color:#ff8463;border-style:solid;border-width:2px;width:49%;float:right;}
