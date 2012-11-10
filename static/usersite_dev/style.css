@@ -9,6 +9,11 @@ html {
 .helveticafont {
   font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
 }
+.background_sidebar_shadow {
+  background-image: url("img/sidebar_rightshadow.png");
+  background-position: right;
+  background-repeat: repeat-y;
+}
 body {
   margin: 10px 0px 10px 280px;
 }
@@ -19,7 +24,10 @@ body {
   bottom: 0;
   width: 270px;
   height: 100%;
-  background-color: red;
+  background-color: #f9f9f9;
+  background-image: url("img/sidebar_rightshadow.png");
+  background-position: right;
+  background-repeat: repeat-y;
 }
 .sidebartop {
   background-color: #3b8bc9;
@@ -31,6 +39,9 @@ body {
   color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;
+  background-image: url("img/sidebar_rightshadow.png");
+  background-position: right;
+  background-repeat: repeat-y;
 }
 .sidebartop a {
   text-decoration: none;

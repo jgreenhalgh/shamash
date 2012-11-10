@@ -14,7 +14,7 @@ html {
 @blau1: #3b8bc9; 		// Blau
 @blau2: #f0f3f5;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
 
-@grau1: #3b8bc9; 		//	Grau fuer Hintergrund von Navigationsleiste
+@grau1: #f9f9f9; 		//	Grau fuer Hintergrund von Sidebarleiste
 @grau2: #dde3e4;		// Trennliniengrau fuer Navigationsleiste Blau (blau2)
 @grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
 @grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
@@ -25,6 +25,12 @@ html {
 
 .helveticafont {
 	font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.background_sidebar_shadow {
+background-image:url("img/sidebar_rightshadow.png");
+background-position: right;
+background-repeat: repeat-y;
 }
 
 body {
@@ -39,7 +45,9 @@ margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebar-width+10px;
 	bottom: 0;
 	width: @sidebar-width;
 	height: 100%;
-	background-color:red;
+	background-color:@grau1;
+	
+	.background_sidebar_shadow;
 }
 
 .sidebartop {
@@ -52,6 +60,8 @@ text-align:center;
 color:#fff;
 padding-top:@padding-top-bottom-logo;
 padding-bottom:@padding-top-bottom-logo;
+
+.background_sidebar_shadow;
 
 	a {
 	text-decoration:none;
