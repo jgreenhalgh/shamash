@@ -6,9 +6,11 @@ html {
   height: 100%;
   min-height: 100%;
 }
+.helveticafont {
+  font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+}
 body {
-  margin: 0;
-  padding: 10px 0px 10px 270px;
+  margin: 10px 0px 10px 280px;
 }
 #sidebar {
   position: fixed;
@@ -18,6 +20,25 @@ body {
   width: 270px;
   height: 100%;
   background-color: red;
+}
+.sidebartop {
+  background-color: #3b8bc9;
+  width: 100%;
+  font-size: 25px;
+  font-style: italic;
+  font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  text-align: center;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.sidebartop a {
+  text-decoration: none;
+  color: #fff;
+}
+.sidebartop a:hover {
+  text-decoration: none;
+  color: red;
 }
 .smallbox_a {
   background-color: #fafbfc;

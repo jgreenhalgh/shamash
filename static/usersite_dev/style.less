@@ -19,13 +19,16 @@ html {
 @grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
 @grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
 
+@padding-top-bottom-logo: 30px;
 @sidebar-width: 270px;
 @footer-header-hoehe: 10px;
 
+.helveticafont {
+	font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+}
 
 body {
-margin: 0;
-padding: @footer-header-hoehe 0px @footer-header-hoehe @sidebar-width;
+margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebar-width+10px;
 }
 
 
@@ -37,6 +40,27 @@ padding: @footer-header-hoehe 0px @footer-header-hoehe @sidebar-width;
 	width: @sidebar-width;
 	height: 100%;
 	background-color:red;
+}
+
+.sidebartop {
+background-color: @blau1;
+width:100%;
+font-size:25px;
+font-style: italic;
+.helveticafont;
+text-align:center;
+color:#fff;
+padding-top:@padding-top-bottom-logo;
+padding-bottom:@padding-top-bottom-logo;
+
+	a {
+	text-decoration:none;
+	color:#fff;
+	}
+	a:hover {
+	text-decoration:none;
+	color: red;
+	}
 }
 
 
