@@ -1,3 +1,48 @@
+// USERSITE
+
+@blau1: #3b8bc9; 		// Blau
+@blau2: #f0f3f5;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
+
+@grau1: #f9f9f9; 		//	Grau fuer Hintergrund von Sidebarleiste
+@grau2: #dde3e4;		// Trennliniengrau fuer Navigationsleiste Blau (blau2)
+@grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
+@grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
+
+@grau5:	#637379;		// Textgrau, verwendet zBsp in der Projektauswahl
+
+@padding-top-bottom-logo: 20px;
+@padding-left-sidebar: 20px;
+@sidebarwidth: 270px;
+@footer-header-hoehe: 10px;
+
+.helveticafont {
+	font-family: Arial, "Helvetica Neue",  "Liberation Sans", FreeSans, sans-serif;
+}
+
+.background_sidebar_shadow {
+background-image:url("img/sidebar_rightshadow.png");
+background-position: right;
+background-repeat: repeat-y;
+}
+
+.solidborder {
+	border-color: @grau4;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.smallbox_a {
+	background-color: @grau3;
+	.solidborder;
+}
+
+.smallbox_b_white_bg {
+	background-color: @grau4;
+	.solidborder;
+}
+
+
+
 // WEITERE NORMILZE FUNKTIONEN
 *{
 	margin: 0;
@@ -9,82 +54,80 @@ html {
 	min-height: 100%;
 }
 
-// USERSITE
-
-@blau1: #3b8bc9; 		// Blau
-@blau2: #f0f3f5;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
-
-@grau1: #f9f9f9; 		//	Grau fuer Hintergrund von Sidebarleiste
-@grau2: #dde3e4;		// Trennliniengrau fuer Navigationsleiste Blau (blau2)
-@grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
-@grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
-
-@padding-top-bottom-logo: 30px;
-@sidebar-width: 270px;
-@footer-header-hoehe: 10px;
-
-.helveticafont {
-	font-family: "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
-}
-
-.background_sidebar_shadow {
-background-image:url("img/sidebar_rightshadow.png");
-background-position: right;
-background-repeat: repeat-y;
-}
 
 body {
-margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebar-width+10px;
+margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
 }
 
 
+
+
+
+
+// SIDEBAR
 #sidebar {
 	position: fixed;
 	left: 0;
 	top: 0;
 	bottom: 0;
-	width: @sidebar-width;
+	width: @sidebarwidth;
 	height: 100%;
 	background-color:@grau1;
-	
 	.background_sidebar_shadow;
 }
 
 .sidebartop {
-background-color: @blau1;
-width:100%;
-font-size:25px;
-font-style: italic;
-.helveticafont;
-text-align:center;
-color:#fff;
-padding-top:@padding-top-bottom-logo;
-padding-bottom:@padding-top-bottom-logo;
-
-.background_sidebar_shadow;
-
-	a {
-	text-decoration:none;
+	background-color: @blau1;
+	width:100%;
+	font-size:25px;
+	font-style: italic;
+	font-weight: bold;
+	.helveticafont;
+	text-align:center;
 	color:#fff;
+	padding-top:@padding-top-bottom-logo;
+	padding-bottom:@padding-top-bottom-logo;
+	.background_sidebar_shadow;
+	a {
+		text-decoration:none;
+		color:#fff;
 	}
 	a:hover {
-	text-decoration:none;
-	color: red;
+		text-decoration:none;
+		color: red;
+	}
+}
+
+.projectchooser-in-sidebar {
+	text-align: center;
+	background-color: @blau2;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.background_sidebar_shadow;	
+	padding-left:@padding-left-sidebar;
+	p {
+		text-align: center;
+		.helveticafont;
+		font-size:15px;
+		padding-top: 10px;
+		padding-bottom:10px;
+		color: @grau5;
+		.smallbox_a;
+		width: (@sidebarwidth)-40;
+		img {
+			padding-left:5px;
+		}
+		a, a:visited {
+			text-decoration: none;
+			color: @grau5; 
+		}
+		a:hover {
+			text-decoration: none;
+			color: @blau1;
+		}
 	}
 }
 
 
-.smallbox_a {
-	background-color: @grau3;
-	border-color: @grau4;
-	border-style: solid;
-	border-width: 1px;
-}
 
-.smallbox_b_white_bg {
-	background-color: @grau4;
-	border-color: @grau4;
-	border-style: solid;
-	border-width: 1px;
-}
 
