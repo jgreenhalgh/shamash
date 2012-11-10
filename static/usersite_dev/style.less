@@ -3,12 +3,19 @@
 @blau1: #3b8bc9; 		// Blau
 @blau2: #f0f3f5;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
 
-@grau1: #f9f9f9; 		//	Grau fuer Hintergrund von Sidebarleiste
+@grau1: #f9f9f9; 		// Grau fuer Hintergrund von Sidebarleiste
 @grau2: #dde3e4;		// Trennliniengrau fuer Navigationsleiste Blau (blau2)
 @grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
 @grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
-
 @grau5:	#637379;		// Textgrau, verwendet zBsp in der Projektauswahl
+@grau6:	#141a1b;		// Very dark gray, used in navigation;
+
+.devborder {
+	border-color: #ff8463;
+	border-style: solid;
+	border-width: 2px;
+}
+
 
 @padding-top-bottom-logo: 20px;
 @padding-left-sidebar: 20px;
@@ -105,6 +112,7 @@ margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
 	padding-bottom: 20px;
 	.background_sidebar_shadow;	
 	padding-left:@padding-left-sidebar;
+	border-bottom: 1px solid @grau2;
 	p {
 		text-align: center;
 		.helveticafont;
@@ -128,6 +136,34 @@ margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
 	}
 }
 
+#navigationleft{
+	margin-top:100px;
+	ul {
+		a, a:visited {
+			text-decoration:none;
+		}
+		li {
+			padding-left:(@padding-left-sidebar)*2;	
+			color: @grau6;
+			.helveticafont;
+			font-size: 16px;
+			line-height: 49px;
+			border-bottom: solid 1px @grau2;
+			.offertenrot {
+				background-color: red;
+				padding: 3px;
+				font-size: 8px;
+				color: #fff;
+				margin-bottom: -10px;
+			}
+		}
+		li:hover {
+			background-color:@blau2;
+			.background_sidebar_shadow;	
+			color: @blau1;
+		}
+	}
+}
 
 
 

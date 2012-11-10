@@ -1,3 +1,8 @@
+.devborder {
+  border-color: #ff8463;
+  border-style: solid;
+  border-width: 2px;
+}
 .helveticafont {
   font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
 }
@@ -78,6 +83,7 @@ body {
   background-position: right;
   background-repeat: repeat-y;
   padding-left: 20px;
+  border-bottom: 1px solid #dde3e4;
 }
 .projectchooser-in-sidebar p {
   text-align: center;
@@ -102,5 +108,34 @@ body {
 }
 .projectchooser-in-sidebar p a:hover {
   text-decoration: none;
+  color: #3b8bc9;
+}
+#navigationleft {
+  margin-top: 100px;
+}
+#navigationleft ul a,
+#navigationleft ul a:visited {
+  text-decoration: none;
+}
+#navigationleft ul li {
+  padding-left: 40px;
+  color: #141a1b;
+  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
+  font-size: 16px;
+  line-height: 49px;
+  border-bottom: solid 1px #dde3e4;
+}
+#navigationleft ul li .offertenrot {
+  background-color: red;
+  padding: 3px;
+  font-size: 8px;
+  color: #fff;
+  margin-bottom: -10px;
+}
+#navigationleft ul li:hover {
+  background-color: #f0f3f5;
+  background-image: url("img/sidebar_rightshadow.png");
+  background-position: right;
+  background-repeat: repeat-y;
   color: #3b8bc9;
 }
