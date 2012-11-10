@@ -3,14 +3,17 @@
 // USERSITE
 
 @blau1: #3b8bc9; 		// Blau
-@blau2: #f0f3f5;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
+@blau2: #f0f6f8;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
+@blau3: #e2f9fa;		// hover_blau
 
 @grau1: #f9f9f9; 		// Grau fuer Hintergrund von Sidebarleiste
 @grau2: #dde3e4;		// Trennliniengrau fuer Navigationsleiste Blau (blau2)
 @grau3: #fafbfc;		// Hitnergrundgrau fuer Projektauswahl
 @grau4:	#c7d0d3;		// Runde Boxen, border (fuer beide: weisse und etwas grauliche Background)
-@grau5:	#637379;		// Textgrau, verwendet zBsp in der Projektauswahl
+@grau5:	#637379;		// Textgrau, verwendet zBsp in der Projektauswahl, p1 Tag unter Übersicht
 @grau6:	#141a1b;		// Very dark gray, used in navigation;
+@grau7: #333a39;		// dark green-blue for h1 Title
+@grau8: #a1adb2;
 
 .devborder {
 	border-color: #ff8463;
@@ -23,6 +26,8 @@
 @padding-left-sidebar: 20px;
 @sidebarwidth: 270px;
 @footer-header-hoehe: 10px;
+@box-weight-inst-find: 500px;
+@box-height-inst-find: round(((@box-weight-inst-find)/1.618)/2)-10;
 
 .helveticafont {
 	font-family: Arial, "Helvetica Neue",  "Liberation Sans", FreeSans, sans-serif;
@@ -65,7 +70,8 @@ html {
 
 
 body {
-margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
+	margin: 0px 0px 0px @sidebarwidth+10px;
+	height:100%;
 }
 
 
@@ -233,25 +239,138 @@ margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
 }
 
 #content {
-width: 100%;
-height: 100%;
-.devborder;
-overflow: hidden;
-background: green;
-min-width: 400px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	min-width: 400px;
 }
 
 // AUSWAHL LINKS
 #anzeigelinks {
-	.devborder;
-	width: 49%;
+	width: 50%;
+	min-width:@box-weight-inst-find;
 	height: 100%;
 	float: left;
+	h1 {
+		margin-top:@padding-top-bottom-logo;
+		margin-bottom:(@padding-top-bottom-logo)+4;
+		.helveticafont;
+		font-size: 21px;
+		line-height:21px;
+		color:@grau7;
+	}
+	p {
+		.helveticafont;	
+		line-height: 20px;
+		font-size: 13px;
+		color: @grau5;
+		margin-bottom:@padding-top-bottom-logo;
+	}
+	.boxuebersicht_a{
+		background-color:@blau2;
+		height: @box-height-inst-find;
+		p {
+			float:left;
+		}
+		.pin{
+			.devborder;
+			margin-top:floor((@box-height-inst-find/2)-(30/2));
+			margin-left:10px;
+			width:30px;
+			height:30px;
+			.smallbox_a;
+			.rounded(3px);
+			background-image:url(img/instfinden_pin.png);
+			background-position:8px 8px;
+			background-repeat:no-repeat;
+		}
+		.linke_uebersicht{
+			height: @box-height-inst-find;
+			margin-left:15px;
+			float:left;
+			min-width:180px;
+			h2 {
+				margin-top: @padding-left-sidebar;
+				margin-bottom: round(@padding-left-sidebar/2);
+				.helveticafont;
+				font-size:21px;
+				line-height:21px;
+				color: grau5;
+			}
+			ul {
+				color: @grau5;
+		
+			}
+			li {
+				color: @grau5;
+				.helveticafont;
+				font-size: 13px;
+				line-height: 25px;
+				list-style:none;
+				padding-left:20px;
+		
+			}
+			.erfolgreicheprojekte {
+				background-image:url(img/instfinden_thumbsup.png);
+				background-repeat:no-repeat;
+				background-position: 0px 5px;
+			}
+			.location {
+				background-image:url(img/instfinden_location.png);
+				background-repeat:no-repeat;
+				background-position: 0px 5px;				
+			}
+		}
+		.rechte_uebersicht{
+			float:left;
+			min-width:210px;
+			ul{
+				margin-left: @padding-left-sidebar;
+				margin-top: @padding-left-sidebar;
+				font-size: 13px;
+				line-height: 27px;
+				.helveticafont;
+			}
+			li {
+				list-style:none;
+				color: @grau8;
+				width:100%;
+				span {
+					float: right;
+					color: @grau5;
+					font-weight: bold;
+				}
+			}
+		}
+		.more_info{
+			.devborder;
+			margin-top:floor((@box-height-inst-find/2)-(30/2));
+			margin-right:10px;
+			width:30px;
+			height:30px;
+			.smallbox_a;
+			.rounded(3px);
+			background-image:url(img/instfinden_more.png);
+			background-position:11px 8px;
+			background-repeat:no-repeat;
+			float:right;
+		}
+		.more_info:hover{
+			background-color:@blau1;
+			background-image:url(img/instfinden_more_white.png);	
+			background-position:11px 8px;
+			background-repeat:no-repeat;	
+			border:#fff;
+		}
+	}
+	.boxuebersicht_a:hover {
+		background-color:@blau3;
+	}
 }
 
 // ANBIETER ANZEIGE RECHTS
 #anbieterrechts {
-	.devborder;
-	width: 49%;
+
+	width: 50%;
 	float: right;
 }
