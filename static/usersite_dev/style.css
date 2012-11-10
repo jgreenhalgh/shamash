@@ -1,3 +1,15 @@
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
 .devborder {
   border-color: #ff8463;
   border-style: solid;
@@ -118,7 +130,7 @@ body {
   text-decoration: none;
 }
 #navigationleft ul li {
-  padding-left: 40px;
+  padding-left: 50px;
   color: #141a1b;
   font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
   font-size: 16px;
@@ -132,10 +144,74 @@ body {
   color: #fff;
   margin-bottom: -10px;
 }
+#navigationleft ul .sidebar_uebersicht {
+  background-image: url(img/sidebar_uebersicht_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 12;
+}
+#navigationleft ul .sidebar_uebersicht:hover {
+  background-image: url(img/sidebar_uebersicht_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 -28;
+}
+#navigationleft ul .sidebar_entwicklung {
+  background-image: url(img/sidebar_projektentwicklung_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 12;
+}
+#navigationleft ul .sidebar_entwicklung:hover {
+  background-image: url(img/sidebar_projektentwicklung_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 -28;
+}
+#navigationleft ul .sidebar_bearbeiten {
+  background-image: url(img/sidebar_edit_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 12;
+}
+#navigationleft ul .sidebar_bearbeiten:hover {
+  background-image: url(img/sidebar_edit_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 -28;
+}
+#navigationleft ul .sidebar_finden {
+  background-image: url(img/sidebar_finden_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 12;
+}
+#navigationleft ul .sidebar_finden:hover {
+  background-image: url(img/sidebar_finden_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 -28;
+}
+#navigationleft ul .sidebar_vergleichen {
+  background-image: url(img/sidebar_uebersicht_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 12;
+}
+#navigationleft ul .sidebar_vergleichen:hover {
+  background-image: url(img/sidebar_uebersicht_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 -28;
+}
+#navigationleft ul .sidebar_offerten {
+  background-image: url(img/sidebar_offerten_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 12;
+}
+#navigationleft ul .sidebar_offerten:hover {
+  background-image: url(img/sidebar_offerten_icon.png);
+  background-repeat: no-repeat;
+  background-position: 20 -28;
+}
 #navigationleft ul li:hover {
-  background-color: #f0f3f5;
+  background-color: #637379;
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  -webkit-opacity: 0.6;
+  opacity: 0.6;
   background-image: url("img/sidebar_rightshadow.png");
   background-position: right;
   background-repeat: repeat-y;
-  color: #3b8bc9;
+  color: #fff;
 }

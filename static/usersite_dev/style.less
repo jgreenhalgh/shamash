@@ -1,3 +1,5 @@
+@import "elements.less";
+
 // USERSITE
 
 @blau1: #3b8bc9; 		// Blau
@@ -142,8 +144,9 @@ margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
 		a, a:visited {
 			text-decoration:none;
 		}
+
 		li {
-			padding-left:(@padding-left-sidebar)*2;	
+			padding-left:(@padding-left-sidebar)*2+10;	
 			color: @grau6;
 			.helveticafont;
 			font-size: 16px;
@@ -157,10 +160,71 @@ margin: @footer-header-hoehe 0px @footer-header-hoehe @sidebarwidth+10px;
 				margin-bottom: -10px;
 			}
 		}
+		.sidebar_uebersicht {
+			background-image:url(img/sidebar_uebersicht_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 12;
+		}
+		.sidebar_uebersicht:hover {
+			background-image:url(img/sidebar_uebersicht_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 -28;		
+		}
+		.sidebar_entwicklung {
+			background-image:url(img/sidebar_projektentwicklung_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 12;		
+		}
+		.sidebar_entwicklung:hover {
+			background-image:url(img/sidebar_projektentwicklung_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 -28;		
+		}
+		.sidebar_bearbeiten {
+			background-image:url(img/sidebar_edit_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 12;
+		}
+		.sidebar_bearbeiten:hover {
+			background-image:url(img/sidebar_edit_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 -28;		
+		}
+		.sidebar_finden {
+			background-image:url(img/sidebar_finden_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 12;		
+		}
+		.sidebar_finden:hover {
+			background-image:url(img/sidebar_finden_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 -28;		
+		}
+		.sidebar_vergleichen {
+			background-image:url(img/sidebar_uebersicht_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 12;
+		}
+		.sidebar_vergleichen:hover {
+			background-image:url(img/sidebar_uebersicht_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 -28;		
+		}
+		.sidebar_offerten {
+			background-image:url(img/sidebar_offerten_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 12;		
+		}
+		.sidebar_offerten:hover {
+			background-image:url(img/sidebar_offerten_icon.png);
+			background-repeat:no-repeat;
+			background-position:20 -28;		
+		}
 		li:hover {
-			background-color:@blau2;
+			background-color:@grau5;
+			.opacity(0.6);
 			.background_sidebar_shadow;	
-			color: @blau1;
+			color: #fff;
 		}
 	}
 }
