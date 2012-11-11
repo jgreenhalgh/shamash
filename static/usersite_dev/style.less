@@ -242,7 +242,7 @@ body {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	min-width: 400px;
+	min-width: 1000px;
 }
 
 // AUSWAHL LINKS
@@ -250,7 +250,7 @@ body {
 	width: 50%;
 	min-width:@box-weight-inst-find;
 	height: 100%;
-	float: left;
+
 	overflow-y: scroll;
 	h1 {
 		margin-top:@padding-top-bottom-logo;
@@ -271,6 +271,7 @@ body {
 		margin-top:10px;
 		background-color:@blau2;
 		height: @box-height-inst-find;
+		margin-right:7px;
 		
 		p {
 			float:left;
@@ -289,9 +290,9 @@ body {
 		}
 		.linke_uebersicht{
 			height: @box-height-inst-find;
-			margin-left:15px;
+			margin-left:10px;
 			float:left;
-			min-width:180px;
+			min-width:170px;
 			h2 {
 				margin-top: @padding-left-sidebar;
 				margin-bottom: round(@padding-left-sidebar/2);
@@ -328,7 +329,7 @@ body {
 			float:left;
 			min-width:210px;
 			ul{
-				margin-left: @padding-left-sidebar;
+				margin-left: 10px;
 				margin-top: @padding-left-sidebar;
 				font-size: 13px;
 				line-height: 27px;
@@ -371,10 +372,139 @@ body {
 	}
 }
 
+// SCROLLBAR fuer die zwei DIVS
+
+@scrollbreite: 5px;
+@scrollhoehe: 10%;
+@scrollfarbe1: @grau4;
+@scrollfarbe2: white;
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: @scrollbreite;
+	height: @scrollhoehe;
+	background: @scrollfarbe1;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: @scrollhoehe;
+	height: @scrollbreite;
+	background: @scrollfarbe1;
+
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+	margin: 0;
+	padding: 0;
+	.rounded(7px);
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: @scrollfarbe2;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: @scrollfarbe1;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: @scrollhoehe;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: @scrollbreite;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: @scrollbreite;
+	float: left;
+	height: @scrollhoehe;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: @scrollhoehe;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+
+
+
 // ANBIETER ANZEIGE RECHTS
 #anbieterrechts {
 	overflow-y: scroll;
 	width: 50%;
 	float: right;
-	height: 100%
+	height: 100%;
+		.block {
+			.devborder;
+			height: 100%;
+		}
 }
