@@ -230,6 +230,7 @@ body {
   min-width: 500px;
   height: 100%;
   float: left;
+  overflow-y: scroll;
 }
 #anzeigelinks h1 {
   margin-top: 20px;
@@ -247,8 +248,9 @@ body {
   margin-bottom: 20px;
 }
 #anzeigelinks .boxuebersicht_a {
+  margin-top: 10px;
   background-color: #f0f6f8;
-  height: 145px;
+  height: 135px;
 }
 #anzeigelinks .boxuebersicht_a p {
   float: left;
@@ -256,7 +258,7 @@ body {
 #anzeigelinks .boxuebersicht_a .pin {
   border-color: #ff8463;
   border-width: 2px;
-  margin-top: 57px;
+  margin-top: 52px;
   margin-left: 10px;
   width: 30px;
   height: 30px;
@@ -275,7 +277,7 @@ body {
   background-repeat: no-repeat;
 }
 #anzeigelinks .boxuebersicht_a .linke_uebersicht {
-  height: 145px;
+  height: 135px;
   margin-left: 15px;
   float: left;
   min-width: 180px;
@@ -333,7 +335,7 @@ body {
 #anzeigelinks .boxuebersicht_a .more_info {
   border-color: #ff8463;
   border-width: 2px;
-  margin-top: 57px;
+  margin-top: 52px;
   margin-right: 10px;
   width: 30px;
   height: 30px;
@@ -363,6 +365,8 @@ body {
   background-color: #e2f9fa;
 }
 #anbieterrechts {
+  overflow-y: scroll;
   width: 50%;
   float: right;
+  height: 100%;
 }
