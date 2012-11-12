@@ -18,6 +18,13 @@
 .helveticafont {
   font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
 }
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
 .background_sidebar_shadow {
   background-image: url("img/sidebar_rightshadow.png");
   background-position: right;
@@ -456,9 +463,78 @@ body {
   float: right;
   height: 100%;
 }
-#anbieterrechts .block {
+#anbieterrechts .blockoben {
+  background-color: #f0f6f8;
+  padding: 10px;
+  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
+}
+#anbieterrechts .blockoben .wrapperintheblock {
+  max-width: 500px;
+  margin: 0px auto;
+}
+#anbieterrechts .blockoben .wrapperintheblock h1 {
+  margin-top: 7px;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+#anbieterrechts .blockoben .wrapperintheblock span {
+  color: #a1adb2;
+  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
+  font-size: 13px;
+}
+#anbieterrechts .blockoben .wrapperintheblock p {
+  color: #333a39;
   border-color: #ff8463;
-  border-style: solid;
   border-width: 2px;
-  height: 100%;
+  background-color: #fafbfc;
+  border-color: #c7d0d3;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 7px;
+  margin-top: 5px;
+  text-align: center;
+}
+#anbieterrechts .blockoben .wrapperintheblock .zahlboxallgemein {
+  width: 130px;
+  display: block;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_infozahl_1 {
+  width: 130px;
+  display: block;
+  float: left;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_infozahl_2 {
+  width: 130px;
+  display: block;
+  float: left;
+  margin-left: 50px;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_infozahl_3 {
+  width: 130px;
+  display: block;
+  float: right;
+}
+#anbieterrechts .blockoben .wrapperintheblock ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+  color: #637379;
+  width: 200px;
+  line-height: 27px;
+  font-size: 14px;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_liste_links {
+  padding-left: 10px;
+  float: left;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_liste_rechts {
+  float: right;
 }
