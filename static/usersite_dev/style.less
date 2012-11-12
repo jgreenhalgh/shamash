@@ -2,7 +2,7 @@
 
 // USERSITE
 
-@blau1: #3b8bc9; 		// Blau
+@blau1: #0093d5; 		// Blau alt: 3b8bc9
 @blau2: #f0f6f8;		// sehr dezentes Blau fuer Navigationslieste links unter dem Projekt, funktioniert gut mit grau2
 @blau3: #e2f9fa;		// hover_blau
 
@@ -84,8 +84,25 @@ body {
 }
 
 
-
-
+// SHADOW, PROMT BG
+#shadowbg {
+	background-image:url(img/SHADOW_BG_1.png);
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	// height:100%;
+	z-index:10000;
+	.prompt_box {
+		width:270px;
+		height:150px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin:-75px 0 0 -135px;
+		background-color:white;
+	}
+}
 
 
 // SIDEBAR
@@ -98,6 +115,7 @@ body {
 	height: 100%;
 	background-color:@grau1;
 	.background_sidebar_shadow;
+	z-index:9999;
 }
 
 .sidebartop {
@@ -385,7 +403,7 @@ body {
 
 @scrollbreite: 5px;
 @scrollhoehe: 10%;
-@scrollfarbe1: @grau4;
+@scrollfarbe1: @blau1;
 @scrollfarbe2: white;
 
 .jspContainer
@@ -508,17 +526,31 @@ body {
 
 // ANBIETER ANZEIGE RECHTS
 #anbieterrechts {
+	@max-width-wrapper-rechts: 500px;
+	
+	.background_anbieter_shadow_links {
+		background-image:url("img/anbieter_leftshadow.png");
+		background-position: left;
+		background-repeat: repeat-y;
+	}
+	
 	overflow-y: scroll;
 	width: 50%;
 	float: right;
 	height: 100%;
+	background-color:@grau1;
+	
+	.background_anbieter_shadow_links;
 		.blockoben {
 			background-color:@blau2;
-
+			
+			.background_anbieter_shadow_links;
+			
 			padding:10px;
 			.helveticafont;
+			border-bottom: 1px solid @grau2;
 			
-			@max-width-wrapper-rechts: 500px;
+
 			
 			.wrapperintheblock {
 				max-width: @max-width-wrapper-rechts;
@@ -576,12 +608,80 @@ body {
 			
 				}
 				.rechts_liste_links {
-					padding-left:10px;
 					float: left;
+						li {
+						background-image:url(img/right_check.png);
+						background-repeat: no-repeat;
+						background-position: 0px 6px;
+						padding-left:20px;
+						}
 					
 				}
 				.rechts_liste_rechts {
-						float:right;
+					float:right;
+						li {
+						background-image:url(img/right_check.png);
+						background-repeat: no-repeat;
+						background-position: 0px 6px;
+						padding-left:20px;
+						}
+				}
+			}
+		}
+		.blockanbieter {
+			max-width: @max-width-wrapper-rechts;
+			margin: 0px auto;
+			padding-left:10px;
+			padding-right:10px;	
+			.helveticafont;
+			
+			.offertenbutton {
+				float:right;
+				display:block;
+				.devborder;
+
+				padding:7px;
+				padding-right:30px;
+				padding-left:15px;
+				.smallbox_a;
+				.rounded(3px);
+				background-image:url(img/arrow_right_white.png);
+				background-position: 128px 10px;
+				background-repeat:no-repeat;
+				background-color: @blau1;
+				color: #fff;
+				border-color:#fff;
+			}
+			
+			h1 {
+				color: @grau7;
+				font-size: 21px;
+				margin-top:20px;
+				margin-bottom:7px;
+			}
+			h3 {
+				color: @grau8;
+				font-size: 15px;
+				font-weight:none;
+				margin-bottom:20px;
+			}
+			
+			p {
+				color: @grau7;
+				font-size:14px;
+				line-height: 21px;
+			}
+			ul {
+				line-height:27px;
+				font-size: 14px;
+				color: @grau8;
+				list-style:none;
+				li {
+						background-image:url(img/bulltetpoint.png);
+						background-repeat: no-repeat;
+						background-position: 3px 11px;
+						padding-left:20px;
+						list-style:none;
 				}
 			}
 		}

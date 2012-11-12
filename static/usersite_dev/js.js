@@ -103,3 +103,32 @@ $(function()
 	$('.scroll-pane').jScrollPane();
 });
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************** DIMMER */
+/********** das http://www.jankoatwarpspeed.com/post/2009/05/17/Use-jQuery-to-turn-off-the-lights-while-watching-videos.aspx */

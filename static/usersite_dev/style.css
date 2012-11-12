@@ -59,6 +59,23 @@ body {
   margin: 0px 0px 0px 280px;
   height: 100%;
 }
+#shadowbg {
+  background-image: url(img/SHADOW_BG_1.png);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+#shadowbg .prompt_box {
+  width: 270px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -75px 0 0 -135px;
+  background-color: white;
+}
 #sidebar {
   position: fixed;
   left: 0;
@@ -70,9 +87,10 @@ body {
   background-image: url("img/sidebar_rightshadow.png");
   background-position: right;
   background-repeat: repeat-y;
+  z-index: 9999;
 }
 .sidebartop {
-  background-color: #3b8bc9;
+  background-color: #0093d5;
   width: 100%;
   font-size: 25px;
   font-style: italic;
@@ -128,7 +146,7 @@ body {
 }
 .projectchooser-in-sidebar p a:hover {
   text-decoration: none;
-  color: #3b8bc9;
+  color: #0093d5;
 }
 .projectchooser-in-sidebar p img {
   border: 0;
@@ -362,7 +380,7 @@ body {
   float: right;
 }
 #anzeigelinks .boxuebersicht_a .more_info:hover {
-  background-color: #3b8bc9;
+  background-color: #0093d5;
   background-image: url(img/instfinden_more_white.png);
   background-position: 11px 8px;
   background-repeat: no-repeat;
@@ -384,7 +402,7 @@ body {
   right: 0;
   width: 5px;
   height: 10%;
-  background: #c7d0d3;
+  background: #0093d5;
 }
 .jspHorizontalBar {
   position: absolute;
@@ -392,7 +410,7 @@ body {
   left: 0;
   width: 10%;
   height: 5px;
-  background: #c7d0d3;
+  background: #0093d5;
 }
 .jspVerticalBar *,
 .jspHorizontalBar * {
@@ -416,7 +434,7 @@ body {
   position: relative;
 }
 .jspDrag {
-  background: #c7d0d3;
+  background: #0093d5;
   position: relative;
   top: 0;
   left: 0;
@@ -462,11 +480,24 @@ body {
   width: 50%;
   float: right;
   height: 100%;
+  background-color: #f9f9f9;
+  background-image: url("img/anbieter_leftshadow.png");
+  background-position: left;
+  background-repeat: repeat-y;
+}
+#anbieterrechts .background_anbieter_shadow_links {
+  background-image: url("img/anbieter_leftshadow.png");
+  background-position: left;
+  background-repeat: repeat-y;
 }
 #anbieterrechts .blockoben {
   background-color: #f0f6f8;
+  background-image: url("img/anbieter_leftshadow.png");
+  background-position: left;
+  background-repeat: repeat-y;
   padding: 10px;
   font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
+  border-bottom: 1px solid #dde3e4;
 }
 #anbieterrechts .blockoben .wrapperintheblock {
   max-width: 500px;
@@ -532,9 +563,82 @@ body {
   font-size: 14px;
 }
 #anbieterrechts .blockoben .wrapperintheblock .rechts_liste_links {
-  padding-left: 10px;
   float: left;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_liste_links li {
+  background-image: url(img/right_check.png);
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  padding-left: 20px;
 }
 #anbieterrechts .blockoben .wrapperintheblock .rechts_liste_rechts {
   float: right;
+}
+#anbieterrechts .blockoben .wrapperintheblock .rechts_liste_rechts li {
+  background-image: url(img/right_check.png);
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  padding-left: 20px;
+}
+#anbieterrechts .blockanbieter {
+  max-width: 500px;
+  margin: 0px auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
+}
+#anbieterrechts .blockanbieter .offertenbutton {
+  float: right;
+  display: block;
+  border-color: #ff8463;
+  border-width: 2px;
+  padding: 7px;
+  padding-right: 30px;
+  padding-left: 15px;
+  background-color: #fafbfc;
+  border-color: #c7d0d3;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-image: url(img/arrow_right_white.png);
+  background-position: 128px 10px;
+  background-repeat: no-repeat;
+  background-color: #0093d5;
+  color: #fff;
+  border-color: #fff;
+}
+#anbieterrechts .blockanbieter h1 {
+  color: #333a39;
+  font-size: 21px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+}
+#anbieterrechts .blockanbieter h3 {
+  color: #a1adb2;
+  font-size: 15px;
+  font-weight: none;
+  margin-bottom: 20px;
+}
+#anbieterrechts .blockanbieter p {
+  color: #333a39;
+  font-size: 14px;
+  line-height: 21px;
+}
+#anbieterrechts .blockanbieter ul {
+  line-height: 27px;
+  font-size: 14px;
+  color: #a1adb2;
+  list-style: none;
+}
+#anbieterrechts .blockanbieter ul li {
+  background-image: url(img/bulltetpoint.png);
+  background-repeat: no-repeat;
+  background-position: 3px 11px;
+  padding-left: 20px;
+  list-style: none;
 }
