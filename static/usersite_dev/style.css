@@ -66,6 +66,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 10000;
+  zoom: 1;
 }
 #shadowbg .prompt_box {
   width: 270px;

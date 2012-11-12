@@ -67,6 +67,11 @@ $(document).ready(function(){
 	$(".clickshadow").click(function(){
 		$("#shadowbg").toggle();
 	});
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
 });
 </script>
 
