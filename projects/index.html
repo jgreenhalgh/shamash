@@ -89,8 +89,9 @@ $(document).ready(function(){
 			</div>
 			<div class="grid_6">
 			<form action="/panel/" method="post">
-				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Wohnadresse') { this.value = ''; }" value="Ihre Wohnadresse" /> <br />
-				<input type="text"  onfocus="if(this.value == 'Ihr Wohnort') { this.value = ''; }" value="Ihr Wohnort" class="postleihzahl" /><input type="button" class="solarpotentialbutton" value="zum Solarpotential"/> 
+			{% csrf_token %}
+				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Wohnadresse') { this.value = ''; }" value="Ihre Wohnadresse"  name="address"/> <br />
+				<input type="text"  onfocus="if(this.value == 'Ihr Wohnort') { this.value = ''; }" value="Ihr Wohnort" class="postleihzahl" /><input type="submit" class="solarpotentialbutton" value="zum Solarpotential"/> 
 			</form>
 			</div>
 		</div>
@@ -111,7 +112,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 		
-				<div class="grid_3">
+		<div class="grid_3">
 			<h2>Solarenergie f&uuml;r Ihr Haus</h2>
 			<ul>
 				<li>Weshalb Solarenergie?</li>
@@ -121,7 +122,7 @@ $(document).ready(function(){
 			</ul>
 		</div>
 		
-				<div class="grid_3">
+		<div class="grid_3">
 			<h2>F&uuml;r Solaranbieter</h2>
 			<ul>
 				<li>Was ist das ganze?</li>
@@ -129,9 +130,7 @@ $(document).ready(function(){
 				<li>Anmeldung</li>
 			</ul>
 		</div>
-		
-	
-				<div class="grid_3">
+		<div class="grid_3">
 			<h2>&Uuml;ber Shamash</h2>
 			<ul>
 				<li>&Uuml;ber Shamash</li>
@@ -141,20 +140,5 @@ $(document).ready(function(){
 			</ul>
 		</div>
 	</div>
-</body>
-
-
-		
-		
-		<form action="/panel/" method="post">
-			 {% csrf_token %} <label>
-			<input type="text" id="address" name="address"></input>
-			<script type="text/javascript">
-			</script>
-			<input type="submit"value=""/>
-			</label>
-		</form>
-
-
 </body>
 </html>
