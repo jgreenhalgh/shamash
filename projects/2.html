@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
+<title> </title>
 <meta charset="utf-8"/>
 <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -61,15 +62,87 @@
 	});	
 	</script>
 </head>
-<title>Schritt 2, Details eingeben</title>
+
+
+<!-- CSS Normilze Stylesheet -->
 <link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
-<link rel='stylesheet' href="{{STATIC_URL}}/style_step3.css"/>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900italic' rel='stylesheet' type='text/css'>
+
+<!-- CSS GRID Stylesheet -->
 <link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
-<script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- CSS Master Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/style.css"/>
+
+<!-- Dimmer Funtion, Kirill -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
+	});
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
+</script>
+
+<!-- Toggle script -->
 <script src="{{STATIC_URL}}/toggle.js" type="text/javascript"></script>
-<body id="startbg_sub">
-<div id="header_bg_wrapper_subsite">
+<body class="bodynomargin">
+
+<!-- PROMT BOX start -->
+<div id="shadowbg">
+	<div class="prompt_box">
+		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
+		<h2>Verwalten Sie Ihre Solaranlage</h2>
+		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt. <span style="color:red">{{message}}</span>
+			
+			<form action="/" method="post">
+				{% csrf_token %}
+				<label><span>Login:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+			</form>
+
+			</p>
+	</div>
+</div>
+<!-- PROMT BOX end -->
+
+
+
+<div class="start_headertop">
+	<div class="container_12">
+		<div class="grid_2 active"><h1>getSolar</h1></div>
+		<div class="grid_8 centerlist">
+			<ul>
+				<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+				<a href="#"><li>Solardachrechner</li></a>
+				<a href="#"><li>Anbieter direkt vergleichen</li></a>
+			</ul>
+		</div>
+		<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+	</div>
+</div>
+
+<div class="step14bg">
+		<div class="container_12">
+			<div class="grid_3"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
+			<div class="grid_3"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3 active"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
+			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
+		</div>
+</div>
+
+
+
+
+<div>
 	<!-- Logo + Navigation -->
 	<div class="container_12 verschieben_subsite">
 		<div class="grid_2 logotopsubsite">
