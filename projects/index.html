@@ -44,7 +44,7 @@ $(document).ready(function(){
 </head>
 <body>
 
-<!-- PROMT BOX -->
+<!-- PROMT BOX start -->
 <div id="shadowbg">
 	<div class="prompt_box">
 		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
@@ -61,26 +61,91 @@ $(document).ready(function(){
 			</p>
 	</div>
 </div>
+<!-- PROMT BOX end -->
 
-<!-- PROMT BOX -->
 
-            <form action="/" method="post">
-                {% csrf_token %}
-			    <ul class="loginregisternav">
-
-				    <li><a class="einloggennav" href="#">
-                    <input type="text" name="username" value="username"></input>
-                    <input type="password" name="password" value="password"></input>
-                    <input type="submit" value="{{loginlogout}}" name="loginlogour"></input>
-                    </a></li>
-
-			    </ul>
-            </form>
+<body class="bodynomargin">	
+	<div class="start_headertop">
+		<div class="container_12">
+			<div class="grid_2"><h1>SlrDemo</h1></div>
+			<div class="grid_8 centerlist">
+				<ul>
+					<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+					<a href="/panel/"><li>Solardachrechner</li></a>
+					<a href="#"><li>Anbieter direkt vergleichen</li></a>
+				</ul>
+			</div>
+			<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+		</div>
+	</div>
+	<div class="start_headertwo">
+		<div class="container_12">
+			<div class="grid_6">
+				<h1>Ihre Solaranlage beginnt hier</h1>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscings elit. 
+				Suspendisse eget imperdiet dolor. <span style="color:red;">{{message}}</span>
+				
+				</p>
+			</div>
+			<div class="grid_6">
+			<form action="/panel/" method="post">
+				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Wohnadresse') { this.value = ''; }" value="Ihre Wohnadresse" /> <br />
+				<input type="text"  onfocus="if(this.value == 'Ihr Wohnort') { this.value = ''; }" value="Ihr Wohnort" class="postleihzahl" /><input type="button" class="solarpotentialbutton" value="zum Solarpotential"/> 
+			</form>
+			</div>
+		</div>
+	</div>
 	
-	
-	
+	<div  class="container_12 startfooter" >
 		
-		{{message}}
+		<div class="grid_3" style="padding:0px">
+			<div class="hilfegrid">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+			</div>
+		</div>
+		
+				<div class="grid_3">
+			<h2>Solarenergie f&uuml;r Ihr Haus</h2>
+			<ul>
+				<li>Weshalb Solarenergie?</li>
+				<li>Photovoltaik oder Solarthermie?</li>
+				<li>Solarpontential bestimmen</li>
+				<li>Solarenergie im Kanton Z&uuml;rich</li>
+			</ul>
+		</div>
+		
+				<div class="grid_3">
+			<h2>F&uuml;r Solaranbieter</h2>
+			<ul>
+				<li>Was ist das ganze?</li>
+				<li>Vorteile von Shamash</li>
+				<li>Anmeldung</li>
+			</ul>
+		</div>
+		
+	
+				<div class="grid_3">
+			<h2>&Uuml;ber Shamash</h2>
+			<ul>
+				<li>&Uuml;ber Shamash</li>
+				<li>Wer wir sind</li>
+				<li>Neuigkeiten</li>
+				<li>Facebook</li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+
+		
 		
 		<form action="/panel/" method="post">
 			 {% csrf_token %} <label>
