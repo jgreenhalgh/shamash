@@ -2,51 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Demo</title>
+<title>Herzlich Willkommen</title>
+
+<!-- CSS Normilze Stylesheet -->
 <link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
-<link rel='stylesheet' href="{{STATIC_URL}}/style_step3.css"/>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900italic' rel='stylesheet' type='text/css'>
+
+<!-- CSS GRID Stylesheet -->
 <link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
-<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.min.js'></script>
-<!--	<script type="text/javascript" src="fullscreenBackground.js"> </script>
-	<script type="text/javascript">
-	$(document).ready(function () {
-		$("#background-image").fullscreenBackground();
+
+<!-- CSS Master Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/style.css"/>
+
+<!-- JQuery -->
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.min.js'>
+
+<!-- Dimmer Funtion, Kirill -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
 	});
--->
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
 </script>
+
+
 <!-- Scripts von Charles -->
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" type="text/css" media="all"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
 <script src="http://jquery-watermark.googlecode.com/svn/trunk/jquery-watermark/jquery.watermark/jquery.watermark.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
             function callback_my_args_example(data){
                 alert(data.message);
                 }   
             </script>
 </head>
-<body id="startbg">
-<div id="header_bg_wrapper">
-	<div class="container_12 verschiebenvonoben">
-		<div class="grid_2 logotop">
-			<img src="{{STATIC_URL}}/logo.png"/>
-		</div>
-		<div class="grid_8">
-			<ul class="topnavigation">
-			
-				<li class="topnavigation litopwas_w"><a href="#">Was ist SolarProject?</a></li>
-				<li class="topnavigation litopsolardach_w"><a href="/panel/">Solardach Rechner</a></li>
-				<li class="topnavigation litopvergleich_w"><a href="#">Installateure finden</a></li>
-			</ul>
-		</div>
-		<div class="grid_2">
+
+<body>
+	
+
             <form action="/" method="post" style="margin-top:60px;">
                 {% csrf_token %}
 			    <ul class="loginregisternav">
 
-				    <li class="loginregisternav"><a class="einloggennav" href="#">
+				    <li><a class="einloggennav" href="#">
                     <input type="text" name="username" value="username"></input>
                     <input type="password" name="password" value="password"></input>
                     <input type="submit" value="{{loginlogout}}" name="loginlogour"></input>
@@ -54,29 +59,21 @@
 
 			    </ul>
             </form>
-		</div>
-	</div>
-	<div class="container_12 topquestion">
-		<p>
-			Ihre Solaranlage beginnt hier: {{message}}
-		</p>
-		<form action="/panel/" method="post" style="margin-top:60px;">
-			 {% csrf_token %} <label class="suchlabel">
-			<input type="text" id="address" class="suchtxtinput" name="address"></input>
+	
+	
+	
+		
+		{{message}}
+		
+		<form action="/panel/" method="post">
+			 {% csrf_token %} <label>
+			<input type="text" id="address" name="address"></input>
 			<script type="text/javascript">
-	$(function () {
-		$("#address").watermark("Strasse, Gemeinde");
-		$("#addressFocus").click(
-			function () {
-				$("#address")[0].focus();
-			}
-		);
-	});
 			</script>
-			<input type="submit" class="suchsubmit" value=""/>
+			<input type="submit"value=""/>
 			</label>
 		</form>
-	</div>
-</div>
+
+
 </body>
 </html>
