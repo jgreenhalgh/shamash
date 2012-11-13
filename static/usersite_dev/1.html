@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+<title> </title>
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- CSS, normilzed -->
+<link rel="stylesheet" type="text/css" href="normalize.css">
+
+<!-- GRID -->
+<link rel="stylesheet" type="text/css" href="960.css">
+
+<!-- CSS, compiled --> 
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Dimmer Funtion -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
+	});
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
+</script>
+
+</head>
+
+<div id="shadowbg">
+		<div class="prompt_box">
+			<h2>Herzlichst</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Suspendisse eget imperdiet dolor. 
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Suspendisse eget imperdiet dolor. </p>
+			
+		</div>
+</div>
+
+<body class="bodynomargin">	
+	<div class="start_headertop">
+		<div class="container_12">
+			<div class="grid_2"><h1>SlrDemo</h1></div>
+			<div class="grid_8 centerlist">
+				<ul>
+					<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+					<a href="/panel/"><li>Solardachrechner</li></a>
+					<a href="#"><li>Anbieter direkt vergleichen</li></a>
+				</ul>
+			</div>
+			<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+		</div>
+	</div>
+	<div class="start_headertwo">
+		<div class="container_12">
+			<div class="grid_6">
+				<h1>Ihre Solaranlage beginnt hier</h1>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Suspendisse eget imperdiet dolor. 		
+				</p>
+				<form action="/" method="post" style="margin-top:60px;">
+					
+					
+				</form>
+
+			</div>
+			<div class="grid_6">
+			<form>
+				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Wohnadresse') { this.value = ''; }" value="Ihre Wohnadresse" /> <br />
+				<input type="text"  onfocus="if(this.value == 'Ihr Wohnort') { this.value = ''; }" value="Ihr Wohnort" class="postleihzahl" /><input type="button" class="solarpotentialbutton" value="zum Solarpotential"/> 
+			</form>
+			</div>
+		</div>
+	</div>
+	
+	<div  class="container_12 startfooter" >
+		
+		<div class="grid_3" style="padding:0px">
+			<div class="hilfegrid">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+			</div>
+		</div>
+		
+				<div class="grid_3">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+		</div>
+		
+				<div class="grid_3">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+		</div>
+		
+	
+				<div class="grid_3">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+		</div>
+	</div>
+</body>
