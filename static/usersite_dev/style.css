@@ -112,6 +112,13 @@ body {
   color: #637379;
   padding-top: 10px;
 }
+#shadowbg .prompt_box span {
+  width: 200px;
+  background-color: red;
+}
+#shadowbg .prompt_box input {
+  width: 100px;
+}
 #sidebar {
   position: fixed;
   left: 0;
