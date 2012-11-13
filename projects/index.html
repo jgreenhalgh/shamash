@@ -48,7 +48,7 @@ $(document).ready(function(){
 	<div class="prompt_box">
 		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
 		<h2>Verwalten Sie Ihre Solaranlage</h2>
-		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt.
+		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt. <span style="color:red">{{message}}</span>
 			
 			<form action="/" method="post">
 				{% csrf_token %}
