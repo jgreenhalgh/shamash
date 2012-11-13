@@ -2,72 +2,160 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Demo</title>
-<link rel="stylesheet" href="../static/normalize.css"/>
-<link rel='stylesheet' href="http://charlestill.github.com/shamash/static/style_step3.css"/>
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:900italic' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href="../static/960.css"/>
-<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.2.min.js'></script>
-<!--	<script type="text/javascript" src="fullscreenBackground.js"> </script>
-	<script type="text/javascript">
-	$(document).ready(function () {
-		$("#background-image").fullscreenBackground();
+<title>Herzlich Willkommen</title>
+
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+
+<!-- CSS GRID Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- CSS Master Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/style.css"/>
+
+<!-- Dimmer Funtion, Kirill -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
 	});
--->
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
 </script>
+
 <!-- Scripts von Charles -->
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" type="text/css" media="all"/>
+<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" type="text/css" media="all"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
 <script src="http://jquery-watermark.googlecode.com/svn/trunk/jquery-watermark/jquery.watermark/jquery.watermark.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-            function callback_my_args_example(data){
-                alert(data.message);
-                }   
-            </script>
+	function callback_my_args_example(data){
+		alert(data.message);
+	}   
+</script> -->
 </head>
-<body id="startbg">
-<div id="header_bg_wrapper">
-	<div class="container_12 verschiebenvonoben">
-		<div class="grid_2 logotop">
-			<img src="../static/logo.png"/>
-		</div>
-		<div class="grid_8">
-			<ul class="topnavigation">
-				<li class="topnavigation litopwas_w"><a href="#">Was ist SolarProject?</a></li>
-				<li class="topnavigation litopsolardach_w"><a href="#">Solardach Rechner</a></li>
-				<li class="topnavigation litopvergleich_w"><a href="#">Installateure finden</a></li>
-			</ul>
-		</div>
-		<div class="grid_2">
-			<ul class="loginregisternav">
-				<!-- <li class="loginregisternav"><a href="#">Registrieren</a></li> -->
-				<li class="loginregisternav"><a class="einloggennav" href="#">Einloggen</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="container_12 topquestion">
-		<p>
-			Ihre Solaranlage beginnt hier:
-		</p>
-		<form action="/panel/" method="post" style="margin-top:60px;">
-			 {% csrf_token %} <label class="suchlabel">
-			<input type="text" id="address" class="suchtxtinput" name="address"></input>
-			<script type="text/javascript">
-	$(function () {
-		$("#address").watermark("Strasse, Gemeinde");
-		$("#addressFocus").click(
-			function () {
-				$("#address")[0].focus();
-			}
-		);
-	});
-			</script>
-			<input type="submit" class="suchsubmit" value=""/>
-			</label>
-		</form>
+<body>
+
+<!-- PROMT BOX start -->
+<div id="shadowbg">
+	<div class="prompt_box">
+		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
+		<h2>Verwalten Sie Ihre Solaranlage</h2>
+		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt.
+			
+			<form action="/" method="post">
+				{% csrf_token %}
+				<label><span>Login:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+			</form>
+
+			</p>
 	</div>
 </div>
+<!-- PROMT BOX end -->
+
+
+<body class="bodynomargin">	
+	<div class="start_headertop">
+		<div class="container_12">
+			<div class="grid_2"><h1>SlrDemo</h1></div>
+			<div class="grid_8 centerlist">
+				<ul>
+					<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+					<a href="/panel/"><li>Solardachrechner</li></a>
+					<a href="#"><li>Anbieter direkt vergleichen</li></a>
+				</ul>
+			</div>
+			<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+		</div>
+	</div>
+	<div class="start_headertwo">
+		<div class="container_12">
+			<div class="grid_6">
+				<h1>Ihre Solaranlage beginnt hier</h1>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscings elit. 
+				Suspendisse eget imperdiet dolor. <span style="color:red;">{{message}}</span>
+				
+				</p>
+			</div>
+			<div class="grid_6">
+			<form action="/panel/" method="post">
+				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Wohnadresse') { this.value = ''; }" value="Ihre Wohnadresse" /> <br />
+				<input type="text"  onfocus="if(this.value == 'Ihr Wohnort') { this.value = ''; }" value="Ihr Wohnort" class="postleihzahl" /><input type="button" class="solarpotentialbutton" value="zum Solarpotential"/> 
+			</form>
+			</div>
+		</div>
+	</div>
+	
+	<div  class="container_12 startfooter" >
+		
+		<div class="grid_3" style="padding:0px">
+			<div class="hilfegrid">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+			</div>
+		</div>
+		
+				<div class="grid_3">
+			<h2>Solarenergie f&uuml;r Ihr Haus</h2>
+			<ul>
+				<li>Weshalb Solarenergie?</li>
+				<li>Photovoltaik oder Solarthermie?</li>
+				<li>Solarpontential bestimmen</li>
+				<li>Solarenergie im Kanton Z&uuml;rich</li>
+			</ul>
+		</div>
+		
+				<div class="grid_3">
+			<h2>F&uuml;r Solaranbieter</h2>
+			<ul>
+				<li>Was ist das ganze?</li>
+				<li>Vorteile von Shamash</li>
+				<li>Anmeldung</li>
+			</ul>
+		</div>
+		
+	
+				<div class="grid_3">
+			<h2>&Uuml;ber Shamash</h2>
+			<ul>
+				<li>&Uuml;ber Shamash</li>
+				<li>Wer wir sind</li>
+				<li>Neuigkeiten</li>
+				<li>Facebook</li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+
+		
+		
+		<form action="/panel/" method="post">
+			 {% csrf_token %} <label>
+			<input type="text" id="address" name="address"></input>
+			<script type="text/javascript">
+			</script>
+			<input type="submit"value=""/>
+			</label>
+		</form>
+
+
 </body>
 </html>
