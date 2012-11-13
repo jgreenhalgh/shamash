@@ -35,22 +35,30 @@
 		</div>
 		<div class="grid_8">
 			<ul class="topnavigation">
-			TEST
+			
 				<li class="topnavigation litopwas_w"><a href="#">Was ist SolarProject?</a></li>
 				<li class="topnavigation litopsolardach_w"><a href="/panel/">Solardach Rechner</a></li>
 				<li class="topnavigation litopvergleich_w"><a href="#">Installateure finden</a></li>
 			</ul>
 		</div>
 		<div class="grid_2">
-			<ul class="loginregisternav">
-				<!-- <li class="loginregisternav"><a href="#">Registrieren</a></li> -->
-				<li class="loginregisternav"><a class="einloggennav" href="#">Einloggen</a></li>
-			</ul>
+            <form action="/" method="post" style="margin-top:60px;">
+                {% csrf_token %}
+			    <ul class="loginregisternav">
+
+				    <li class="loginregisternav"><a class="einloggennav" href="#">
+                    <input type="text" name="username" value="username"></input>
+                    <input type="password" name="password" value="password"></input>
+                    <input type="submit" value="{{loginlogout}}" name="loginlogour"></input>
+                    </a></li>
+
+			    </ul>
+            </form>
 		</div>
 	</div>
 	<div class="container_12 topquestion">
 		<p>
-			Ihre Solaranlage beginnt hier: test
+			Ihre Solaranlage beginnt hier: {{message}}
 		</p>
 		<form action="/panel/" method="post" style="margin-top:60px;">
 			 {% csrf_token %} <label class="suchlabel">
