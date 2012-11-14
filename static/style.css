@@ -29,7 +29,7 @@ input {
   margin: 0;
   margin-bottom: 0;
 }
-.devborder {
+.WTF {
   border-color: #ff8463;
   border-style: solid inset;
   border-width: 2px;
@@ -1042,51 +1042,291 @@ body {
 .bigoverview .container_12 h1 {
   font-size: 21px;
   color: #333a39;
-  width: 100%;
   text-align: center;
   margin-top: 70px;
+  float: right;
 }
-.bigoverview .container_12 .selectdown {
+.bigoverview .container_12 #dropdownphotovoltaik {
+  margin-top: 63px;
+  list-style: none;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown {
+  width: 268px;
+  background-color: #0093d5;
+  color: #fff;
+  float: left;
+  position: relative;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: none;
+  padding-left: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-image: url(img/smallarrowdown_white.png);
+  background-repeat: no-repeat;
+  background-position: 270px 19px;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown a,
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown a:visited {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown ul {
+  list-style: none;
+  position: absolute;
+  left: -999em;
   -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 0px;
-  -webkit-border-bottom-left-radius: 0px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block;
+  background-image: url(img/SHADOW_BG_1.png);
+  background-repeat: repeat;
+  margin-top: 10px;
+  width: 450px;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown ul .trennlinie {
+  height: 1px;
+  width: 100%;
+  background-color: #f0f6f8;
+  display: block;
+  -moz-opacity: 0.1;
+  -khtml-opacity: 0.1;
+  -webkit-opacity: 0.1;
+  opacity: 0.1;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown ul li {
+  float: none;
+  display: block;
+  padding-left: 20px;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown ul li h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  font-weight: bold;
+  color: #f0f6f8;
+  margin-top: 10px;
+  padding-left: 80px;
+  padding-right: 10px;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown ul li span {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: normal;
+  color: #f0f6f8;
+  width: 410x;
+  padding-bottom: 10px;
+  display: block;
+  padding-left: 80px;
+  background-image: url(img/icon_infinity_photovoltaic.png);
+  background-repeat: no-repeat;
+}
+.bigoverview .container_12 #dropdownphotovoltaik .selectdown ul li a:hover li {
+  color: #fff;
+  background-color: red;
+}
+.bigoverview .container_12 #dropdownphotovoltaik li:hover {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
   -webkit-border-top-left-radius: 5px;
   -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 0px;
-  -moz-border-radius-bottomleft: 0px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
   -moz-border-radius-topleft: 5px;
   border-top-right-radius: 5px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   border-top-left-radius: 5px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  background-color: red;
-  display: block;
-  width: 100px;
-  padding: 10px;
-}
-.bigoverview .container_12 .selectdown .dropdownselect {
-  margin-top: 10px;
-  margin-left: -10px;
-  position: absolute;
+  background-color: #fff;
   background-image: url(img/SHADOW_BG_1.png);
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 0;
+  background-repeat: repeat;
+}
+.bigoverview .container_12 #dropdownphotovoltaik li:hover ul {
+  left: 0;
+  display: block;
+}
+.bigoverview .container_12 .grid_3 {
+  font-size: 14px;
+  line-height: 31px;
+  font-color: #333a39;
+  list-style: none;
+  margin-top: 30px;
+  padding-top: 60px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position: 92px 10px;
+  padding-bottom: 10px;
+}
+.bigoverview .container_12 .grid_3:hover {
+  background-color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  padding: 10px;
+}
+.bigoverview .container_12 .step3home {
+  background-image: url(img/step3WORLD_big.png);
+}
+.bigoverview .container_12 .step3homeinfo {
+  background-image: url(img/step3HOME_big.png);
+}
+.bigoverview .container_12 .step3homeinfo ul {
+  text-align: left;
+  list-style: none;
+}
+.bigoverview .container_12 .step3homeinfo ul li {
+  padding-left: 80px;
+  line-height: 23px;
+  background-image: url(img/right_check.png);
+  background-repeat: no-repeat;
+  background-position: 57px 6px;
+}
+.bigoverview .container_12 .step3electr {
+  background-image: url(img/step3ELECTRICITY_big.png);
+  line-height: 23px;
+}
+.bigoverview .container_12 .step3info {
+  background-image: url(img/step3INFO_big.png);
+  line-height: 23px;
+}
+.bigoverview .container_12 .grid_4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.bigoverview .container_12 .grid_4 .boxinnen {
+  margin: 5px;
+  background-color: #fff;
+  padding: 15px;
+  border: solid 1px #fff;
+}
+.bigoverview .container_12 .grid_4 .boxinnen h3 {
+  color: #333a39;
+  font-size: 15px;
+  font-family: Arial, "Helvetica Neue", "Liberation Sans", FreeSans, sans-serif;
+  font-weight: bold;
+}
+.bigoverview .container_12 .grid_4 .boxinnen div {
+  float: right;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #a1adb2;
+  color: #637379;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 5px;
+  background-color: #fff;
+}
+.bigoverview .container_12 .grid_4 .boxinnen div span {
+  background-color: #f0f6f8;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+.bigoverview .container_12 .grid_4 .boxinnen .kleinertext {
+  color: #637379;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: normal;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.bigoverview .container_12 .grid_4 .boxinnen ul li {
+  list-style: none;
+  font-size: 14px;
+  line-height: 24px;
+  color: #637379;
+  font-weight: normal;
+}
+.bigoverview .container_12 .grid_4 .boxinnen ul li span {
+  float: right;
+  font-weight: bold;
+}
+.bigoverview .container_12 .grid_4 .boxinnen .buttonauswaehlen {
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  padding: 7px;
+  padding-right: 15px;
+  width: 90px;
+  color: #0093d5;
+  background-color: #c7d0d3;
+  border-color: #c7d0d3;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  background-color: #fff;
+  background-image: url(img/arrow_right_BLUE.png);
+  background-repeat: no-repeat;
+  background-position: 97px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.bigoverview .container_12 .grid_4 .boxinnen .buttonauswaehlen:hover {
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
   color: #fff;
+  background-color: #0093d5;
+  background-position: 94px 11px;
+  background-image: url(img/arrow_down_WHITE.png);
+  background-repeat: no-repeat;
+}
+.bigoverview .container_12 .grid_4 .boxinnen:hover {
+  background-color: #f0f6f8;
+  border: solid 1px #0093d5;
+  -webkit-box-shadow: 0px 0px 3px #0093d5;
+  -moz-box-shadow: 0px 0px 3px #0093d5;
+  box-shadow: 0px 0px 3px #0093d5;
+}
+.bigoverview .container_12 .grid_4 .ausgewaehlt {
+  background-color: #f0f6f8;
+  border: solid 1px #0093d5;
+  -webkit-box-shadow: 0px 0px 3px #0093d5;
+  -moz-box-shadow: 0px 0px 3px #0093d5;
+  box-shadow: 0px 0px 3px #0093d5;
+}
+.bigoverview .container_12 .grid_4 .ausgewaehlt .buttonauswaehlen {
+  -moz-transition-duration: 0.1s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  color: #fff;
+  background-color: #0093d5;
+  padding-right: 20px;
+  background-position: 98px 11px;
+  background-image: url(img/arrow_down_WHITE.png);
+  background-repeat: no-repeat;
+}
+.bigoverview .container_12 .grid_4 .ausgewaehlt .buttonauswaehlen:hover {
+  background-position: 98px 11px;
 }

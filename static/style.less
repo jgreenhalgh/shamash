@@ -37,7 +37,7 @@ input {
 @grau7: #333a39;		// dark green-blue for h1 Title
 @grau8: #a1adb2;
 
-.devborder {
+.WTF {
 	border-color: #ff8463;
 	border-style: solid inset;
 	border-width: 2px;
@@ -417,7 +417,7 @@ body {
 			float:left;
 		}
 		.pin{
-			.devborder;
+			.WTF;
 			margin-top:floor((@box-height-inst-find/2)-(30/2));
 			margin-left:10px;
 			width:30px;
@@ -487,7 +487,7 @@ body {
 			}
 		}
 		.more_info{
-			.devborder;
+			.WTF;
 			margin-top:floor((@box-height-inst-find/2)-(30/2));
 			margin-right:10px;
 			width:30px;
@@ -681,7 +681,7 @@ body {
 				}
 				p {
 					color:@grau7;
-					.devborder;
+					.WTF;
 					.smallbox_a;
 					.rounded(3px);
 					font-size:19px;
@@ -751,7 +751,7 @@ body {
 			.offertenbutton {
 				float:right;
 				display:block;
-				.devborder;
+				.WTF;
 
 				padding:7px;
 				padding-right:30px;
@@ -1048,31 +1048,291 @@ body {
 	.gradient(#F5F5F5, #ebeff0, #fbfdfd);
 	.inner-shadow(0, 1, 2, 0.4);
 	z-index:-300;
-		.container_12 {
-			h1 {
-				font-size:21px;
-				color: @grau7;
-				width:100%;
-				text-align:center;
-				margin-top:70px;
-			}
+	.container_12 {
+		h1 {
+			font-size:21px;
+			color: @grau7;
+		
+			text-align:center;
+			margin-top:70px;
+			float:right;
+		}
+		
+		#dropdownphotovoltaik {
+			margin-top:63px;
+			list-style:none;
+			// float:left;
+			
+			
 			.selectdown {
-				.border-radius(5px, 0px, 0px, 5px);
-				background-color:red;
-				display:block;
-				width:100px;
-				padding:10px;
-				
-				.dropdownselect {
-				margin-top:10px;
-				margin-left:-10px;
-				position:absolute;
-				//left:-999em;
-				background-image:url(img/SHADOW_BG_1.png);
-				.border-radius(5px, 5px, 5px, 0);
-				padding:10px;
+				width:268px;
+				background-color:@blau1;
 				color:#fff;
+				float:left;
+				position:relative;
+				font-size:18px;
+				padding:10px;
+				font-weight:none;
+				padding-left:20px;
+				.rounded(5px);
+				background-image:url(img/smallarrowdown_white.png);
+				background-repeat:no-repeat;
+				background-position: 270px 19px;
+				
+				a, a:visited {
+					text-decoration:none;
+					display: block;
+					color:#fff;
+				}
+				
+				// DROPDOWN, geht einen UL weiter nach innen
+				ul {
+					list-style: none;
+					position: absolute;
+					left:-999em; // HIDE OFF THE SCREEN
+					.border-radius(5px, 5px, 5px, 0px);
+					display: block;
+					
+					background-image:url(img/SHADOW_BG_1.png);
+					background-repeat:repeat;					
+					
+					margin-top:10px;
+					
+					
+					width:450px;
+					
+					.trennlinie {
+					height:1px;
+					width:100%;
+					background-color:@blau2;
+					display:block;
+					.opacity(0.1);
+					}
+					
+					li {
+						float:none;
+						display: block;
+						padding-left:20px;
+						h3 {
+							text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+							font-size: 16px;
+							font-weight:bold;
+							color:@blau2;
+							margin-top:10px;
+							padding-left:80px;
+							padding-right:10px;
+							
+						}
+						
+						span {
+							font-size: 13px;
+							line-height:16px;
+							font-weight:normal;
+							color:@blau2;
+							width:410x;
+							padding-bottom:10px;
+							display:block;
+							padding-left:80px;
+							background-image:url(img/icon_infinity_photovoltaic.png);
+							background-repeat:no-repeat;
+						
+						}
+						
+						a, a:visited {
+							//white-space :nowrap;
+							
+						}
+						a:hover {
+							li {
+								color: #fff;
+								background-color:red;
+							}
+						}
+					}
 				}
 			}
-		}	
+			
+			// HOVER EFFECT betrifft alle LI im UL und nur den einen UL drinnen
+			li:hover {
+				.border-radius(5px, 0, 0, 5px);
+				background-color:#fff;
+				background-image:url(img/SHADOW_BG_1.png);
+				background-repeat:repeat;
+				ul {
+					left:0;
+					display:block;
+				}
+			}
+		}
+		
+		// JETZT KOMMEN DIE 4 KLEINEN BOXEN, die sind auc him CONTAINER_12 drin
+		
+		.grid_3 {
+			font-size:14px;
+			line-height:31px;
+			font-color:@grau7;
+			list-style:none;
+			margin-top:30px;
+			padding-top:60px;
+			text-align:center;
+			background-repeat:no-repeat;
+			background-position:top;
+			background-position:92px 10px;
+			padding-bottom:10px;
+		}
+		
+		.grid_3:hover {
+			background-color:#fff;
+			
+			.rounded(5px);
+		}
+		
+		.step3home {
+			background-image:url(img/step3WORLD_big.png);
+			
+		}
+		
+		.step3homeinfo {
+			background-image:url(img/step3HOME_big.png);
+			ul {
+				text-align:left;
+				list-style:none;
+				li {
+					padding-left:80px;
+					line-height:23px;
+					background-image:url(img/right_check.png);
+					background-repeat:no-repeat;
+					background-position:57px 6px;
+				
+				}
+			}
+		}
+		
+		.step3electr {
+			background-image:url(img/step3ELECTRICITY_big.png);	
+			line-height:23px;
+
+			
+		}
+		
+		.step3info {
+			background-image:url(img/step3INFO_big.png);
+			line-height:23px;
+	
+		}
+		
+		// AUSWAHL von 3
+		
+		.grid_4 {
+			
+			
+			margin-top:20px;
+			margin-bottom:20px;
+			.boxinnen {
+				margin:5px;
+				background-color:#fff;
+				padding: 15px;
+				border: solid 1px #fff;
+			
+				
+				h3 {
+					color:@grau7;
+					font-size:15px;
+					.helveticafont;
+					font-weight:bold;
+					
+				}
+				// das ist der 13kWh DIV
+				div {
+					float:right;
+					.rounded(3px);
+					border: 1px solid @grau8;
+					color:@grau5;
+					font-size: 12px;
+					font-weight:bold;
+					padding-right:5px;
+					background-color:#fff;
+					span {
+						background-color:@blau2;
+						padding-left:10px;
+						padding-right:10px;
+						font-weight:bold;
+					
+					}
+				}
+				
+				.kleinertext {
+					color:@grau5;
+					font-size:13px;
+					line-height:18px;
+					font-weight:normal;
+					padding-top:20px;
+					padding-bottom:20px;
+				}
+				ul {
+					li {
+						list-style:none;
+						font-size: 14px;
+						line-height:24px;
+						color:@grau5;
+						font-weight:normal;
+						span {
+							float:right;
+							font-weight:bold;
+						}
+					}
+				}
+				.buttonauswaehlen {
+					margin: auto;
+					margin-top:20px;
+					text-align:center;
+					padding:7px;
+					padding-right:15px;
+					width:90px;
+					color:@blau1;
+					.smallbox_b_white_bg;
+					font-size:14px;
+					background-color:#fff;
+					background-image:url(img/arrow_right_BLUE.png);
+					background-repeat: no-repeat;
+					background-position: 97px 10px;
+					.rounded(3px);
+				}
+				.buttonauswaehlen:hover {
+					.transition-duration(0.1s);
+					color:#fff;
+					background-color:@blau1;
+					background-position: 94px 11px;
+					background-image:url(img/arrow_down_WHITE.png);
+					background-repeat: no-repeat;
+				}
+			}
+			
+			.boxinnen:hover {
+				background-color:@blau2;
+				border: solid 1px @blau1;
+				.box-shadow(0px 0px 3px @blau1);
+			}
+			
+			.ausgewaehlt {
+				background-color:@blau2;
+				border: solid 1px @blau1;
+				.box-shadow(0px 0px 3px @blau1);
+				
+				.buttonauswaehlen {
+					.transition-duration(0.1s);
+					color:#fff;
+					background-color:@blau1;
+					padding-right:20px;
+					background-position: 98px 11px;
+					background-image:url(img/arrow_down_WHITE.png);
+					background-repeat: no-repeat;
+				}
+				
+				.buttonauswaehlen:hover {
+					background-position: 98px 11px;
+				}
+			}
+		}
+	}	
 }
