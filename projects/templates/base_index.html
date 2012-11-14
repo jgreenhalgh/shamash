@@ -41,11 +41,47 @@ $(document).ready(function(){
 	}   
 </script> -->
 
-{% block header %} <!-- Header from DjangoTemplates -->{% endblock %}
+{% block header_inhead %} <!-- Header from DjangoTemplates --> {% endblock %}
 </head>
 <body  class="bodynomargin">
-{% block content %}
+
+<!-- PROMT BOX start -->
+<div id="shadowbg">
+	<div class="prompt_box">
+		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
+		<h2>Verwalten Sie Ihre Solaranlage</h2>
+		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt. <span style="color:red">{{message}}</span>
+			
+			<form action="/" method="post">
+				{% csrf_token %}
+				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+			</form>
+
+			</p>
+	</div>
+</div>
+<!-- PROMT BOX end -->
+
+
+{% block header_inbody_1 %}
+<div class="start_headertop">
+	<div class="container_12">
+		<div class="grid_2 active"><h1>getSolar</h1></div>
+		<div class="grid_8 centerlist">
+			<ul>
+				<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+				<a href="#"><li>Solardachrechner</li></a>
+				<a href="#"><li>Anbieter direkt vergleichen</li></a>
+			</ul>
+		</div>
+		<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+	</div>
+</div>
 {% endblock %}	
+
+{% block content %} {% endblock %}	
 
 {% block footer %}
 	<div  class="container_12 startfooter" >
@@ -92,6 +128,5 @@ $(document).ready(function(){
 		</div>
 	</div>
 {% endblock %}
-	
 </body>
 </html>
