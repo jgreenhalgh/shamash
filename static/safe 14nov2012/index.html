@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<head>
+<title> </title>
+
+
+
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- CSS, normilzed -->
+<link rel="stylesheet" type="text/css" href="normalized.css">
+
+<!-- CSS, compiled --> 
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- JS -->
+<script src="js.js"></script>
+
+<!-- Scroller Function -->
+<script type="text/javascript" id="sourcecode">
+$(function()
+{
+	$('.scroll-pane').each(
+		function()
+		{
+			$(this).jScrollPane(
+				{
+					showArrows: $(this).is('.arrow')
+				}
+			);
+			var api = $(this).data('jsp');
+			var throttleTimeout;
+			$(window).bind(
+				'resize',
+				function()
+				{
+					if ($.browser.msie) {
+						// IE fires multiple resize events while you are dragging the browser window which
+						// causes it to crash if you try to update the scrollpane on every one. So we need
+						// to throttle it to fire a maximum of once every 50 milliseconds...
+						if (!throttleTimeout) {
+							throttleTimeout = setTimeout(
+								function()
+								{
+									api.reinitialise();
+									throttleTimeout = null;
+								},
+								50
+							);
+						}
+					} else {
+						api.reinitialise();
+					}
+				}
+			);
+		}
+	)
+
+});
+</script>
+
+<!-- Dimmer Funtion -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
+	});
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
+</script>
+
+</head>
+<body>
+
+	<div id="shadowbg">
+		<div class="prompt_box">
+		test
+		</div>
+	</div>
+
+	<div id="sidebar">
+		<div class="sidebartop">
+			<a href="#">SlrDemo</a>
+		</div>
+		<div class="projectchooser-in-sidebar">
+			<p> <a href="#">Hauptstrasse 12, D&uuml;bendorf <img src="img/sidebar_arrowdown.png" /></a> </p>
+		</div>
+		<div id="navigationleft">
+			<ul>
+				<a href="#"><li class="sidebar_uebersicht"> &Uuml;bersicht </li></a>
+				<a href="#"><li class="sidebar_entwicklung"> Projektentwicklung </li></a>
+				<a href="#"><li class="sidebar_bearbeiten"> Prohjekt bearbeiten </li></a>
+				<a href="#"><li class="sidebar_finden"> Installateure finden </li></a>
+				<a href="#"><li class="sidebar_vergleichen"> Installateure vergleichen </li></a>
+				<a href="#"><li class="sidebar_offerten"> Offerten <span class="offertenrot">2</span> </li></a>
+			</ul>
+		</div>
+	</div>
+			
+			<div id="content">
+
+				<div id="anbieterrechts" class="scroll-pane">
+					<div class="blockoben">
+						<div class="wrapperintheblock clearfix">
+							<h1>Ertragsprognose f&uuml;r Hauptstrasse 12, D&uuml;bendorf</h1>
+							<div class="rechts_infozahl_1"><span>Gesch&auml;tzte Kosten</span><p >23'000CHF</p></div>
+							<div class="rechts_infozahl_2"><span>Gesch&auml;tzte Kosten</span><p>23'000CHF</p></div>
+							<div class="rechts_infozahl_3 clearfix"><span>Gesch&auml;tzte Kosten</span><p>23'000CHF</p></div>
+							<ul class="rechts_liste_links">
+								<li>8 Jahre Installationsgarantie</li>
+								<li>20 Jahre Herstellergarantie</li>
+								<li>T&auml;tigt Baueingabe</li>
+							</ul>
+							<ul class="rechts_liste_rechts clearfix">
+								<li>2.te Liste</li>
+								<li>2.liste</li>
+							</ul>	
+						</div>
+					</div>
+					<div class="blockanbieter">
+						<p class="offertenbutton"><span class="clickshadow">Offerte anfragen</span></p>
+						<h1 class="clickshadow"> Nau Solar GmbH</h1>
+						<h3>Solar - Die Nachhaltige Energie zum Leben</h3>
+						<p>Integer nec luctus metus. Nunc non suscipit orci. Aliquam erat volutpat. Nullam at tempor sapien. Maecenas dictum condimentum nulla, nec faucibus nisi feugiat id. Duis vitae fringilla odio. Etiam est magna, aliquam varius consectetur id. </p>
+						<ul>
+							<li>Test</li>
+							<li>Test2</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div id="anzeigelinks" class="scroll-pane">
+					<h1>Hier sehen sie die &Uuml;bersicht</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dolor enim, ultrices eu consequat dictum, luctus quis felis. Proin diam quam.
+aliquet a vulputate quis, auctor ac leo. In lorem nisi, viverra non pretium vitae.</p>
+
+						
+						<div class="boxuebersicht_a">
+							<p class="pin">
+								
+							</p>
+							<div class="linke_uebersicht">
+									<h2>Nau Gmbhs</h2> 
+									<ul>
+										<li class="location">Chur, Graub&uuml; </li>
+										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> weitere Informationen</li>
+									</ul>
+							</div>
+							<div class="rechte_uebersicht">
+								<ul>
+									<li>Kosten <span>test</span></li>
+									<li>Amortisationszeit <span>test</span></li>
+									<li>Gedeckter Stromverbrauch <span>test</span></li>
+									<li>Weitere Informationen <span>test</span></li>
+								</ul>
+							</div>
+							<p class="more_info">
+								
+							</p>
+						</div>
+
+						<div class="boxuebersicht_a">
+							<p class="pin">
+								
+							</p>
+							<div class="linke_uebersicht">
+									<h2>Nau Gmbhs</h2> 
+									<ul>
+										<li class="location">Chur, Graub&uuml; </li>
+										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> weitere Informationen</li>
+									</ul>
+							</div>
+							<div class="rechte_uebersicht">
+								<ul>
+									<li>Kosten <span>test</span></li>
+									<li>Amortisationszeit <span>test</span></li>
+									<li>Gedeckter Stromverbrauch <span>test</span></li>
+									<li>Weitere Informationen <span>test</span></li>
+								</ul>
+							</div>
+							<p class="more_info">
+								
+							</p>
+						</div>
+						
+						<div class="boxuebersicht_a">
+							<p class="pin">
+								
+							</p>
+							<div class="linke_uebersicht">
+									<h2>Nau Gmbhs</h2> 
+									<ul>
+										<li class="location">Chur, Graub&uuml; </li>
+										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> weitere Informationen</li>
+									</ul>
+							</div>
+							<div class="rechte_uebersicht">
+								<ul>
+									<li>Kosten <span>test</span></li>
+									<li>Amortisationszeit <span>test</span></li>
+									<li>Gedeckter Stromverbrauch <span>test</span></li>
+									<li>Weitere Informationen <span>test</span></li>
+								</ul>
+							</div>
+							<p class="more_info">
+								
+							</p>
+						</div>			
+				
+						<div class="boxuebersicht_a">
+							<p class="pin">
+								
+							</p>
+							<div class="linke_uebersicht">
+									<h2>Nau Gmbhs</h2> 
+									<ul>
+										<li class="location">Chur, Graub&uuml; </li>
+										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> weitere Informationen</li>
+									</ul>
+							</div>
+							<div class="rechte_uebersicht">
+								<ul>
+									<li>Kosten <span>test</span></li>
+									<li>Amortisationszeit <span>test</span></li>
+									<li>Gedeckter Stromverbrauch <span>test</span></li>
+									<li>Weitere Informationen <span>test</span></li>
+								</ul>
+							</div>
+							<p class="more_info">
+								
+							</p>
+						</div>
+						<div class="boxuebersicht_a">
+							<p class="pin">
+								
+							</p>
+							<div class="linke_uebersicht">
+									<h2>Nau Gmbhs</h2> 
+									<ul>
+										<li class="location">Chur, Graub&uuml; </li>
+										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> weitere Informationen</li>
+									</ul>
+							</div>
+							<div class="rechte_uebersicht">
+								<ul>
+									<li>Kosten <span>test</span></li>
+									<li>Amortisationszeit <span>test</span></li>
+									<li>Gedeckter Stromverbrauch <span>test</span></li>
+									<li>Weitere Informationen <span>test</span></li>
+								</ul>
+							</div>
+							<p class="more_info">
+								
+							</p>
+						</div>
+
+						<div class="boxuebersicht_a">
+							<p class="pin">
+								
+							</p>
+							<div class="linke_uebersicht">
+									<h2>Nau Gmbhs</h2> 
+									<ul>
+										<li class="location">Chur, Graub&uuml; </li>
+										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> weitere Informationen</li>
+									</ul>
+							</div>
+							<div class="rechte_uebersicht">
+								<ul>
+									<li>Kosten <span>test</span></li>
+									<li>Amortisationszeit <span>test</span></li>
+									<li>Gedeckter Stromverbrauch <span>test</span></li>
+									<li>Weitere Informationen <span>test</span></li>
+								</ul>
+							</div>
+							<p class="more_info">
+								
+							</p>
+						</div>
+				</div>
+				
+
+			</div>
+		
+</body>

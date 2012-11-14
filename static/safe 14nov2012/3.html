@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<head>
+
+
+<meta http-equiv="refresh" content="2">
+
+<title> </title>
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- CSS, normilzed -->
+<link rel="stylesheet" type="text/css" href="normalize.css">
+
+<!-- GRID -->
+<link rel="stylesheet" type="text/css" href="960.css">
+
+<!-- CSS, compiled --> 
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Dimmer Funtion -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
+	});
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
+</script>
+
+</head>
+
+<div id="shadowbg">
+		<div class="prompt_box">
+			<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
+			<h2>Verwalten Sie Ihre Solaranlage</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Suspendisse eget imperdiet dolor. 
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				Suspendisse eget imperdiet dolor. 
+				
+				<form>
+				<label><span>Login:</span></label><input type="text" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="button" value="Login" class="buttoncener"/> 
+				</form>
+				
+				
+				
+				</p>
+			
+		</div>
+</div>
+
+<body class="bodynomargin">	
+	<div class="start_headertop">
+		<div class="container_12">
+			<div class="grid_2"><a href="#"><h1>SlrDemo</h1></a></div>
+			<div class="grid_8 centerlist">
+				<ul>
+					<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+					<a href="#"><li class="active">Solardachrechner</li></a>
+					<a href="#"><li>Anbieter direkt vergleichen</li></a>
+				</ul>
+			</div>
+			<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+		</div>
+	</div>
+	
+	<div class="step14bg">
+		<div class="container_12">
+			<div class="grid_3"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
+			<div class="grid_3"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3 active"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
+			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
+		</div>
+	</div>
+	
+	<div class="bigoverview">
+		<div class="container_12">
+			<div class="grid_6">
+				<h1>Hier ist ihr Personalisierter &Uuml;berblick</h1>
+			</div>
+				
+			<div class="grid_6">	
+				<ul id="dropdownphotovoltaik">
+					<li class="selectdown"><a href="#">Stromproktion mit Photovoltaik</a>
+						<ul>
+							<li><a href="#">
+									<h3>Stromproduktion mit Photovoltaik</h3>
+									<span>
+									Mit der Sonnenenergie Strom poduzieren Hier kommt eipoduzieren Hier kommt ein kleiner erkl&auml;runpoduzieren Hier kommt ein kleiner erkl&auml;runn kleiner erkl&auml;rungstext und auch eine kleine Infographic rechts.
+									</span>
+									</a>
+							</li>
+							
+							<span class="trennlinie"> </span>
+							
+							<li><a href="#">
+									<h3>Warmwasseraufbereitung mit Solarthermie</h3>
+									<span>
+									Mit der Solarthermie Strom poduzieren Hier kommt ein poduzieren Hier kommtpoduzieren Hier kommt ein kleiner erkl&auml;runpoduzieren Hier kommt ein kleiner erkl&auml;run ein kleiner erkl&auml;runkleiner erkl&auml;rungstext und auch eine kleine Infographic rechts.
+									</span>
+									</a>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+				
+			</div>	
+			
+			<div class="grid_3 step3home">Haupstrasse 13</div> 
+			<div class="grid_3 step3homeinfo">
+				<ul>
+					<li>Satteldach</li>
+					<li>40° Neigung</li>
+					<li>S&uuml;dwesten</li>
+					<li>Fl&auml;che 4m x 9m</li>
+				</ul>
+			</div>
+			<div class="grid_3 step3electr">
+				Wir empfehlen Ihnen Lorem ipsum dolor sit amet. Auf basis das kann man irgendwie editieren.
+			</div>
+			<div class="grid_3 step3info">
+				Wir empfehlen Ihnen Lorem ipsum dolor sit amet. Auf basis das kann man irgendwie editieren.
+			</div>
+			
+			<div class="clear"></div>  
+			
+			<!-- Auswahl von den 3 -->
+			
+			<div class="grid_4">
+				<div class="boxinnen">
+					<div><span>15</span> 4000 kWh </div>
+					<h3> Kleine Version <h3>
+					<p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
+					<ul>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+					</ul>
+					<p class="buttonauswaehlen"> Ausw&auml;hlen </p>
+				</div>
+			</div>
+
+			<div class="grid_4">
+				<div class="boxinnen ausgewaehlt">
+					<div><span>15</span> 4000 kWh </div>
+					<h3> Kleine Version <h3>
+					<p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
+					<ul>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+					</ul>
+					<p class="buttonauswaehlen"> Ausgew&auml;hlt </p>
+				</div>
+			</div>
+			
+			<div class="grid_4">
+				<div class="boxinnen">
+					<div><span>15</span> 4000 kWh </div>
+					<h3> Kleine Version <h3>
+					<p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
+					<ul>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+						<li>Installationskosten <span>15'000 Fr.</span></li>
+					</ul>
+					<p class="buttonauswaehlen"> Ausw&auml;hlen </p>
+				</div>
+			</div>
+			
+			<div class="clear"></div> 
+			
+		</div>
+			<!-->
+			
+			</div>
+			
+			
+			<!--
+			
+				<div class="grid_3">
+				Hauptstrasse 13
+				</div>
+				<div class="grid_3">
+					<ul>
+						<li>Satteldach</li>
+						<li>Neigung</li>
+						<li>S&uuml;dwesten</li>
+					</ul>
+				</div>
+				<div class="grid_3">
+					Wir empfehlen Ihnen Lorem ipsum dolor sit amet. Auf basis das kann man irgendwie editieren.
+				</div>
+				<div class="grid_3">
+					Wir empfehlen Ihnen Lorem ipsum dolor sit amet. Auf basis das kann man irgendwie editieren.
+				</div>
+				
+				<div class="grid_4">
+					<div class="box">
+						<h2>Kleine Version</h2>
+						<p><span class="groesse">15 m</span><span class="leistung">5'000 kWh</span></p>
+					</div>
+				</div>
+				<div class="grid_4"></div>
+				<div class="grid_4"></div>
+		</div>
+	</div>
+	
+	
+	<div  class="container_12 startfooter" >
+		
+		<div class="grid_3" style="padding:0px">
+			<div class="hilfegrid">
+			<h2>H&auml;ufig gesucht/ Hilfe</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+			</div>
+		</div>
+		
+				<div class="grid_3">
+			<h2>Solarenergie f&uuml;r Ihr Haus</h2>
+			<ul>
+				<li>Weshalb Solarenergie?</li>
+				<li>Photovoltaik oder Solarthermie?</li>
+				<li>Solarpontential bestimmen</li>
+				<li>Solarenergie im Kanton Z&uuml;rich</li>
+			</ul>
+		</div>
+		
+				<div class="grid_3">
+			<h2>F&uuml;r Solaranbieter</h2>
+			<ul>
+				<li>Was ist das ganze?</li>
+				<li>Vorteile von Shamash</li>
+				<li>Anmeldung</li>
+			</ul>
+		</div>
+		
+	
+				<div class="grid_3">
+			<h2>&Uuml;ber Shamash</h2>
+			<ul>
+				<li>&Uuml;ber Shamash</li>
+				<li>Wer wir sind</li>
+				<li>Neuigkeiten</li>
+				<li>Facebook</li>
+			</ul>
+		</div>
+	</div>
+</body>
