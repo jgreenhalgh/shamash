@@ -65,6 +65,10 @@ $(document).ready(function(){
 <!-- PROMT BOX end -->
 
 
+ {# 
+			This header_inbody_1 is the header
+			There is an alternative element with the "active" class, which showes us, where we are right now in the navigation bar
+ #}
 {% block header_inbody_1 %}
 <div class="start_headertop">
 	<div class="container_12">
@@ -79,9 +83,29 @@ $(document).ready(function(){
 		<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
 	</div>
 </div>
-{% endblock %}	
+{% endblock %}
 
-{% block content %} {% endblock %}	
+
+ {# 
+			This is now the Step 1-4 header, it must change during the steps, so I think, we should have
+			either an if else comment or an variable with the active step
+			For the active STEP, the class "active" must be added to the div grid so <div class="grid_3 active">
+			This STEP 1-4 must not be shown on 01_startseite.html!
+			K
+ #}
+{% block header_inbody_step14 %}
+	<div class="step14bg">
+		<div class="container_12">
+			<div class="grid_3 active"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
+			<div class="grid_3"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
+			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}	
 
 {% block footer %}
 	<div  class="container_12 startfooter" >
