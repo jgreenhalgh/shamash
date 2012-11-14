@@ -69,21 +69,22 @@ $(document).ready(function(){
 			This header_inbody_1 is the header
 			There is an alternative element with the "active" class, which showes us, where we are right now in the navigation bar
 {% endcomment %}
-{% block header_inbody_1 %}
+
+
 <div class="start_headertop">
 	<div class="container_12">
-		<div class="grid_2 active"><h1>getSolar</h1></div>
+		<div class="grid_2 {% block calc_01_active %}{% endblock}"><h1>getSolar</h1></div>
 		<div class="grid_8 centerlist">
 			<ul>
 				<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
-				<a href="#"><li>Solardachrechner</li></a>
-				<a href="#"><li>Anbieter direkt vergleichen</li></a>
+				<a href="#"><li class="{% block calc_02_active %}{% endblock}">Solardachrechner</li></a>
+				<a href="#"><li class="">Anbieter direkt vergleichen</li></a>
 			</ul>
 		</div>
 		<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
 	</div>
 </div>
-{% endblock %}
+
 
 
 {% comment %} 
@@ -96,8 +97,8 @@ $(document).ready(function(){
 {% block header_inbody_step14 %}
 	<div class="step14bg">
 		<div class="container_12">
-			<div class="grid_3 active"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
-			<div class="grid_3"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
+			<div class="grid_3 {% block calc_02_active %}{% endblock}"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
 			<div class="grid_3"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
 			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
 		</div>
