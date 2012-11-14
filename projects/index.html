@@ -52,9 +52,9 @@ $(document).ready(function(){
 			
 			<form action="/" method="post">
 				{% csrf_token %}
-				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Login:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
 				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
-				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+				<label><span> </span> </label><input type="submit" value="Login" name="loginlogour" class="buttoncener"/> 
 			</form>
 
 			</p>
@@ -72,7 +72,11 @@ $(document).ready(function(){
 				<a href="#"><li>Anbieter direkt vergleichen</li></a>
 			</ul>
 		</div>
-		<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+        {% if loginlogout == "logout" %}
+        <div class="grid_2 logoutclass "><form action="/" method="post"><input type="submit" value="Logout" />{% csrf_token %}</form></div>
+        {% elif loginlogout == "login" %}
+        <div class="grid_2 loginclass clickshadow"><a href="#">Login</a></div>
+        {% endif %}
 	</div>
 </div>
 	<div class="start_headertwo">
@@ -88,7 +92,7 @@ $(document).ready(function(){
 			<div class="grid_6">
 			<form action="/panel/" method="post">
 			{% csrf_token %}
-				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Wohnadresse') { this.value = ''; }" value="Ihre Wohnadresse"  name="address"/> <br />
+				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Strasse') { this.value = ''; }" value="Ihre Strasse"  name="address"/> <br />
 				<input type="text"  onfocus="if(this.value == 'Ihr Wohnort') { this.value = ''; }" value="Ihr Wohnort" class="postleihzahl" /><input type="submit" class="solarpotentialbutton" value="zum Solarpotential"/> 
 			</form>
 			</div>
