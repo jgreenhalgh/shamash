@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>{% block title %}Herzlich willkommen zu {{ comapnynamne }}{% endblock %}</title>
+
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+
+<!-- CSS GRID Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- CSS Master Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/style.css"/>
+
+<!-- Dimmer Funtion, Kirill -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg").toggle();
+	});
+
+	$(".prompt_box").not("#shadowbg").click(function(){
+		stopPropagation();
+		$("#shadowbg").toggle();
+	});
+});
+</script>
+
+<!-- Scripts von Charles AUSKOMMENTIERT -->
+<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" type="text/css" media="all"/>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
+<script src="http://jquery-watermark.googlecode.com/svn/trunk/jquery-watermark/jquery.watermark/jquery.watermark.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	function callback_my_args_example(data){
+		alert(data.message);
+	}   
+</script> -->
+
+{% block header_inhead %} <!-- Header from DjangoTemplates --> {% endblock %}
+</head>
+<body  class="bodynomargin">
+
+<!-- PROMT BOX start -->
+<div id="shadowbg">
+	<div class="prompt_box">
+		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
+		<h2>Verwalten Sie Ihre Solaranlage</h2>
+		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt. <span style="color:red">{{message}}</span>
+			
+			<form action="/" method="post">
+				{% csrf_token %}
+				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+			</form>
+
+			</p>
+	</div>
+</div>
+<!-- PROMT BOX end -->
+
+
+{% comment %}
+			This header_inbody_1 is the header
+			There is an alternative element with the "active" class, which showes us, where we are right now in the navigation bar
+{% endcomment %}
+{% block header_inbody_1 %}
+<div class="start_headertop">
+	<div class="container_12">
+		<div class="grid_2 active"><h1>getSolar</h1></div>
+		<div class="grid_8 centerlist">
+			<ul>
+				<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+				<a href="#"><li>Solardachrechner</li></a>
+				<a href="#"><li>Anbieter direkt vergleichen</li></a>
+			</ul>
+		</div>
+		<div class="grid_2 loginclass clickshadow"><a href="#">login</a></div>
+	</div>
+</div>
+{% endblock %}
+
+
+{% comment %} 
+			This is now the Step 1-4 header, it must change during the steps, so I think, we should have
+			either an if else comment or an variable with the active step
+			For the active STEP, the class "active" must be added to the div grid so <div class="grid_3 active">
+			This STEP 1-4 must not be shown on 01_startseite.html!
+			K
+{% endcomment %}
+{% block header_inbody_step14 %}
+	<div class="step14bg">
+		<div class="container_12">
+			<div class="grid_3 active"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
+			<div class="grid_3"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
+			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}	
+
+{% block footer %}
+	<div  class="container_12 startfooter" >
+		
+		<div class="grid_3" style="padding:0px">
+			<div class="hilfegrid">
+			<h2>H&auml;ufig gestellte Fragen</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div class="grid_3">
+			<h2>Solarenergie f&uuml;r Ihr Haus</h2>
+			<ul>
+				<li>Weshalb Solarenergie?</li>
+				<li>Photovoltaik oder Solarthermie?</li>
+				<li>Solarpontential bestimmen</li>
+				<li>Solarenergie im Kanton Z&uuml;rich</li>
+			</ul>
+		</div>
+		
+		<div class="grid_3">
+			<h2>F&uuml;r Solaranbieter</h2>
+			<ul>
+				<li>Was ist das ganze?</li>
+				<li>Vorteile von Shamash</li>
+				<li>Anmeldung</li>
+			</ul>
+		</div>
+		<div class="grid_3">
+			<h2>&Uuml;ber Shamash</h2>
+			<ul>
+				<li>&Uuml;ber Shamash</li>
+				<li>Wer wir sind</li>
+				<li>Neuigkeiten</li>
+				<li>Facebook</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}
+</body>
+</html>
