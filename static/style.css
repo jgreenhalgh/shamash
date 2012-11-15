@@ -1334,4 +1334,5 @@ body {
   weight: 200px;
   height: 200px;
   background-color: #f0f6f8;
+  position: absolute;
 }
