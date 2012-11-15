@@ -79,7 +79,6 @@
 	</div>
 	-->
 	<div class="grid_4">
-
 		<div class="step2_wastun_todo">
 			<h3 class="toggle" id="navigieren">Navigieren Sie zu Ihrem Dach im Kartenausschnitt rechts. </h3>
 			<p class="toggle_this">
@@ -115,26 +114,17 @@
 					<option>50&deg;</option>
 				</select>
 				<br/>
-
 			</p>
 		</div>
-        
-       
 	</div>
-	<div class="grid_8" id="niko">
-
-</div>	
-<div class="grid_8 push_4">
-<form action="/results/" method="post">
-		{% csrf_token %}
-		<div   id="geoData" style="float:right;">
-<br />
-		 <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> 
-        </div>
-        </form>
-</div>    
-
-
+	
+	<div class="grid_8" id="niko"> </div>	
+	<div class="grid_8 push_4">
+		<form action="/results/" method="post">
+			{% csrf_token %}
+			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> </div>
+		</form>
+	</div>    
 </div>
 
 </body>
