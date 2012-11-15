@@ -64,9 +64,6 @@ $(document).ready(function(){
 </div>
 <!-- PROMT BOX end -->
 
-
-
-
 <div class="start_headertop">
 	<div class="container_12">
 		<div class="grid_2"><h1 class="{% block calc_01_active %} {% endblock %}">getSolar</h1></div>
@@ -82,20 +79,12 @@ $(document).ready(function(){
 </div>
 
 
-
-{% comment %} 
-			This is now the Step 1-4 header, it must change during the steps, so I think, we should have
-			either an if else comment or an variable with the active step
-			For the active STEP, the class "active" must be added to the div grid so <div class="grid_3 active">
-			This STEP 1-4 must not be shown on 01_startseite.html!
-			K
-{% endcomment %}
 {% block header_inbody_step14 %}
 	<div class="step14bg">
 		<div class="container_12">
 			<div class="grid_3"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
-			<div class="grid_3 {% block calc_02_step2_active%}active{% endblock%}"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
-			<div class="grid_3"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
+			<div class="grid_3 {% block calc_02_step2_active%}{% endblock%}"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3 {% block calc_02_step3_active%}{% endblock%}"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
 			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
 		</div>
 	</div>
