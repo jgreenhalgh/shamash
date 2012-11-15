@@ -1048,6 +1048,7 @@ body {
 		}
 }
 
+// STEP 3 big overview
 .bigoverview {
 	.gradient(#F5F5F5, #ebeff0, #fbfdfd);
 	.inner-shadow(0, 1, 2, 0.4);
@@ -1099,10 +1100,7 @@ body {
 					
 					background-image:url(img/SHADOW_BG_1.png);
 					background-repeat:repeat;					
-					
 					margin-top:10px;
-					
-					
 					width:450px;
 					
 					.trennlinie {
@@ -1141,7 +1139,6 @@ body {
 							background-repeat:no-repeat;
 						
 						}
-						
 						a, a:visited {
 							//white-space :nowrap;
 							
@@ -1187,13 +1184,11 @@ body {
 		
 		.grid_3:hover {
 			background-color:#fff;
-			
 			.rounded(5px);
 		}
 		
 		.step3home {
 			background-image:url(img/step3WORLD_big.png);
-			
 		}
 		
 		.step3homeinfo {
@@ -1207,7 +1202,6 @@ body {
 					background-image:url(img/right_check.png);
 					background-repeat:no-repeat;
 					background-position:57px 6px;
-				
 				}
 			}
 		}
@@ -1215,8 +1209,6 @@ body {
 		.step3electr {
 			background-image:url(img/step3ELECTRICITY_big.png);	
 			line-height:23px;
-
-			
 		}
 		
 		.step3info {
@@ -1228,8 +1220,6 @@ body {
 		// AUSWAHL von 3
 		
 		.grid_4 {
-			
-			
 			margin-top:20px;
 			margin-bottom:20px;
 			.boxinnen {
@@ -1340,6 +1330,344 @@ body {
 		}
 	}	
 }
+
+.step3content {
+	
+	.zwischendendivs {
+		margin-top:50px;
+		padding-bottom:20px;
+		margin-bottom:20px;
+		border-bottom: 1px solid @blau2;
+	}
+	
+	h2 {
+			float:right;
+			color:@grau7;
+			.helveticafont;
+			font-weight:normal;
+			font-size:22px;
+			margin-bottom:20px;
+		}
+		p {
+			color:@grau5;
+			font-size:15px;
+			line-height:26px;
+			float:right;
+			text-align:right;
+		}
+
+	.first {
+		
+		.zwischendendivs;
+		
+		
+		.preistag {
+			text-align:center;
+			
+			span {
+				color: @grau8;
+				font-size:13px;
+				line-height:20px;
+			}
+			.center {
+				margin: auto;
+				weight: 100px;
+			}
+			p {
+				weight:100px;
+				margin: auto;
+				float:none;
+				color:@grau7;
+				.smallbox_a;
+				.rounded(3px);
+				font-size:18px;
+				font-weight: bold;
+				padding: 3px;
+				padding-left:7px;
+				padding-right:7px;
+				margin-top:5px;
+				text-align:center;
+			}
+			.active, p:hover {
+				background-color:#fff;
+				color:@blau1;
+			}
+		}
+		
+		.bubble {
+			margin-top:25px;
+			background-color:#fff;
+			position: relative;
+			width: 370px;
+			height: 70px;
+			padding: 0px;
+			.rounded(5px);
+			border: @grau4 solid 1px;
+			padding:15px;
+			
+			font-size:12px;
+			line-height:19px;
+			text-align:left;
+			padding-top:9px;
+			
+			span {
+				font-weight:bold;
+				line-height:30px;
+			}
+			
+		}
+
+		.bubble:after {
+			border-color:#fff transparent;
+			content: "";
+			position: absolute;
+			top: -20px;
+			left: 40px;		/*    MOVE THE BUBBLE-ZEIGER    */
+			border-style: solid;
+			border-width: 0 10px 20px;
+			display: block;
+			width: 0;
+			z-index: 1;
+		}
+		
+		// DAS IST NUR FUER DEN BORDER DER BUBBLE
+		.bubble:before 
+		{
+		content: "";
+		position: absolute;
+		top: -22px;
+		left: 40px;		/*    MOVE THE BUBBLE-ZEIGER    */
+		border-style: solid;
+		border-width: 0 10px 21px;
+		border-color: @grau4 transparent;
+		display: block;
+		width: 0;
+		z-index: 0;
+		}	
+	}
+	.second {
+		.zwischendendivs;
+		
+		h2 {
+			float:left;
+		}
+		p {
+			text-align:left;
+		}
+		
+		
+		//        BUBBLE FOR THE SECOND FIELD, SHOWS DOWN
+		
+		@vonlinks: 29px;
+		@hoehe: 30px;
+		
+		
+		.bubble 
+		{
+			position: relative;
+			width: 460px;
+			height: @hoehe;
+			padding: 1px;
+			background: #FFFFFF;
+			border: @grau4 solid 1px;
+			.rounded(5px);
+			padding:15px;
+			
+			font-size:12px;
+			line-height:19px;
+			text-align:left;
+			padding-top:9px;
+			
+			span {
+				font-weight:bold;
+				line-height:30px;
+			}
+		}
+
+		.bubble:after 
+		{
+			border-color:#fff transparent;
+			content: "";
+			position: absolute;
+			bottom: -19px;
+			left: @vonlinks;  	/*    MOVE THE BUBBLE-ZEIGER    */
+			border-style: solid;
+			border-width: 20px 10px 0;
+			border-color: #FFFFFF transparent;
+			display: block;
+			width: 0;
+			z-index: 1;
+		}
+
+		.bubble:before 
+		{
+			content: "";
+			position: absolute;
+			top: @hoehe+24;		/* DEPENDS ON THE HEIGHT OF THE WHOLE THING11111 */
+			left: @vonlinks;	/*    MOVE THE BUBBLE-ZEIGER    */
+			border-style: solid;
+			border-width: 22px 10px 0;
+			border-color: @grau4 transparent;
+			display: block;
+			width: 0;
+			z-index: 0;
+		}
+		
+		.progress_bar {
+		position:relative;
+		left:-40px;
+		margin-top:25px;
+			height:27px;
+			width:460px;
+			background-image:url(img/progressbar.png);
+			background-repeat:no-repeat;
+			background-position:top center;
+		}
+		
+		.zeitanzeige {
+			-top:5px;
+			font-size:12px;
+			font-weight:bold;
+			color:@grau5;
+			margin-left:-5px;
+			padding-right:90px;
+			
+		}
+		
+		.last {
+			padding-right:0px;
+		}
+	}
+	.third {
+		margin-bottom:20px;
+		h2 {
+			width:100%;
+			text-align:center;
+		}
+		p {
+			text-align:center;
+		}
+		
+		.grid_8{
+			
+		}
+		
+		.links {
+			
+			weight: 250px;
+			display:block;
+			
+			weight:250px;
+			
+		}
+		
+		ul {
+	
+		 padding-top:60px;
+		 margin-top:20px;
+		 background-repeat:no-repeat;
+		background-position:top center;
+
+			li {
+				color:@grau5;
+				font-size:15px;
+				line-height:15px;
+				list-style:none;
+				background-color:@blau2;
+				padding:10px;
+				padding-left:10px;
+			
+			}
+			
+			.alt {
+				background-color:@blau3;
+			}
+			
+			h2 {
+				background-color:#fff;
+				padding-bottom:20px;
+			}
+		}
+		
+		.pdf {
+			line-height:35px;
+			margin-bottom:-10px;
+			float:left;
+			text-align:left;
+			padding-left:30px;
+			position:relative;
+			margin-top:-10px;
+			margin-right:5px;
+			background-image:url(img/pdf_icon.png);
+			background-repeat: no-repeat;
+			background-position: 2px 3px;
+			span {
+				font-size:10px;
+				background-color:red;
+				color:#fff;
+				padding:2px;
+				vertical-align:top;
+				
+			}
+		}
+		
+		.ulleft {
+			margin-left:70px;
+			background-image:url(img/step3_book.png);
+
+		}
+		
+		.ulright {
+			margin-right:15px;
+			
+				background-image:url(img/step3_coins.png);
+		
+		}
+		
+		.rechts {
+			
+			weight:250px;
+		}
+	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*                              STEP 2 - FROM OLD CSS                      */
 
@@ -1548,4 +1876,152 @@ padding-bottom: 10px;
 
 /* nicht anzeigen */
 display: none;
+}
+
+/*
+
+#################### end STEP 3
+
+*/
+
+
+
+/*
+
+VVVVVVVVVVVVVVV STEP 4 #####################
+
+*/
+
+
+.step4_boxes {
+	.waswichtig {
+	 margin-top:15px;
+	 margin-bottom:15px;
+	 padding-bottom:10px;
+	 border-bottom: 1px solid @blau2;
+		h3 {
+			float:left;
+			color:@grau7;
+			.helveticafont;
+			font-size:17px;
+			line-height:17px;
+			font-weight:normal;
+			padding-top:3px;
+			
+		}
+		ul {
+			line-style:none;
+			font-size:14px;
+			line-height:14px;
+			font-color:@grau5;
+			li {
+				padding:3px;
+				padding-left:25px;
+				padding-right:6px;
+				margin-left:8px;
+				float:left;
+				display:block;
+				.WTF;
+				background-image:url(img/checkdgraysmall.png);
+				background-position:5px 4px;
+				background-repeat:no-repeat;
+				
+				background-color:#fff;
+				border: solid 1px @grau2;
+				.box-shadow(0px 0px 2px #fff);
+
+			}
+			.checked, li:hover {
+				background-image:url(img/checkdbluesmall.png);			
+				background-color:@blau2;
+				border: solid 1px @blau1;
+				.box-shadow(0px 0px 2px @blau1);
+			}
+			.last {
+				margin-right:0px;
+			}
+		}
+	}
+	
+	.step4box {
+		.eins {
+			ul {
+				li {
+				
+				}
+				.standort {
+				
+				}
+				.projects {
+				
+				}
+			}
+		}
+		
+		.zwei {
+			ul {
+			
+				li {
+				
+					span {
+					
+					}
+				
+				}
+			
+			}
+		}
+		
+		.drei {
+			ul {
+			
+				li {
+				
+					span {
+					
+					}
+				
+				}
+			
+			}		
+		}
+		
+		.vier {
+			
+			p {
+				
+			}
+			
+			.pinbutton {
+				
+			}
+			
+			.offertenbutton {
+				
+			}
+			
+		}
+	}
+	
+}
+
+.wtfinput {
+	weight:200px;
+	border:@grau3 solid 1px;
+	background-color:@blau1;
+	.helveticafont;
+	font-size:12px;
+	padding:5px;
+	color:red;
+}
+
+.wtfbutton {
+	weight:200px;
+	border:@grau3 solid 1px;
+	background-color:red;
+	.helveticafont;
+	font-size:12px;
+	padding:5px;
+	color:#fff;	
+	margin:5px;
 }
