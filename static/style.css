@@ -1330,3 +1330,8 @@ body {
 .bigoverview .container_12 .grid_4 .ausgewaehlt .buttonauswaehlen:hover {
   background-position: 98px 11px;
 }
+#niko {
+  weight: 200px;
+  height: 200px;
+  background-color: #f0f6f8;
+}
