@@ -29,6 +29,10 @@ input {
   margin: 0;
   margin-bottom: 0;
 }
+textarea:focus,
+input:focus {
+  outline: none;
+}
 .WTF {
   border-color: #ff8463;
   border-style: solid inset;
@@ -1330,8 +1334,171 @@ body {
 .bigoverview .container_12 .grid_4 .ausgewaehlt .buttonauswaehlen:hover {
   background-position: 98px 11px;
 }
+/*                              STEP 2 - FROM OLD CSS                      */
 div#niko {
   width: 619px;
   height: 65%;
   float: right;
+}
+#step2_wastun_activ {
+  /* damit der border ueber die ganze flaeche geht muss das margin ueber die padding gehen */
+
+  background-color: #f4fdfd;
+  padding-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #e4eeee;
+  /* border-top: solid 1px #e4eeee; */
+
+}
+#step2_wastun_activ h3 {
+  color: #011c26;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: normal;
+}
+#step2_wastun_activ p {
+  color: #3b5d6a;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#step2_wastun_checked {
+  /* damit der border ueber die ganze flaeche geht muss das margin ueber die padding gehen */
+
+  background-color: #fff;
+  padding-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #e4eeee;
+}
+#step2_wastun_checked h3 {
+  color: #ababab;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: normal;
+}
+#step2_wastun_checked p {
+  color: #ababab;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* nicht anzeigen */
+
+  display: none;
+}
+/* STEP 2 von Charles classes */
+.step2_wastun_activ {
+  /* damit der border ueber die ganze flaeche geht muss das margin ueber die padding gehen */
+
+  background-color: #f4fdfd;
+  padding-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #e4eeee;
+  /* border-top: solid 1px #e4eeee; */
+
+  background-image: url("arrow_blue_down.png");
+  background-repeat: no-repeat;
+  background-position: 295px 10px;
+}
+.step2_wastun_activ h3 {
+  color: #011c26;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: normal;
+}
+.step2_wastun_activ p {
+  color: #3b5d6a;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.step2_wastun_checked {
+  /* damit der border ueber die ganze flaeche geht muss das margin ueber die padding gehen */
+
+  background-color: #fff;
+  padding-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #e4eeee;
+}
+.step2_wastun_checked h3 {
+  color: #ababab;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: normal;
+}
+.step2_wastun_checked p {
+  color: #ababab;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* nicht anzeigen */
+
+  display: none;
+  background-color: red;
+}
+.step2_wastun_todo {
+  /* damit der border ueber die ganze flaeche geht muss das margin aeber die padding gehen */
+
+  background-color: #fff;
+  padding-top: 10px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #e4eeee;
+  background-image: url("arrow_gray_left.png");
+  background-repeat: no-repeat;
+  background-position: 295px 10px;
+}
+.step2_wastun_todo h3 {
+  color: #ababab;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 17px;
+  line-height: 27px;
+  font-weight: normal;
+}
+.step2_wastun_todo p {
+  color: #ababab;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* nicht anzeigen */
+
+  display: none;
 }
