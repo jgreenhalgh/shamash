@@ -94,13 +94,15 @@
 				<input id="reset" value="Markierung Zur&uuml;cksetzen" type="button" class="navi button_step2_reset"/><br/>
 			</p>
 		</div>
-		<div class="step2_wastun_todo">
+	<form action="/results/" method="post">	
+	{% csrf_token %}
+	<div class="step2_wastun_todo">
 			<h3 class="toggle">W&auml;hlen Sie Ihre Dachform aus:</h3>
 			<p class="toggle_this">
-				<input type="radio" name="hausauswahl" id="haus-1" value="haus1"><label for="haus-1" class="step2_dach step2_dach1"><br/>Satteldach</label>
-				<input type="radio" name="hausauswahl" id="haus-2" value="haus2"><label for="haus-2" class="step2_dach step2_dach2"><br/>Zeltdach</label>
-				<input type="radio" name="hausauswahl" id="haus-3" value="haus3"><label for="haus-3" class="step2_dach step2_dach3"><br/>Walmdach</label>
-				<input type="radio" name="hausauswahl" id="haus-4" value="haus4"><label for="haus-4" class="step2_dach step2_dach4"><br/>Flachdach</label>
+				<input type="radio" name="rooftype" id="haus-1" value="satteldach"><label for="haus-1" class="step2_dach step2_dach1"><br/>Satteldach</label>
+				<input type="radio" name="rooftype" id="haus-2" value="zeltdach"><label for="haus-2" class="step2_dach step2_dach2"><br/>Zeltdach</label>
+				<input type="radio" name="rooftype" id="haus-3" value="walmdach"><label for="haus-3" class="step2_dach step2_dach3"><br/>Walmdach</label>
+				<input type="radio" name="rooftype" id="haus-4" value="flachdach"><label for="haus-4" class="step2_dach step2_dach4"><br/>Flachdach</label>
 				<span style="clear:both;"></span>
 			</p>
 		</div>
@@ -109,11 +111,11 @@
 			<p class="toggle_this">
 				 Sch&auml;tzen Sie hier Ihre Dachneigung ein:<br/>
 				<select name="tilt" class="step2_select">
-					<option>10&deg;</option>
-					<option>20&deg;</option>
-					<option>30&deg;</option>
-					<option>40&deg;</option>
-					<option>50&deg;</option>
+					<option value="10">10 &deg;</option>
+					<option value="20">20</option>&deg;
+					<option value="30">30</option>&deg;
+					<option value="40">40</option>&deg;
+					<option value="50">50</option>&deg;
 				</select>
 				<br/>
 			</p>
@@ -122,8 +124,8 @@
 	
 	<div class="grid_7" id="niko"> </div>	
 	<div class="grid_7 push_4">
-		<form action="/results/" method="post">
-			{% csrf_token %}
+		
+		
 			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> </div>
 		</form>
 	</div>    
