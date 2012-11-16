@@ -55,7 +55,8 @@
                         $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
                         $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
                         $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
-                        $('#geoData').append('<input type="hidden" name="hausauswahl" value="' +hausauswahl+'">');                                       
+                        $('#geoData').append('<input type="hidden" name="hausauswahl" value="' +hausauswahl+'">');                                      
+                        $('#geoData').append('<input type="hidden" name="tilt" value="' +tilt+'">');  
                         //alert(address );
 		 		}
 		 });
@@ -107,7 +108,7 @@
 			<h3 class="toggle" id="navigieren">Dachneigung sch&auml;tzen </h3>
 			<p class="toggle_this">
 				 Sch&auml;tzen Sie hier Ihre Dachneigung ein:<br/>
-				<select class="step2_select">
+				<select name="tilt" class="step2_select">
 					<option>10&deg;</option>
 					<option>20&deg;</option>
 					<option>30&deg;</option>
