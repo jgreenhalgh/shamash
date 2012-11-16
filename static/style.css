@@ -1608,6 +1608,137 @@ body {
   weight: 250px;
 }
 /*                              STEP 2 - FROM OLD CSS                      */
+#suchresultatfuer {
+  background-color: #e7f1f4;
+  width: 970px;
+  margin-left: -10px;
+  padding-right: 10px;
+  padding-top: 35px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#suchresultatfuer h2 {
+  color: #011c26;
+  font-family: Arial, "Helvetica", Arial, Sens Serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+.step2_input_strasse {
+  width: 230px;
+  background-color: red;
+  padding: 7px;
+  margin-left: 7px;
+  margin-right: 7px;
+  border-color: #88a1ab;
+  color: #3c6773;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.step2_dach {
+  display: block;
+  height: 63px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+  color: #3b5d6a;
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size: 0px;
+  vertical-align: middle;
+  padding-top: 10px;
+  font-weight: normal;
+  padding-left: 80px;
+  background-position: top center;
+}
+input[type="radio"]:checked + label {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #a3a9ac;
+  background-color: #e4f1f1;
+  background-position: 12px;
+  padding-left: 103px;
+  font-size: 14px;
+  text-align: left;
+}
+.step2_dach1 {
+  background-image: url("haus1.png");
+}
+.step2_dach2 {
+  background-image: url("haus2.png");
+}
+.step2_dach3 {
+  background-image: url("haus3.png");
+}
+.step2_dach4 {
+  background-image: url("haus4.png");
+}
+.step2_select {
+  padding: 3px;
+  margin: auto;
+  padding-right: 27px;
+  font-size: 20px;
+  margin-top: 20px;
+  -webkit-border-radius: 34px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 3px 0 #cccccc, 0 -1px #ffffff inset;
+  -moz-box-shadow: 0 3px 0 #cccccc, 0 -1px #ffffff inset;
+  box-shadow: 0 3px 0 #cccccc, 0 -1px #ffffff inset;
+  background: #fff;
+  color: #888;
+  border: none;
+  outline: none;
+  display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("dropdownselect.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.button_step2_weiter {
+  color: #ffffff;
+  font-size: 17px;
+  padding: 8px;
+  padding-right: 14px;
+  padding-left: 14px;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 1px 1px 3px #292929;
+  background: #1d8d72;
+  clear: both;
+}
+.button_step2_weiter:hover {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#1d8d72), to(#145f4d));
+  background: -moz-linear-gradient(top, #1d8d72, #145f4d);
+  -webkit-box-shadow: 0px 0px 3px #50c928;
+  -moz-box-shadow: 0px 0px 3px #50c928;
+  box-shadow: 0px 0px 3px #50c928;
+}
+.button_step2_reset {
+  color: #ffffff;
+  font-size: 17px;
+  font-size: 14px;
+  padding: 8px;
+  padding-right: 14px;
+  padding-left: 14px;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 1px 1px 3px #292929;
+  background: #d76666;
+}
+.button_step2_reset:hover {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#d72d20), to(#9f322a));
+  background: -moz-linear-gradient(top, #d72d20, #9f322a);
+}
 div#niko {
   width: 619px;
   height: 65%;
@@ -1798,6 +1929,154 @@ margin-top: 132px;
 VVVVVVVVVVVVVVV STEP 4 #####################
 
 */
+.bigoverview_step4 {
+  background: #f5f5f5;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ebeff0), color-stop(1, #fbfdfd));
+  background: -ms-linear-gradient(bottom, #ebeff0, #fbfdfd);
+  background: -moz-linear-gradient(center bottom, #ebeff0 0%, #fbfdfd 100%);
+  -webkit-box-shadow: inset 0 1 2 rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 1 2 rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1 2 rgba(0, 0, 0, 0.4);
+  z-index: -300;
+}
+.bigoverview_step4 .container_12 h1 {
+  font-size: 21px;
+  line-height: 21px;
+  color: #333a39;
+  font-weight: normal;
+  text-align: center;
+  margin-top: -3px;
+  float: right;
+  padding-top: 10px;
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+.bigoverview_step4 .container_12 h2 {
+  font-size: 21px;
+  color: #333a39;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 10px;
+  float: left;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik {
+  margin-top: 63px;
+  list-style: none;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown {
+  width: 268px;
+  background-color: #fff;
+  float: left;
+  position: relative;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding-left: 20px;
+  background-image: url(img/smallarrowdown_grau.png);
+  background-repeat: no-repeat;
+  background-position: 270px 19px;
+  border-color: #141a1b solid 1px;
+  font-color: #637379;
+  font-size: 15px;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown a,
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown a:visited {
+  text-decoration: none;
+  display: block;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown ul {
+  list-style: none;
+  position: absolute;
+  left: -999em;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-left-radius: 0px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block;
+  background-image: url(img/SHADOW_BG_1.png);
+  background-repeat: repeat;
+  margin-top: 10px;
+  width: 450px;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown ul .trennlinie {
+  height: 1px;
+  width: 100%;
+  background-color: #f0f6f8;
+  display: block;
+  -moz-opacity: 0.1;
+  -khtml-opacity: 0.1;
+  -webkit-opacity: 0.1;
+  opacity: 0.1;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown ul li {
+  float: none;
+  display: block;
+  padding-left: 20px;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown ul li h3 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  font-weight: bold;
+  color: #f0f6f8;
+  margin-top: 10px;
+  padding-left: 80px;
+  padding-right: 10px;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik .selectdown ul li span {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: normal;
+  color: #f0f6f8;
+  width: 410x;
+  padding-bottom: 10px;
+  display: block;
+  padding-left: 80px;
+  background-image: url(img/icon_infinity_photovoltaic.png);
+  background-repeat: no-repeat;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik li:hover {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #fff;
+  background-image: url(img/SHADOW_BG_1.png);
+  background-repeat: repeat;
+}
+.bigoverview_step4 .container_12 #dropdownphotovoltaik li:hover ul {
+  left: 0;
+  display: block;
+}
 .step4_boxes .waswichtig {
   margin-top: 15px;
   margin-bottom: 15px;
