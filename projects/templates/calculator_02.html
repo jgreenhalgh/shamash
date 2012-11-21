@@ -39,14 +39,20 @@
 		$('#sendData').click(function(){ 
 		 		$('#dataPanel').empty();
 		 		if(null==creator.showData()){
-		 			$('#dataPanel').append('Please first create a polygon');
-		            $("#shadowbg").toggle();
-	                
-                    $("#shadowbg").html("hello world");
-                    event.stopImmediatePropagation()
-                    
-                    //alert("no data given");
-
+					
+					//stop the form from executing
+					$(".postforresults").click(function(event) {
+						event.preventDefault();
+					});	
+					
+					// open the toggle
+					$("#shadowbg").toggle();
+					
+					//
+	                $(".prompt_box").html("test");
+					
+                   
+                    //alert("no data given")';
                     //alert("you forgot to mark roof");
 		 		}else{
                         var LatLng = new Array();
@@ -85,7 +91,7 @@
 {% endblock %}
 
 {% block content %}
-<form action="/results/" method="post">	
+<form action="/results/" method="post" class="postforresults">	
 {% csrf_token %}
 <div class="container_12" id="contentbereich" style="height:800px;">
 	<!-- Suchresultate fuer 
