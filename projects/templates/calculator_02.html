@@ -72,7 +72,9 @@ $(document).ready(function(){
 		 		$('#dataPanel').empty();
 		 		if(null==creator.showData()){
 		 			$('#dataPanel').append('Please first create a polygon');
-                    alert("you forgot to mark roof");
+                    alert("no data given");
+                    $('#shadowbg2').click();
+                    //alert("you forgot to mark roof");
 		 		}else{
                         var LatLng = new Array();
                         var Dist = new Array();
@@ -92,8 +94,7 @@ $(document).ready(function(){
                         $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
                         $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
                         $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
-                        //$('#geoData').append('<input type="hidden" name="hausauswahl" value="' +hausauswahl+'">');                                      
-                        //$('#geoData').append('<input type="hidden" name="tilt" value="' +tilt+'">');  
+
                         //alert(address );
 		 		}
 		 });
