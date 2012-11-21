@@ -95,7 +95,7 @@
 			</p>
 		</div>
 
-	{% csrf_token %}
+
 	<div class="step2_wastun_todo">
 			<h3 class="toggle">W&auml;hlen Sie Ihre Dachform aus:</h3>
 			<p class="toggle_this">
@@ -126,6 +126,7 @@
 	<div class="grid_7 push_4">
 		
 	    <form action="/results/" method="post">	
+        	{% csrf_token %}
 			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> </div>
 		</form>
 	</div>    
