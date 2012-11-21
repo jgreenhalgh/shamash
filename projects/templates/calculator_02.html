@@ -94,7 +94,7 @@
 				<input id="reset" value="Markierung Zur&uuml;cksetzen" type="button" class="navi button_step2_reset"/><br/>
 			</p>
 		</div>
-	<form action="/results/" method="post">	
+
 	{% csrf_token %}
 	<div class="step2_wastun_todo">
 			<h3 class="toggle">W&auml;hlen Sie Ihre Dachform aus:</h3>
@@ -125,8 +125,8 @@
 	<div class="grid_7" id="niko"> </div>	
 	<div class="grid_7 push_4">
 		
-		
-			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter"  /> </div>
+	    <form action="/results/" method="post">	
+			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> </div>
 		</form>
 	</div>    
 </div>
