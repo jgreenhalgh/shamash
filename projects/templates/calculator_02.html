@@ -4,7 +4,20 @@
 {% block title %}Schritt Zwei{% endblock %}
 {% block header_inhead %}
 
+<!-- Dimmer Funtion, Kirill -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+    $("#shadowbg2").css("height", $(document).height()).hide();
+	$(".clickshadow").click(function(){
+		$("#shadowbg2").toggle();
+	});
 
+	$(".prompt_box").not("#shadowbg2").click(function(){
+		stopPropagation();
+		$("#shadowbg2").toggle();
+	});
+});
+</script>
 <!-- PROMT BOX 2 start -->
 <div id="shadowbg2">
 	<div class="prompt_box">
