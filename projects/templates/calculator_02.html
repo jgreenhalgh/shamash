@@ -80,6 +80,8 @@
 		<h2>Wir haben die berechent f&uuml;r <input type="text" class="step2_input_strasse" value="{{selected_address}}"></input> berechnet:</h2>
 	</div>
 	-->
+	<form action="/results/" method="post">	
+    {% csrf_token %}
 	<div class="grid_4">
 		<div class="step2_wastun_todo">
 			<h3 class="toggle" id="navigieren">Navigieren Sie zu Ihrem Dach im Kartenausschnitt rechts. </h3>
@@ -124,8 +126,7 @@
 	</div>
 
 	<div class="grid_7" id="niko"> </div>	
-    	<form action="/results/" method="post">	
-    {% csrf_token %}
+
 	<div class="grid_7 push_4">
 		
 	   
