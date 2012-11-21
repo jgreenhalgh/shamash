@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 });
 </script>
-<!-- PROMT BOX 2 start -->
+<!-- PROMT BOX 2 start: PROBLEM: dieses zeugs sieth man beim reload für eine sekunde! -->
 <div id="shadowbg2">
 	<div class="prompt_box">
 		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
@@ -72,7 +72,7 @@ $(document).ready(function(){
 		 		$('#dataPanel').empty();
 		 		if(null==creator.showData()){
 		 			$('#dataPanel').append('Please first create a polygon');
-                    alert("you forgot to mark roof")
+                    alert("you forgot to mark roof");
 		 		}else{
                         var LatLng = new Array();
                         var Dist = new Array();
