@@ -96,7 +96,7 @@
 		</div>
 
     
-	<div class="step2_wastun_todo">
+	    <div class="step2_wastun_todo">
 			<h3 class="toggle">W&auml;hlen Sie Ihre Dachform aus:</h3>
 			<p class="toggle_this">
 				<input type="radio" name="rooftype" id="haus-1" value="satteldach"><label for="haus-1" class="step2_dach step2_dach1"><br/>Satteldach</label>
@@ -105,8 +105,9 @@
 				<input type="radio" name="rooftype" id="haus-4" value="flachdach"><label for="haus-4" class="step2_dach step2_dach4"><br/>Flachdach</label>
 				<span style="clear:both;"></span>
 			</p>
-		</div>
-		<div class="step2_wastun_todo">
+	    </div>
+
+	    <div class="step2_wastun_todo">
 			<h3 class="toggle" id="navigieren">Dachneigung sch&auml;tzen </h3>
 			<p class="toggle_this">
 				 Sch&auml;tzen Sie hier Ihre Dachneigung ein:<br/>
@@ -121,10 +122,10 @@
 			</p>
 		</div>
 	</div>
-	<form action="/results/" method="post">	
-    {% csrf_token %}
-	<div class="grid_7" id="niko"> </div>	
 
+	<div class="grid_7" id="niko"> </div>	
+    	<form action="/results/" method="post">	
+    {% csrf_token %}
 	<div class="grid_7 push_4">
 		
 	   
