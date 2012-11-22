@@ -67,12 +67,12 @@ $(document).ready(function(){
 
 <div class="start_headertop">
 	<div class="container_12">
-		<div class="grid_2"><h1 class="{% block calc_01_active %} {% endblock %}">getSolar</h1></div>
+		<div class="grid_2"><a href="http://151.236.216.105"><h1 class="{% block calc_01_active %} {% endblock %}">getSolar</h1></a></div>
 		<div class="grid_8 centerlist">
 			<ul>
 				<a href="#"><li class="verschiebenlinks">Was ist Shamash?</li></a>
 				<a href="#"><li class="{% block calc_02_active %}{% endblock %}">Solardachrechner</li></a>
-				<a href="#"><li class="">Anbieter direkt vergleichen</li></a>
+				<a href="#"><li class="{% block calc_04_active %}{% endblock %}">Anbieter direkt vergleichen</li></a>
 			</ul>
 		</div>
 		<div class="grid_2 loginclass clickshadow"><a href="#">{% if {{loginlogout}}==login %}Login{% else %}{% if {{loginlogout}}==logout %}Logout{% endif %}{% endif %}</a></div>
@@ -84,9 +84,9 @@ $(document).ready(function(){
 	<div class="step14bg">
 		<div class="container_12">
 			<div class="grid_3"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
-			<div class="grid_3 {% block calc_02_step2_active%}{% endblock%}"><a href="#"><span>2</span> <p>Details eingeben</p></a></div>
-			<div class="grid_3 {% block calc_02_step3_active%}active{% endblock%}"><a href="#"><span>3</span> <p>Potential berechnen</p></a></div>
-			<div class="grid_3"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
+			<div class="grid_3 {% block calc_02_step2_active%}{% endblock%}"><a href="http://151.236.216.105/panel/"><span>2</span> <p>Details eingeben</p></a></div>
+			<div class="grid_3 {% block calc_02_step3_active%}{% endblock%}"><a href="http://151.236.216.105/results/"><span>3</span> <p>Potential berechnen</p></a></div>
+			<div class="grid_3 {% block calc_02_step4_active%}{% endblock%}"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
 		</div>
 	</div>
 {% endblock %}
