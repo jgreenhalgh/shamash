@@ -75,7 +75,7 @@ $(document).ready(function(){
 				<a href="#"><li class="{% block calc_04_active %}{% endblock %}">Anbieter direkt vergleichen</li></a>
 			</ul>
 		</div>
-		<div {% if loginlogout == "login" %} class="grid_2 loginclass clickshadow">Login
+		<div {% if loginlogout == "login" %} class="grid_2 loginclass clickshadow"><a href="#">Login
        
         {% else %}{% if loginlogout == "logout" %}>
         <form action={{request.get_full_path}} method="post">
