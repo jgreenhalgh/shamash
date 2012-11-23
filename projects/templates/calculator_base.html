@@ -142,14 +142,16 @@ $(".schliessen").click(function(e){
 		<div class="grid_2 loginclass">
 		<a href="#">Login</a></div>
         {% else %}{% if loginlogout == "logout" %}
-		<div class="grid_2 loginclass">		
-			Eingeloggt als: {{request.user.username}}
+		<div class="grid_2 logoutclass">		
+			
+			
 			<form action={{request.get_full_path}} method="post">
 			{% csrf_token %}
+			<p class="logoutbuttonname"><span>{{request.user.username}}</span>
 			<input type="hidden" name="logout_request" value="logout_request">
-			<input type="submit" value="{{loginlogout}}" name="loginlogout" class="logoutbutton"/> 
+			<input type="submit" value="{{loginlogout}}" name="loginlogout" class="logoutbutton"/> </p>
 			</form>
-			</div>
+		</div>
         {% else %}Weiss nicht{% endif %}{% endif %}
 	</div>
 </div>

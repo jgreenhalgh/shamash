@@ -874,24 +874,46 @@ body {
 		color:@grau7;
 		.transition-duration(0.3s);			
 	}
-	.loginclass {
-		padding-top: round((@heightheader/2)-17);
+	
+	.logoutclass {
+	
+		padding-top:30px;
+	
+		.logoutbuttonname {
+			padding:5px;
+			color:@grau7;
+			float:left;
+			.rounded(3px);
+			background-color:@blau2;
+			font-size:13px;
+			width:100%;
+				span {
+					line-height:26px;
+					padding-left:5px;
+				}
+		}
 		
 		.logoutbutton {
+			margin-left:10px;
 			float:right;
 			.smallbox_a;
 			.rounded(3px);
+			background-color:@blau1;
+			border: #fff;
 			padding:5px;
-			padding-right:20px;
+			padding-right:10px;
 			padding-left:10px;
 			font-size: 13px;
-			.helveticafont;
-			color:@grau7;
+			
+			color:#fff;
 			line-height:14px;
-			background-image:url(img/smallloginarrow_gray.png);
-			background-repeat:no-repeat;
-			background-position: 44px 9px;		
+			
 		}
+	
+	}
+	.loginclass {
+		padding-top: round((@heightheader/2)-17);
+		
 		
 		a {
 			float:right;
