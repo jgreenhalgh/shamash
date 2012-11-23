@@ -75,7 +75,14 @@ $(document).ready(function(){
 				<a href="#"><li class="{% block calc_04_active %}{% endblock %}">Anbieter direkt vergleichen</li></a>
 			</ul>
 		</div>
-		<div {% if loginlogout == "login" %} class="grid_2 loginclass clickshadow"{% endif %}><a href="#">{% if loginlogout == "login" %}Login{% else %}{% if loginlogout == "logout" %}Logout{% else %}Weiss nicht{% endif %}{% endif %}</a></div>
+		<div {% if loginlogout == "login" %} class="grid_2 loginclass clickshadow">Login
+       
+        {% else %}{% if loginlogout == "logout" %}>
+        <form action={{request.get_full_path}} method="post">
+        <label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+        </form>
+
+        {% else %}Weiss nicht{% endif %}{% endif %}</a></div>
 	</div>
 </div>
 
