@@ -137,13 +137,15 @@ $(".schliessen").click(function(e){
 				<a href="#"><li class="{% block calc_04_active %}{% endblock %}">Anbieter direkt vergleichen</li></a>
 			</ul>
 		</div>
+		
 		<div {% if loginlogout == "login" %} class="grid_2 loginclass clickshadow"><a href="#">Login
-       
         {% else %}{% if loginlogout == "logout" %}>
+		Eingeloggt als: {{request.user.username}}
         <form action={{request.get_full_path}} method="post">
         {% csrf_token %}
         <input type="hidden" name="logout_request" value="logout_request">
-        <label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogout" class="buttoncener"/> 
+        <!-- <label><span> </span> </label> -->
+		<input type="submit" value="{{loginlogout}}" name="loginlogout" class="buttoncener"/> 
         </form>
 
         {% else %}Weiss nicht{% endif %}{% endif %}</a></div>
