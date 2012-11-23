@@ -137,26 +137,29 @@ body {
 
 // SHADOW, PROMT BG
 #shadowbg {
+/*
 	background-image:url(img/SHADOW_BG_1.png);
 	position:absolute;
 	left:0;
 	top:0;
 	width:100%;
-	// height:100%;
 	z-index:10000;
 	zoom:1;
-	
+*/
 	@boxwidth:400px;
 	@boxheight:460px;
-	
+
 	.prompt_box {
+		display:none;
 		width:@boxwidth;
 		height:@boxheight;
 		position:absolute;
+		/*
 		left:50%;
 		// top:50%;
 		// margin: -(round(@boxheight/2)) 0 0 -(round(@boxwidth/2));
 		margin: 150px 0 0 -(round(@boxwidth/2));
+		*/
 		background-color:white;
 		
 		padding:20px;
@@ -2504,25 +2507,17 @@ VVVVVVVVVVVVVVV STEP 4 #####################
 
 // STILL STEP 4!!
 
-.box_getoffer_bg {
-	background-image:url(img/SHADOW_BG_1.png);
-	position:absolute;
-	left:0;
-	top:0;
-	width:100%;
-	// height:100%;
-	z-index:10000;
-	zoom:1;
-}
 
 .box_getoffer {
+
+
+	
+	display: none;
 	width:800px;
 	height:400px;
 	color:@grau7;
-	position:absolute;
-	left:50%;
-	margin: 150px 0 0 -400px;
 	background-color:#fff;
+
 	.inner {
 		margin: 40px 20px 40px 20px;
 	}
@@ -2544,6 +2539,17 @@ VVVVVVVVVVVVVVV STEP 4 #####################
 		text-align:center;
 		padding-top:15px;
 		line-height:13px;
+	}
+	
+	.schliessen {
+		float: right;
+		display: block;
+		padding: 5px;
+		font-size:10px;
+		.smallbox_a;
+		.rounded(3px);
+		color:@grau7;
+		margin-top:-20px;
 	}
 	
 	label {
@@ -2591,7 +2597,8 @@ VVVVVVVVVVVVVVV STEP 4 #####################
 		border-left: 1px solid @grau4;
 		width:300px;
 		height:100%;
-
+		background-image:url(img/anbieter_leftshadow.png);
+		background-repeat:repeat-y;
 	}
 	.links {
 		float:left;
