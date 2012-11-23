@@ -136,115 +136,97 @@ body {
 
 
 // SHADOW, PROMT BG
-#shadowbg {
-/*
-	background-image:url(img/SHADOW_BG_1.png);
-	position:absolute;
-	left:0;
-	top:0;
-	width:100%;
-	z-index:10000;
-	zoom:1;
-*/
-	@boxwidth:400px;
-	@boxheight:460px;
 
-	.prompt_box {
-		display:none;
-		width:@boxwidth;
-		height:@boxheight;
-		position:absolute;
-		/*
-		left:50%;
-		// top:50%;
-		// margin: -(round(@boxheight/2)) 0 0 -(round(@boxwidth/2));
-		margin: 150px 0 0 -(round(@boxwidth/2));
-		*/
-		background-color:white;
+
+.prompt_box_login {
+	display: none;
+	width: 400px;
+	
+	background-color: white;
+	
+	padding:20px;
+	padding-bottom:70px;
+	
+	.schliessen {
+		float: right;
+		display: block;
+		padding: 5px;
+		font-size:10px;
+		.smallbox_a;
+		.rounded(3px);
+		color:@grau7;
+	}
+	
+	h2 {
+		font-size:21px;
+		color:@grau7;
+		margin-bottom:10px;
+		padding-top:30px;
+	}
+	
+	p {
+		font-size: 15px;
+		line-height:23px;
+		color: @grau5;
+		padding-top:10px;
+		margin-bottom:15px;
+	}
+	
+	form {
+		// platz fuer beide elemente = 400pixel
+		label {
+			float:left;
+			display:block;
+			width:150px;
+			text-align:right;
+		}
+		span {
+			display:block;	
+			font-size: 15px;
+			color: @grau5;
+			margin-top:7px;
+			padding-right:20px;
+			padding-bottom:5px;
 		
-		padding:20px;
-		
-		.schliessen {
-			float: right;
-			display: block;
-			padding: 5px;
-			font-size:10px;
+		}
+		input {
+			width:220px;
+			height:50px;
+			float:left;
+			height:30px;
 			.smallbox_a;
 			.rounded(3px);
-			color:@grau7;
-		}
-		
-		h2 {
-			font-size:21px;
-			color:@grau7;
-			margin-bottom:10px;
-			padding-top:30px;
-		}
-		
-		p {
+			padding-left:10px;
+			margin-bottom:20px;
 			font-size: 15px;
-			line-height:23px;
-			color: @grau5;
-			padding-top:10px;
-			margin-bottom:15px;
+			.helveticafont;
+			color: @grau7;
+		}
+		.spacer { 
+			clear:both; 
+			height:1px;
+		}
+		.buttoncener {
+
+			width:150px;
+			display:block;
+			
+			color:#fff;
+			background-color:@green1;
+			//.opacity(1);
+			// .gradient(@blau1, #0273a2, @blau1);
+			border-color:#fff;
+			.rounded(3px);
 		}
 		
-		form {
-			// platz fuer beide elemente = 400pixel
-			label {
-				float:left;
-				display:block;
-				width:150px;
-				text-align:right;
-			}
-			span {
-				display:block;	
-				font-size: 15px;
-				color: @grau5;
-				margin-top:7px;
-				padding-right:20px;
-				padding-bottom:5px;
-			
-			}
-			input {
-				width:220px;
-				height:50px;
-				float:left;
-				height:30px;
-				.smallbox_a;
-				.rounded(3px);
-				padding-left:10px;
-				margin-bottom:20px;
-				font-size: 15px;
-				.helveticafont;
-				color: @grau7;
-			}
-			.spacer { 
-				clear:both; 
-				height:1px;
-			}
-			.buttoncener {
-			   /* float:none;
-				width: 200px;
-				display: block;
-				margin-left: auto;
-				margin-right: auto; */
-			
-				width:150px;
-				display:block;
-				
-				color:#fff;
-				.opacity(1);
-				.gradient(@blau1, #0273a2, @blau1);
-				border-color:#fff;
-			}
-			
-			.buttoncener:hover {
-				.gradient(@blau1, @blau1, #0273a2);				
-			}
+		.buttoncener:hover {
+			background-color:@green2;
+			//.gradient(@blau1, @blau1, #0273a2);
+			.rounded(3px);			
 		}
 	}
 }
+
 
 
 // SIDEBAR
@@ -2509,9 +2491,6 @@ VVVVVVVVVVVVVVV STEP 4 #####################
 
 
 .box_getoffer {
-
-
-	
 	display: none;
 	width:800px;
 	height:400px;

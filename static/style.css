@@ -16,15 +16,15 @@ textarea:focus,input:focus{outline:none;}
 html{height:100%;min-height:100%;}
 body{margin:0px 0px 0px 280px;height:100%;}
 .bodynomargin{margin:0px;}
-#shadowbg{}#shadowbg .prompt_box{display:none;width:400px;height:460px;position:absolute;background-color:white;padding:20px;}#shadowbg .prompt_box .schliessen{float:right;display:block;padding:5px;font-size:10px;background-color:#fafbfc;border-color:#c7d0d3;border-style:solid;border-width:1px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;color:#333a39;}
-#shadowbg .prompt_box h2{font-size:21px;color:#333a39;margin-bottom:10px;padding-top:30px;}
-#shadowbg .prompt_box p{font-size:15px;line-height:23px;color:#637379;padding-top:10px;margin-bottom:15px;}
-#shadowbg .prompt_box form label{float:left;display:block;width:150px;text-align:right;}
-#shadowbg .prompt_box form span{display:block;font-size:15px;color:#637379;margin-top:7px;padding-right:20px;padding-bottom:5px;}
-#shadowbg .prompt_box form input{width:220px;height:50px;float:left;height:30px;background-color:#fafbfc;border-color:#c7d0d3;border-style:solid;border-width:1px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;padding-left:10px;margin-bottom:20px;font-size:15px;font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;color:#333a39;}
-#shadowbg .prompt_box form .spacer{clear:both;height:1px;}
-#shadowbg .prompt_box form .buttoncener{width:150px;display:block;color:#fff;-moz-opacity:1;-khtml-opacity:1;-webkit-opacity:1;opacity:1;background:#0093d5;background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #0273a2), color-stop(1, #0093d5));background:-ms-linear-gradient(bottom, #0273a2, #0093d5);background:-moz-linear-gradient(center bottom, #0273a2 0%, #0093d5 100%);border-color:#fff;}
-#shadowbg .prompt_box form .buttoncener:hover{background:#0093d5;background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #0093d5), color-stop(1, #0273a2));background:-ms-linear-gradient(bottom, #0093d5, #0273a2);background:-moz-linear-gradient(center bottom, #0093d5 0%, #0273a2 100%);}
+.prompt_box_login{display:none;width:400px;background-color:white;padding:20px;padding-bottom:70px;}.prompt_box_login .schliessen{float:right;display:block;padding:5px;font-size:10px;background-color:#fafbfc;border-color:#c7d0d3;border-style:solid;border-width:1px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;color:#333a39;}
+.prompt_box_login h2{font-size:21px;color:#333a39;margin-bottom:10px;padding-top:30px;}
+.prompt_box_login p{font-size:15px;line-height:23px;color:#637379;padding-top:10px;margin-bottom:15px;}
+.prompt_box_login form label{float:left;display:block;width:150px;text-align:right;}
+.prompt_box_login form span{display:block;font-size:15px;color:#637379;margin-top:7px;padding-right:20px;padding-bottom:5px;}
+.prompt_box_login form input{width:220px;height:50px;float:left;height:30px;background-color:#fafbfc;border-color:#c7d0d3;border-style:solid;border-width:1px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;padding-left:10px;margin-bottom:20px;font-size:15px;font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;color:#333a39;}
+.prompt_box_login form .spacer{clear:both;height:1px;}
+.prompt_box_login form .buttoncener{width:150px;display:block;color:#fff;background-color:#39b54a;border-color:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.prompt_box_login form .buttoncener:hover{background-color:#197b30;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}
 #sidebar{position:fixed;left:0;top:0;bottom:0;width:270px;height:100%;background-color:#f9f9f9;background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;z-index:9999;}
 .sidebartop{background-color:#0093d5;width:100%;font-size:25px;font-style:italic;font-weight:bold;font-family:Arial,"Helvetica Neue","Liberation Sans",FreeSans,sans-serif;text-align:center;color:#fff;padding-top:20px;padding-bottom:20px;background-image:url("img/sidebar_rightshadow.png");background-position:right;background-repeat:repeat-y;}.sidebartop a{text-decoration:none;color:#fff;}
 .sidebartop a:hover{text-decoration:none;color:red;}
