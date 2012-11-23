@@ -79,6 +79,7 @@ $(document).ready(function(){
        
         {% else %}{% if loginlogout == "logout" %}>
         <form action={{request.get_full_path}} method="post">
+        {% csrf_token %}
         <label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
         </form>
 
