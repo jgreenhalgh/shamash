@@ -179,7 +179,8 @@ gewissen Zeit sich in einen Profit umwandeln. Navigieren Sie
 
 
 		
-        <form action="/compare/" method="post" >	
+        <form action="/compare/" method="post" >
+        {% csrf_token %}	
 		<input type="submit" value="WEITER zu SCHRITT 3 mit den DATEN" class="wtfbutton" />
 		</form>
 
