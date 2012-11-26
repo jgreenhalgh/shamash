@@ -84,7 +84,6 @@ $(document).ready(function() {
 {% endblock %}
 
 {% block content %}
-	
 	<div class="bigoverview_step4">
 		<div class="container_12">
 			<div class="grid_12" style="text-align:center,">
@@ -116,13 +115,11 @@ $(document).ready(function() {
 <div class="container_16 step4_boxes">
 	<div class="grid_16 waswichtig">
 		<h3>Was ist Ihnen wichtig?</h3>
-		<ul>
-			<li class="checked">Qualit&auml;</li>
-			<li class="">Tiefe Amortisationszeit</li>
-			<li class="checked">Qualit&auml;</li>
-			<li class="">Tiefe Amortisationszeit</li>
-			<li class="checked">Qualit&auml;</li>
-			<li class="last">Tiefe Amoreit</li>
+		<ul class="s4_auswahl">
+			<a href="#"><li data="a" class="s4ListSelect">Sort by A</li></a>
+			<a href="#"><li data="b" class="s4ListSelect ">Sort by B</li></a>
+			<a href="#"><li data="c" class="s4ListSelect ">Sort by C</li></a>
+			<a href="#"><li data="c" class="s4ListSelect ">Sort by C</li></a>
 		</ul>
 	</div>
 	
@@ -132,43 +129,14 @@ $(document).ready(function() {
 	
 	<p class="linie"> </p>
 	
-	<!-- START BOX -->
-	<div class="firemoverview">
-		<div class="grid_4 eins">
-			<h2>Firmentitel</h2>
-			<ul>
-				<li class="standort">Standort</li>
-				<li class="projects">4 erfolgreiche Projeke</li>
-			</ul>
-		</div>
-		<div class="grid_4 zwei">
-			<ul>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-			</ul>
-		</div>
-		<div class="grid_4 zwei">
-			<ul>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-			</ul>		
-		</div>
-		<div class="grid_4 vier">
-			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<a href="#"><p class="pinbutton"></p></a>
-			<a href="#"><p class="offertenbutton">Offerte einholen</p></a>
-		</div>
-	</div> <div class="clear"></div>
-	<!-- END BOX -->
+<!-- One BIG List -->
+<ul class="s4ul">
 	
 	<!-- START BOX -->
+	<li class="s4list" a="0" b="10" c="5" d="8" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
-			<h2>Firmentitel</h2>
+			<h2>a 0 b 10 c 5 d 8</h2>
 			<ul>
 				<li class="standort">Standort</li>
 				<li class="projects">4 erfolgreiche Projeke</li>
@@ -196,8 +164,9 @@ $(document).ready(function() {
 			<a href="#"><p class="offertenbutton getoffer_1">Offerte einholen</p></a>
 		</div>
 	</div> <div class="clear"></div>
+	</li>
 	<!-- END BOX -->
-	
+
 	<!-- >>>> START PROMPT BOX OFFER -->
 <div class="box_getoffer" id="getoffer_1">
 	<div class="rechts">
@@ -227,12 +196,77 @@ $(document).ready(function() {
 	</div>
 </div>
 <!-- END BOX OFFER -->
+	
+	<!-- START BOX -->
+	<li class="s4list" a="9" b="2" c="7" d="12" total="">
+	<div class="firemoverview">
+		<div class="grid_4 eins">
+			<h2>a 9 b 2 c 7 d 12</h2>
+			<ul>
+				<li class="standort">Standort</li>
+				<li class="projects">4 erfolgreiche Projeke</li>
+			</ul>
+		</div>
+		<div class="grid_4 zwei">
+			<ul>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+			</ul>
+		</div>
+		<div class="grid_4 zwei">
+			<ul>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+				<li>Anlagenleistung <span>4 kWh</span></li>
+			</ul>		
+		</div>
+		<div class="grid_4 vier">
+			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			<a href="#"><p class="pinbutton"></p></a>
+			<a href="#"><p class="offertenbutton getoffer_2">Offerte einholen</p></a>
+		</div>
+	</div> <div class="clear"></div>
+	</li>
+	<!-- END BOX -->
+	
+	<!-- >>>> START PROMPT BOX OFFER -->
+<div class="box_getoffer" id="getoffer_2">
+	<div class="rechts">
+		<div class="inner">
+			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
+			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
+			<form method="post" action="#" id="offerteabschicken">
+			<label class="eingabetext"> Name * <input type="text" name="name"  /> </label>
+			<label class="eingabetext"> Email * <input type="text" name="email" /> </label>
+			<label class="eingabetext"> Kommentar <textarea rows="3" cols="22"> </textarea> </label>
+			<input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
+			<p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
+			</form>
+		</div>
+	</div>	
+	<div class="links">
+		<div class="inner">
+			<h1>Ihr Projekt von lorem ipsum dolor sit amet</h1>
+			<p class="projektuebersicht">
+			
+			Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
+			
+			<br/>
+			Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
+			</p>
+		</div>
+	</div>
+</div>
+<!-- END BOX OFFER -->
 
-	
-		<!-- START BOX -->
+	<!-- START BOX -->
+	<li class="s4list" a="6" b="4" c="11" d="6" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
-			<h2>Firmentitel</h2>
+			<h2> a 6, b 4 c 11 d 6</h2>
 			<ul>
 				<li class="standort">Standort</li>
 				<li class="projects">4 erfolgreiche Projeke</li>
@@ -260,12 +294,14 @@ $(document).ready(function() {
 			<a href="#"><p class="offertenbutton">Offerte einholen</p></a>
 		</div>
 	</div> <div class="clear"></div>
+	</li>
 	<!-- END BOX -->
-	
-		<!-- START BOX -->
+
+	<!-- START BOX -->
+	<li class="s4list" a="7" b="3" c="0" d="13" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
-			<h2>Firmentitel</h2>
+			<h2>a 7, b 3 c 0 d 13</h2>
 			<ul>
 				<li class="standort">Standort</li>
 				<li class="projects">4 erfolgreiche Projeke</li>
@@ -293,39 +329,7 @@ $(document).ready(function() {
 			<a href="#"><p class="offertenbutton">Offerte einholen</p></a>
 		</div>
 	</div> <div class="clear"></div>
-	<!-- END BOX -->
-	
-		<!-- START BOX -->
-	<div class="firemoverview">
-		<div class="grid_4 eins">
-			<h2>Firmentitel</h2>
-			<ul>
-				<li class="standort">Standort</li>
-				<li class="projects">4 erfolgreiche Projeke</li>
-			</ul>
-		</div>
-		<div class="grid_4 zwei">
-			<ul>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-			</ul>
-		</div>
-		<div class="grid_4 zwei">
-			<ul>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-			</ul>		
-		</div>
-		<div class="grid_4 vier">
-			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<a href="#"><p class="pinbutton"></p></a>
-			<a href="#"><p class="offertenbutton">Offerte einholen</p></a>
-		</div>
-	</div> <div class="clear"></div>
+	</li>
 	<!-- END BOX -->
 	
 	
