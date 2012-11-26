@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+
+<head>
+<meta charset="utf-8"/>
+<title>{% block title %}User Backend{{ comapnynamne }}{% endblock %}</title>
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- JQuery Lightbox Plugin -->
+<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
+
+<!-- JQuery Validate Plugin -->
+<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
+
+<!-- JQuery Scroller Plugin -->
+<script src="{{STATIC_URL}}/scroller_backend.js"/></script>
+
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+
+<!-- CSS Master Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/style.css"/>
+
+<!-- Scroller Function -->
+<script type="text/javascript" id="sourcecode">
+$(function()
+{
+	$('.scroll-pane').each(
+		function()
+		{
+			$(this).jScrollPane(
+				{
+					showArrows: $(this).is('.arrow')
+				}
+			);
+			var api = $(this).data('jsp');
+			var throttleTimeout;
+			$(window).bind(
+				'resize',
+				function()
+				{
+					if ($.browser.msie) {
+						// IE fires multiple resize events while you are dragging the browser window which
+						// causes it to crash if you try to update the scrollpane on every one. So we need
+						// to throttle it to fire a maximum of once every 50 milliseconds...
+						if (!throttleTimeout) {
+							throttleTimeout = setTimeout(
+								function()
+								{
+									api.reinitialise();
+									throttleTimeout = null;
+								},
+								50
+							);
+						}
+					} else {
+						api.reinitialise();
+					}
+				}
+			);
+		}
+	)
+
+});
+</script>
+
+<!-- Dimmer Function User Backend with .lightbox_me() -->
+<script type="text/javascript" id="sourcecode">
+
+</script>
+
+{% block header_inhead %} <!-- Optional Header --> {% endblock %}
+</head>
+<body>
+{% block sidebar %}
+<div id="sidebar">
+	<div class="sidebartop">
+		<a href="#">SlrDemo</a>
+	</div>
+	<div class="projectchooser-in-sidebar">
+		<p> <a href="#">Hauptstrasse 12, D&uuml;bendorf <img src="img/sidebar_arrowdown.png" /></a> </p>
+	</div>
+	<div id="navigationleft">
+		<ul>
+			<a href="#"><li class="sidebar_uebersicht"> &Uuml;bersicht </li></a>
+			<a href="#"><li class="sidebar_entwicklung"> Projektentwicklung </li></a>
+			<a href="#"><li class="sidebar_bearbeiten"> Prohjekt bearbeiten </li></a>
+			<a href="#"><li class="sidebar_finden"> Installateure finden </li></a>
+			<a href="#"><li class="sidebar_vergleichen"> Installateure vergleichen </li></a>
+			<a href="#"><li class="sidebar_offerten"> Offerten <span class="offertenrot">2</span> </li></a>
+		</ul>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+</body>
