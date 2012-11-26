@@ -2,16 +2,88 @@
 {% block calc_02_step4_active%}active{% endblock%}
 {% block calc_04_active %}active{% endblock %}
 
-{% comment %}
-			TODO: Somehow tell the content  block header_inbody_1, that we are on the startpage, so add
-			the active classs to the logo!
-{% endcomment %}
+{% block header_inhead %}
+<!-- SORTING Script -->
+<script type='text/javascript'>
+/*-------- SORTING SCRIPT --------*/
 
-{% comment %}
-			TODO: Somehow tell the STEP step 
-{% endcomment %}
+// variables for the sorting script
+var selected = new Array();
+var zwischensumme = new Array();
+
+// summing function for the variable
+$.sum = function(arr){
+    var r = 0;
+    $.each(arr,function(i,v){
+        r += v;
+    });
+    return r;
+}
+
+// jQuery Stuff for sorting script
+$(document).ready(function() {
+    $(".s4ListSelect").click(function() {
+		
+		$(this).toggleClass("checked");
+		// toggle the list
+		
+		$("ul.s4ul").hide();
+		
+		// find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
+		//input:checkbox[name=sortieren]:checked
+
+	
+		
+		$(".s4_auswahl .checked").each(function()
+		{ 
+			selected.push($(this).attr("data")); 
+		});
+		
+		//alert(selected);
+		// $("span").html(selected.join(" "));
+		
+		// for each list element 
+        $("li.s4list").each(function() {
+			// with .length check the arrays length, how many elements and get the attribute with the same name
+			for (var i = 0; i < selected.length; i++) {
+				var thisThing = selected[i];
+				zwischensumme.push(parseInt($(this).attr(thisThing)));
+				// $(this).html($.sum(zwischensumme));
+			}
+			
+			$(this).attr("total", $.sum(zwischensumme));
+			// $(this).html($(this).attr("total"));
+			//zwischensumme loeschen;
+			zwischensumme = [];
+        });
+		
+	//Liste sortieren nach 
+	var li = $('li.s4list');
+		li.sort(function(a, b) {
+			if(parseInt($(a).attr("total")) < parseInt($(b).attr("total")))
+		return 1;
+		else return -1;
+		});
+	// toggle list
+	
+	$("ul.s4ul").fadeIn("slow");
+	
+	$('ul.s4ul').empty().html(li);
+
+	// Array loeschen
+	selected = [];
+	// total value loeschen
+		$("li").each(function() {
+			$(this).attr("total", "");
+		});
+		
+    });	
+
+});
+</script>
+{% endblock %}
+
 {% block content %}
-<body class="bodynomargin">	
 	
 	<div class="bigoverview_step4">
 		<div class="container_12">

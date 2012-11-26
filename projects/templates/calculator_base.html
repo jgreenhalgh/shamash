@@ -89,42 +89,21 @@ $(".schliessen").click(function(e){
 </head>
 <body  class="bodynomargin">
 
-<!-- PROMT BOX start  OLD !!!!!!!!!!!!!
-<div id="shadowbg">
-	<div class="prompt_box">
-		<a href="#"><span class="schliessen clickshadow"> SCHLIESSEN </span></a>
-		<h2>Verwalten Sie Ihre Solaranlage</h2>
-		<p>Loggen Sie sich hier ein und verwalten Sie ihr Projekt. <span style="color:red">{{message}}</span>
-			
-			<form action={{request.get_full_path}} method="post">
-				{% csrf_token %}
-				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
-				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
-				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
-			</form>
-
-			</p>
-	</div>
-</div>
- PROMT BOX end -->
- 
- 
  <!-- PROMPT Box NEW -->
  <div class="prompt_box_login">
 	<a href="#"><span class="schliessen"> SCHLIESSEN </span></a>
 	<h2>Verwalten Sie Ihre Solaranlage</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Suspendisse eget imperdiet dolor. 
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		Suspendisse eget imperdiet dolor.  <span style="color:red">{{message}}</span>
-		
 			<form action={{request.get_full_path}} method="post">
 				{% csrf_token %}
 				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
 				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
 				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
 			</form>
-		</p>
+	</p>
 </div>
  
 
@@ -161,10 +140,10 @@ $(".schliessen").click(function(e){
 {% block header_inbody_step14 %}
 	<div class="step14bg">
 		<div class="container_12">
-			<div class="grid_3"><a href="#"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
+			<div class="grid_3"><a href="http://151.236.216.105/"><span>1</span> <p>Dach ausw&auml;hlen</p></a></div>
 			<div class="grid_3 {% block calc_02_step2_active%}{% endblock%}"><a href="http://151.236.216.105/panel/"><span>2</span> <p>Details eingeben</p></a></div>
 			<div class="grid_3 {% block calc_02_step3_active%}{% endblock%}"><a href="http://151.236.216.105/results/"><span>3</span> <p>Potential berechnen</p></a></div>
-			<div class="grid_3 {% block calc_02_step4_active%}{% endblock%}"><a href="#"><span>4</span> <p>Anbieter vergleichen</p></a></div>
+			<div class="grid_3 {% block calc_02_step4_active%}{% endblock%}"><a href="http://151.236.216.105/compare/"><span>4</span> <p>Anbieter vergleichen</p></a></div>
 		</div>
 	</div>
 {% endblock %}
