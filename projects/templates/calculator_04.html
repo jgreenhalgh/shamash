@@ -79,6 +79,25 @@ $(document).ready(function() {
 		
     });	
 
+	// PROMPT BOX fix of the offer
+	
+	$("p.offertenbutton").click(function(e){
+	// es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+	var gettheclasses=$(this).attr("class").split(' ');
+	$("#"+gettheclasses[1]).lightbox_me({
+		centered: true,
+		onLoad: function() {
+			$(".inner").find('input:first').focus()
+		},
+	});
+e.preventDefault();
+});
+
+// SCHLIESSEN-Button in der Box
+$(".schliessen").click(function(e){	
+	$(this).trigger('close');
+});
+	
 });
 </script>
 {% endblock %}
@@ -119,7 +138,7 @@ $(document).ready(function() {
 			<a href="#"><li data="a" class="s4ListSelect">Sort by A</li></a>
 			<a href="#"><li data="b" class="s4ListSelect ">Sort by B</li></a>
 			<a href="#"><li data="c" class="s4ListSelect ">Sort by C</li></a>
-			<a href="#"><li data="c" class="s4ListSelect ">Sort by C</li></a>
+			<a href="#"><li data="d" class="s4ListSelect ">Sort by D</li></a>
 		</ul>
 	</div>
 	
