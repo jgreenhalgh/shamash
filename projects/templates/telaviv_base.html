@@ -66,14 +66,48 @@ $(function()
 });
 </script>
 
-<!-- Dimmer Function User Backend with .lightbox_me() -->
+<!-- Popup Login-Function -->
 <script type="text/javascript" id="sourcecode">
-
+$(document).ready(function() {
+ 
+        var registerBox=window.location.hash;
+        if (registerBox == "#register") {
+			// show loginbox
+			// alert("du bist drin");
+			
+			
+			$(".prompt_box_login").lightbox_me({
+				centered: true,
+				onLoad: function() {
+			$(".inner").find('input:first').focus()
+			},
+			});	
+		}
+});
 </script>
 
 {% block header_inhead %} <!-- Optional Header --> {% endblock %}
 </head>
 <body>
+
+<!-- Register Box -->
+<div class="prompt_box_login">
+	<a href="#"><span class="schliessen"> SCHLIESSEN </span></a>
+	<h2>Registrieren Sie sich jetzt kostenlos</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse eget imperdiet dolor. 
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse eget imperdiet dolor.  <span style="color:red">Loginbox im Hintergrund</span>
+			<form action={{request.get_full_path}} method="post">
+				{% csrf_token %}
+				<label><span>Email:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="Registrieren" name="loginlogour" class="buttoncener"/> 
+			</form>
+	</p>
+</div>
+
 {% block sidebar %}
 <div id="sidebar">
 	<div class="sidebartop">
