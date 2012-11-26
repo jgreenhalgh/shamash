@@ -1,0 +1,6 @@
+request.session["my_effective_are"] = effective_area
+request.session["my_tilt"] = tilt
+request.session["my_orientation"] = orientation
+request.session["my_rooftype"] = rooftype
+request.session["my_roof_heading"] = roof_heading
+request.session["my_coordinates"] = coordinates
