@@ -87,12 +87,9 @@
 
 <script src="{{STATIC_URL}}/js/jquery.selectboxdslick.min.js"></script>
 <script type="text/javascript" id="sourcecode">
-$(document).ready(function(){ // toggle the warnnachrichtbox STEP 2
+$(document).ready(function(){ 
 	
-	$(".closetoggle").click(function(){
-		$(".steps_warnnachricht").slideToggle("fast");
-	});
-	
+
 	// DROPDOWN SELECT BOX im STEP 2
 	
 	$('#rooftype-select').ddslick({
@@ -118,6 +115,11 @@ $(document).ready(function(){ // toggle the warnnachrichtbox STEP 2
 		imagePosition: "left",			
 		showSelectedHTML: false,
 	});
+	
+	$(".closetoggle").click(function(){
+		$(".steps_warnnachricht").slideToggle("fast");
+	});
+	
 });
 </script>
 
@@ -174,10 +176,10 @@ $(document).ready(function(){ // toggle the warnnachrichtbox STEP 2
 			
 				<select name="rooftype" id="rooftype-select">
 					
-					<option value="Satteldach" data-imagesrc="http://151.236.216.105:8080/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
-					<option value="Zeltdach" data-imagesrc="http://151.236.216.105:8080/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
-					<option value="Walmdach" data-imagesrc="http://151.236.216.105:8080/img/haus3_32.png" data-description="Kleine Beschreibung">Walmdach</option>
-					<option value="Flachdach" data-imagesrc="http://151.236.216.105:8080/img/haus4_32.png" data-description="Kleine Beschreibung">Flachdach</option>
+					<option value="Satteldach" data-imagesrc={{STATIC_URL}}/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
+					<option value="Zeltdach" data-imagesrc="{{STATIC_URL}}/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
+					<option value="Walmdach" data-imagesrc="{{STATIC_URL}}/img/haus3_32.png" data-description="Kleine Beschreibung">Walmdach</option>
+					<option value="Flachdach" data-imagesrc="{{STATIC_URL}}/img/haus4_32.png" data-description="Kleine Beschreibung">Flachdach</option>
 					<option value="Weitere Optionen">Weitere D&auml;cher</option>
 				</select>
 
@@ -188,10 +190,10 @@ $(document).ready(function(){ // toggle the warnnachrichtbox STEP 2
 
 				
 				<select name="tilt" id="tilt-select">
-					<option value="0" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle0_32.png" >0&deg;</option>
-					<option value="25" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle25_32.png" >25&deg;</option>
-					<option value="35" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle35_32.png" >35&deg;</option>
-					<option value="45" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle45_32.png" >45&deg;</option>
+					<option value="0" data-imagesrc="{{STATIC_URL}}/img/angle0_32.png" >0&deg;</option>
+					<option value="25" data-imagesrc="{{STATIC_URL}}/img/angle25_32.png" >25&deg;</option>
+					<option value="35" data-imagesrc="{{STATIC_URL}}/img/angle35_32.png" >35&deg;</option>
+					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
 				</select>
 		</div>
 		
