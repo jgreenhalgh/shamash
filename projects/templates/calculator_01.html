@@ -14,6 +14,16 @@
 				Herzlich Willkommen zur Demoversion. Lorem ipsum dolor sit amet. Testnachricht hier: <span style="font-weight:bold;">{{message}}</span>
 				
 				</p>
+				
+				<p>
+				liste my_list erstellen mit "a" "b" "cc"
+				{% make_list "a" "b" "cc" as my_list %}
+				checken if a is in my_list
+				{% if "a" in my_list %}
+					yes a is in my_list
+				{% endif %}
+				
+				</p>
 			</div>
 			<div class="grid_6">
 			<form action="/panel/" method="post">
