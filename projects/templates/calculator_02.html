@@ -166,7 +166,7 @@ $(document).ready(function(){
 	<div class="container_12">
 		<div class="grid_3 informationstep2">
 			<img width="63" height="59" class="showDachhere" src="" />
-			<input type="text" value="Schwamendingenstrasse 88" class="strasseinput" ><input class="smallsubmit" type="submit" value="">	
+			<input type="text" value="{{ selected_address }}" class="strasseinput" ><input class="smallsubmit" type="submit" value="">	
 		</div>
 		<div class="grid_3 step2_2">
 		
@@ -176,7 +176,7 @@ $(document).ready(function(){
 			
 				<select name="rooftype" id="rooftype-select">
 					
-					<option value="Satteldach" data-imagesrc={{STATIC_URL}}/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
+					<option value="Satteldach" data-imagesrc="{{STATIC_URL}}/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
 					<option value="Zeltdach" data-imagesrc="{{STATIC_URL}}/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
 					<option value="Walmdach" data-imagesrc="{{STATIC_URL}}/img/haus3_32.png" data-description="Kleine Beschreibung">Walmdach</option>
 					<option value="Flachdach" data-imagesrc="{{STATIC_URL}}/img/haus4_32.png" data-description="Kleine Beschreibung">Flachdach</option>
@@ -205,6 +205,11 @@ $(document).ready(function(){
 	
 	<div class="clear"></div>
 	<div class="container_12">
+		<div clas="grid_12">
+			<!-- <p class="zahluebersicht"><span>Dachfl&auml;che w&auml;hlen:</span></p> -->
+			<p class="step2p" style="width:100%; text-align:center;">Navigieren Sie zu Ihrem Haus und w&auml;hlen Sie Ihre Dachfl&auml;che aus. Hier kommt eine anderer Erkl&auml;rungstext. Dies wurde ganz schnell erfasst.</p>
+		</div>
+		<div class="clear"></div>
 		<div class="grid_12" style="height:430px; width:940px; background-color:#9CA7AC;" id="niko"> </div>	
 	</div>
 	<div class="clear"></div>
