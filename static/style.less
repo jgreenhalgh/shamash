@@ -36,6 +36,7 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+
 .groupthis:before, .groupthis:after {
 	content: "\0020";
 	display: block;
@@ -68,6 +69,11 @@ textarea:focus, input:focus{
 
 @green1: #39b54a;
 @green2: #197b30;
+
+@red1: #F8EBE0;			// Fuer die Warnnachricht
+@red2: #F8EBE1;
+@red3: #D5C3B4;			// Border Bottom
+@red4: #B97843;			// Text Farbe
 
 .WTF {
 	border-color: #ff8463;
@@ -1695,9 +1701,101 @@ body {
 
 
 
+/*------------ WARNNACHRICHT ------------*/
 
+.steps_warnnachricht {
+	background-color: @red1;
+	.gradient(@red1, @red2, @red1);
+	border-top: solid 1px #fff;
+	border-bottom: solid 1px @red3;
+	padding-bottom:10px;
+	
+	a, a:hover {
+		color: @red4;
+	}
+	
+	.button_effect {
+		font-size: 12px;
+		padding-top:5px;
+		padding-bottom:5px;
+		margin-top:5px;
+		margin-bottom:5px;
+	
+	}
+	
+	.close_button {
+		float:right;
+		.button_effect;
+	}
+	
+	.back_button {
+		.button_effect;
+	}
+	
+	.kleinertitel {
+		font-size: 14px;
+		font-weight:bold;
+		color:@red4;
+		color: #69412C;
+		padding-bottom:5px;
+		
+	}
+	.kleinertext {
+		color:#AD7354;
+		font-size:12px;
+		line-height:18px;
+	}
+	
+	label {
+		.kleinertext;
+	}
+	
+	.warnnacheingabe {
+		background-color:#FFF8F3;
+		.kleinertext;
+		padding:3px;
+		paddin-left:7px;
+		padding-right:7px;
+		margin-left:5px;
+		.rounded(3px);
+		border: solid 1px @red3;
+	}
+	
+	.warnsubmit {
+		.warnnacheingabe;
+		margin:0px;
+		margin-left:5px;
+		padding-left:7px;
+		padding-right:7px;
+		
+	}
+	
+	.smallbutton {
+		
+		.warnnacheingabe;
+		.opacity(0.5);
+		padding:2px;
+		margin:0px;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	
+	.smallbutton:hover {
 
-
+		.opacity(0.9);
+		.transition-duration(0.3s);			
+	}
+	
+	.buttonhover {
+	
+	}
+	.buttonhover:hover {
+		background-color:@red4;
+	}
+	
+	
+	
+}
 
 
 
