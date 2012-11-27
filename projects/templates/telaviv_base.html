@@ -87,9 +87,46 @@ $(document).ready(function() {
 </script>
 
 <script>
-    $(document).ready(function(){
 
-    $("#registration_form").validate;
+
+$.validator.setDefaults({
+	submitHandler: function() { alert("submitted!"); }
+});
+
+$().ready(function() {
+	// validate the comment form when it is submitted
+	$("#commentForm").validate();
+
+	// validate signup form on keyup and submit
+	$("#signupForm").validate({
+		rules: {
+
+			password_registration: {
+				required: true,
+				minlength: 5
+			},
+			password_confirmation: {
+				required: true,
+				minlength: 5,
+				equalTo: "#password"
+			},
+	
+		},
+		messages: {
+
+			password_registration: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long"
+			},
+			password_confirmation: {
+				required: "Please provide a password",
+				minlength: "Your password must be at least 5 characters long",
+				equalTo: "Please enter the same password as above"
+			},
+
+		}
+	});
+
 
 });
 
@@ -112,8 +149,8 @@ $(document).ready(function() {
 			<form action={{request.get_full_path}} method="post" id="registration_form">
 				{% csrf_token %}
 				<label><span>Email:</span></label><input type="text" name="registration_email" id="registration_email" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
-				<label><span>Passwort:</span></label><input type="password" name="registration_password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
-				<label><span>Passwort:</span></label><input type="password" name="confirmation_password" id="confirmation_password" onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span>Passwort:</span></label><input type="password" name="password_registration" id="password_registration"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span>Passwort:</span></label><input type="password" name="password_confirmation" id="password_confirmation" onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
                 <input type="hidden" name="registration" value="registration">
 				<label><span> </span> </label><input type="submit" value="Registrieren" name="loginlogour" class="buttoncener"/> 
 			</form>
