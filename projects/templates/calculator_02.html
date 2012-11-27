@@ -99,10 +99,9 @@
 		<div class="grid_8">
 			<p class="kleinertitel" style="margin-top:20px;">Es wurde kein Dach gefunden.</p>
 			<p class="kleinertext">Sie k&ouml;nnen auch ohne Dach. Hier sollte ein guter Text hinkommen, der kurz ist aber erkl&auml;, was man machen kann. Zum Beispiel kann man auch nochmals suchen.
-			<br /> 1: {{selected_address}}
-			<br /> 1if: {% if selected_address %} hierif {% endif %}
-			<br /> 2yesno: {{ selected_address|yesno:'String for true,String for false' }}
-			<br /> 2: {{request.session.my_street}}
+		
+			<br /> 1if: {% if selected_address == "Ihre Wohnadresse " %} Hier kommt Ihre Wohnadresse {% else %} test {% endif %}
+
 			
 			</p>
 			
