@@ -120,7 +120,7 @@
 <form action="/results/" method="post" class="postforresults">	
 {% csrf_token %}
 <div class="bigoverview">
-	<div class="container_12" id="contentbereich" style="height:800px;">
+	<div class="container_12" id="contentbereich" style="height:400px;">
 		<div class="grid_4">
 				Info
 		</div>
@@ -144,6 +144,21 @@
 		</div>
 	</div>
 </div>
+
+
+	<div class="grid_12" style="height:500px; width:940px;" id="niko"> </div>	
+
+			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> </div>
+
+</div>
+
+<!-- Fehlermeldung Box with new Lightbox -->
+<div class="fehlermeldungbox" style="width:200px, height:200px, text-align:center, font-size:13px, padding-top:50px, background-color:#fff; display:none;">
+	Fehlermeldung, kein Polygon ausgew&auml;lt.
+</div>
+</form>
+{% endblock %}
+
 	<!-- Suchresultate fuer 
 	<div id="suchresultatfuer">
 		<h2>Wir haben die berechent f&uuml;r <input type="text" class="step2_input_strasse" value="{{selected_address}}"></input> berechnet:</h2>
@@ -193,23 +208,3 @@
 		</div>
 	</div>
 	-->
-
-	<div class="grid_12" style="height:500px; width:940px;" id="niko"> </div>	
-
-	
-		
-	   
-			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Weiter" class="navi button_step2_weiter" /> </div>
-		
-	
-
-</div>
-
-<!-- Fehlermeldung Box with new Lightbox -->
-<div class="fehlermeldungbox" style="width:200px, height:200px, text-align:center, font-size:13px, padding-top:50px, background-color:#fff; display:none;">
-	Fehlermeldung, kein Polygon ausgew&auml;lt.
-</div>
-
-
-</form>
-{% endblock %}
