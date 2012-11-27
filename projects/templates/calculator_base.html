@@ -23,22 +23,6 @@
 <!-- CSS Master Stylesheet -->
 <link rel='stylesheet' href="{{STATIC_URL}}/style.css"/>
 
-<!-- Dimmer Funtion OLD CAN BE DELETED AFTER 30 NOV!! Kirill -->
-<script type="text/javascript" id="sourcecode">
-/* $(document).ready(function(){
-    $("#shadowbg").css("height", $(document).height()).hide();
-	
-	$(".clickshadow").click(function(){
-		$("#shadowbg").toggle();
-	});
-
-	$(".prompt_box").not("#shadowbg").click(function(){
-		stopPropagation();
-		$("#shadowbg").toggle();
-	});
-});*/
-</script>
-
 <!-- Dimmer Function NEW mit Plugin -->
 <script type="text/javascript" id="sourcecode">
 $(document).ready(function(){
@@ -71,6 +55,12 @@ e.preventDefault();
 $(".schliessen").click(function(e){	
 	$(this).trigger('close');
 });
+
+// toggle the warnnachrichtbox in den STEPS
+
+	$(".closetoggle").click(function(){
+		$(".steps_warnnachricht").slideToggle("fast");
+	});
 
 });
 </script>
@@ -138,6 +128,9 @@ $(".schliessen").click(function(e){
 		</div>
 	</div>
 {% endblock %}
+
+{% block warnnachricht %}
+{% endblock %}	
 
 {% block content %}
 {% endblock %}	
