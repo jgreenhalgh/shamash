@@ -91,11 +91,11 @@ $(document).ready(function() {
     $("#registration_form").validate({
     rules: {
 
-        password: {
+        registration_password: {
             required: true,
             minlength: 5
         },
-        confirm_password: {
+        confirmation_password: {
             required: true,
             minlength: 5,
             equalTo: "#password"
@@ -104,11 +104,11 @@ $(document).ready(function() {
     },
     messages: {
 
-        password: {
+        registration_password: {
             required: "Please provide a password",
             minlength: "Your password must be at least 5 characters long"
         },
-        confirm_password: {
+        confirmation_password: {
             required: "Please provide a password",
             minlength: "Your password must be at least 5 characters long",
             equalTo: "Please enter the same password as above"
@@ -135,9 +135,9 @@ $(document).ready(function() {
 
 			<form action={{request.get_full_path}} method="post" id="registration_form">
 				{% csrf_token %}
-				<label><span>Email:</span></label><input type="text" name="registration_email" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Email:</span></label><input type="text" name="registration_email" id="registration_email" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
 				<label><span>Passwort:</span></label><input type="password" name="registration_password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
-				<label><span>Passwort:</span></label><input type="password" name="registration_password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span>Passwort:</span></label><input type="password" name="confirmation_password" id="confirmation_password" onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
                 <input type="hidden" name="registration" value="registration">
 				<label><span> </span> </label><input type="submit" value="Registrieren" name="loginlogour" class="buttoncener"/> 
 			</form>
