@@ -87,34 +87,10 @@ $(document).ready(function() {
 </script>
 
 <script>
+    $(document).ready(function(){
 
-    $("#registration_form").validate({
-    rules: {
+    $("#registration_form").validate;
 
-        registration_password: {
-            required: true,
-            minlength: 5
-        },
-        confirmation_password: {
-            required: true,
-            minlength: 5,
-            equalTo: "#password"
-        },
-
-    },
-    messages: {
-
-        registration_password: {
-            required: "Please provide a password",
-            minlength: "Your password must be at least 5 characters long"
-        },
-        confirmation_password: {
-            required: "Please provide a password",
-            minlength: "Your password must be at least 5 characters long",
-            equalTo: "Please enter the same password as above"
-        },
-
-    }
 });
 
 </script>
