@@ -94,11 +94,10 @@ $.validator.setDefaults({
 });
 
 $().ready(function() {
-	// validate the comment form when it is submitted
-	$("#commentForm").validate();
+
 
 	// validate signup form on keyup and submit
-	$("#signupForm").validate({
+	$("#registration_form").validate({
 		rules: {
 
 			password_registration: {
@@ -108,7 +107,7 @@ $().ready(function() {
 			password_confirmation: {
 				required: true,
 				minlength: 5,
-				equalTo: "#password"
+				equalTo: "#password_registration"
 			},
 	
 		},
