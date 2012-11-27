@@ -93,13 +93,15 @@
 
 {% block warnnachricht %}
 
+	{% expr ["Ihre Wohnadresse",2,3] as warnlist %}
+	
 		<div class="steps_warnnachricht">
 		<div class="container_16">
 		<!-- <div class="grid_16"><!-- <a class="smallbutton" href="#">Zur&uuml;ck zur Startseite</a></p> </div>--> 
 		<div class="grid_8">
 			<p class="kleinertitel" style="margin-top:20px;">Es wurde kein Dach gefunden.</p>
 			<p class="kleinertext">Sie k&ouml;nnen auch ohne Dach. Hier sollte ein guter Text hinkommen, der kurz ist aber erkl&auml;, was man machen kann. Zum Beispiel kann man auch nochmals suchen.
-		
+			<br /> {{selected_address}}
 			<br /> 1if: {% if selected_address == "Ihre Wohnadresse" %} Hier kommt Ihre Wohnadresse {% else %} test {% endif %}
 
 			
