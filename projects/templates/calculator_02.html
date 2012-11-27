@@ -85,10 +85,45 @@
 	});	
 	</script>
 
-<title>Schritt 2, Details eingeben</title>
-<!-- <link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/> -->
+<script src="{{STATIC_URL}}/js/jquery.selectboxdslick.min.js"></script>
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){ // toggle the warnnachrichtbox STEP 2
+	
+	$(".closetoggle").click(function(){
+		$(".steps_warnnachricht").slideToggle("fast");
+	});
+	
+	// DROPDOWN SELECT BOX im STEP 2
+	
+	$('#rooftype-select').ddslick({
+		width: 220,
+		imagePosition: "left",			
+		showSelectedHTML: false,
+		onSelected: function(data) {
+			// show the right house, when selected select the ImageSrc with data.selectedData.imageSrc
+			showImgurl = data.selectedData.imageSrc.slice(0,-7)+".png";
+			$(".showDachhere").attr("src", showImgurl);
+			
+			// get the Name and do something, if its a Flachdach
+			workingValue = data.selectedData.value;
+			if(workingValue == "Flachdach") {
+				$('#tilt-select').ddslick('select', {index: "0" });
+			}
+			
+		}
+	});
 
-<!-- <script src="{{STATIC_URL}}/toggle.js" type="text/javascript"></script> -->
+	$('#tilt-select').ddslick({
+		width: 220,
+		imagePosition: "left",			
+		showSelectedHTML: false,
+	});
+});
+</script>
+
+	
+<title>Schritt 2, Details eingeben</title>
+
 {% endblock %}
 
 {% block warnnachricht %}
@@ -125,38 +160,65 @@
 
 <form action="/results/" method="post" class="postforresults">	
 {% csrf_token %}
-<div class="bigoverview">
-	<div class="container_12" id="contentbereich" style="height:170px;">
-		<div class="grid_4">
-				Info
+<div class="bigoverview_step2">
+	<div class="container_12">
+		<div class="grid_3 informationstep2">
+			<img width="63" height="59" class="showDachhere" src="" />
+			<input type="text" value="Schwamendingenstrasse 88" class="strasseinput" ><input class="smallsubmit" type="submit" value="">	
 		</div>
-		<div class="grid_4">
-				<select name="tilt">
-					<option value="10">10 &deg;</option>
-					<option value="20">20</option>&deg;
-					<option value="30">30</option>&deg;
-					<option value="40">40</option>&deg;
-					<option value="50">50</option>&deg;
-				</select>				
+		<div class="grid_3 step2_2">
+		
+		
+		
+			<p class="zahluebersicht"><span>Dachtyp w&auml;hlen:</span></p>
+			
+				<select name="rooftype" id="rooftype-select">
+					
+					<option value="Satteldach" data-imagesrc="http://151.236.216.105:8080/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
+					<option value="Zeltdach" data-imagesrc="http://151.236.216.105:8080/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
+					<option value="Walmdach" data-imagesrc="http://151.236.216.105:8080/img/haus3_32.png" data-description="Kleine Beschreibung">Walmdach</option>
+					<option value="Flachdach" data-imagesrc="http://151.236.216.105:8080/img/haus4_32.png" data-description="Kleine Beschreibung">Flachdach</option>
+					<option value="Weitere Optionen">Weitere D&auml;cher</option>
+				</select>
+
 		</div>
-		<div class="grid_4">
-				<select name="tilt">
-					<option value="10">10 &deg;</option>
-					<option value="20">20</option>&deg;
-					<option value="30">30</option>&deg;
-					<option value="40">40</option>&deg;
-					<option value="50">50</option>&deg;
+		<div class="grid_3">
+		
+			<p class="zahluebersicht"><span>Dachneigung w&auml;hlen:</span></p>
+
+				
+				<select name="tilt" id="tilt-select">
+					<option value="0" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle0_32.png" >0&deg;</option>
+					<option value="25" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle25_32.png" >25&deg;</option>
+					<option value="35" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle35_32.png" >35&deg;</option>
+					<option value="45" data-imagesrc="C:\Users\Thomas\Documents\GitHub\shamash\static\img\angle45_32.png" >45&deg;</option>
 				</select>
 		</div>
+		
+		
+		<div class="grid_3">
+				<div id="geoData"><input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton biggreenstep2movetop" /> </div>
+		</div>
 	</div>
+	
+	<div class="clear"></div>
+	<div class="container_12">
+		<div class="grid_12" style="height:430px; width:940px; background-color:#9CA7AC;" id="niko"> </div>	
+	</div>
+	<div class="clear"></div>
+	<br />	
+
+</div>
 
 
 	<div class="container_12">
-	<div class="grid_12" style="height:430px; width:940px;" id="niko"> </div>	
-			<div   id="geoData" style="float:right;"> <br /> <input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton" /> </div>
+			<div class="grid_8"><p class="step2p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dignissim arcu ac nisl ornare molestie. Suspendisse potenti. Maecenas sodales mi a enim iaculis eu rhoncus enim sollicitudin.</p></div>
+			<div class="grid_4"   id="geoData"><input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton biggreenstep2move" /> </div>
+			<div class="clear"></div>
+			
 	</div>
 
-</div>
+
 </form>
 {% endblock %}
 
