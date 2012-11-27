@@ -198,8 +198,6 @@ input[type="radio"]:checked+label{border-radius:3px;-moz-border-radius:3px;-webk
 .step2_dach3{background-image:url("img/haus3.png");}
 .step2_dach4{background-image:url("img/haus4.png");}
 .step2_select{padding:3px;margin:auto;padding-right:27px;font-size:20px;margin-top:20px;-webkit-border-radius:34px;-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 3px 0 #cccccc,0 -1px #ffffff inset;-moz-box-shadow:0 3px 0 #cccccc,0 -1px #ffffff inset;box-shadow:0 3px 0 #cccccc,0 -1px #ffffff inset;background:#fff;color:#888;border:none;outline:none;display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;cursor:pointer;background-image:url("dropdownselect.png");background-repeat:no-repeat;background-position:right center;}
-.button_step2_weiter{color:#ffffff;font-size:17px;padding:8px;padding-right:14px;padding-left:14px;text-decoration:none;-webkit-border-radius:3px;border-radius:3px;text-shadow:1px 1px 3px #292929;background:#1d8d72;clear:both;}
-.button_step2_weiter:hover{background:-webkit-gradient(linear, 0 0, 0 100%, from(#1d8d72), to(#145f4d));background:-moz-linear-gradient(top, #1d8d72, #145f4d);-webkit-box-shadow:0px 0px 3px #50c928;-moz-box-shadow:0px 0px 3px #50c928;box-shadow:0px 0px 3px #50c928;}
 .button_step2_reset{color:#ffffff;font-size:17px;font-size:14px;padding:8px;padding-right:14px;padding-left:14px;text-decoration:none;-webkit-border-radius:3px;border-radius:3px;text-shadow:1px 1px 3px #292929;background:#d76666;}
 .button_step2_reset:hover{background:-webkit-gradient(linear, 0 0, 0 100%, from(#d72d20), to(#9f322a));background:-moz-linear-gradient(top, #d72d20, #9f322a);}
 div#niko{width:938px;height:430px;}
