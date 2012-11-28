@@ -41,10 +41,10 @@ $(function(){
 			if(null==creator.showData()){
 				
 				//stop the form from executing
-				$(".postforresults").click(function(e) {
-					 e.preventDefault();
-				});	
-				
+				$('form').submit(function(e) {
+					alert('submit clicked');
+					e.preventDefault();
+				});
 
 				$(".fehlermeldungbox").lightbox_me({
 					centered: true
@@ -53,15 +53,10 @@ $(function(){
 			   
 				//alert("no data given")';
 				//alert("you forgot to mark roof");
-				
-				 //reset
-				$('#reset').click(function(){ 
-					creator.destroy();
-					creator=null;
-					creator=new PolygonCreator(map);
-				});
-				
+
 			}else{
+			
+					
 					var LatLng = new Array();
 					var Dist = new Array();
 					var Head = new Array();
@@ -82,10 +77,11 @@ $(function(){
 					$('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
 
 					//alert(address );
-						$(".postforresults").click(function() {
+					
+					$('form').submit(function() {
+						alert('sollte weiter');
 						return true;
-						});	
-				
+					});
 			}
 	 });
 	})
