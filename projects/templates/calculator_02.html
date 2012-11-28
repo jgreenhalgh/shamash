@@ -100,7 +100,9 @@ $(document).ready(function(){
 			// show the right house, when selected select the ImageSrc with data.selectedData.imageSrc
 			showImgurl = data.selectedData.imageSrc.slice(0,-7)+".png";
 			$(".showDachhere").attr("src", showImgurl);
-			
+			// show the house name in the value of the field
+			showinField = data.selectedData.value;
+			$(".rooftypevalue").attr("value", showinField);
 			// get the Name and do something, if its a Flachdach
 			workingValue = data.selectedData.value;
 			if(workingValue == "Flachdach") {
@@ -196,8 +198,8 @@ $(document).ready(function(){
 					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
 				</select>
 				
-				<input type="text" name="tilt" value="10"  />10
-				<input type="text" name="rooftype" value="Satteldach"  />Satteldach
+				<input class="tiltvalue" type="text" name="tilt" value="10"  />10
+				<input class="rooftypevalue" type="text" name="rooftype" value="Satteldach"  />Satteldach
 		</div>
 		
 		
