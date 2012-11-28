@@ -174,7 +174,7 @@ $(document).ready(function(){
 		
 			<p class="zahluebersicht"><span>Dachtyp w&auml;hlen:</span></p>
 			
-				<select name="rooftype" id="rooftype-select">
+				<select name="rooftype_select" id="rooftype-select">
 					
 					<option value="Satteldach" data-imagesrc="{{STATIC_URL}}/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
 					<option value="Zeltdach" data-imagesrc="{{STATIC_URL}}/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
@@ -189,12 +189,15 @@ $(document).ready(function(){
 			<p class="zahluebersicht"><span>Dachneigung w&auml;hlen:</span></p>
 
 				
-				<select name="tilt" id="tilt-select">
+				<select name="tilt_select" id="tilt-select">
 					<option value="0" data-imagesrc="{{STATIC_URL}}/img/angle0_32.png" >0&deg;</option>
 					<option value="25" data-imagesrc="{{STATIC_URL}}/img/angle25_32.png" >25&deg;</option>
 					<option value="35" data-imagesrc="{{STATIC_URL}}/img/angle35_32.png" >35&deg;</option>
 					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
 				</select>
+				
+				<input type="text" value="10" name="tilt" />10
+				<input type="text" value="Satteldach" name="rooftype" />Satteldach
 		</div>
 		
 		
