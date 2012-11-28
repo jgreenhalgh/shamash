@@ -156,7 +156,7 @@ $(document).ready(function(){
 {% block content %}
 
 <!-- Fehlermeldung Box with new Lightbox -->
-<div class="fehlermeldungbox" style="width:200px, height:200px, text-align:center, font-size:13px, padding-top:50px, background-color:#fff; display:none;">
+<div class="fehlermeldungbox" style="width:200px; height:200px; text-align:center; font-size:13px; padding-top:50px; background-color:#fff; display:none;">
 	Fehlermeldung, kein Polygon ausgew&auml;lt.
 </div>
 
@@ -196,8 +196,8 @@ $(document).ready(function(){
 					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
 				</select>
 				
-				<input type="text" value="10" name="tilt" />10
-				<input type="text" value="Satteldach" name="rooftype" />Satteldach
+				<input type="text" name="tilt" value="10"  />10
+				<input type="text" name="rooftype" value="Satteldach"  />Satteldach
 		</div>
 		
 		
