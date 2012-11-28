@@ -43,14 +43,7 @@
 						return false;
 					});	
 					
-					/* WITH OLD TOGGLE BOX 
-					// open the toggle
-					$("#shadowbg").toggle();
-					
-					// change the content of the prompt box
-	                $(".prompt_box").html("test");
-					*/
-					
+
 					$(".fehlermeldungbox").lightbox_me({
 						centered: true
 					});
@@ -79,7 +72,10 @@
                         $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
 
                         //alert(address );
+							$(".postforresults").click(function(event) {
 						return true;
+					});	
+					
 		 		}
 		 });
 		})
