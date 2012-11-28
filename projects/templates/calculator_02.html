@@ -116,6 +116,11 @@ $(document).ready(function(){
 		width: 220,
 		imagePosition: "left",			
 		showSelectedHTML: false,
+		onSelected: function(data) {
+			// show the house tilt in the value of the field
+			showinField = data.selectedData.value;
+			$(".tiltvalue").attr("value", showinField);		
+		}
 	});
 	
 	$(".closetoggle").click(function(){
@@ -198,8 +203,8 @@ $(document).ready(function(){
 					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
 				</select>
 				
-				<input class="tiltvalue" type="text" name="tilt" value="10"  />10
-				<input class="rooftypevalue" type="text" name="rooftype" value="Satteldach"  />Satteldach
+				<input class="tiltvalue" type="text" name="tilt" value="25"  /> (Hidden)<br/>
+				<input class="rooftypevalue" type="text" name="rooftype" value="Satteldach"  /> (Hidden)
 		</div>
 		
 		
