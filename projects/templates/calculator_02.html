@@ -10,7 +10,7 @@
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"></script>
 <script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
 <!-- this next bit is needed for json request ->zipcode -->
-
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>​
 <script type="text/javascript">
 
 $(function(){
@@ -34,7 +34,7 @@ $(function(){
 
     //getting zipcode
     geocoder.geocode({
-        'latLng': latlong
+        'latLng': point
         }, function(results, status) {
 
         if (status == google.maps.GeocoderStatus.OK) {
