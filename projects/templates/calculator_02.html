@@ -14,7 +14,7 @@ $(function(){
 	//this script is for loading the map at the correct coordinates and drawing the polygon on it
 	 var geocoder = new GClientGeocoder();
 	 var address = "{{selected_address}}";
-     $.getJSON("http://maps.google.com/maps/geo?q="+ address+"&key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"+"&sensor=false&output=json&callback=?",
+     $.getJSON("http://maps.google.com/maps/geo?q="+ address+"&key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"+"&sensor=false",
         function(data, textStatus){
         console.log(data);
      });
