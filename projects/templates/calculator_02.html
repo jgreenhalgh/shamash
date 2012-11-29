@@ -16,74 +16,83 @@ $(function(){
 	 var address = "{{selected_address}}";
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
-	 var latitude = point.y;
-	 var longitude = point.x;  
-	 var customer_location = new google.maps.LatLng(latitude, longitude);
-	 var myOptions = {
-		zoom: 20,
-		center: customer_location,
-		mapTypeId: google.maps.MapTypeId.HYBRID
-	  }
-	 map = new google.maps.Map(document.getElementById('niko'), myOptions);
-	 var creator = new PolygonCreator(map);
-	 var my_polygon = creator.pen.polygon;
-	 
-	 //reset
-	 $('#reset').click(function(){ 
-			creator.destroy();
-			creator=null;
-			creator=new PolygonCreator(map);
-	 });		 
+	     var latitude = point.y;
+	     var longitude = point.x;  
+	     var customer_location = new google.maps.LatLng(latitude, longitude);
+	     var myOptions = {
+		    zoom: 20,
+		    center: customer_location,
+		    mapTypeId: google.maps.MapTypeId.HYBRID
+	      }
+	     map = new google.maps.Map(document.getElementById('niko'), myOptions);
+	     var creator = new PolygonCreator(map);
+	     var my_polygon = creator.pen.polygon;
+	     
+	     //reset
+	     $('#reset').click(function(){ 
+			    creator.destroy();
+			    creator=null;
+			    creator=new PolygonCreator(map);
+	     });		 
 	
-	//get data to transfer to server
-	$('#sendData').click(function(){ 
-			$('#dataPanel').empty();
-			if(null==creator.showData()){
+	    //get data to transfer to server
+	    $('#sendData').click(function(){ 
+			    $('#dataPanel').empty();
+			    if(null==creator.showData()){
 				
-				//stop the form from executing
-				$('form').submit(function(e) {
-					alert('submit clicked');
-					e.preventDefault();
-				});
+				    //stop the form from executing
+				    $('form').submit(function(e) {
+					    alert('submit clicked');
+					    e.preventDefault();
+				    });
 
-				$(".fehlermeldungbox").lightbox_me({
-					centered: true
-				});
-				//alert("no data given")';
-				//alert("you forgot to mark roof");
+				    $(".fehlermeldungbox").lightbox_me({
+					    centered: true
+				    });
+				    //alert("no data given")';
+				    //alert("you forgot to mark roof");
 
-			}else{
+			    }else{
 			
 					
-					var LatLng = new Array();
-					var Dist = new Array();
-					var Head = new Array();
-					var coordinates = creator.showData().match(/[0-9.]+/g);
-					for(var i=0; i <(coordinates.length)/2; i++)
-					{
-						LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
-						if (i>0)
-						{
-							Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(LatLng[i-1],LatLng[i]);
-							Head[i-1]= google.maps.geometry.spherical.computeHeading(LatLng[i-1],LatLng[i]);
-						}
-					}
-					var area = google.maps.geometry.spherical.computeArea(LatLng);
-					$('#geoData').append('<input type="hidden" name="coordinates" value="' +coordinates+'">');                    
-					$('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
-					$('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
-					$('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
+					    var LatLng = new Array();
+					    var Dist = new Array();
+					    var Head = new Array();
+					    var coordinates = creator.showData().match(/[0-9.]+/g);
+					    for(var i=0; i <(coordinates.length)/2; i++)
+					    {
+						    LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
+						    if (i>0)
+						    {
+							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(LatLng[i-1],LatLng[i]);
+							    Head[i-1]= google.maps.geometry.spherical.computeHeading(LatLng[i-1],LatLng[i]);
+						    }
+					    }
+					    var area = google.maps.geometry.spherical.computeArea(LatLng);
+					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +coordinates+'">');                    
+					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
+					    $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
+					    $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
 
-					//alert(address );
+					    //alert(address );
 					
-					$('form').submit(function() {
-						alert('sollte weiter');
-						//preventDefault false;
-						return true;
-					});
-			}
-	 });
-	})
+					    $('form').submit(function() {
+						    alert('sollte weiter');
+						    //preventDefault false;
+						    return true;
+					    });
+			    }
+	     });
+	    })
+
+        geocoder.geocode({
+            'latLng': point
+            }, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+             alert(results[0].formatted_address);
+            }
+});​
 });	
 </script>
 
