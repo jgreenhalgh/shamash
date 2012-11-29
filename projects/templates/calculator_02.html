@@ -9,18 +9,11 @@
 <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k" type="text/javascript"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"></script>
 <script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
-<!-- this next bit is needed for json request ->zipcode -->
-<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>​
 <script type="text/javascript">
-
 $(function(){
 	//this script is for loading the map at the correct coordinates and drawing the polygon on it
 	 var geocoder = new GClientGeocoder();
 	 var address = "{{selected_address}}";
-     //$.getJSON("http://maps.google.com/maps/geo?q="+ address+"&key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"+"&sensor=false&output=json&callback=?",
-       // function(data, textStatus){
-        //console.log(data);
-     });
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
 	 var latitude = point.y;
@@ -31,19 +24,6 @@ $(function(){
 		center: customer_location,
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	  }
-
-    //getting zipcode
-    geocoder.geocode({
-        'latLng': latlong
-        }, function(results, status) {
-
-        if (status == google.maps.GeocoderStatus.OK) {
-          alert(results[0].formatted_address);
-          }
-        });​
-
-
-    //filling map into division niko    
 	 map = new google.maps.Map(document.getElementById('niko'), myOptions);
 	 var creator = new PolygonCreator(map);
 	 var my_polygon = creator.pen.polygon;
