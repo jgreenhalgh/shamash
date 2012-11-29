@@ -17,10 +17,11 @@ $(function(){
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
 
-
+          var geocoder = new google.maps.Geocoder();
+          var latlong = new google.maps.LatLng("37.5097258429375","-122.27783203125");
 
           geocoder.geocode({
-            'latLng': point
+            'latLng': latlong
             }, function(results, status) {
 
              if (status == google.maps.GeocoderStatus.OK) {
