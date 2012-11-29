@@ -49,8 +49,6 @@ $(function(){
 				$(".fehlermeldungbox").lightbox_me({
 					centered: true
 				});
-				
-			   
 				//alert("no data given")';
 				//alert("you forgot to mark roof");
 
@@ -80,6 +78,7 @@ $(function(){
 					
 					$('form').submit(function() {
 						alert('sollte weiter');
+						preventDefault false;
 						return true;
 					});
 			}
