@@ -20,7 +20,7 @@ $(function(){
      //$.getJSON("http://maps.google.com/maps/geo?q="+ address+"&key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"+"&sensor=false&output=json&callback=?",
        // function(data, textStatus){
         //console.log(data);
-     //});
+     });
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
 	 var latitude = point.y;
@@ -34,7 +34,7 @@ $(function(){
 
     //getting zipcode
     geocoder.geocode({
-        'point': LatLng
+        'latLng': latlong
         }, function(results, status) {
 
         if (status == google.maps.GeocoderStatus.OK) {
