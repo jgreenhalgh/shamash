@@ -14,6 +14,10 @@ $(function(){
 	//this script is for loading the map at the correct coordinates and drawing the polygon on it
 	 var geocoder = new GClientGeocoder();
 	 var address = "{{selected_address}}";
+     $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=schweiz,+zurich+langstrasse+4&sensor=false', function(results){
+ 
+});
+     alert(results.address_components[0]);
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
 	 var latitude = point.y;
