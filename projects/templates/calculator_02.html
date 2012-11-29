@@ -16,6 +16,19 @@ $(function(){
 	 var address = "{{selected_address}}";
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
+
+
+
+          geocoder.geocode({
+            'latLng': point
+            }, function(results, status) {
+
+             if (status == google.maps.GeocoderStatus.OK) {
+                 alert(results[0].formatted_address);
+            }
+            });​
+
+
 	     var latitude = point.y;
 	     var longitude = point.x;  
 	     var customer_location = new google.maps.LatLng(latitude, longitude);
