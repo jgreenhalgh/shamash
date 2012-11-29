@@ -34,7 +34,7 @@ $(function(){
 
     //getting zipcode
     geocoder.geocode({
-        'latLng': point
+        'point': LatLng
         }, function(results, status) {
 
         if (status == google.maps.GeocoderStatus.OK) {
