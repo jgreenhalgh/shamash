@@ -86,7 +86,19 @@ $(function(){
 	    })
 });	
 </script>
+<script type="text/javascript">
+var geocoder = new google.maps.Geocoder();
+var latlong = new google.maps.LatLng("37.5097258429375","-122.27783203125");
 
+geocoder.geocode({
+    'latLng': latlong
+}, function(results, status) {
+
+    if (status == google.maps.GeocoderStatus.OK) {
+        alert(results[0].formatted_address);
+    }
+});​
+</script>
 <script src="{{STATIC_URL}}/js/jquery.selectboxdslick.min.js"></script>
 <script type="text/javascript" id="sourcecode">
 $(document).ready(function(){ 
