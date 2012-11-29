@@ -194,6 +194,7 @@ $(".schliessen").click(function(e){
 			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
 			<form method="post" action="/user/compare/#register" id="offerteabschicken">
             {% csrf_token %}
+            <input type="hidden" name="offerte_einholen" value="offerte_einholen">
 			<label class="eingabetext"> Name * <input type="text" name="name"  /> </label>
 			<label class="eingabetext"> Email * <input type="text" name="email" /> </label>
 			<label class="eingabetext"> Kommentar <textarea rows="3" cols="22"> </textarea> </label>
@@ -260,6 +261,7 @@ $(".schliessen").click(function(e){
 			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
 			<form method="post" action="/user/compare/#register" id="offerteabschicken">
             {% csrf_token %}
+            <input type="hidden" name="offerte_einholen" value="offerte_einholen">
 			<label class="eingabetext"> Name * <input type="text" name="name"  /> </label>
 			<label class="eingabetext"> Email * <input type="text" name="email" /> </label>
 			<label class="eingabetext"> Kommentar <textarea rows="3" cols="22"> </textarea> </label>
