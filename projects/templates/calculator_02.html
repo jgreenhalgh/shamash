@@ -19,6 +19,12 @@ $(function(){
 	 var latitude = point.y;
 	 var longitude = point.x;  
 	 var customer_location = new google.maps.LatLng(latitude, longitude);
+
+     //getting zipcode
+     var address = results[0].address_components;
+     var zipcode = address[address.length - 1].long_name;
+
+
 	 var myOptions = {
 		zoom: 20,
 		center: customer_location,
