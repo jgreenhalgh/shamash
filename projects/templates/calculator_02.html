@@ -21,8 +21,8 @@ $(function(){
 	 var customer_location = new google.maps.LatLng(latitude, longitude);
 
      //getting zipcode
-     var address = results[0].address_components;
-     var zipcode = address[address.length - 1].long_name;
+     var address_variable = results[0].address_components;
+     var zipcode = address_vairable[address_variable.length - 1].long_name;
 
 
 	 var myOptions = {
