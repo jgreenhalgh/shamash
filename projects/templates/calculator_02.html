@@ -39,6 +39,7 @@ $(document).ready(function(){
       alert("it got until geocode")
     geocoder.geocode({'latLng': latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
+        alert("geocode status ok");
         if (results[1]) {
           map.setZoom(11);
           marker = new google.maps.Marker({
