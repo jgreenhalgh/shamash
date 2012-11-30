@@ -134,7 +134,7 @@ $(function(){
 
     alert("got until start of variables definition");
 
-  function codeLatLng() 
+  function codeLatLng(point) 
     {
     geocoder = new google.maps.Geocoder();
     //var latlng = new google.maps.LatLng(40.730885,-73.997383);
@@ -160,7 +160,7 @@ $(function(){
                 }
     });
    }
-    codeLatLng(); 
+    codeLatLng(point); 
     alert("it got until the end")
 
 
