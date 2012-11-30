@@ -150,12 +150,12 @@ $(".schliessen").click(function(e){
 	
 <!-- One BIG List -->
 <ul class="s4ul">
-	{% for o in list_of_companies %}
+	{% for company in list_of_companies %}
 	<!-- START BOX -->
 	<li class="s4list" a="0" b="10" c="5" d="8" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
-			<h2>a 0 b 10 c 5 d 8</h2>
+			<h2>{{company.name}}</h2>
 			<ul>
 				<li class="standort">Standort</li>
 				<li class="projects">4 erfolgreiche Projeke</li>
