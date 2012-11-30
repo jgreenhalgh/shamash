@@ -37,12 +37,12 @@ $(function(){
         geocoder = new google.maps.Geocoder();
     //var latlng = new google.maps.LatLng(40.730885,-73.997383);
         var latlng = customer_location;
-         geocoder.geocode({'latLng': latlng}, function(results, status) 
+         geocoder.geocode({'latLng': latlng,'region':'ch' }, function(results, status) 
             {
-
-             {
-             'region':   'ch'   
-             }   
+               //regional biasing for switzerland
+            
+               
+             
              if (status == google.maps.GeocoderStatus.OK) 
                  {
                  //checking whether there are any data                       
