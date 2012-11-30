@@ -88,6 +88,10 @@ $(function(){
                      
                      var google_address = results[0].address_components;
                      var zipcode = google_address[google_address.length - 1].long_name;
+                     var google_variable2 =google_address[google_address.length - 2].long_name;
+                     var google_variable3 =google_address[google_address.length - 3].long_name;
+                     var google_variable4 =google_address[google_address.length - 4].long_name;
+                     var google_variable5 =google_address[google_address.length - 5].long_name;
                     alert(google_address);
                      }
 
