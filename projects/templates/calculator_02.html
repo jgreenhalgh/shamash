@@ -15,7 +15,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  alert("the program has initialized")
+
   var geocoder;
   var map;
   var infowindow = new google.maps.InfoWindow();
@@ -30,7 +30,7 @@ $(document).ready(function(){
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
   }
-  alert("it got until codelatling")
+
   function codeLatLng() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(40.730885,-73.997383);
@@ -46,7 +46,7 @@ $(document).ready(function(){
               map: map
           });
           
-          alert(results[1].formatted_address);
+          alert("results[1].formatted_address");
           infowindow.setContent(results[1].formatted_address);
           infowindow.open(map, marker);
         }
