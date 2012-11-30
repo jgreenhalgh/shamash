@@ -12,46 +12,6 @@
 <script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
 
 
-<!-- commenting out th test addresgetting thing 
-<script type="text/javascript">
-$(document).ready(function(){
-
-  var geocoder;
-  var map;
-
-
-  function codeLatLng() 
-    {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(40.730885,-73.997383);
-
-
-      alert("it got until geocode")
-    geocoder.geocode({'latLng': latlng}, function(results, status) 
-    {
-        if (status == google.maps.GeocoderStatus.OK) 
-            {
-            alert("geocode status ok");
-            if (results[1]) 
-                {
-                alert("results[1] geholt");   
-                alert(results[1].formatted_address);
-                }
-
-             } 
-            else 
-                {
-                alert("Geocoder failed due to: " + status);
-                }
-    });
-   }
-
-    alert("it got until the end")
-});
-</script>
-
--->
-
 
 <script type="text/javascript">
 $(function(){
@@ -71,13 +31,14 @@ $(function(){
 
 
 
-    //getting exact dta of the customer
+    //getting exact data of the customer
     function codeLatLng(customer_location) 
         {
         geocoder = new google.maps.Geocoder();
     //var latlng = new google.maps.LatLng(40.730885,-73.997383);
         var latlng = customer_location;
          geocoder.geocode({'latLng': latlng}, function(results, status) 
+
             {
              if (status == google.maps.GeocoderStatus.OK) 
                  {
@@ -85,26 +46,28 @@ $(function(){
                  if (results[1]) 
                      {
                      alert("results[1] geholt");   
-                     
-                     var google_address = results[0].address_components;
-                     var zipcode = google_address[google_address.length - 1].long_name;
-                     var google_variable2 =google_address[google_address.length - 2].long_name;
-                     var google_variable3 =google_address[google_address.length - 3].long_name;
-                     var google_variable4 =google_address[google_address.length - 4].long_name;
-                     var google_variable5 =google_address[google_address.length - 5].long_name;
-                    alert(zipcode+google_variable2+google_variable3+google_variable4+google_variable5);
+                     for (var i=0;i<results[0].address_components.length;i++)
+                         {                 
+                         if (results[0].address_components[i].types == "postal_code")
+                               {
+                               alert(results[0].address_components[i].long_name)
+                               }   
+                         }
                      }
-
                   } 
             else 
                 {
                 alert("Geocoder failed due to: " + status);
                 }
+             }
+
+        } 
+         
     });
    }
     codeLatLng(customer_location); 
 
-
+    //end of getting exact data of the customer
     
 
 
