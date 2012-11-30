@@ -131,8 +131,8 @@ $(function(){
 			    }
 	     });
 	    })
-
-    geocoder.geocode({'latLng': latlng}, function(results, status) 
+    alert("got until geocoder");
+    geocoder.geocode({'latLng': point}, function(results, status) 
     {
         if (status == google.maps.GeocoderStatus.OK) 
             {
