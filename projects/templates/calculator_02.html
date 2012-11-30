@@ -50,13 +50,12 @@ $(function(){
                      {
                      
                      var google_address = results[0].address_components;
-                     //now looking for the right data and then adding it to the hidden fields   
+                     //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
                      for (var i=0;i<google_address.length;i++)
                          {                 
                          if (google_address[i].types == "postal_code")
                                {
                                $('#geoData').append('<input type="hidden" name="postal_code" value="' +google_address[i].long_name+'">');
-                               alert(google_address[i].long_name)
                                }   
                          }
                      for (var i=0;i<google_address.length;i++)
@@ -64,7 +63,6 @@ $(function(){
                          if (google_address[i].types == "locality,political")
                                {
                                $('#geoData').append('<input type="hidden" name="gemeinde" value="' +google_address[i].long_name+'">');
-                               alert(google_address[i].long_name)
                                }   
                          }
                      }
