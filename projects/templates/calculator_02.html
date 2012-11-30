@@ -66,6 +66,46 @@ $(function(){
 	     var latitude = point.y;
 	     var longitude = point.x;  
 	     var customer_location = new google.maps.LatLng(latitude, longitude);
+
+
+
+
+    alert("got until start of variables definition");
+
+  function codeLatLng(customer_location) 
+    {
+    geocoder = new google.maps.Geocoder();
+    //var latlng = new google.maps.LatLng(40.730885,-73.997383);
+    var latlng = customer_location;
+
+
+      alert("it got until geocode")
+    geocoder.geocode({'latLng': latlng}, function(results, status) 
+    {
+        if (status == google.maps.GeocoderStatus.OK) 
+            {
+            alert("geocode status ok");
+            if (results[1]) 
+                {
+                alert("results[1] geholt");   
+                alert(results[1].formatted_address);
+                }
+
+             } 
+            else 
+                {
+                alert("Geocoder failed due to: " + status);
+                }
+    });
+   }
+    codeLatLng(customer_location); 
+    alert("it got until the end")
+
+
+
+
+
+
 	     var myOptions = {
 		    zoom: 20,
 		    center: customer_location,
@@ -132,36 +172,7 @@ $(function(){
 	     });
 	    })
 
-    alert("got until start of variables definition");
 
-  function codeLatLng(point) 
-    {
-    geocoder = new google.maps.Geocoder();
-    //var latlng = new google.maps.LatLng(40.730885,-73.997383);
-    var latlng = point;
-
-
-      alert("it got until geocode")
-    geocoder.geocode({'latLng': latlng}, function(results, status) 
-    {
-        if (status == google.maps.GeocoderStatus.OK) 
-            {
-            alert("geocode status ok");
-            if (results[1]) 
-                {
-                alert("results[1] geholt");   
-                alert(results[1].formatted_address);
-                }
-
-             } 
-            else 
-                {
-                alert("Geocoder failed due to: " + status);
-                }
-    });
-   }
-    codeLatLng(point); 
-    alert("it got until the end")
 
 
 });	
