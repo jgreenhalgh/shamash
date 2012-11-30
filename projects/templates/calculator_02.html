@@ -42,11 +42,11 @@ $(document).ready(function(){
         alert("geocode status ok");
         if (results[1]) {
         alert("results[1] geholt");
-          map.setZoom(11);
-          marker = new google.maps.Marker({
-              position: latlng,
-              map: map
-          });
+          //map.setZoom(11);
+          //marker = new google.maps.Marker({
+            //  position: latlng,
+             // map: map
+          //});
           
           alert("results[1].formatted_address");
           infowindow.setContent(results[1].formatted_address);
