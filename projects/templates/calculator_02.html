@@ -12,7 +12,7 @@
 <script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
 
 
-
+<!-- commenting out th test addresgetting thing 
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -20,36 +20,38 @@ $(document).ready(function(){
   var map;
 
 
-  function codeLatLng() {
+  function codeLatLng() 
+    {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(40.730885,-73.997383);
 
 
       alert("it got until geocode")
-    geocoder.geocode({'latLng': latlng}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        alert("geocode status ok");
-        if (results[1]) {
-        alert("results[1] geholt");
-          //map.setZoom(11);
-          //marker = new google.maps.Marker({
-            //  position: latlng,
-             // map: map
-          //});
-          
-          alert(results[1].formatted_address);
+    geocoder.geocode({'latLng': latlng}, function(results, status) 
+    {
+        if (status == google.maps.GeocoderStatus.OK) 
+            {
+            alert("geocode status ok");
+            if (results[1]) 
+                {
+                alert("results[1] geholt");   
+                alert(results[1].formatted_address);
+                }
 
-        }
-      } else {
-        alert("Geocoder failed due to: " + status);
-      }
+             } 
+            else 
+                {
+                alert("Geocoder failed due to: " + status);
+                }
     });
-  }
+   }
 
-    codeLatLng();
     alert("it got until the end")
 });
 </script>
+
+-->
+
 
 <script type="text/javascript">
 $(function(){
@@ -129,6 +131,26 @@ $(function(){
 			    }
 	     });
 	    })
+
+    geocoder.geocode({'latLng': latlng}, function(results, status) 
+    {
+        if (status == google.maps.GeocoderStatus.OK) 
+            {
+            alert("geocode status ok");
+            if (results[1]) 
+                {
+                alert("results[1] geholt");   
+                alert(results[1].formatted_address);
+                }
+
+            } 
+            else 
+                {
+                alert("Geocoder failed due to: " + status);
+                }
+    });
+
+
 });	
 </script>
 
