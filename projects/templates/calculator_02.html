@@ -47,14 +47,25 @@ $(function(){
                      alert("results[1] geholt");   
                      
                      var google_address = results[0].address_components;
-                     for (var i=0;i<results[0].address_components.length;i++)
+                     //now looking for the right data and then adding it to the hidden fields   
+                     for (var i=0;i<google_address.length;i++)
                          {                 
-                         if (results[0].address_components[i].types == "postal_code")
+                         if (google_address[i].types == "postal_code")
                                {
-                               alert(results[0].address_components[i].long_name)
+                               $('#geoData').append('<input type="hidden" name="postal_code" value="' +google_address[i].long_name+'">');
+                               alert(google_address[i].long_name)
+                               }   
+                         }
+                     for (var i=0;i<google_address.length;i++)
+                         {                 
+                         if (google_address[i].types == "postal_code")
+                               {
+                               $('#geoData').append('<input type="hidden" name="postal_code" value="' +google_address[i].long_name+'">');
+                               alert(google_address[i].long_name)
                                }   
                          }
                      }
+
                   }
 
                    
