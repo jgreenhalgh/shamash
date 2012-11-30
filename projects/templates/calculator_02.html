@@ -86,8 +86,8 @@ $(function(){
                      {
                      alert("results[1] geholt");   
                      
-                     var address = results[0].address_components;
-                     var zipcode = address[address.length - 1].long_name;
+                     var google_address = results[0].address_components;
+                     var zipcode = google_address[google_address.length - 1].long_name;
                     alert(zipcode);
                      }
 
