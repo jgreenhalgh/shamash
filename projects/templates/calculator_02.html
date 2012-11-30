@@ -16,8 +16,20 @@ $(function(){
 	 var geocoder = new GClientGeocoder();
 
      var latlong = new google.maps.LatLng("37.5097258429375","-122.27783203125");
-     geocoder.geocode({'latLng':latlong},function(results){alert(results[0].formatted_address);});
-
+     geocoder.geocode({'latLng': latlong}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[1]) {
+          map.setZoom(11);
+          marker = new google.maps.Marker({
+              position: latlng,
+              map: map
+          });
+          infowindow.setContent(results[1].formatted_address);
+          infowindow.open(map, marker);
+        }
+      } else {
+        alert("Geocoder failed due to: " + status);
+      }
     
 	 var address = "{{selected_address}}";
 	  //create map
