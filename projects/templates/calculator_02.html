@@ -62,6 +62,7 @@ $(function(){
     
 	 var address = "{{selected_address}}";
 	  //create map
+    //attention, point is not a latlng object , customer_location is!
 	 var point = geocoder.getLatLng(address, function(point) {
 	     var latitude = point.y;
 	     var longitude = point.x;  
@@ -70,7 +71,7 @@ $(function(){
 
 
 
-//getting exact dta of the customer
+    //getting exact dta of the customer
     function codeLatLng(customer_location) 
         {
         geocoder = new google.maps.Geocoder();
@@ -84,7 +85,10 @@ $(function(){
                  if (results[1]) 
                      {
                      alert("results[1] geholt");   
-                     alert(results[1].formatted_address);
+                     
+                     var address = results[0].address_components;
+                     var zipcode = address[address.length - 1].long_name;
+                    alert(zipcode);
                      }
 
                   } 
