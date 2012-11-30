@@ -61,7 +61,7 @@ $(function(){
                          }
                      for (var i=0;i<google_address.length;i++)
                          {                 
-                         if (google_address[i].types == "route")
+                         if (google_address[i].types == "locality,political")
                                {
                                $('#geoData').append('<input type="hidden" name="gemeinde" value="' +google_address[i].long_name+'">');
                                alert(google_address[i].long_name)
