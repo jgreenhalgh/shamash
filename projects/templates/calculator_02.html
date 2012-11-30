@@ -41,10 +41,9 @@ $(function(){
             {
              if (status == google.maps.GeocoderStatus.OK) 
                  {
-                 alert("geocode status ok");
+                 //checking whether there are any data                       
                  if (results[1]) 
                      {
-                     alert("results[1] geholt");   
                      
                      var google_address = results[0].address_components;
                      //now looking for the right data and then adding it to the hidden fields   
@@ -58,9 +57,9 @@ $(function(){
                          }
                      for (var i=0;i<google_address.length;i++)
                          {                 
-                         if (google_address[i].types == "postal_code")
+                         if (google_address[i].types == "political")
                                {
-                               $('#geoData').append('<input type="hidden" name="postal_code" value="' +google_address[i].long_name+'">');
+                               $('#geoData').append('<input type="hidden" name="gemeinde" value="' +google_address[i].long_name+'">');
                                alert(google_address[i].long_name)
                                }   
                          }
@@ -68,7 +67,7 @@ $(function(){
 
                   }
 
-                   
+           //error message        
             else 
                 {
                 alert("Geocoder failed due to: " + status);
