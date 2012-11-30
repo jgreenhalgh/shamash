@@ -15,7 +15,9 @@ $(function(){
 	 var geocoder = new GClientGeocoder();
 
      var latlong = new google.maps.LatLng("37.5097258429375","-122.27783203125");
-     geocoder.geocode({'latLng':latlong},function(results, status){if(status == google.maps.GeocoderStatus.OK){alert(results[0].formatted_address);}});
+
+
+    
 	 var address = "{{selected_address}}";
 	  //create map
 	 var point = geocoder.getLatLng(address, function(point) {
