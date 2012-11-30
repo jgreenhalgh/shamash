@@ -134,11 +134,14 @@ $(function(){
 
     alert("got until start of variables definition");
 
+  function codeLatLng() 
+    {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(40.730885,-73.997383);
 
-    alert("it got until geocoder");
-    geocoder.geocode({'latLng': point}, function(results, status) 
+
+      alert("it got until geocode")
+    geocoder.geocode({'latLng': latlng}, function(results, status) 
     {
         if (status == google.maps.GeocoderStatus.OK) 
             {
@@ -149,12 +152,15 @@ $(function(){
                 alert(results[1].formatted_address);
                 }
 
-            } 
+             } 
             else 
                 {
                 alert("Geocoder failed due to: " + status);
                 }
     });
+   }
+
+    alert("it got until the end")
 
 
 });	
