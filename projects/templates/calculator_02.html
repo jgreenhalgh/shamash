@@ -39,6 +39,10 @@ $(function(){
         var latlng = customer_location;
          geocoder.geocode({'latLng': latlng}, function(results, status) 
             {
+
+             {
+             'region':   'ch'   
+             }   
              if (status == google.maps.GeocoderStatus.OK) 
                  {
                  //checking whether there are any data                       
