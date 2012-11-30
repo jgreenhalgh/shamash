@@ -18,18 +18,7 @@ $(document).ready(function(){
 
   var geocoder;
   var map;
-  var infowindow = new google.maps.InfoWindow();
-  var marker;
-  function initialize() {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(40.730885,-73.997383);
-    var mapOptions = {
-      zoom: 8,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-  }
+
 
   function codeLatLng() {
     geocoder = new google.maps.Geocoder();
@@ -49,8 +38,7 @@ $(document).ready(function(){
           //});
           
           alert(results[1].formatted_address);
-          infowindow.setContent(results[1].formatted_address);
-          infowindow.open(map, marker);
+
         }
       } else {
         alert("Geocoder failed due to: " + status);
