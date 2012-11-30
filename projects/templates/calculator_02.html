@@ -41,6 +41,7 @@ $(document).ready(function(){
       if (status == google.maps.GeocoderStatus.OK) {
         alert("geocode status ok");
         if (results[1]) {
+        alert("results[1] geholt");
           map.setZoom(11);
           marker = new google.maps.Marker({
               position: latlng,
