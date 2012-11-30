@@ -45,6 +45,8 @@ $(document).ready(function(){
               position: latlng,
               map: map
           });
+          
+          alert(results[1].formatted_address);
           infowindow.setContent(results[1].formatted_address);
           infowindow.open(map, marker);
         }
@@ -53,8 +55,9 @@ $(document).ready(function(){
       }
     });
   }
-    alert("it got until the end")
+
     codeLatLng();
+    alert("it got until the end")
 });
 </script>
 
