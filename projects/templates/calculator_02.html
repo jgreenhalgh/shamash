@@ -131,7 +131,13 @@ $(function(){
 			    }
 	     });
 	    })
-    alert("got until geocoder");
+
+    alert("got until start of variables definition");
+
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(40.730885,-73.997383);
+
+    alert("it got until geocoder");
     geocoder.geocode({'latLng': point}, function(results, status) 
     {
         if (status == google.maps.GeocoderStatus.OK) 
