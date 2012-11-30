@@ -34,9 +34,9 @@ $(document).ready(function(){
   function codeLatLng() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(40.730885,-73.997383);
-alert("it got until maps.latlng")
+
     var latlng = new google.maps.LatLng(lat, lng);
-      
+      alert("it got until geocode")
     geocoder.geocode({'latLng': latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         if (results[1]) {
@@ -53,7 +53,7 @@ alert("it got until maps.latlng")
       }
     });
   }
-    alert("it got until teh end")
+    alert("it got until the end")
     codeLatLng();
 });
 </script>
