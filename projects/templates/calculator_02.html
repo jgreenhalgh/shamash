@@ -37,6 +37,7 @@ $(document).ready(function(){
     var lat = parseFloat(latlngStr[0]);
     var lng = parseFloat(latlngStr[1]);
     var latlng = new google.maps.LatLng(lat, lng);
+      alert("it got until geocode")
     geocoder.geocode({'latLng': latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         if (results[1]) {
