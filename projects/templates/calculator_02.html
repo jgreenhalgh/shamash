@@ -13,6 +13,7 @@
 
 
 <script type="text/javascript">
+$(document).ready(function(){
      var latlong = new google.maps.LatLng("37.5097258429375","-122.27783203125");
      geocoder.geocode({'latLng': latlong}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -28,6 +29,7 @@
       } else {
         alert("Geocoder failed due to: " + status);
       }
+});
 </script>
 
 <script type="text/javascript">
