@@ -1,0 +1,767 @@
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+/*-------------------- GENERAL NORMALISATION --------------------*/html,
+body {
+  height: 100%;
+}
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  color: red;
+}
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.WTF {
+  border-color: #ff8463;
+  border-style: solid inset;
+  border-width: 2px;
+}
+/*-------------------- BASE STYLES --------------------*/#topHebron h1,
+#topHebron a:visited,
+#topHebron a {
+  color: #333a39;
+  font-size: 21px;
+  font-style: italic;
+  line-height: 21px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#topHebron h1 span,
+#topHebron a:visited span,
+#topHebron a span {
+  color: #0093d5;
+}
+#topHebron a:hover {
+  color: #0093d5;
+}
+#bgHeader {
+  background-color: #fff;
+  border-bottom: 1px solid #F1F1F1;
+  padding-bottom: 30px;
+}
+#contentBg {
+  padding-top: 30px;
+  background-color: #F8F8F8;
+  height: 100%;
+}
+body {
+  background-color: #F8F8F8;
+}
+#informationRight .container {
+  padding: 10px;
+  padding-top: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #FFf;
+  border: 1px solid #DFE4E6;
+}
+#informationRight .container h2 {
+  font-size: 18px;
+  line-height: 20px;
+  color: #333a39;
+}
+#informationRight .container p {
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+}
+/*-------------------- BIG FORM HEBRON --------------------*/form.bigFormHebron {
+  color: #637379;
+  /*----------------------------- GENERAL ICONS ----------------------------*/
+
+}
+form.bigFormHebron .n4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 32px;
+  display: block;
+  overflow: hidden;
+}
+form.bigFormHebron .n4 div.smallcontainer {
+  display: block;
+  float: right;
+  width: 250px;
+  padding: 7px 10px;
+  padding-top: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: solid 1px #D2D2D2;
+  line-height: 16px;
+  color: #333a39;
+}
+form.bigFormHebron .n4 div.smallcontainer textarea {
+  display: block;
+  width: 100%;
+  border: 0px solid #fff;
+}
+form.bigFormHebron .n3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 32px;
+  display: block;
+  overflow: hidden;
+}
+form.bigFormHebron .n3 div.smallcontainer {
+  display: block;
+  float: right;
+  width: 250px;
+  padding: 7px 10px;
+  padding-top: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: solid 1px #D2D2D2;
+  line-height: 16px;
+  color: #333a39;
+}
+form.bigFormHebron .n3 div.smallcontainer select {
+  display: block;
+  width: 100%;
+  border: 0px solid #fff;
+}
+form.bigFormHebron .n3 .question {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #c7d0d3;
+  padding: 1px 5px 1px 5px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+form.bigFormHebron .n3 .righticon {
+  display: block;
+  width: 150px;
+  float: right;
+  font-size: 12px;
+  clear: both;
+  margin-left: 10px;
+  padding-left: 30px;
+  background-position: 6px 7px;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+form.bigFormHebron .n2 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 32px;
+  display: block;
+  overflow: hidden;
+}
+form.bigFormHebron .n2 div.smallcontainer {
+  display: block;
+  float: right;
+  width: 250px;
+  padding: 7px 10px;
+  padding-top: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: solid 1px #D2D2D2;
+  line-height: 16px;
+  color: #333a39;
+}
+form.bigFormHebron .n2 div.smallcontainer label {
+  display: block;
+  width: 100%;
+}
+form.bigFormHebron .n2 .question {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #c7d0d3;
+  padding: 1px 5px 1px 5px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+form.bigFormHebron .n2 .righticon {
+  display: block;
+  width: 150px;
+  float: right;
+  font-size: 12px;
+  clear: both;
+  margin-left: 10px;
+  padding-left: 30px;
+  background-position: 6px 7px;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+form.bigFormHebron .n1 {
+  margin-bottom: 10px;
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+}
+form.bigFormHebron .n1 .question {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #c7d0d3;
+  padding: 1px 5px 1px 5px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 15px;
+  display: inline-block;
+  margin-left: 10px;
+}
+form.bigFormHebron .n1 input {
+  float: right;
+  display: block;
+  width: 250px;
+  padding: 7px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #fff;
+  border: solid 1px #D2D2D2;
+  color: #333a39;
+}
+form.bigFormHebron .n1 .righticon {
+  width: 150px;
+  float: right;
+  font-size: 12px;
+  clear: both;
+  margin-left: 10px;
+  padding-left: 30px;
+  background-position: 6px 7px;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+form.bigFormHebron .OKicon {
+  background-image: url(tick.png);
+}
+form.bigFormHebron .NOicon {
+  background-image: url(exclamation.png);
+  background-color: #F8D2D2;
+  color: #333a39;
+}
+form.bigFormHebron .LOCKicon {
+  background-image: url(lock.png);
+}
+form.bigFormHebron .buttonblue {
+  float: right;
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+  color: #fff;
+  background-color: #0093d5;
+  background: #084ba3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #084ba3), color-stop(1, #0093d5));
+  background: -ms-linear-gradient(bottom, #084ba3, #0093d5);
+  background: -moz-linear-gradient(center bottom, #084ba3 0%, #0093d5 100%);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0px 25px;
+}
+form.bigFormHebron .buttonblue:hover {
+  background: #084ba3;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #1b8dd7), color-stop(1, #0093d5));
+  background: -ms-linear-gradient(bottom, #1b8dd7, #0093d5);
+  background: -moz-linear-gradient(center bottom, #1b8dd7 0%, #0093d5 100%);
+}
+form.bigFormHebron .flaotfromright {
+  margin-left: 160px;
+  margin-top: 10px;
+  float: left;
+}
+form.bigFormHebron .inputred {
+  display: block;
+  font-size: 14px;
+  line-height: 32px;
+  color: #fff;
+  background-color: #0093d5;
+  background: #df0a0a;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #df0a0a), color-stop(1, #ff4141));
+  background: -ms-linear-gradient(bottom, #df0a0a, #ff4141);
+  background: -moz-linear-gradient(center bottom, #df0a0a 0%, #ff4141 100%);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 0px 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  float: left;
+}
+form.bigFormHebron .inputred:hover {
+  background: #df0a0a;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #f53d3d), color-stop(1, #ff4141));
+  background: -ms-linear-gradient(bottom, #f53d3d, #ff4141);
+  background: -moz-linear-gradient(center bottom, #f53d3d 0%, #ff4141 100%);
+}
+/*-------------------- OTHER CONTENT ELEMENTS --------------------*/.content h2 {
+  font-size: 18px;
+  line-height: 20px;
+  color: #333a39;
+}
+.content .nText {
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+}
+.content .nFehler {
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+  width: 100%;
+  background-color: #F8D2D2;
+  background-image: url(exclamation.png);
+  background-position: 6px 7px;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  height: 30px;
+}
+.content .nFehler span {
+  line-height: 30px;
+  padding-top: 15px;
+  padding-left: 32px;
+}
+.content .nWarnmeldung {
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+  width: 100%;
+  background-color: #F8D2D2;
+  background-image: url(exclamation.png);
+  background-position: 6px 7px;
+  background-repeat: no-repeat;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  height: 30px;
+  background-color: #F4E4BD;
+  background-image: url(alert.png);
+}
+.content .nWarnmeldung span {
+  line-height: 30px;
+  padding-top: 15px;
+  padding-left: 32px;
+}
+/*-------------------- LOGIN SCREEN ELEMENTS --------------------*/.footerlogin {
+  text-align: right;
+  font-size: 12px;
+  color: #a1adb2;
+  text-spacing: 200;
+}
+/* @group HEBRON_ projectOverview LIST LEFT */
+.listofferoverview {
+  padding: 0px;
+  padding: 0px 5px 0px 5px;
+  border-bottom: 1px solid #dde3e4;
+}
+.listofferoverview .title {
+  padding: 0px;
+  margin: 0px;
+  font-size: 18px;
+  color: #333a39;
+  font-weight: bold;
+  float: left;
+  width: 180px;
+  padding-top: 10px;
+}
+.listofferoverview .rednew {
+  background-color: red;
+  font-weight: normal;
+  color: #fff;
+  padding: 2px 4px;
+  font-size: 09px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+  width: 20px;
+  text-align: center;
+  float: left;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+.listofferoverview .rightinfo {
+  float: right;
+  width: 50px;
+  margin: 30px 5px 0px 0px;
+  text-align: center;
+  padding: 3px 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: orange;
+  font-size: 12px;
+  color: #fff;
+}
+.listofferoverview .subline {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #637379;
+  width: 280px;
+}
+.listofferoverview .green {
+  font-size: 12px;
+  font-weight: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #fff;
+  background-color: #39b54a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+}
+.listofferoverview .blue {
+  font-size: 12px;
+  font-weight: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #fff;
+  background-color: #39b54a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+  background-color: #f0f6f8;
+  color: #637379;
+}
+.listofferoverview .question {
+  font-size: 12px;
+  font-weight: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #39b54a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+  background-color: #0093d5;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.listofferoverview:hover {
+  background-color: #fff;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* @end */
+/* @group HEBRON_ projectOverview RIGHT */
+#infRight_Projectoverview .container {
+  padding: 10px;
+  padding-top: 0px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #FFf;
+  border: 1px solid #DFE4E6;
+  /* basierend auf bigFormHebron */
+
+}
+#infRight_Projectoverview .container h2 {
+  font-size: 18px;
+  line-height: 20px;
+  color: #333a39;
+}
+#infRight_Projectoverview .container h2 .grey {
+  color: #637379;
+  font-weight: normal;
+}
+#infRight_Projectoverview .container h2 .green {
+  float: right;
+  font-size: 12px;
+  font-weight: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #fff;
+  background-color: #39b54a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+}
+#infRight_Projectoverview .container h2 .blue {
+  float: right;
+  font-size: 12px;
+  font-weight: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #fff;
+  background-color: #39b54a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+  background-color: #f0f6f8;
+  color: #637379;
+}
+#infRight_Projectoverview .container h2 .question {
+  float: right;
+  font-size: 12px;
+  font-weight: normal;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #39b54a;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin-right: 5px;
+  background-color: #0093d5;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#infRight_Projectoverview .container h3 {
+  line-height: 20px;
+  color: #637379;
+  font-weight: normal;
+}
+#infRight_Projectoverview .container p {
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+}
+#infRight_Projectoverview .container input {
+  width: 100px;
+}
+#infRight_Projectoverview .container input[type="text"] {
+  text-align: center;
+}
+#infRight_Projectoverview .container .smallcontainer {
+  width: 100px;
+}
+#infRight_Projectoverview .container .width200 {
+  /* ONLY FOR CHECKBOX !!! */
+
+  width: 100px;
+  text-align: left;
+}
+#infRight_Projectoverview .container .width200 input {
+  width: 20px;
+  float: left;
+}
+#infRight_Projectoverview .container .marginneg {
+  margin-right: -20px;
+  margin-left: -2px;
+}
+#infRight_Projectoverview .container .whatforcostumer {
+  padding: 5px;
+  background-color: #f0f6f8;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+}
+#infRight_Projectoverview .container .whatforcostumer .smalltitle {
+  font-weight: bold;
+  font-size: 15px;
+  color: #637379;
+}
+#infRight_Projectoverview .container .whatforcostumer ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  list-style-type: square;
+  padding-left: 17px;
+}
+#infRight_Projectoverview .container .whatforcostumer ul li {
+  padding-left: 2px;
+}
+#infRight_Projectoverview .container .whatanlage {
+  padding: 5px;
+  background-color: #f0f6f8;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  line-height: 23px;
+  font-size: 13px;
+  color: #333a39;
+  background-color: #fff;
+}
+#infRight_Projectoverview .container .whatanlage .smalltitle {
+  font-weight: bold;
+  font-size: 15px;
+  color: #637379;
+}
+#infRight_Projectoverview .container .whatanlage ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  list-style-type: square;
+  padding-left: 17px;
+}
+#infRight_Projectoverview .container .whatanlage ul li {
+  padding-left: 2px;
+}
+#infRight_Projectoverview .container .valueflright {
+  width: 30px;
+  text-align: right;
+  float: right;
+  margin-left: 10px;
+  margin-right: 5px;
+  display: block;
+}
+#infRight_Projectoverview .container .preisflright {
+  width: 50px;
+  float: right;
+}
+#infRight_Projectoverview .container .total {
+  color: #0093d5;
+  font-weight: bold;
+  border: 1px solid #0093d5;
+  background-color: #f0f6f8;
+}
+#infRight_Projectoverview .container .offertsendmodif {
+  text-align: center;
+  width: 150px;
+}
+/* @end */
+/* @group Footer Hebron */
+#footerHEBRON {
+  /*margin: 20px; */
+
+  padding: 0px;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /*padding: 15px 20px 20px 10px;*/
+
+  border-top: 1px solid #dde3e4;
+  text-align: right;
+  font-size: 10px;
+  color: #637379;
+}
+/* @end */

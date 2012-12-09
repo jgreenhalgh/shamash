@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example 3</title>
+	<meta http-equiv="refresh" content="3">
+
+	<!-- JQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+	<!-- GRID -->
+	<link rel="stylesheet" href="css/960.css" type="text/css" media="screen">
+	<!-- Generalstyle -->
+	<link rel="stylesheet" href="css/generalstyle.css" type="text/css" media="screen">
+	<!-- Normalize -->
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">	
+	<!-- Navigation -->
+	<link rel="stylesheet" href="css/menu/core.css" type="text/css" media="screen">
+	<!--  -->
+	<link rel="stylesheet" href="css/menu/styles/lblue.css" type="text/css" media="screen">
+	<!--[if (gt IE 9)|!(IE)]><!-->
+		<link rel="stylesheet" href="css/menu/effects/slide.css" type="text/css" media="screen">
+	<!--<![endif]-->
+
+	<!-- This piece of code, makes the CSS3 effects available for IE -->
+	<!--[if lte IE 9]>
+		<script src="js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/menu.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(function() {
+				$("#menu").menu({'effect' : 'slide'});
+			});
+		</script>
+	<![endif]-->
+	
+	<!-- Tipsy by onehackoranother.com -->
+<script type='text/javascript' src='js/jquery.tipsy.js'></script>
+<link rel="stylesheet" href="css/tipsy.css" type="text/css" />
+<script type='text/javascript'>
+ $(function() {
+	//$('a[rel=tipsy]').tipsy({fade: true, gravity: 'n'});
+	// $('.question').tipsy({gravity: 'n'});
+	$('.question').tipsy(
+		{
+			html: true,
+			title: function() { return this.getAttribute('original-title'); }, 
+			html: true,
+			fade: true,
+			delayOut: 1000,
+			gravity: "w",
+			offset: 5,
+		}
+		);
+ });
+</script>
+	
+</head>
+<body>
+<div id="bgHeader">
+	<div class="container_12">
+		<div class="grid_12" id="topHebron"> 
+			<h1><a href="">getSolar<span>/admin</span></a></h1> 
+		</div>
+		<div class="grid_12">
+		<ul class="menu lblue slide" id="menu">
+			
+			<li><a href="#">Eins</a>
+				<!-- start level 2 -->
+				<ul>
+					<li><a href="#">Test 1</a></li>
+					<li><a href="#">Test 2</a>
+						<!-- start level 3 -->
+						<ul>
+							<li><a href="#">Test</a></li>
+							<li><a href="#">lore</a></li>
+							<li><a href="#">test</a></li>
+						</ul>
+						<!-- end level 3 -->
+					</li>
+					<li><a href="#">Neue<span class="bubble">50</span></a></li>
+				</ul>
+				<!-- end level 2 -->
+			</li> 
+			<li><a href="#">Zwei</a>
+				<!-- start mega menu -->
+				<div class="cols3">
+					<div class="col3">
+						<h4>Bearbeiten Sie hier Ihre Produkte, die auf getSolar angeboten werden</h4>
+					</div>
+					<div class="col1">
+						<h5>Etwas Verwalten</h5>
+						<ol>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+						</ol>
+					</div>
+					<div class="col1">
+						<h5>Produkte &auml;ndern</h5>
+						<ol>
+							<li><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+						</ol>
+					</div>
+					<div class="col1">
+						<h5>Paragraph</h5>
+						<p>Lorem ipsum dolor etst</p>
+					</div>
+				</div>
+				<!-- end mega menu -->
+			</li>
+			
+			
+			<li><a href="#">Neue Offerten<span class="bubble">3</span></a></li>
+			
+			<li><a href="#">Neue Nachrichten<span class="bubble-alt">4</span></a></li>
+			
+			
+			<li class="floatr"><a href="#">HQEnergie</a>
+				<!-- start level 2 -->
+				<ul>
+					<li><a href="example1.html">Logout</a></li>
+					<li><a href="example2.html">Example 2</a></li>
+					<li><a href="example3.html">Example 3</a></li>
+				</ul>
+				<!-- end level 2 -->
+			</li>
+			
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div id="contentBg">
+	<div class="container_12">
+		
+<!--	Project Listings Overview	-->
+		<div class="grid_5">
+			
+			<a href="#">
+			<div class="listofferoverview">
+				<p class="rednew">NEU</p><p class="title">Photovoltaik, 5kWh</p>
+				
+				<p class="clearfix"></p>
+				<p class="rightinfo">Offen</p>
+				<p class="subline">Lorem ipsum dolor sit amet <br /><span class="blue">5.01.2012</span><span class="green">Kurzofferte</span></p>
+			</div>
+			</a>
+			
+			<a href="#">
+			<div class="listofferoverview">
+				<p class="rednew">NEU</p><p class="title">Photovoltaik, 5kWh</p>
+				
+				<p class="clearfix"></p>
+				<p class="rightinfo">Offen</p>
+				<p class="subline">Lorem ipsum dolor sit amet <br /><span class="blue">5.01.2012</span><span class="green">Kurzofferte</span></p>
+			</div>
+			</a>
+			
+			<a href="#">
+			<div class="listofferoverview">
+				<p class="rednew">NEU</p><p class="title">Photovoltaik, 5kWh</p>
+				
+				<p class="clearfix"></p>
+				<p class="rightinfo">Offen</p>
+				<p class="subline">Lorem ipsum dolor sit amet <br /><span class="blue">5.01.2012</span><span class="green">Kurzofferte</span></p>
+			</div>
+			</a>
+			
+		</div>
+		
+		
+<!--	Project Overview	-->
+		<div class="grid_7" id="infRight_Projectoverview">
+			<div class="container">
+				<h2>5kWh, Photovoltaik, 
+				
+				<span class="grey">8600 D&uuml;bendorf</span>
+			
+				<span class="question" original-title="Es handelt sich um eine Kurzofferte, die am 5. Januar gestellt wurde">?</span>
+				<span class="green">Kurzofferte</span>
+				<span class="blue">5.01.2013</span>
+				</h2>
+				<p>
+				
+					<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.ch/maps?f=q&amp;source=s_q&amp;hl=de&amp;geocode=&amp;q=hauptstrasse+d%C3%BCbendorf&amp;aq=&amp;sll=47.41181,8.696093&amp;sspn=0.009714,0.022724&amp;t=k&amp;g=hauptstrasse+d%C3%BCbendorf&amp;ie=UTF8&amp;hq=&amp;hnear=Hauptstrasse,+8307+Illnau-Effretikon,+Z%C3%BCrich&amp;ll=47.411728,8.695952&amp;spn=0.000635,0.000268&amp;z=19&amp;output=embed&iwloc=near"></iframe><br />
+				
+				</p>
+				
+				
+				<div class="grid_4 alpha"> 
+					
+					<div class="whatforcostumer">
+						<span class="smalltitle">Kundenprofil:</span> <br />
+						
+					Wichtig f&uuml;r den Kunden sind:
+						<ul>
+							<li>Test</li>
+						</ul>
+						
+					Informationsstand des Kunden: Test<br />
+					Weitere Infos: Test <br/>
+					
+						<span class="smalltitle">Hausprofil:</span> 
+						<ul>	
+							<li>Standort (PLZ)</li>
+							<li>Neubau? (-Ger&uuml;st) Wann?</li>
+							
+							<li>Dachtyp</li>
+							<li>Dachziegelart</li>
+							<li>Dachfl&auml;che (max, gew&uuml;nschte Bedeckung)</li>
+							<li>Ausrichtung</li>
+							<li>Gesch&auml;tzter Neigungswinkel</li>
+							<li>Wichtig: Kunde legt Wert auf Qualit&auml;t</li>
+						</ul>
+					</div>
+				
+				</div>
+				
+				<div class="grid_3 omega marginneg">
+				
+					<div class="whatanlage">
+						<span class="smalltitle">Projektvorstellungen:</span> <br />
+
+					<ul>
+						<li>Photovoltaik</li>
+						<li>~5kWh Leistung</li>
+						<li>Wichtig: Kunde legt Wert auf Qualit&auml;t</li>
+						<li>Gesch&auml;tzter Realiationstermin</li>
+					</ul>
+					</div>
+				
+				 </div>
+				<div class="clear"></div>
+				
+				
+				
+				<h3>Automatisch erstellte Kurofferte</h3>
+				<p>
+					<!-- Form fuer den Anlagenwunsch -->
+					<form class="bigFormHebron">
+
+
+						<label class="n1">Gesch&auml;tzte Anlageleistung 
+						<a href="#"><span class="question" original-title="Test lorem">?</span> </a>  
+						<span class="valueflright">kWh</span>
+						<input type="text" value="5" /> 
+						</label>	
+
+						<label class="n1">Gesch&auml;tzte Dafl&auml;chenbedeckung 
+						<a href="#"><span class="question" original-title="Test lorem">?</span> </a>  
+						<span class="valueflright">m&sup2;</span>
+						<input type="text" value="5 x 5" /> 
+						</label>	
+						
+						<div class="n3">Vorgeschlagene Module<a href="#"><span class="question" original-title="Test lorem">?</span></a>  
+						<span class="valueflright">kWh</span>
+							<div class="smallcontainer">
+								<select>
+								  <option value="Sharm">Sharp</option>
+								  <option value="Nick Loehr Module">Niko Loehr Module</option>
+								  <option value="Sony">Sony</option>
+								  <option value="Chinese">Style</option>
+								</select>
+							</div>
+						</div>		
+												
+						<label class="n1">Modulpreise total 
+						<a href="#"><span class="question" original-title="Test lorem">?</span> </a>  
+						<span class="valueflright">Fr</span>
+						<input type="text" value="23000" /> 
+						</label>
+
+						<label class="n1">Montagekosten: Ger&uuml;st
+						<a href="#"><span class="question" original-title="Test lorem">?</span> </a>  
+						<span class="valueflright">Fr</span>
+						<input type="text" value="23000" /> 
+						</label>
+
+						<label class="n1">Wechselrichter
+						<a href="#"><span class="question" original-title="Test lorem">?</span> </a>  
+						<span class="valueflright">Fr</span>
+						<input type="text" value="23000" /> 
+						</label>
+
+						<div class="n2">Checkbox Auswahl <a href="#"><span class="question" original-title="Test lorem">?</span></a> 
+							<span class="valueflright">Fr</span> 
+							<div class="smallcontainer width200">
+								<label><input type="checkbox" name="sex" value="male"> Male</label><br />
+								<label><input type="checkbox" name="sex" value="female"> Koks</label><br />
+								<label><input type="checkbox" name="sex" value="female"> Weitere Auswahl</label><br />
+							</div>
+						</div>
+						
+						<label class="n1">Kurofferten Kosten total 
+						<a href="#"><span class="question" original-title="Test lorem">?</span> </a>  
+						<span class="valueflright">Fr</span>
+						<input class="total" type="text" value="23000" /> 
+						</label>
+						
+						<label><span class="valueflright">&#160;
+						</span><input class="buttonblue offertsendmodif" type="submit" value="Abschicken" />
+						</label>
+						
+						
+						
+					</form>
+				</p>
+				<p class="clearfix"></p>
+			</div>	
+		</div>
+		
+		<div class="clear"></div>
+		
+<!--		-->
+		<!--
+		<div class="grid_8 content">
+			<h2> Hier kann man etwas Editieren </h2>
+			<p class="nText"> Lorem ipsum dolor sit amet normaldolor sit amet normaldolor si rmaldolor sit amet normaldolor sit amermaldolor sit amet normaldolor sit amermaldolor sit amet normaldolor sit amermaldolor sit amet normaldolor sit amet amet normaldolor sit amet normal dolor sit amet normaler text</p>
+			<p class="nFehler"> <span>Fehlermeldung</span> </p>
+			<p class="nWarnmeldung"> <span>Gelbe Warnmeldung</span> </p>
+			<form class="bigFormHebron">
+				<label class="n1">Ein Feld <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon LOCKicon">&nbsp;</span> <input type="text" value="HQ Energie" readonly="readonly" /> </label>
+				<label class="n1">Weiteres Feld <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon NOicon">Hier die Warnnachricht</span> <input type="text" value="Ihr Name" /></label>
+				<label class="n1">Ein Feld <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon">&nbsp;</span> <input type="text" value="Ihr Name" /> </label>
+				<label class="n1">Ein Feld <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon OKicon">&nbsp;</span> <input type="text" value="Ihr Name" /> </label>
+				<div class="n2">Radio Auswahl 
+					<a href="#"><span class="question" original-title="Test lorem">?</span></a> 
+					<span class="righticon OKicon">&nbsp;</span> 
+					<div class="smallcontainer">
+						<label><input type="radio" name="sex" value="male"> Male</label><br />
+						<label><input type="radio" name="sex" value="female"> Female</label><br />
+						<label><input type="radio" name="sex" value="female"> Weitere Auswahl</label><br />
+						<label><input type="radio" name="sex" value="female"> Noch eine Auswahl</label><br />
+						<label><input type="radio" name="sex" value="female"> Weiter Gehts hier</label><br />
+						<label><input type="radio" name="sex" value="female"> Niko L&ouml;hr</label><br />
+					</div>
+				</div>
+
+				<div class="n2">Checkbox Auswahl <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon OKicon">&nbsp;</span> 
+					<div class="smallcontainer">
+						<label><input type="checkbox" name="sex" value="male"> Male</label><br />
+						<label><input type="checkbox" name="sex" value="female"> Koks</label><br />
+						<label><input type="checkbox" name="sex" value="female"> Weitere Auswahl</label><br />
+						<label><input type="checkbox" name="sex" value="female"> Noch eine Auswahl</label><br />
+						<label><input type="checkbox" name="sex" value="female"> Weiter Gehts hier</label><br />
+						<label><input type="checkbox" name="sex" value="female"> Niko L&ouml;hr</label><br />
+					</div>
+				</div>
+
+				<div class="n3">Checkbox Auswahl <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon OKicon">&nbsp;</span> 
+					<div class="smallcontainer">
+						<select>
+						  <option value="volvo">Volvo</option>
+						  <option value="saab">Saab</option>
+						  <option value="opel">Opel</option>
+						  <option value="audi">Audi</option>
+						</select>
+					</div>
+				</div>				
+
+				<div class="n3">Textfeld <a href="#"><span class="question" original-title="Test lorem">?</span></a> <span class="righticon OKicon">&nbsp;</span> 
+					<div class="smallcontainer">
+						<textarea rows="5" cols="38"></textarea>
+					</div>
+				</div>		
+				
+				<label><input class="buttonblue flaotfromright" type="submit" value="Etwas &Auml;ndern" /></label>
+				<label><input type="submit" class="inputred" value="Etwas Wichtiges &auml;ndern" /></label>
+			</form>
+		</div>
+		<div class="grid_4" id="informationRight">
+			<div class="container">
+				<h2>Hier die Nachricht von rechts</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida ornare facilisis. Aenean id nulla lacus. Nulla lacus magna, pretium eu convallis eget, congue sit amet magna. In hac habitasse platea dictumst. Donec vitae nisi quis neque varius ornare vitae id nunc. Ut interdum, dolor at tempus blandit, metus eros pulvinar turpis, nec egestas nisi orci a dui. Aenean enim tortor, gravida at tincidunt eget, tincidunt tristique turpis.</p>
+			</div>
+		</div>
+	</div>
+	
+	-->
+	
+	<div class="grid_12" id="footerHEBRON">
+	Telefonischer Support Ticketservice usw test
+	</div>
+	
+</div>
+
+
+</body>
+</html>
