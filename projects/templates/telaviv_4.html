@@ -50,16 +50,16 @@ aliquet a vulputate quis, auctor ac leo. In lorem nisi, viverra non pretium vita
 									<h2>{{company.name}}</h2> 
 									<ul>
 										<li class="location">Chur, Graub&uuml; </li>
-										<li class="erfolgreicheprojekte"> 4 erfolgreiche Projekte</li>
+										<li class="erfolgreicheprojekte"> {{company.number_of_successful_projects}} erfolgreiche Projekte</li>
 										<li class="erfolgreicheprojekte"> weitere Informationen</li>
 									</ul>
 							</div>
 							<div class="rechte_uebersicht">
 								<ul>
-									<li>Kosten <span>test</span></li>
-									<li>Amortisationszeit <span>test</span></li>
-									<li>Gedeckter Stromverbrauch <span>test</span></li>
-									<li>Weitere Informationen <span>test</span></li>
+				                    <li>Produkt <span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></li>
+				                    <li>Geschätze Anlagekosten <span>{{company.price}}</span></li>
+				                    <li>Geschätze Amortisationszeit <span>{{company.amortization_time}}</span></li>
+				                    <li>Geschätzer Profit nach 25 Jahren <span>{{company.profit_25}}</span></li>
 								</ul>
 							</div>
 							<p class="more_info">
