@@ -35,7 +35,7 @@ $(document).ready(function() {
                                 url:call_url,
                                 //Datatype set to "json"
                                 dataType: "json",
-                                
+
                                 //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
                                 success: function (data)
                                         {       
@@ -45,6 +45,7 @@ $(document).ready(function() {
                                         object.hide();
                                         }
                                 });
+                        alert("we got to the line after .ajax");
                         //Finally, (and importantly) return false; stops the click from taking us through to the url listed in href. Trying commenting out this line and see what happens.
                         //This is incredibly useful. Browsers with javascript disabled, will still follow through to description page. While, "enchanced" browsers will get the data passed to the page they are on. 
                         return false;
