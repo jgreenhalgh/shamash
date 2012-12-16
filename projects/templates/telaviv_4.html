@@ -24,7 +24,7 @@ $(document).ready(function() {
                         
                         //The request path is fixed, i.e "www.example.com" + "slug/1/"
                         var call_url = currentpath + url;
-                        
+                        alert(call_url);
                         //Next up is our bread and butter. 
                         //An ajax function is called. If you wanted to save line space, you could convert this to use .get, however I like the clarity of .ajax more. 
                         $.ajax(
@@ -87,7 +87,7 @@ $(document).ready(function() {
 				</div>
 				
 				<div id="anzeigelinks" class="scroll-pane">
-					<h1>Hier sehen sie die &Uuml;bersicht {{message}}</h1>
+					<h1>Hier sehen sie die &Uuml;bersicht </h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dolor enim, ultrices eu consequat dictum, luctus quis felis. Proin diam quam.
 aliquet a vulputate quis, auctor ac leo. In lorem nisi, viverra non pretium vitae.</p>
 
