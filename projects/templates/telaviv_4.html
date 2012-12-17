@@ -46,7 +46,7 @@ $(document).ready(function() {
                                         }
                                 });
                         //trying to insert the data into the html
-                        //$("#slug").html(data.slug);
+                        $("#slug").html(data.slug);
 
                         //Finally, (and importantly) return false; stops the click from taking us through to the url listed in href. Trying commenting out this line and see what happens.
                         //This is incredibly useful. Browsers with javascript disabled, will still follow through to description page. While, "enchanced" browsers will get the data passed to the page they are on. 
@@ -82,7 +82,7 @@ $(document).ready(function() {
 						<h3>Solar - Die Nachhaltige Energie zum Leben</h3>
 						<p>Integer nec luctus metus. Nunc non suscipit orci. Aliquam erat volutpat. Nullam at tempor sapien. Maecenas dictum condimentum nulla, nec faucibus nisi feugiat id. Duis vitae fringilla odio. Etiam est magna, aliquam varius consectetur id. </p>
 						<ul>
-							<li> <strong><a class="slug"  id="slug" href="slug/1"> Get slug! </a></strong>
+							<div id="slug"><li> <strong><a class="slug" href="slug/1"> Get slug! </a></strong></div>
 </li>
 							<li>here comes the message: {{message}}</li>
 						</ul>
