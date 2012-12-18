@@ -89,7 +89,7 @@ $(document).ready(function() {
                             <div id="slug"></div>
 						<p>Integer nec luctus metus. Nunc non suscipit orci. Aliquam erat volutpat. Nullam at tempor sapien. Maecenas dictum condimentum nulla, nec faucibus nisi feugiat id. Duis vitae fringilla odio. Etiam est magna, aliquam varius consectetur id. </p>
 						<ul>
-							<li> <strong><a class="slug" href="slug/{{company.pk}}"> Get slug! </a></strong>
+							<li> <strong><a class="slug" href="slug/1"> Get slug! </a></strong>
 </li>
 
 							<li>here comes the message: {{message}}</li>
@@ -110,7 +110,7 @@ aliquet a vulputate quis, auctor ac leo. In lorem nisi, viverra non pretium vita
 								
 							</p>
 							<div class="linke_uebersicht">
-									<h2><a class="slug" href="slug/1">{{company.name}}</a></h2> 
+									<h2><a class="slug" href="slug/{{company.pk}}">{{company.name}}</a></h2> 
 									<ul>
 										<li class="location">Chur, Graub&uuml; </li>
 										<li class="erfolgreicheprojekte"> {{company.number_of_successful_projects}} erfolgreiche Projekte</li>
