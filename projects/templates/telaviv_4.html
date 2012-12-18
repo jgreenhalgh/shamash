@@ -49,6 +49,8 @@ $(document).ready(function() {
                                         //object.before(data.slug);
                                         	$('#company_name_div').empty();  
                                         	$('#company_name_div').append(data.company_name_json);  
+                                        	$('#company_price_div').empty();  
+                                        	$('#company_price_div').append(data.company_price_json);  
                                         //The "button" is hide
                                         //object.hide();
                                         }
@@ -71,7 +73,7 @@ $(document).ready(function() {
 					<div class="blockoben">
 						<div class="wrapperintheblock clearfix">
 							<h1>Ertragsprognose f&uuml;r Hauptstrasse 12, D&uuml;bendorf</h1>
-							<div class="rechts_infozahl_1"><span>Gesch&auml;tzte Kosten</span><p >23'000CHF</p></div>
+							<div class="rechts_infozahl_1"><span>Gesch&auml;tzte Kosten</span><p ><div id="company_price_div">X</div></p></div>
 							<div class="rechts_infozahl_2"><span>Gesch&auml;tzte Kosten</span><p>23'000CHF</p></div>
 							<div class="rechts_infozahl_3 clearfix"><span>Gesch&auml;tzte Kosten</span><p>23'000CHF</p></div>
 							<ul class="rechts_liste_links">
