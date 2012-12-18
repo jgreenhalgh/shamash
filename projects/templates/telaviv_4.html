@@ -23,7 +23,7 @@ $(document).ready(function() {
                         var url = object.attr("href");
                         
                         //The request path is fixed, i.e "www.example.com" + "slug/1/"
-                        //var call_url = currentpath + url;
+                        var call_url = currentpath + url;
                         //$.get("/user/compare/slug/1", function(data) {
                           //  alert(data);
                             //});
@@ -35,7 +35,7 @@ $(document).ready(function() {
                                 //The request type is set to GET, alternatively, it could be POST if we were passing data. 
                                 type:"GET",
                                 //The url is set to our request path.
-                                url:/user/compare/slug/1,
+                                url:call_url,
                                 //Datatype set to "json"
                                 dataType: "json",
         
