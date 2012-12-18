@@ -24,17 +24,20 @@ $(document).ready(function() {
                         
                         //The request path is fixed, i.e "www.example.com" + "slug/1/"
                         var call_url = currentpath + url;
-                        alert(call_url);
+                        $.get("/slug/1", function(data) {
+                            alert(data);
+                            });
+                       
                         //Next up is our bread and butter. 
                         //An ajax function is called. If you wanted to save line space, you could convert this to use .get, however I like the clarity of .ajax more. 
-                        $.ajax(
-                                {
+                        //$.ajax(
+                                //{
                                 //The request type is set to GET, alternatively, it could be POST if we were passing data. 
-                                type:"GET",
+                                //type:"GET",
                                 //The url is set to our request path.
-                                url:call_url,
+                                //url:call_url,
                                 //Datatype set to "json"
-                                dataType: "json",
+                                //dataType: "json",
         
                                 //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
                                 //success: function (data)
@@ -46,7 +49,7 @@ $(document).ready(function() {
 
                                       //  object.hide();
                                         //}
-                                });
+                                //});
                         //trying to insert the data into the html
                         //$("").html(data.slug);
 
