@@ -47,6 +47,7 @@ $(document).ready(function() {
                                         alert(data);
                                         //The description (data.slug) is added
                                         object.before(data.slug);
+                                        	$('#company_name_div').append(data.slug);  
                                         //The "button" is hide
                                         object.hide();
                                         }
@@ -85,7 +86,8 @@ $(document).ready(function() {
 					</div>
 					<div class="blockanbieter">
 						<p class="offertenbutton"><span class="clickshadow">Offerte anfragen</span></p>
-						<h1 class="clickshadow"> Nau Solar GmbH</h1>
+						<h1 class="clickshadow"> X</h1>
+                        <div class="company_name_div"></div>
 						<h3>Solar - Die Nachhaltige Energie zum Leben</h3>
                             <div id="slug"></div>
 						<p>Integer nec luctus metus. Nunc non suscipit orci. Aliquam erat volutpat. Nullam at tempor sapien. Maecenas dictum condimentum nulla, nec faucibus nisi feugiat id. Duis vitae fringilla odio. Etiam est magna, aliquam varius consectetur id. </p>
