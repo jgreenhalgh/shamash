@@ -39,10 +39,11 @@ $(document).ready(function() {
                                 //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
                                 success: function (data)
                                         {       
-                                        //The description (data.slug) is added 
+                                        //The description (data.slug) is added
+                                        alert("getting data was successful"); 
                                         object.before(data.slug);
                                         //The "button" is hide
-                                        alert("getting data was successful");
+
                                         object.hide();
                                         }
                                 });
