@@ -42,12 +42,13 @@ $(document).ready(function() {
                                         //The description (data.slug) is added 
                                         object.before(data.slug);
                                         //The "button" is hide
+                                        alert("getting data was successful")
                                         object.hide();
                                         }
                                 });
                         //trying to insert the data into the html
                         //$("").html(data.slug);
-					    $('#slug').append(data.slug); 
+
 
                         //Finally, (and importantly) return false; stops the click from taking us through to the url listed in href. Trying commenting out this line and see what happens.
                         //This is incredibly useful. Browsers with javascript disabled, will still follow through to description page. While, "enchanced" browsers will get the data passed to the page they are on. 
