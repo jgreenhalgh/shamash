@@ -3,6 +3,8 @@ padding: 0px;
 margin: 0px;
 
 height: 100%;
+
+background-color:#f9f9f9;
 }
 
 .logotext {
@@ -18,9 +20,11 @@ color: #0182BA;
 color: #0B3649;
 color: #141A1B;
 color:#062B49;
-padding-top: 100px;
+padding-top: 35px;
 margin-bottom: 29px;
 }
+
+
 
 .logobg {
 background-color: #fff;
@@ -33,6 +37,26 @@ font-size: 15px;
 line-height: 20px;
 }
 
+.bigtext {
+color: #353f48;
+font-family: Arial, "Helvetica";
+font-size: 29px;
+line-height: 29px;
+text-align:center;
+padding-top:20px;
+padding-bottom:0px;
+margin-bottom:10px;
+}
+
+.subbigtext {
+color: #8E959C;
+font-family: Arial, "Helvetica";
+font-size: 17px;
+line-height: 19px;
+text-align:center;
+padding:5px 0px;
+margin-top:0px;
+}
 
 .landbutton_newsletter {
 	-moz-box-shadow: 0px 3px 0px 0px #59951d;
@@ -49,7 +73,7 @@ line-height: 20px;
 	display:inline-block;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:18px;
 	font-weight:normal;
 	padding:10px 23px 8px 23px;
 	text-decoration:none;
@@ -75,9 +99,9 @@ line-height: 20px;
 	display:inline-block;
 	color:#7d787d;
 	font-family:Arial;
-	font-size:15px;
+	font-size:18px;
 	font-weight:normal;
-	padding:11px 98px 11px 11px;
+	padding:11px 130px 11px 11px;
 	text-decoration:none;
 }
 
@@ -113,4 +137,18 @@ text-align:center;
 
 .small a, .small a:visited, .small a:hover {
 color: #318CCB;
+}
+
+.anbieterRED {
+	margin-left:10px;
+	background-color:#ff7575;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	display:inline-block;
+	color:#ffffff;
+	padding:5px 13px;
+	text-decoration:none;
+}.anbieterRED:hover {
+	background-color:#df4646;
 }
