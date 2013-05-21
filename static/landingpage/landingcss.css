@@ -1,0 +1,116 @@
+html, body {
+padding: 0px;
+margin: 0px;
+
+height: 100%;
+}
+
+.logotext {
+font-size: 27px;
+line-height: 20px;
+font-style: italic;
+font-weight: bold;
+font-family: Arial, "Helvetica";
+color: #FFFFFF;
+color: #888F97;
+color: #454E5C;
+color: #0182BA;
+color: #0B3649;
+color: #141A1B;
+color:#062B49;
+padding-top: 100px;
+margin-bottom: 29px;
+}
+
+.logobg {
+background-color: #fff;
+}
+
+.subtext {
+color: #8E959C;
+font-family: Arial, "Helvetica";
+font-size: 15px;
+line-height: 20px;
+}
+
+
+.landbutton_newsletter {
+	-moz-box-shadow: 0px 3px 0px 0px #59951d;
+	-webkit-box-shadow: 0px 3px 0px 0px #59951d;
+	box-shadow: 0px 3px 0px 0px #59951d;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7ec219), color-stop(1, #84c129) );
+	background:-moz-linear-gradient( center top, #7ec219 5%, #84c129 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7ec219', endColorstr='#84c129');
+	background-color:#7ec219;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #84c129;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:normal;
+	padding:10px 23px 8px 23px;
+	text-decoration:none;
+	margin-left:5px;
+}.landbutton_newsletter:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #84c129), color-stop(1, #7ec219) );
+	background:-moz-linear-gradient( center top, #84c129 5%, #7ec219 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#84c129', endColorstr='#7ec219');
+	background-color:#84c129;
+}.landbutton_newsletter:active {
+	position:relative;
+	top:3px;
+		box-shadow: 0px 1px 0px 0px #59951d;
+
+}
+
+.landinput_news {
+	background-color:transparent;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #cbd8d8;
+	display:inline-block;
+	color:#7d787d;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:normal;
+	padding:11px 98px 11px 11px;
+	text-decoration:none;
+}
+
+.footerright {
+	text-align:right;
+}
+
+.landpage_anbieter {
+	background-color:#98BDCD;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:normal;
+	padding:5px 8px;
+	text-decoration:none;
+}
+
+.landing_sepline {
+ border: 0px;
+ margin: 20px 150px;
+ border-bottom: 1px solid #ECECEC;
+}
+
+.small {
+font-size:11px;
+text-align:center;
+
+}
+
+.small a, .small a:visited, .small a:hover {
+color: #318CCB;
+}
