@@ -48,9 +48,13 @@
 	
 	<hr class="landing_sepline"/>
 
-<input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" />
 
-<a href="#" class="landbutton_newsletter">Newsletter</a>
+<form action="/" method="post" style="width: 200px;">
+<input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" />
+{% csrf_token %}	
+<input type="submit" value="Newsletter" class="landbutton_newsletter" />
+</form>
+
 
 <hr class="landing_sepline"/>
 </div>
