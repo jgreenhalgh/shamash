@@ -50,9 +50,9 @@
 
 
 <form action="/" method="post" style="width: 200px;">
-<input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" />
+<input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" name= "customer_email_adress" />
 {% csrf_token %}	
-<input type="submit" name="customer_email_adress" value="Newsletter" class="landbutton_newsletter" />
+<input type="submit" name="submit_button" value="Newsletter" class="landbutton_newsletter" />
 </form>
 
 
