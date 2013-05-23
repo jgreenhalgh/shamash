@@ -41,22 +41,22 @@ $(document).ready(function() {
                         //Next up is our bread and butter. 
              
                         $.get(call_url, function(data) {
-                            alert(data.company_name_json);
+                            alert(data.price_small);
                             alert("json data draw worked");
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
-                        success: function (data)
-                                {   
-                                //The description (data.slug) is added
-                                object.before(data.slug);
-                                	$('#price_small_div').empty();  
-                                	$('#price_small_div').append(data.price_small);  
-     //                           	$('#company_price_div').empty();  
-    //                            	$('#company_price_div').append(data.company_price_json);  
-                                //The "button" is hide
-      //                          object.hide();
-                                }
+                            success: function (data)
+                                    {   
+                                    //The description (data.slug) is added
+                                    object.before(data.slug);
+                                    	$('#price_small_div').empty();  
+                                    	$('#price_small_div').append(data.price_small);  
+         //                           	$('#company_price_div').empty();  
+        //                            	$('#company_price_div').append(data.company_price_json);  
+                                    //The "button" is hide
+          //                          object.hide();
+                                    }
                                
                         });
 
