@@ -20,7 +20,7 @@ $(document).ready(function() {
     var currentpath = window.location;
 
     //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
-    $('.boxinnen').css("background-color","red");
+    $('.boxinnen').className = "boxinnen ausgewaehlt";
 
     //The following calls a function when a "slug" link is clicked... - *1
         $('.slug').click(
@@ -29,7 +29,7 @@ $(document).ready(function() {
                         var object = $(this);
                         
                         //When clicked the color changes to blue. This was used more when debugging
-                        $(this).css("class","boxinnen");
+                        $(this).css("background-color","blue");
                         
                         //The url for the request is taken from the <a> object
                         var url = object.attr("href");
