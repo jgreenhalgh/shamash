@@ -27,8 +27,8 @@ $(document).ready(function() {
                         /*$.get("/user/compare/slug/1", function(data) {
                             alert(data);
                             });
-                       */
-
+                        */
+                        alert("got to before ajax");
                         //Next up is our bread and butter. 
                         //An ajax function is called. If you wanted to save line space, you could convert this to use .get, however I like the clarity of .ajax more. 
                         $.ajax(
@@ -44,7 +44,7 @@ $(document).ready(function() {
                                 success: function (data)
                                         {   
 
-                                        alert("got data");
+                                        
                                         //The description (data.slug) is added
                                         //object.before(data.slug);
                                         	$('#company_name_div').empty();  
