@@ -31,10 +31,6 @@ $(document).ready(function() {
                         alert("got to before ajax");
                         //Next up is our bread and butter. 
                         
-                        alert("call_url");
-                        $.get(call_url, function(data) {
-                            alert(data);
-                        });
 
                         //An ajax function is called. If you wanted to save line space, you could convert this to use .get, however I like the clarity of .ajax more. 
                         //$.ajax(
@@ -55,12 +51,12 @@ $(document).ready(function() {
                                         //object.before(data.slug);
                                 //        	$('#company_name_div').empty();  
                                 //        	$('#company_name_div').append(data.company_name_json);  
-                                 //       	$('#company_price_div').empty();  
+                                  //      	$('#company_price_div').empty();  
                                  //       	$('#company_price_div').append(data.company_price_json);  
                                         //The "button" is hide
                                         //object.hide();
-                                 //       }
-                                //}); 
+                                        }
+                                }); 
                         //trying to insert the data into the html
                         //$("").html(data.slug);
 
