@@ -4,6 +4,10 @@
 <meta charset="utf-8"/>
 <title>{% block title %}Herzlich willkommen zu {{ comapnynamne }}{% endblock %}</title>
 
+<!-- Giving a Block to extend for the header(eg calculator_03) -->
+{% block content_header %}
+{% endblock %}	
+
 <!-- CSS Normilze Stylesheet -->
 <link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
 
@@ -70,9 +74,6 @@ $(".schliessen").click(function(e){
 
 {% block header_inhead %} <!-- Header from DjangoTemplates --> {% endblock %}
 
-<!-- Giving a Block to extend for the header(eg calculator_03) -->
-{% block content_header %}
-{% endblock %}	
 
 <!-- Google Analytics Code Snippet -->
 <script>
