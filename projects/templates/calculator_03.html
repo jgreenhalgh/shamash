@@ -20,7 +20,7 @@ $(document).ready(function() {
     var currentpath = window.location;
 
     //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
-    $('small_plant').css("background-color","red");
+    $('.boxinnen').css("background-color","red");
 
     //The following calls a function when a "slug" link is clicked... - *1
         $('.slug').click(
@@ -45,17 +45,17 @@ $(document).ready(function() {
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
-                        success: function (data)
-                                {   
-                                //The description (data.slug) is added
+ //                       success: function (data)
+   //                             {   
+  //                              //The description (data.slug) is added
    //                             object.before(data.slug);
-           //                     	$('#company_name_div').empty();  
+    //                            	$('#company_name_div').empty();  
        //                         	$('#company_name_div').append(data.company_name_json);  
      //                           	$('#company_price_div').empty();  
     //                            	$('#company_price_div').append(data.company_price_json);  
                                 //The "button" is hide
-                                object.hide();
-                                }
+      //                          object.hide();
+      //                          }
                                
                         });
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
 			<!-- Auswahl von den 3 -->
 
 			    <div class="grid_4">
-				    <div class="boxinnen" id = "small_plant">
+				    <div class="boxinnen">
 					    <div><span>{{area_small_str}} m&sup2</span> {{power_output_small}} kWh </div>
 					    <h3> Kleine Version <h3>
 					    <p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
