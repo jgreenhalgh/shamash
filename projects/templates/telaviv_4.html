@@ -28,12 +28,13 @@ $(document).ready(function() {
                             alert(data);
                             });
                         */
-                        alert("got to before ajax");
+                        //alert("got to before ajax");
                         //Next up is our bread and butter. 
                         $.get(call_url, function(data) {
                             alert(data);
+                            alert("json data draw worked");
                         });
-                        alert("got to after ajax");
+                        //alert("got to after ajax");
                         //An ajax function is called. If you wanted to save line space, you could convert this to use .get, however I like the clarity of .ajax more. 
                         //$.ajax(
                          //       {
