@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
 
-    document.getElementById("medium_plant").className = "ausgewaehlt";
+    document.getElementById("small_plant").style.backgroundColor = 'green';
     //The following calls a function when a "slug" link is clicked... - *1
         $('.slug').click(
                 function(){
@@ -136,7 +136,7 @@ $(document).ready(function() {
 			    </div>
             </a>
 
-			<div class="grid_4" id="medium_plant">
+			<div class="grid_4">
 				<div class="boxinnen ausgewaehlt">
 					<div><span>{{area_medium_str}} m&sup2</span> {{power_output_medium}} kWh </div>
 					<h3> Mittlere Version <h3>
