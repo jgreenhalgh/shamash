@@ -39,12 +39,12 @@ $(document).ready(function() {
                                 url: call_url,
                                 //Datatype set to "json"
                                 dataType: "json",
-        
+                                alert("got ajax");
                                 //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
                                 success: function (data)
                                         {   
 
-
+                                        alert("got data");
                                         //The description (data.slug) is added
                                         //object.before(data.slug);
                                         	$('#company_name_div').empty();  
