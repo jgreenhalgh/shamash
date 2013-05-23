@@ -23,44 +23,44 @@ $(document).ready(function() {
     $('.boxinnen').css("background-color","red");
 
     //The following calls a function when a "slug" link is clicked... - *1
-     //   $('.slug').click(
-      //          function(){
+        $('.slug').click(
+                function(){
                         //Stores which slug link was clicked as the variable "object"
-        //                var object = $(this);
+                        var object = $(this);
                         
                         //When clicked the color changes to blue. This was used more when debugging
-        //                $(this).css("color","blue");
+                        $(this).css("color","blue");
                         
                         //The url for the request is taken from the <a> object
-      //                  var url = object.attr("href");
+                        var url = object.attr("href");
                         
                         //The request path is fixed, i.e "www.example.com" + "slug/1/"
-     //                   var call_url = currentpath + url;
+                        var call_url = currentpath + url;
 
                         //Next up is our bread and butter. 
              
-     //                   $.get(call_url, function(data) {
-       //                     alert(data.company_name_json);
-      //                      alert("json data draw worked");
+                        $.get(call_url, function(data) {
+                            alert(data.company_name_json);
+                            alert("json data draw worked");
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
- //                       success: function (data)
-   //                             {   
-  //                              //The description (data.slug) is added
-   //                             object.before(data.slug);
-    //                            	$('#company_name_div').empty();  
-       //                         	$('#company_name_div').append(data.company_name_json);  
-     //                           	$('#company_price_div').empty();  
-    //                            	$('#company_price_div').append(data.company_price_json);  
+                        success: function (data)
+                                {   
+                                //The description (data.slug) is added
+                                object.before(data.slug);
+                                	$('#company_name_div').empty();  
+                                	$('#company_name_div').append(data.company_name_json);  
+                                	$('#company_price_div').empty();  
+                                	$('#company_price_div').append(data.company_price_json);  
                                 //The "button" is hide
-      //                          object.hide();
-      //                          }
+                                object.hide();
+                                }
                                
-        //                });
+                        });
 
-          //              return false;
-       //         });
+                        return false;
+                });
 });
 
 </script>
