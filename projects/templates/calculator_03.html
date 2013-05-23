@@ -27,8 +27,8 @@ $(document).ready(function() {
                 function(){
                         //Stores which slug link was clicked as the variable "object"
                         var object = $(this);
-                        $('.boxinnen').addClass("ausgewaehlt");
-                        
+                        $('.boxinnen').removeClass("ausgewaehlt");
+                        $(this).removeClass("ausgewaehlt");
                         //When clicked the color changes to blue. This was used more when debugging
                         //$(this).css("background-color","blue");
                         
