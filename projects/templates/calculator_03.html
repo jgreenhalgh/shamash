@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
 
-    $('div.boxinnen').toggleClass('ausgewaehlt')
+    document.getElementById("small_plant").className = "ausgewaehlt";
     //The following calls a function when a "slug" link is clicked... - *1
         $('.slug').click(
                 function(){
@@ -120,7 +120,7 @@ $(document).ready(function() {
 			
 			<!-- Auswahl von den 3 -->
 
-			    <div class="grid_4">
+			    <div class="grid_4" id="small_plant">
 				    <div class="boxinnen">
 					    <div><span>{{area_small_str}} m&sup2</span> {{power_output_small}} kWh </div>
 					    <h3> Kleine Version <h3>
