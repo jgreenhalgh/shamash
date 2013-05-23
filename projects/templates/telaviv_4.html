@@ -30,7 +30,7 @@ $(document).ready(function() {
                         */
                         alert("got to before ajax");
                         //Next up is our bread and butter. 
-                        $.get("/ajax_test/", function(data) {
+                        $.get(call_url, function(data) {
                             alert(data);
                         });
                         alert("got to after ajax");
