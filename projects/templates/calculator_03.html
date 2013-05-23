@@ -30,7 +30,7 @@ $(document).ready(function() {
                         $('.boxinnen').removeClass("ausgewaehlt");
                         
                         //When clicked the color changes to blue. This was used more when debugging
-                        $(this).css("background-color","blue");
+                        //$(this).css("background-color","blue");
                         
                         //The url for the request is taken from the <a> object
                         var url = object.attr("href");
@@ -40,9 +40,9 @@ $(document).ready(function() {
 
                         //Next up is our bread and butter. 
              
-                        $.get(call_url, function(data) {
-                            alert(data.company_name_json);
-                            alert("json data draw worked");
+                        //$.get(call_url, function(data) {
+                          //  alert(data.company_name_json);
+                           // alert("json data draw worked");
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
