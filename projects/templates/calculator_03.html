@@ -45,17 +45,17 @@ $(document).ready(function() {
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
- //                       success: function (data)
-   //                             {   
-  //                              //The description (data.slug) is added
-   //                             object.before(data.slug);
-    //                            	$('#company_name_div').empty();  
+                        success: function (data)
+                                {   
+                                //The description (data.slug) is added
+                                object.before(data.slug);
+                                	$('#company_name_div').empty();  
        //                         	$('#company_name_div').append(data.company_name_json);  
      //                           	$('#company_price_div').empty();  
     //                            	$('#company_price_div').append(data.company_price_json);  
                                 //The "button" is hide
-      //                          object.hide();
-      //                          }
+                                object.hide();
+                                }
                                
                         });
 
