@@ -30,8 +30,8 @@ $(document).ready(function() {
                         */
                         //alert("got to before ajax");
                         //Next up is our bread and butter. 
-                        alert(call_url);
-                        $.get(/user/compare/slug/2, function(data) {
+             
+                        $.get(call_url, function(data) {
                             alert(data);
                             alert("json data draw worked");
                         });
