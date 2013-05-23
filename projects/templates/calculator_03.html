@@ -41,22 +41,22 @@ $(document).ready(function() {
                         //Next up is our bread and butter. 
              
                         $.get(call_url, function(data) {
-                           // alert(data.company_name_json);
-                           // alert("json data draw worked");
+                            alert(data.company_name_json);
+                            alert("json data draw worked");
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
- //                       success: function (data)
-   //                             {   
-  //                              //The description (data.slug) is added
-   //                             object.before(data.slug);
-    //                            	$('#company_name_div').empty();  
-       //                         	$('#company_name_div').append(data.company_name_json);  
+                        success: function (data)
+                                {   
+                                //The description (data.slug) is added
+                                object.before(data.slug);
+                                	$('#price_small_div').empty();  
+                                	$('#price_small_div').append(data.price_small);  
      //                           	$('#company_price_div').empty();  
     //                            	$('#company_price_div').append(data.company_price_json);  
                                 //The "button" is hide
       //                          object.hide();
-      //                          }
+                                }
                                
                         });
 
@@ -122,12 +122,12 @@ $(document).ready(function() {
 			<!-- Auswahl von den 3 -->
 
 			    <div class="grid_4">
-				    <div class="boxinnen">
+				    <div class="boxinnen" href="/plant/small/">
 					    <div><span>{{area_small_str}} m&sup2</span> {{power_output_small}} kWh </div>
 					    <h3> Kleine Version <h3>
 					    <p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
 					    <ul>
-						    <li>Installationskosten <span>{{price_small}} Fr.</span></li>
+						    <divi id= "price_small_div"><li>Installationskosten <span>{{price_small}} Fr.</span></li></div>
 						    <li>Amortisationszeit <span>{{amortization_time_small}} Jahre</span></li>
 						    <li>Profit nach 25 Jahren<span>{{profit_25_small}} Fr.</span></li>
                             <li>CO2 in km Autofahrt<span>{{km_driveable_small}} km</span></li>
