@@ -42,6 +42,7 @@ $(document).ready(function() {
              
                         $.get(call_url, function(data) {
                             alert(data.price_selected);
+                            $('#price_div').empty;
                             $('#price_div').replaceWith(data.price_selected);
 
 
