@@ -41,7 +41,6 @@ $(document).ready(function() {
                         //Next up is our bread and butter. 
              
                         $.get(call_url, function(data) {
-                            alert(data.price_selected);
                             $('#selected_price_div').empty();
                             $('#selected_price_div').append(data.price_selected + "Fr.");  
                            
