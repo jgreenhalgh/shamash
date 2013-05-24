@@ -42,7 +42,7 @@ $(document).ready(function() {
              
                         $.get(call_url, function(data) {
                             alert(data.price_selected);
-
+                            $('#price_div').empty();
 
 
                                                         //Next, once the request is successful, the following function is called, and a json response is returned and held in the (temp) variable data. 
