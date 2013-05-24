@@ -29,6 +29,7 @@ $(document).ready(function() {
                         var object = $(this);
                         $('.boxinnen').removeClass("ausgewaehlt");
                         object.addClass("ausgewaehlt");
+                        object.$('#auswaehlen_text_id').empty();
                         //When clicked the color changes to blue. This was used more when debugging
                         //$(this).css("background-color","blue");
                         
@@ -42,7 +43,7 @@ $(document).ready(function() {
              
                         $.get(call_url, function(data) {
                             $('#selected_price_div').empty();
-                            $('#selected_price_div').append(data.price_selected + "Fr.");  
+                            $('#selected_price_div').append(data.price_selected + " Fr.");  
                            
                         });
 
@@ -119,7 +120,7 @@ $(document).ready(function() {
 						    <li>Profit nach 25 Jahren<span>{{profit_25_small}} Fr.</span></li>
                             <li>CO2 in km Autofahrt<span>{{km_driveable_small}} km</span></li>
 					    </ul>
-					    <p class="buttonauswaehlen"> Ausw&auml;hlen </p>
+					    <p class="buttonauswaehlen" id="auswaehlen_text_id"> Ausw&auml;hlen </p>
 				    </div>
 			    </div>
             </a>
@@ -135,7 +136,7 @@ $(document).ready(function() {
 						<li>Profit nach 25 Jahren <span>{{profit_25_medium}} Fr.</span></li>
                         <li>CO2 in km Autofahrt<span>{{km_driveable_medium}} km</span></li>
 					</ul>
-					<p class="buttonauswaehlen"> Ausgew&auml;hlt </p>
+					<p class="buttonauswaehlen" id="auswaehlen_text_id"> Ausgew&auml;hlt </p>
 				</div>
 			</div>
 			
@@ -150,7 +151,7 @@ $(document).ready(function() {
 						<li>Profit nach 25 Jahren <span>{{profit_25_large}} Fr.</span></li>
 						<li>CO2 in km Autofahrt <span>{{km_driveable_large}} km</span></li>
 					</ul>
-					<p class="buttonauswaehlen"> Ausw&auml;hlen </p>
+					<p class="buttonauswaehlen" id="auswaehlen_text_id"> Ausw&auml;hlen </p>
 				</div>
 			</div>
 			
