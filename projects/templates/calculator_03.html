@@ -43,7 +43,7 @@ $(document).ready(function() {
                         $.get(call_url, function(data) {
                             alert(data.price_selected);
                             $('#price_div').empty();
-                            $('#price_div').append("hello");  
+                            $('#price_div').append("hello "+ data.price_selected);  
                             //$('#price_div').replaceWith('<div id="price_div">' + data.price_selected + '</div>');
 
 
