@@ -55,6 +55,30 @@ $(document).ready(function() {
 <!-- Window Overlay script for step 3 thermal part (to wirte that it is coming soon) -->
 <script type="text/javascript" src="{{STATIC_URL}}/slimbox2.js"></script>
 <link rel="stylesheet" href="{{STATIC_URL}}/slimbox2.css" type="text/css" media="screen" />
+
+
+<!-- Popup Login-Function -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function() {
+ 
+        var registerBox=window.location.hash;
+        if (registerBox == "") {
+			// show loginbox
+			// alert("du bist drin");
+			
+			
+			$(".prompt_box_login").lightbox_me({
+				centered: true,
+				onLoad: function() {
+			$(".inner").find('input:first').focus()
+			},
+			});	
+		}
+});
+</script>
+
+
+
 {% endblock %}
 
 {% block content %}
