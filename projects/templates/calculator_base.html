@@ -93,9 +93,23 @@ $(".schliessen").click(function(e){
 </head>
 <body  class="bodynomargin">
 
-
+ <!-- PROMPT Box NEW -->
+ <div class="prompt_box_login">
+	<a href="#"><span class="schliessen"> SCHLIESSEN </span></a>
+	<h2>Verwalten Sie Ihre Solaranlage</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse eget imperdiet dolor. 
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse eget imperdiet dolor.  <span style="color:red">{{message}}</span>
+			<form action={{request.get_full_path}} method="post">
+				{% csrf_token %}
+				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+			</form>
+	</p>
+</div>
  
-
 
 <div class="start_headertop">
 	<div class="container_12">
