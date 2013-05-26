@@ -1,0 +1,411 @@
+/*=== Setup ===*/
+body,div,h1,h2,h3,h4,h5,h6,p,li,ul,dl,img,form{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #ffffff;
+	color: #000000;
+	font: 12px Arial,Tahoma,Verdana,Helvetica,Sans-Serif;
+	line-height: 1.5em;
+}
+
+a:hover{
+	color: #CC0000;
+}
+
+
+
+#home h2{
+	color: #bbbbbb;
+	font-size: 22px;
+	letter-spacing: -1px;
+}
+
+h2{
+	color: #000000;
+	font-size: 16px;
+	
+}
+
+
+
+hr {
+padding: 0px;
+margin: 0px;
+height: 1px;
+border: 0px;
+}
+
+/*=== Layout ===*/
+
+#centercontent a:visited{
+	color: #666666;
+	text-decoration: underline;
+}
+
+.page{
+	margin: 0 0 0 28px;
+	overflow: visible;
+	width: 950px;
+}
+#container{
+	background: url(page-bgr.gif) repeat-y;
+	float: right;
+	width: 878px;
+	background-color: #eaebed;
+}
+/*=== Header ===*/
+#header{
+	border-bottom: 4px solid #ffffff;
+	height: 72px;
+}
+.logo{
+	float: left;
+}
+/*- Top Menu -*/
+
+
+
+
+
+
+/*=== Columns ===*/
+/*--- Left Column ---*/
+#leftcol{
+	float: left;
+	width: 178px;
+}
+
+/*- Styling the calendar -*/
+
+/*--- Center Column ---*/
+
+
+
+
+#centercolfront{
+	float: left;
+	margin: 0;
+	width: 700px;
+	background-position: top;
+}
+
+#centercolfront .spacer{
+	background: #eaebed;
+	margin: 34px 0 0;
+	padding: 15px;
+}
+#home #centercolfront .spacer{
+	height: 1%;
+	margin-bottom: 10px;
+	padding: 15px 15px 10px;
+}
+#home #centercolfront h2{
+	display: block;
+	margin: -32px 15px 0;
+	padding: 0 0 10px;
+	position: relative;
+	text-transform: uppercase;
+}
+#centercolfront p{
+	padding: 0 0 10px;
+}
+
+/*- News Lists -*/
+#centercolfront dl{
+	clear: both;
+}
+#centercolfront dt,#centercolfront dd{
+	float: left;
+	margin: 3px 0;
+	color: #000000;
+}
+
+
+#centercolfront dt,#centercolfront dd a:hover{
+	color: #cc0000;
+}
+
+#centercolfront dt{
+	font-weight: bold;
+	width: 95px;
+}
+#centercolfront li{
+	padding: 0 0 7px;
+}
+#centercolfront li a{
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+#centercolfront li a:hover{
+	color: #cc0000;
+}
+
+
+/* 'Go Top' Button */
+#centercolfront p.top{
+	background: url(v-arrow.gif) no-repeat left;
+	clear: both;
+	float: right;
+	font-weight: bold;
+	line-height: 37px;
+	margin: -7px 0 0;
+	padding: 0 0 0 13px;
+	position: relative;
+}
+* html #centercolfront p.top{
+	margin: 0 0 -15px;
+	padding: 0 0 20px 13px;
+}
+#centercolfront p.top a{
+	color: #b0b0b0;
+	text-decoration: none;
+}
+#centercolfront p.top a:hover{
+	color: #333333;
+}
+/* 'More' Button2 */
+#centercolfront p.more{
+	background: url(h-arrow3.gif) no-repeat left;
+	clear: both;
+	float: right;
+	font-weight: bold;
+	padding: 0 0 0 40px;
+	position: relative;
+}
+* html #centercolfront p.more{
+	margin: 0 0 -25px;
+}
+#centercolfront p.more a{
+	color: #b0b0b0;
+	text-decoration: none;
+}
+#centercolfront p.more a:hover{
+	color: #333333;
+}
+
+#home #centercol .spacer{
+	height: 1%;
+	margin-bottom: 10px;
+	padding: 15px 15px 10px;
+}
+#home #centercol h2{
+	display: block;
+	margin: -28px 0 0;
+	padding: 0 0 10px;
+	position: relative;
+	text-transform: uppercase;
+}
+#centercol p{
+	padding: 0 0 10px;
+}
+/*- Title -*/
+.title img{
+	display: block;
+}
+/*- News Lists -*/
+
+
+
+#centercolfront dl{
+	clear: both;
+}
+#centercolfront dt,#centercolfront dd{
+	float: left;
+	margin: 3px 0;
+	color: #000000;
+}
+
+#centercolfront .spacer dd{
+	max-width: 550px
+}
+
+#centercolfront dt,#centercolfront dd a:hover{
+	color: #cc0000;
+}
+
+#centercolfront dt{
+	font-weight: bold;
+	width: 97px;
+}
+
+
+
+
+
+/*- News Lists -*/
+#centercolfront td{
+vertical-align: top;
+	margin: 3px 0;
+	color: #000000;
+}
+
+#centercolfront td a:hover{
+	color: #cc0000;
+}
+
+
+#centercolfront td a{
+	color: #000000;
+	text-decoration: none;
+}
+
+/*=== Misc. ===*/
+.fix{
+	clear: both;
+	height: 1px;
+	line-height: 1px;
+	margin: -1px 0 0;
+}
+hr{
+	border-bottom: 2px solid #020202;
+	clear: both;
+	height: 2px;
+	margin: 4px 0 8px 0;
+}
+.ac{
+	text-align: center;
+}
+
+
+
+/* link*/
+	
+
+
+
+#centercontent #calendarReservation img {width: 8px !important; padding: 0px !important; margin: 0px !important; }
+#centercontent #calendarReservation td {padding: 1px !important; margin: 0px !important; }
+
+#centercontent table table td {
+padding: 0px 2px 0px 3px;
+}
+
+#centercontent table td {
+padding: 1px 2px 1px 3px;
+}
+
+#centercontent h1, h2, h3, h4, h5 {
+padding: 3px 0 2px 0; 
+margin: 5px 0 3px 0; 
+}
+
+#centercontent h1, h2, h3 {
+	line-height: 26px 
+}
+
+#centercontent img{
+    	margin: 0px 3px 0px 5px;
+    }
+
+#centercontent p {
+padding: 3px 0 3px 0; 
+}
+
+
+
+* html #centercontent {
+	position: relative;
+ 	padding: 0;
+ 	margin: 0;
+	width: 670px;
+}
+
+
+* html .subsitebody #centercontent {
+	position: relative;
+ 	padding: 0;
+ 	margin: 0;
+	width: 670px;
+}
+
+
+
+
+th {
+ border-bottom: 2px solid;
+ font-weight: bold;
+}
+
+tr:hover{background-color: white;}
+
+a[href $='.pdf']
+{
+	padding-right: 22px;
+	background: transparent url(pdf.gif) no-repeat center right;
+}
+
+#doku{
+	border-collapse:collapse;
+	text-align:left;
+	margin:4px;
+	width: 100%;
+	}
+#doku th{
+	border-bottom: 2px solid;
+	font-weight: bold;
+	padding:5px 0px;}
+	
+#doku  td{border-bottom:1px solid #ccc; padding: 2px;
+}
+
+#doku td.zwischen{
+	border-bottom: none;
+	border-top: #bbb;
+	font-style: italic;
+	font-variant: small-caps;
+	padding: 15px 2px 0 0;
+}
+
+a.horgen {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+a.tooltip
+{
+	
+	outline: none;
+	cursor: help;
+	text-decoration: none;
+	position: relative;
+	background: transparent;
+}
+
+.tooltip span
+{
+	margin-left: -999em;
+	position: absolute;
+}
+
+.tooltip:hover span
+{
+	position: absolute;
+	left: 1em;
+	top: 2em;
+	z-index: 999;
+	margin-left: 0;
+	width: 400px;
+	border-radius: 8px 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border: 2px dashed #CC0000;
+	background-color: #FDCA60;
+	color: black;
+	text-decoration:none;
+}
+* html a:hover { background: transparent; }
+
+.tooltip:hover em
+{
+	font-weight: bold;
+	display: block;
+	padding: 0em 0 0.4em 0;
+}
+
+.custom { padding: .5em; }
+
