@@ -49,12 +49,11 @@
 	<hr class="landing_sepline"/>
 
 
-<form action="/" method="post" style="width: 200px;">
+<form action="/" method="post">
 <input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" name= "customer_email_adress" />
 {% csrf_token %}	
 <input type="submit" name="submit_button" value="Newsletter" class="landbutton_newsletter" />
 </form>
-
 
 <hr class="landing_sepline"/>
 </div>
@@ -66,7 +65,7 @@
 <div class="grid_12" style="text-align:left; padding: 20px 0px; ">
 
 	<p class="subbigtext" style="color: #353f48;">
-		Sind Sie ein Photovoltaikanbieter in der Schweiz und auf der Suche nach neuen Kunden? <a href="#" class="anbieterRED">   Weitere Informationen</a>
+		Sind Sie ein Photovoltaikanbieter in der Schweiz und auf der Suche nach neuen Kunden? <a href="/landing_02/" class="anbieterRED">   Weitere Informationen</a>
 	</p>
 	
 
