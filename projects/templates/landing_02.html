@@ -72,9 +72,12 @@
 <div class="grid_12" style="text-align:center; padding: 20px 0px; ">
 <hr class="landing_sepline" style=" margin: 25px 70px; border-bottom: 1px solid #6085a3;"/>
 
+<form action="/" method="post">
 <input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" style="color:white;" />
+{% csrf_token %}	
+<input type="submit" name="submit_button" value="Weitere Informationen erhalten" class="landbutton_newsletter" />
 
-<a href="#" class="landbutton_newsletter">Weitere Informationen erhalten</a>
+</form>
 
 <hr class="landing_sepline" style=" margin: 25px 70px; border-bottom: 1px solid #6085a3;"/>
 <br />
