@@ -18,6 +18,12 @@
 			
 			</div>
 			<div class="grid_6">
+<div class="container_12">
+			<div class="grid_6">
+				<h1>Ihre Adresse(Strasse, Strassennummer, Wohnort)</h1>
+				
+			
+			</div>
 			<form action="/panel/" method="post">
 			{% csrf_token %}
 				<input class="wohnadresse" type="text" onfocus="if(this.value == 'Ihre Adresse(Strasse, Strassennummer, Wohnort)') { this.value = ''; }" value="Ihre Adresse(Strasse, Strassennummer, Wohnort)"  name="address"/> <br />
