@@ -5,6 +5,33 @@
 {% block header_inbody_step14 %}
 {% endblock %}
 
+
+{% block content_header %}
+<!-- ==============================================
+		 Stuff for Inline Validation Below! 															-->
+
+
+<!-- stylesheet for inline validation -->
+    <link href="{{STATIC_URL}}/inline_validation_static/inline_validation_style.css" rel="stylesheet">
+
+<!-- jQuery via Google + local fallback, see h5bp.com -->
+	  <script src="{{STATIC_URL}}/inline_validation_static/jquery-1.7.1.min.js"></script>
+
+<!-- Bootstrap JS -->
+	  <script src="{{STATIC_URL}}/inline_validation_static/js/bootstrap.min.js"></script>
+
+<!-- Validate plugin -->
+		<script src="{{STATIC_URL}}/inline_validation_static/jquery.validate.js"></script>
+
+
+<!-- Scripts specific to this page -->
+		<script src="{{STATIC_URL}}/inline_validation_static/inline_validation_script.js"></script>
+
+<!-- ==============================================
+		 End Inline Validation Stuff 															-->
+
+{% endblock %}
+
 {% block content %}
 	<div class="start_headertwo">
 		<div class="container_12">
@@ -17,7 +44,39 @@
 				</p>
 			
 			</div>
+<div class="row">
+				
+<!--  start: inline validated form -->
+				    <div id="demo" class="tab-pane active">
+<!-- notes .alert -->
+						<form action="" id="contact-form" class="form-horizontal">
+						  <fieldset>
+						    <legend>Sample Contact Form <small>(will not submit any information)</small></legend>
 
+						    <div class="control-group">
+						      <label class="control-label" for="name">Your Name</label>
+						      <div class="controls">
+						        <input type="text" class="input-xlarge" name="name" id="name">
+						      </div>
+						    </div>
+						    <div class="control-group">
+						      <label class="control-label" for="email">Email Address</label>
+						      <div class="controls">
+						        <input type="text" class="input-xlarge" name="email" id="email">
+						      </div>
+						    </div>
+
+	              <div class="form-actions">
+			            <button type="submit" class="btn btn-primary btn-large">Submit</button>
+	    			      <button type="reset" class="btn">Cancel</button>
+	        			</div>
+						  </fieldset>
+						</form>
+			
+
+			</div><!-- .row -->
+
+<!--  finish: inline validated form -->
 			<form action="/panel/" method="post">
 			{% csrf_token %}
 				<p>
