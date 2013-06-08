@@ -21,6 +21,7 @@
 		}
 		label.error {
 			font-weight: bold;
+		    background: url(error.png) center center no-repeat;
 			color: red;
 			padding: 2px 8px;
 			margin-top: 2px;
