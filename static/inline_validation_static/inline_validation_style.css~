@@ -24,6 +24,9 @@
 			color: red;
 			padding: 2px 8px;
 			margin-top: 2px;
-
-
+		    width: 24px;
+		    height: 24px;
+		    background: url(error.png) center center no-repeat;
+		    display: inline-block;
+		    text-indent: -9999px;
 		}
