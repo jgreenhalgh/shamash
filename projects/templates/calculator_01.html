@@ -33,22 +33,8 @@
 {% endblock %}
 
 {% block content %}
-	<div class="start_headertwo">
-		<div class="container_12">
-			<div class="grid_6">
-				<h1>Sch&auml;tzen Sie Ihr Solarpotential:</h1>
-				<p>
-				Herzlich Willkommen bei InstantSolar.ch <br />Ihre indiviueller Rechner f&uuml;r Photovoltaik- und Solarthermieanlagen.
-
-<!--  Testnachricht hier: <span style="font-weight:bold;">{{message}}</span> -->
-				</p>
-			
-			</div>
-<div class="row">
-				
 <!--  start: inline validated form -->
 				    <div id="demo" class="tab-pane active">
-<!-- notes .alert -->
 						<form action="" id="contact-form" class="form-horizontal">
 						  <fieldset>
 						    <legend>Sample Contact Form <small>(will not submit any information)</small></legend>
@@ -77,6 +63,20 @@
 			</div><!-- .row -->
 
 <!--  finish: inline validated form -->
+	<div class="start_headertwo">
+		<div class="container_12">
+			<div class="grid_6">
+				<h1>Sch&auml;tzen Sie Ihr Solarpotential:</h1>
+				<p>
+				Herzlich Willkommen bei InstantSolar.ch <br />Ihre indiviueller Rechner f&uuml;r Photovoltaik- und Solarthermieanlagen.
+
+<!--  Testnachricht hier: <span style="font-weight:bold;">{{message}}</span> -->
+				</p>
+			
+			</div>
+<div class="row">
+				
+
 			<form action="/panel/" method="post">
 			{% csrf_token %}
 				<p>
