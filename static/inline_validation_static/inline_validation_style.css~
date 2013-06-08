@@ -7,15 +7,15 @@
 		
 ========================================== */
 
-@import url('{{STATIC_URL}}/inline_validation_static/bootstrap.min.css');
-@import url('{{STATIC_URL}}/inline_validation_static/bootstrap-responsive.min.css');
+@import url('bootstrap.min.css');
+@import url('bootstrap-responsive.min.css');
 
 /* New styles below */
 
 		label.valid {
 		  width: 24px;
 		  height: 24px;
-		  background: url({{STATIC_URL}}/inline_validation_static/valid.png) center center no-repeat;
+		  background: url(valid.png) center center no-repeat;
 		  display: inline-block;
 		  text-indent: -9999px;
 		}
