@@ -12,7 +12,7 @@
 <script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
 
 
-
+<!--Skript fuer Google Maps Anzeige: -->
 <script type="text/javascript">
 $(function(){
 	 //this script is for loading the map at the correct coordinates and drawing the polygon on it
@@ -86,7 +86,13 @@ $(function(){
         //building the map
 	     var myOptions = {
 		    zoom: 20,
+            //disbling 45 degree tilt
             tilt: 0,
+            //disabling zooming and panning with the next 4 items
+            draggable: false, 
+            zoomControl: false, 
+            scrollwheel: false, 
+            disableDoubleClickZoom: true
 		    center: customer_location,
 		    mapTypeId: google.maps.MapTypeId.HYBRID
 	      }
@@ -157,7 +163,7 @@ $(function(){
 });	
 </script>
 
-
+<!--Skript Dropdown Items: -->
 
 <script src="{{STATIC_URL}}/js/jquery.selectboxdslick.min.js"></script>
 <script type="text/javascript" id="sourcecode">
