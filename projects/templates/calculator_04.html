@@ -8,6 +8,7 @@
 <script type="text/javascript" src="{{STATIC_URL}}/raty_rating_system/lib/jquery.raty.min.js"></script>
 
 
+
 <!-- SORTING Script -->
 <script type='text/javascript'>
 
@@ -178,17 +179,16 @@ $(".schliessen").click(function(e){
 			</ul>
 		</div>
 		<div class="grid_4 zwei">
-         <script type="text/javascript">
-        $(function() {
-              $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
+ <script type="text/javascript">
+    $(function() {
+      $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
 
-              $('#star').raty({ score: 3 });
-          });
+      $('#star').raty({ score: 3 });
+  });
 
-         </script>
-
+  </script>
 			<ul>
-				<li>Bewertung <span><div id="star"></div>{{company.stars_average}}</span></li>
+				<li>Bewertung <span><div id="star">{{company.stars_average}}</div> Sterne</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
