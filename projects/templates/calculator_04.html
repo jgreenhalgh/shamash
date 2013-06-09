@@ -182,13 +182,13 @@ $(".schliessen").click(function(e){
         $(function() {
               $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
 
-              $('#star').raty({ score: 3 });
+              $('#star').raty({ score: {{company.stars_average}} });
           });
 
          </script>
 
 			<ul>
-				<li>Bewertung <span><div id="star">{{company.stars_average}}</div> Sterne</span></li>
+				<li>Bewertung <span><div id="star"></div></span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
