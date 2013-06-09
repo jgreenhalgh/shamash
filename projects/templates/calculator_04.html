@@ -44,9 +44,9 @@
 
             $(this).toggleClass("checked");
             // toggle the list
-
+            e.preventDefault();
             $("ul.s4ul").hide();
-
+            e.preventDefault();
             // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
             //input:checkbox[name=sortieren]:checked
 
@@ -58,7 +58,7 @@
 
             //alert(selected);
             // $("span").html(selected.join(" "));
-
+            e.preventDefault();
             // for each list element 
             $("li.s4list").each(function () {
                 // with .length check the arrays length, how many elements and get the attribute with the same name
@@ -73,7 +73,7 @@
                 //zwischensumme loeschen;
                 zwischensumme = [];
             });
-
+            e.preventDefault();
             //Liste sortieren nach 
             var li = $('li.s4list');
             li.sort(function (a, b) {
@@ -82,9 +82,9 @@
                 else return -1;
             });
             // toggle list
-
+            e.preventDefault();
             $("ul.s4ul").fadeIn("slow");
-            alert("wir sind bis zuSELECTED =[] GEKOMMEN gekommen gekommen");
+            e.preventDefault();
             //the following line kills the the buttons "offerte anfordern", so I commented it out -charles
             //$('ul.s4ul').empty().html(li);
 
