@@ -40,11 +40,11 @@ $.sum = function(arr){
     });
     return r;
 }
-
+alert("wir sind bis zu document ready function gekommen ");
 // jQuery Stuff for sorting script
 $(document).ready(function() {
     $(".s4ListSelect").click(function() {
-		
+		alert("wir sind bis zu toggle this class gekommen");
 		$(this).toggleClass("checked");
 		// toggle the list
 		
@@ -52,7 +52,7 @@ $(document).ready(function() {
 		
 		// find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
 		//input:checkbox[name=sortieren]:checked
-
+    
 	
 		
 		$(".s4_auswahl .checked").each(function()
