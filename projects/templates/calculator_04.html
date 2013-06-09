@@ -72,7 +72,7 @@
                 // $(this).html($(this).attr("total"));
                 //zwischensumme loeschen;
                 zwischensumme = [];
-            return false;
+
             });
 
             //Liste sortieren nach 
@@ -94,9 +94,9 @@
             // total value loeschen
             $("li").each(function () {
                 $(this).attr("total", "");
-                return false;
+
             });
-            // this prevents the screen from jumping back all the time
+            // this prevents the screen from jumping back all the time(in terms of scrolling)  
             return false;
         });
 
