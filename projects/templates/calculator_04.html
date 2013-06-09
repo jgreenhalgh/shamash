@@ -12,7 +12,10 @@
     $(function() {
       $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
 
+    //for each company the div will have a different name
+	{% for company in list_of_companies %}
       $('#star').raty({ score: {{message}} });
+    {% endfor %}
   });
 
   </script>
@@ -189,7 +192,7 @@ $(".schliessen").click(function(e){
 		</div>
 		<div class="grid_4 zwei">
 			<ul>
-				<li>Bewertung <span><div id="star"></div>{{company.stars_average}} Sterne</span></li>
+				<li>Bewertung <span><div id="star{{company.id}}"></div>{{company.stars_average}} Sterne</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
