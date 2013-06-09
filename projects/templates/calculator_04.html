@@ -8,7 +8,7 @@
 <script type="text/javascript" src="{{STATIC_URL}}/raty_rating_system/lib/jquery.raty.min.js"></script>
  <script type="text/javascript">
     $(function() {
-      $.fn.raty.defaults.path = 'img';
+      $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
 
       $('#star').raty({ score: 3 });
   });
