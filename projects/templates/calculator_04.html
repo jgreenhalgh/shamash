@@ -3,8 +3,24 @@
 {% block calc_04_active %}active{% endblock %}
 
 {% block header_inhead %}
+
+<!-- RTING Script -->
+<script type="text/javascript" src="{{STATIC_URL}}/raty_rating_system/lib/jquery.raty.min.js"></script>
+ <script type="text/javascript">
+    $(function() {
+      $.fn.raty.defaults.path = 'lib/img';
+
+      $('#star').raty({ score: 3 });
+  });
+
+  </script>
+
+
 <!-- SORTING Script -->
 <script type='text/javascript'>
+
+
+
 /*-------- SORTING SCRIPT --------*/
 
 // variables for the sorting script
@@ -171,7 +187,7 @@ $(".schliessen").click(function(e){
 		</div>
 		<div class="grid_4 zwei">
 			<ul>
-				<li>Bewertung <span>{{company.stars_average}} Sterne</span></li>
+				<li>Bewertung <span><div id="star">{{company.stars_average}}</div> Sterne</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
