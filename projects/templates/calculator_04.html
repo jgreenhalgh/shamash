@@ -14,7 +14,7 @@
 
     //for each company the div will have a different name to assign a different number of stars
 	{% for company in list_of_companies %}
-      $('#star{{company.id}}').raty({ score: {{company.stars_average}} });
+      $('#star{{company.id}}').raty({ readOnly: true, score: {{company.stars_average}} });
     {% endfor %}
   });
 
