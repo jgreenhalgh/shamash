@@ -106,6 +106,7 @@ $(document).ready(function() {
 	$("p.offertenbutton").click(function(e){
 	// es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
 	var gettheclasses=$(this).attr("class").split(' ');
+    alert("wir sind bis zum gettheclasses zeugs gekomen");
 	$("#"+gettheclasses[1]).lightbox_me({
 		centered: true,
 		onLoad: function() {
