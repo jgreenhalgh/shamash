@@ -6,6 +6,8 @@
 
 <!-- RTING Script -->
 <script type="text/javascript" src="{{STATIC_URL}}/raty_rating_system/lib/jquery.raty.min.js"></script>
+
+
  <script type="text/javascript">
     $(function() {
       $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
@@ -187,7 +189,7 @@ $(".schliessen").click(function(e){
 		</div>
 		<div class="grid_4 zwei">
 			<ul>
-				<li>Bewertung <span><div id="star">{{company.stars_average}}</div> Sterne</span></li>
+				<li>Bewertung <span><div id="star"></div>{{company.stars_average}} Sterne</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
 				<li>Anlagenleistung <span>4 kWh</span></li>
