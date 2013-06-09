@@ -13,6 +13,7 @@
         alert("got till first variable of latlng calc");
       	var my_home_Latlng = new google.maps.LatLng({{home_coordinate_lat}}, {{home_coordinate_lng}});
         alert("got till second variable of latlng calc");
+        console.dir();
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(test_Latlng, my_home_Latlng);
         //alert("got till the end of latlng calc");
     });
