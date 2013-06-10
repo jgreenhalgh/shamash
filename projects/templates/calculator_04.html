@@ -65,63 +65,7 @@
     // jQuery Stuff for sorting script: This script sorts according to the "data" variables in the list items, see the HMTL below
     $(document).ready(function () {
         $(".s4ListSelect").click(function () {
-
-            $(this).toggleClass("checked");
-            // toggle the list
-            
-            $("ul.s4ul").hide();
-
-            // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
-            //input:checkbox[name=sortieren]:checked
-
-
-
-            $(".s4_auswahl .checked").each(function () {
-                selected.push($(this).attr("data"));
-            });
-
-            //alert(selected);
-            // $("span").html(selected.join(" "));
-
-            // for each list element 
-            $("li.s4list").each(function () {
-                // with .length check the arrays length, how many elements and get the attribute with the same name
-                for (var i = 0; i < selected.length; i++) {
-                    var thisThing = selected[i];
-                    zwischensumme.push(parseInt($(this).attr(thisThing)));
-                    // $(this).html($.sum(zwischensumme));
-                }
-
-                $(this).attr("total", $.sum(zwischensumme));
-                // $(this).html($(this).attr("total"));
-                //zwischensumme loeschen;
-                zwischensumme = [];
-
-            });
-
-            //Liste sortieren nach 
-            var li = $('li.s4list');
-            li.sort(function (a, b) {
-                if (parseInt($(a).attr("total")) < parseInt($(b).attr("total")))
-                    return 1;
-                else return -1;
-            });
-            // toggle list
-
-            $("ul.s4ul").fadeIn("slow");
-
-            //the following line kills the the buttons "offerte anfordern" -charles
-            $('ul.s4ul').empty().html(li);
-
-            // Array loeschen
-            selected = [];
-            // total value loeschen
-            $("li").each(function () {
-                $(this).attr("total", "");
-
-            });
-            // this prevents the screen from jumping back all the time(in terms of scrolling) -chatles
-            return false;
+$('ul#company_list>li').tsort({attr:'a'});
 
         });
 
@@ -198,7 +142,7 @@
 	<p class="linie"> </p>
 	
 <!-- One BIG List -->
-<ul class="s4ul">
+<ul class="s4ul" id="company_list">
 	{% for company in list_of_companies %}
 	<!-- START BOX -->
 	<li class="s4list" a="{{company.stars_average}}" b="10" c="5" d="8" total="">
