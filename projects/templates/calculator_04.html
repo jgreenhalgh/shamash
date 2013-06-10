@@ -76,13 +76,14 @@
                 });
 
             e.preventDefault();
-            // this prevents the screen from jumping back all the time(in terms of scrolling) -charles
-            return false;
+ 
         });
 
         // SCHLIESSEN-Button in der Box
         $(".schliessen").click(function (e) {
             $(this).trigger('close');
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -charles
+            return false;
         });
 
         // Sorting stuff 
