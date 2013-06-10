@@ -20,7 +20,7 @@
       	var company_Latlng = new google.maps.LatLng({{company.lat_coord}}, {{company.lng_coord}});
 
         //calculting distnace of the two addresses 
-        var my_distance = google.maps.geometry.spherical.computeDistanceBetween(test_Latlng, company_Latlng);
+        var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
         {% endfor %}
 
     });
