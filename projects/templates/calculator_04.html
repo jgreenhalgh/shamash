@@ -14,14 +14,13 @@
     $(document).ready(function () {
 
         //creating latlng coordinates of home address
-      	var my_home_Latlng = new google.maps.LatLng({{home_coordinate_lat}}, {{home_coordinate_lng}});
+      	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord}}, {{home_lng_coord}});
 	    {% for company in list_of_companies %}
         //creating latlng coordinates of company address
-        geocoder = new google.maps.Geocoder();
-//{{company.gemeinde}}
-        var test_Latlng = new google.maps.LatLng(0.0, 0.0);
+      	var company_Latlng = new google.maps.LatLng({{company.lat_coord}}, {{company.lng_coord}});
+
         //calculting distnace of the two addresses 
-        var my_distance = google.maps.geometry.spherical.computeDistanceBetween(test_Latlng, test_Latlng);
+        var my_distance = google.maps.geometry.spherical.computeDistanceBetween(test_Latlng, company_Latlng);
         {% endfor %}
 
     });
@@ -184,7 +183,7 @@
 			<a href="#"><li data="a" class="s4ListSelect">Nach Bewertung sortieren</li></a>
 			<a href="#"><li data="b" class="s4ListSelect ">Nach Nähe zu Ihrer Adresse sortieren</li></a>
 			<a href="#"><li data="c" class="s4ListSelect ">Nach Produkte-Herkunftsland sortieren</li></a>
-			<a href="#"><li data="d" class="s4ListSelect ">Sort by D</li></a>
+
 		</ul>
 	</div>
 	
