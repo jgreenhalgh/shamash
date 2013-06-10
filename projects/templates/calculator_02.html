@@ -35,7 +35,7 @@ $(function(){
     function codeLatLng(customer_location) 
         {
         geocoder = new google.maps.Geocoder();
-    //var latlng = new google.maps.LatLng(40.730885,-73.997383);
+
         var latlng = customer_location;
          geocoder.geocode({'latLng': latlng,'region':'ch' }, function(results, status) 
             {
