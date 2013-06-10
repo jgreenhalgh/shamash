@@ -5,7 +5,7 @@
 {% block header_inhead %}
 
 <!-- TinySort Sorting Script for sorting the list elements of companies available for installation in the custoemrs area -->
-<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min"></script>
+<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min.js"></script>
 
 
 
@@ -138,6 +138,7 @@
 
             //the following line kills the the buttons "offerte anfordern" -charles
             $('ul.s4ul').empty().html(li);
+
             //unfortunately this also kills the offer button which is why we reinsert it here
             $("p.offertenbutton").click(function (e) {
                 // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
