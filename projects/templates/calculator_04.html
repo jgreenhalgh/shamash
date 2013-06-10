@@ -5,7 +5,7 @@
 {% block header_inhead %}
 
 <!-- TinySort Sorting Script for sorting the list elements of companies available for installation in the custoemrs area -->
-<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min"></script>
 
 
 
@@ -64,13 +64,6 @@
 
     // jQuery Stuff for sorting script: This script sorts according to the "data" variables in the list items, see the HMTL below
     $(document).ready(function () {
-        $(".s4ListSelect").click(function () {
-
-
-       
-            $('ul#company_list>li').tsort({attr:'a'});
-
-        });
 
         // PROMPT BOX fix of the offer
 
@@ -93,6 +86,85 @@
         $(".schliessen").click(function (e) {
             $(this).trigger('close');
         });
+
+        // Sorting stuff 
+
+        $(".s4ListSelect").click(function () {
+            //$('ul#company_list>li').tsort({attr:'a'});
+
+            $(this).toggleClass("checked");
+            // toggle the list
+            
+            $("ul.s4ul").hide();
+
+            // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
+            //input:checkbox[name=sortieren]:checked
+
+
+
+            $(".s4_auswahl .checked").each(function () {
+                selected.push($(this).attr("data"));
+            });
+
+            //alert(selected);
+            // $("span").html(selected.join(" "));
+
+            // for each list element 
+            $("li.s4list").each(function () {
+                // with .length check the arrays length, how many elements and get the attribute with the same name
+                for (var i = 0; i < selected.length; i++) {
+                    var thisThing = selected[i];
+                    zwischensumme.push(parseInt($(this).attr(thisThing)));
+                    // $(this).html($.sum(zwischensumme));
+                }
+
+                $(this).attr("total", $.sum(zwischensumme));
+                // $(this).html($(this).attr("total"));
+                //zwischensumme loeschen;
+                zwischensumme = [];
+
+            });
+
+            //Liste sortieren nach 
+            var li = $('li.s4list');
+            li.sort(function (a, b) {
+                if (parseInt($(a).attr("total")) < parseInt($(b).attr("total")))
+                    return 1;
+                else return -1;
+            });
+            // toggle list
+
+            $("ul.s4ul").fadeIn("slow");
+
+            //the following line kills the the buttons "offerte anfordern" -charles
+            $('ul.s4ul').empty().html(li);
+            //unfortunately this also kills the offer button which is why we reinsert it here
+            $("p.offertenbutton").click(function (e) {
+                // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+                var gettheclasses = $(this).attr("class").split(' ');
+
+                $("#" + gettheclasses[1]).lightbox_me({
+                        centered: true,
+                        onLoad: function () {
+                            $(".inner").find('input:first').focus()
+                        }
+                    });
+
+                e.preventDefault();
+
+            });
+
+            // Array loeschen
+            selected = [];
+            // total value loeschen
+            $("li").each(function () {
+                $(this).attr("total", "");
+
+            });
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -chatles
+            return false;
+        });
+
 
     });
 </script>
