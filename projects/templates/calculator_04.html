@@ -140,21 +140,22 @@
             $('ul.s4ul').empty().html(li);
 
             //unfortunately this also kills the offer button which is why we reinsert it here
-            $("p.offertenbutton").click(function (e) {
-                // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
-                var gettheclasses = $(this).attr("class").split(' ');
+            $(document).ready(function () {
+                $("p.offertenbutton").click(function (e) {
+                    // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+                    var gettheclasses = $(this).attr("class").split(' ');
 
-                $("#" + gettheclasses[1]).lightbox_me({
-                        centered: true,
-                        onLoad: function () {
-                            $(".inner").find('input:first').focus()
-                        }
-                    });
+                    $("#" + gettheclasses[1]).lightbox_me({
+                            centered: true,
+                            onLoad: function () {
+                                $(".inner").find('input:first').focus()
+                            }
+                        });
 
-                e.preventDefault();
+                    e.preventDefault();
 
+                });
             });
-
             // Array loeschen
             selected = [];
             // total value loeschen
