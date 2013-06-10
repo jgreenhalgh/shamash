@@ -65,7 +65,13 @@
     // jQuery Stuff for sorting script: This script sorts according to the "data" variables in the list items, see the HMTL below
     $(document).ready(function () {
         $(".s4ListSelect").click(function () {
-$('ul#company_list>li').tsort({attr:'a'});
+
+
+            $(this).toggleClass("checked");
+            // toggle the list
+            
+            $("ul.s4ul").hide();
+            $('ul#company_list>li').tsort({attr:'a'});
 
         });
 
