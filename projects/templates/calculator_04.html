@@ -22,7 +22,7 @@
         //calculting distnace of the two addresses 
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
      $("#company_li_{{company.id}}").attr("b", 1/my_distance);
-    alert(1/my_distance+ "company id is: {{company.name}}");
+    alert(my_distance+ "company id is: {{company.name}}");
         {% endfor %}
 
 
