@@ -26,9 +26,11 @@
 
  <script type="text/javascript">
     $(function() {
+    //getting some pictures data
       $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
 
-    //for each company the div will have a different name to assign a different number of stars
+    //for each company the div will have a different name to assign a different number of stars, that'
+    //why we cycle through all companies that will be displayed on this site
 	{% for company in list_of_companies %}
       $('#star{{company.id}}').raty({ readOnly: true, score: {{company.stars_average}} });
     {% endfor %}
@@ -54,13 +56,13 @@
         return r;
     }
 
-    // jQuery Stuff for sorting script
+    // jQuery Stuff for sorting script: This script sorts according to the "data" variables in the list items, see the HMTL below
     $(document).ready(function () {
         $(".s4ListSelect").click(function () {
 
             $(this).toggleClass("checked");
             // toggle the list
-
+            
             $("ul.s4ul").hide();
 
             // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
@@ -112,7 +114,7 @@
                 $(this).attr("total", "");
 
             });
-            // this prevents the screen from jumping back all the time(in terms of scrolling)  
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -chatles
             return false;
         });
 
@@ -175,8 +177,8 @@
 	<div class="grid_16 waswichtig">
 		<h3>Was ist Ihnen wichtig?</h3>
 		<ul class="s4_auswahl">
-			<a href="#"><li data="a" class="s4ListSelect">Sort by A</li></a>
-			<a href="#"><li data="b" class="s4ListSelect ">Sort by B</li></a>
+			<a href="#"><li data="a" class="s4ListSelect">Nach Bewertung sortieren</li></a>
+			<a href="#"><li data="b" class="s4ListSelect ">Nach nähe zu Ihrer Adresse sortieren</li></a>
 			<a href="#"><li data="c" class="s4ListSelect ">Sort by C</li></a>
 			<a href="#"><li data="d" class="s4ListSelect ">Sort by D</li></a>
 		</ul>
@@ -192,7 +194,7 @@
 <ul class="s4ul">
 	{% for company in list_of_companies %}
 	<!-- START BOX -->
-	<li class="s4list" a="0" b="10" c="5" d="8" total="">
+	<li class="s4list" a="{{company.stars_average}}" b="10" c="5" d="8" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
 			<h2>{{company.name}}</h2>
