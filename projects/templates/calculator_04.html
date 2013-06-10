@@ -88,9 +88,14 @@
         });
 
         // Sorting stuff 
+        $("#my_button").click(function(){
+            $('ul#company_list>li').tsort({attr:'a'});
+    
+        });
+
 
         $(".s4ListSelect").click(function () {
-            $('ul#company_list>li').tsort({attr:'a'});
+
 
 
         });
@@ -130,6 +135,7 @@
 	</div>
 	
 <div class="container_16 step4_boxes">
+    <a href="#" id="my_button">Nach XYZ sortieren</a>
 	<div class="grid_16 waswichtig">
 		<h3>Was ist Ihnen wichtig?</h3>
 		<ul class="s4_auswahl">
