@@ -4,10 +4,6 @@
 
 {% block header_inhead %}
 
-<!-- TinySort Sorting Script for sorting the list elements of companies available for installation in the custoemrs area -->
-<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min.js"></script>
-
-
 
 <!-- Calculating distances Script -->
 
@@ -44,7 +40,8 @@
 
   </script>
 
-              
+<!-- TinySort Sorting Script for sorting the list elements of companies available for installation in the custoemrs area(needed for the next bit to work) -->
+<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min.js"></script>
 <!-- SORTING Script -->
 <script type='text/javascript'>
     /*-------- SORTING SCRIPT --------*/
@@ -79,7 +76,8 @@
                 });
 
             e.preventDefault();
-
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -charles
+            return false;
         });
 
         // SCHLIESSEN-Button in der Box
@@ -135,7 +133,7 @@
                 $(this).attr("total", "");
 
             });
-            // this prevents the screen from jumping back all the time(in terms of scrolling) -chatles
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -charles
             return false;
         });
 
