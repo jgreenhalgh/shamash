@@ -21,6 +21,8 @@
 
         //calculting distnace of the two addresses 
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
+
+        $('.s4list a').attr("b", my_distance)
         {% endfor %}
 
     });
@@ -197,7 +199,7 @@
 <ul class="s4ul" id="company_list">
 	{% for company in list_of_companies %}
 	<!-- START BOX -->
-	<li class="s4list" a="{{company.stars_average}}" b="10" c="5" d="8" total="">
+	<li class="s4list" a="{{company.stars_average}}"  c="5" d="8" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
 			<h2>{{company.name}}</h2>
