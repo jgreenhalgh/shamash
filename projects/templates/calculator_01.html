@@ -73,19 +73,20 @@
 				</p>
 			
 			</div>
-<div class="row">
+
+<!-- neues submut zeugs -->
+				<div class="row">
+				
 
 				    <div id="demo" class="tab-pane active">
-				
-				    <div id="demo" class="tab-pane active">
-			<form action="/panel/" method="post" id="contact-form" class="form-horizontal">
-			{% csrf_token %}
+<!-- notes .alert -->
+						<form action="/panel/" id="contact-form" class="form-horizontal">
+{% csrf_token %}
+						  <fieldset>
+						    <legend>			
 				<p>
             Geben Sie Ihren Wohnort, Strasse und Strassennummer ein:
-                </p>
-								
-						  <fieldset>
-						    <legend>Sample Contact Form <small>(will not submit any information)</small></legend>
+                </p></legend>
 
 						    <div class="control-group">
 						      <label class="control-label" for="name">Your Name</label>
@@ -93,19 +94,39 @@
 						        <input type="text" class="input-xlarge" name="name" id="name">
 						      </div>
 						    </div>
-			
+						    <div class="control-group">
+						      <label class="control-label" for="email">Email Address</label>
+						      <div class="controls">
+						        <input type="text" class="input-xlarge" name="email" id="email">
+						      </div>
+						    </div>
 
 	              <div class="form-actions">
 			            <button type="submit" class="btn btn-primary btn-large">Submit</button>
 	    			      <button type="reset" class="btn">Cancel</button>
 	        			</div>
 						  </fieldset>
+						</form>
+			
 
-			</form>
 			</div><!-- .row -->
+<!--  altes submit zeugs
+<div class="row">
+				
+
+			<form action="/panel/" method="post">
+			{% csrf_token %}
+				<p>
+            Geben Sie Ihren Wohnort, Strasse und Strassennummer ein:
+                </p>
+			
+				<input class="wohnadresse" type="text" name="address"/> <br />
+				<input type="submit" class="solarpotentialbutton" value="Weiter"/> 
+			</form>
 			</div>
 		</div>
 	</div>
+-->
 {% endblock %}
 
 
