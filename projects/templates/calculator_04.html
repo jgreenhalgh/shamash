@@ -21,10 +21,10 @@
 
         //calculting distnace of the two addresses 
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
-
+     $("#company_li_{{company.id}}").css("border","3px solid red");
    
         {% endfor %}
-     $("#company_li_").css("border","3px solid red");
+
 
     });
 </script>
@@ -200,7 +200,7 @@
 <ul class="s4ul" id="company_list">
 	{% for company in list_of_companies %}
 	<!-- START BOX -->
-	<li class="s4list" id="company_li_" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
+	<li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
 	<div class="firemoverview">
 		<div class="grid_4 eins">
 			<h2>{{company.name}}</h2>
