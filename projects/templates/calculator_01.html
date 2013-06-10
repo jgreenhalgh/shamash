@@ -74,19 +74,18 @@
 			
 			</div>
 <div class="row">
-				
 
-			<form action="/panel/" method="post">
+				    <div id="demo" class="tab-pane active">
+				
+				    <div id="demo" class="tab-pane active">
+			<form action="/panel/" method="post" id="contact-form" class="form-horizontal">
 			{% csrf_token %}
 				<p>
             Geben Sie Ihren Wohnort, Strasse und Strassennummer ein:
                 </p>
-
-				<div class="row">
-				
-
-				    <div id="demo" class="tab-pane active">
-			  <fieldset>
+								
+						  <fieldset>
+						    <legend>Sample Contact Form <small>(will not submit any information)</small></legend>
 
 						    <div class="control-group">
 						      <label class="control-label" for="name">Your Name</label>
@@ -94,7 +93,7 @@
 						        <input type="text" class="input-xlarge" name="name" id="name">
 						      </div>
 						    </div>
-				
+			
 
 	              <div class="form-actions">
 			            <button type="submit" class="btn btn-primary btn-large">Submit</button>
@@ -103,12 +102,7 @@
 						  </fieldset>
 
 			</form>
-			</div>
-
 			</div><!-- .row -->
-
-
-
 			</div>
 		</div>
 	</div>
