@@ -137,6 +137,52 @@
         buildColorPalette();
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
+
+	    //get data to transfer to server
+	    $('#sendData').click(function(){ 
+			    $('#dataPanel').empty();
+			    if(null==creator.showData()){
+				
+				    //stop the form from executing
+				    $('form').submit(function(e) {
+					    alert('submit clicked');
+					    e.preventDefault();
+				    });
+
+				    $(".fehlermeldungbox").lightbox_me({
+					    centered: true
+				    });
+				    //alert("no data given")';
+				    //alert("you forgot to mark roof");
+
+			    }
+                
+                else{
+			            
+					    //extracting data to be handed over to django
+					    var LatLng = new Array();
+					    var Dist = new Array();
+					    var Head = new Array();
+					    var coordinates = creator.showData().match(/[0-9.]+/g);
+					    for(var i=0; i <(coordinates.length)/2; i++)
+					    {
+						    LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
+						    if (i>0)
+						    {
+							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(LatLng[i-1],LatLng[i]);
+							    Head[i-1]= google.maps.geometry.spherical.computeHeading(LatLng[i-1],LatLng[i]);
+						    }
+					    }
+					    var area = google.maps.geometry.spherical.computeArea(LatLng);
+					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +coordinates+'">');                    
+					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
+					    $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
+					    $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
+
+	
+			    }
+	     });
     </script>
 
 <!--Skript fuer Google Maps Anzeige: -->
