@@ -132,17 +132,17 @@
 
     //the next line helps us to get the data from the user
     google.maps.event.addListener(drawingManager, 'click', showArrays);
-
-
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-
  //the next lines help us to get the data from the user
 function showArrays(event) {
  var vertices = this.getPath();
  var my_coordinate = vertices.getAt(0);
 alert(my_coordinate);
 }
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
 
 
 
