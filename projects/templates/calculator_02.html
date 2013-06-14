@@ -372,13 +372,7 @@ $(document).ready(function(){
 <div class="fehlermeldungbox" style="width:200px; height:200px; text-align:center; font-size:13px; padding-top:50px; background-color:#fff; display:none;">
 	Fehlermeldung, kein Polygon ausgew&auml;lt.
 </div>
-    <div id="panel">
-      <div id="color-palette"></div>
-      <div>
-        <button id="delete-button">Delete Selected Shape</button>
-      </div>
-    </div>
-    <div id="map"></div>
+
 <form action="/results_photo/" method="post" class="postforresults">	
 {% csrf_token %}
 <div class="bigoverview_step2">
@@ -434,7 +428,7 @@ $(document).ready(function(){
 			<p class="step2p" style="width:100%; text-align:center;">Anleitung:Navigieren Sie zu Ihrem Haus. Klicken Sie mit Ihrer Mause die vier Ecken Ihres Daches. Klicken Sie zum Schluss wieder auf den ersten Ecken um abzuschliessen. Wenn Sie neu starten m&ouml;chten, klicken sie auf den "Neu Starten" Knopf</p>
 		</div>
 		<div class="clear"></div>
-		<div class="grid_12" style="height:430px; width:940px; background-color:#9CA7AC;" id="niko"> </div>	
+		<div class="grid_12" style="height:430px; width:940px; background-color:#9CA7AC;" id="map"> </div>	
 	</div>
 	<div class="clear"></div>
 	<br />	
@@ -455,52 +449,4 @@ $(document).ready(function(){
 <div id="geoData"><input id="reset" type="submit" value="Neu Starten"  /> </div>
 {% endblock %}
 
-	<!-- Suchresultate fuer 
-	<div id="suchresultatfuer">
-		<h2>Wir haben die berechent f&uuml;r <input type="text" class="step2_input_strasse" value="{{selected_address}}"></input> berechnet:</h2>
-	</div>
-	-->
-	<!--
-	<div class="grid_4">
-		<div class="step2_wastun_todo">
-			<h3 class="toggle" id="navigieren">Navigieren Sie zu Ihrem Dach im Kartenausschnitt rechts. </h3>
-			<p class="toggle_this">
-				Navigieren Sie rechts im Kartenausschnitt zu Ihrem Dach.
-			</p>
-		</div>
-		<div class="step2_wastun_todo">
-			<h3 class="toggle">W&auml;hlen Sie Ihre Dachfl&auml;che aus </h3>
-			<p class="toggle_this" style="align:center;">
-				Markieren Sie die gnaze Dachfl&auml;che auf dem Kartenausschnitt.<br/><br/>
-				<input id="reset" value="Markierung Zur&uuml;cksetzen" type="button" class="navi button_step2_reset"/><br/>
-			</p>
-		</div>
 
-    
-	    <div class="step2_wastun_todo">
-			<h3 class="toggle">W&auml;hlen Sie Ihre Dachform aus:</h3>
-			<p class="toggle_this">
-				<input type="radio" name="rooftype" id="haus-1" value="Satteldach"><label for="haus-1" class="step2_dach step2_dach1"><br/>Satteldach</label>
-				<input type="radio" name="rooftype" id="haus-2" value="Zeltdach"><label for="haus-2" class="step2_dach step2_dach2"><br/>Zeltdach</label>
-				<input type="radio" name="rooftype" id="haus-3" value="Walmdach"><label for="haus-3" class="step2_dach step2_dach3"><br/>Walmdach</label>
-				<input type="radio" name="rooftype" id="haus-4" value="Flachdach"><label for="haus-4" class="step2_dach step2_dach4"><br/>Flachdach</label>
-				<span style="clear:both;"></span>
-			</p>
-	    </div>
-
-	    <div class="step2_wastun_todo">
-			<h3 class="toggle" id="navigieren">Dachneigung sch&auml;tzen </h3>
-			<p class="toggle_this">
-				 Sch&auml;tzen Sie hier Ihre Dachneigung ein:<br/>
-				<select name="tilt" class="step2_select">
-					<option value="10">10 &deg;</option>
-					<option value="20">20</option>&deg;
-					<option value="30">30</option>&deg;
-					<option value="40">40</option>&deg;
-					<option value="50">50</option>&deg;
-				</select>
-				<br/>
-			</p>
-		</div>
-	</div>
-	-->
