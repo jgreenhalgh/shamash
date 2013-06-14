@@ -134,7 +134,7 @@
      google.maps.event.addListener(drawingManager, 'overlaycomplete', showArrays);
 
  //the next lines help us to get the data from the user
-function showArrays(event) {
+function showArrays(polygon) {
  var vertices = polygon.getPath();
  var my_coordinate = vertices.getAt(0);
 alert(my_coordinate);
