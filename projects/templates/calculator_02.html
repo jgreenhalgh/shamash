@@ -129,9 +129,10 @@
        // google.maps.event.addListener(map, 'click', clearSelection);
         //ATTENTION: reactivate this as soon as the delete button is implemented
        // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
-
+alert("got to before listener");
     //the next line helps us to get the data from the user
     google.maps.event.addListener(drawingManager, 'click', showArrays);
+alert("got to aftr listener");
  //the next lines help us to get the data from the user
 function showArrays(event) {
  var vertices = this.getPath();
