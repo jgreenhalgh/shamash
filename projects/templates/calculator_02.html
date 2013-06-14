@@ -121,16 +121,17 @@
           drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
         }
       }
-
+        
         // Clear the current selection when the drawing mode is changed, or when the
         // map is clicked.
     //This is commented out so the shape cannot be unselected(next two lines):
         //google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
        // google.maps.event.addListener(map, 'click', clearSelection);
-        google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
+        //ATTENTION: reactivate this as soon as the delete button is implemented
+       // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
 
     //the next line helps us to get the data from the user
-    google.maps.event.addDomListener(document.getElementById('sendData'), 'click', showArrays);
+    google.maps.event.addDomListener(document.getElementById("sendData"), 'click', showArrays);
     alert("got till the end of the script");
 
       }
