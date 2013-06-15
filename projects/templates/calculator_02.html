@@ -78,7 +78,7 @@ $(function () {
         console.log(customer_location);
 
 
-
+});
         //getting exact data of the customer
 
         function codeLatLng(customer_location) {
@@ -130,7 +130,7 @@ $(function () {
         console.log(customer_location);
     });
 
-});
+
 
 
 function setSelection(shape) {
@@ -213,7 +213,7 @@ var customer_location = new google.maps.LatLng(47.368594, 8.514404);
 google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
 
     latlng_coordinates = (polygon.getPath().getArray());
-    console.log(latlng_coordinates);
+
     area = google.maps.geometry.spherical.computeArea(polygon.getPath());
 
 });
