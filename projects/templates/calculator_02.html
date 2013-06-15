@@ -51,8 +51,9 @@
       var drawingManager;
       var selectedShape;
       var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
-      var selectedColor;
-      var colorButtons = {};
+      //var selectedColor;
+     // var colorButtons = {};
+      var latlng_coordinates;
     //This is commented out so the shape cannot be unselected
       //function clearSelection() {
       //  if (selectedShape) {
@@ -129,7 +130,7 @@
        // google.maps.event.addListener(map, 'click', clearSelection);
         //ATTENTION: reactivate this as soon as the delete button is implemented
        // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
-var latlng_coordinates;
+
     //the next line helps us to get the data from the user
 google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
 
@@ -180,7 +181,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 					    }
 
                                 console.log(area);
-					    var area = google.maps.geometry.spherical.computeArea(LatLng);
+					    var area = google.maps.geometry.spherical.computeArea(latlng_coordinates);
 					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +latlng_coordinates+'">');                    
 					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
 					    $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
