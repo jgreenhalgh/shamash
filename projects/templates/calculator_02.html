@@ -68,7 +68,7 @@ function get_coordinates() {
       if (status == google.maps.GeocoderStatus.OK) {
 
             console.log("success"+ results[0]);
-            my_results = results[0];
+            my_results = results;
       } 
 
         else 
@@ -86,8 +86,8 @@ function get_coordinates() {
 
 
     //getting exact data of the customer
-//customer_location =new google.maps.LatLng(47.368594, 8.514404);
-customer_location =results[0].geometry.location;
+customer_location =new google.maps.LatLng(47.368594, 8.514404);
+//customer_location =results[0].geometry.location;
     function codeLatLng(customer_location) {
         geocoder = new google.maps.Geocoder();
         var latlng = customer_location;
