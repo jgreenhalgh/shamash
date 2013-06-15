@@ -46,9 +46,8 @@
       #delete-button {
         margin-top: 5px;
       }
- < /style>
-    <script type="text/javascript
-">
+    </style>
+    <script type="text/javascript">
       var drawingManager;
       var selectedShape;
       var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
@@ -56,11 +55,6 @@
      // var colorButtons = {};
       var latlng_coordinates;
       var area;
-
-
-
-
-
     //This is commented out so the shape cannot be unselected
       //function clearSelection() {
       //  if (selectedShape) {
@@ -166,11 +160,11 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 				//	    e.preventDefault();
 				  //  });
 
-				  //  $(".fehlermeldungbox ").lightbox_me({
+				  //  $(".fehlermeldungbox").lightbox_me({
 					//    centered: true
 				   // });
-				    //alert("no data given ")';
-				    //alert("you forgot to mark roof ");
+				    //alert("no data given")';
+				    //alert("you forgot to mark roof");
 
 			   // }
                 
@@ -182,7 +176,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 					    var Head = new Array();
 					    //var coordinates = creator.showData().match(/[0-9.]+/g);
 					    //for(var i=0; i <(coordinates.length)/2; i++)
-                        console.log("got until before loop ");
+    console.log("got until before loop");
 					    for(var i=0; i <latlng_coordinates.length; i++)
 					    {
 						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
@@ -208,11 +202,11 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 
                                 console.log(area);
 
-					    $('#geoData').append('<input type="hidden " name="coordinates " value="' +latlng_coordinates+'">');                    
-					    $('#geoData').append('<input type="hidden " name="area " value="' +area+'">');              
-					    $('#geoData').append('<input type="hidden " name="distances " value="' +Dist+'">');      
-					    $('#geoData').append('<input type="hidden " name="headings " value="' +Head+'">'); 
-                        alert("stop execution ");
+					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +latlng_coordinates+'">');                    
+					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
+					    $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
+					    $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
+                        alert("stop execution");
 	
 			  //  }
 	     });
@@ -224,7 +218,15 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
       }
       google.maps.event.addDomListener(window, 'load', initialize);
 
-</script>
+
+
+
+
+
+	
+    </script>
+
+
 
 
 <!--Skript Dropdown Items: -->
