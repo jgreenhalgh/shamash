@@ -68,11 +68,15 @@ function get_coordinates() {
       if (status == google.maps.GeocoderStatus.OK) {
 
             console.log("success"+ results[0]);
-      } else {
+      } 
+
+        else 
+        {
         alert("Geocode was not successful for the following reason: " + status);
-      }
+        }
+
     });
-    return results;
+    return results[0];
   }
     results=get_coordinates();
 
