@@ -170,11 +170,11 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 					    for(var i=0; i <3; i++)
 					    {
 						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
-                            LatLng[i]=latlng_coordinates[i]
+                           
 						    if (i>0)
 						    {
-							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i-1],latlng_coordinates[i]);
-							    Head[i-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[i-1],latlng_coordinates[i]);
+							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i],latlng_coordinates[i+1]);
+							    Head[i-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[i],latlng_coordinates[i+1]);
                                 console.log(Dist[i-1]);
 						    }
 					    }
