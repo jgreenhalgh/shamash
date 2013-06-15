@@ -108,15 +108,13 @@ $(function () {
                             }
                         }
                         for (var i = 0; i < google_address.length; i++) {
-                            if (google_address[i].types == "locality,political") {d
+                            if (google_address[i].types == "locality,political") {
                                 $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
                             }
                         }
                     }
 
                 }
-
-
 
 
                 console.log(customer_location);
