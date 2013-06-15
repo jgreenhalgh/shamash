@@ -62,7 +62,7 @@ $(document).ready(function(){
 
 
 
-function codeAddress() {
+function get_coordinates() {
     var address = document.getElementById("address").value;
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
@@ -72,8 +72,11 @@ function codeAddress() {
         alert("Geocode was not successful for the following reason: " + status);
       }
     });
+    
   }
-    //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
+    get_coordinates();
+
+//this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
     //attention, point is not a latlng object , customer_location is!
 
 
