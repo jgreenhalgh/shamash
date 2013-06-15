@@ -63,7 +63,7 @@ $(document).ready(function(){
 
 
 function get_coordinates() {
-    var address = document.getElementById("address").value;
+
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
 
