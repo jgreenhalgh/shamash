@@ -78,104 +78,104 @@ $(function () {
 
 
     });
-        //getting exact data of the customer
+    //getting exact data of the customer
 
-        function codeLatLng(customer_location) {
-            geocoder = new google.maps.Geocoder();
-            var latlng = customer_location;
-          
-            geocoder.geocode({
-                'latLng': latlng,
-                'region': 'ch'
-            }, function (results, status) {
-                //regional biasing for switzerland
+    function codeLatLng(customer_location) {
+        geocoder = new google.maps.Geocoder();
+        var latlng = customer_location;
+
+        geocoder.geocode({
+            'latLng': latlng,
+            'region': 'ch'
+        }, function (results, status) {
+            //regional biasing for switzerland
 
 
 
-                if (status == google.maps.GeocoderStatus.OK) {
-                    //checking whether there are any data                       
-                    if (results[1]) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                //checking whether there are any data                       
+                if (results[1]) {
 
-                        var google_address = results[0].address_components;
-                        //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
-                        //unfortunately the different parts of the address are not always in the same position so we have to cycle through
-                        for (var i = 0; i < google_address.length; i++) {
-                            if (google_address[i].types == "postal_code") {
-                                $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
-                            }
-                        }
-                        for (var i = 0; i < google_address.length; i++) {
-                            if (google_address[i].types == "locality,political") {
-                                $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
-                            }
+                    var google_address = results[0].address_components;
+                    //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
+                    //unfortunately the different parts of the address are not always in the same position so we have to cycle through
+                    for (var i = 0; i < google_address.length; i++) {
+                        if (google_address[i].types == "postal_code") {
+                            $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
                         }
                     }
-
+                    for (var i = 0; i < google_address.length; i++) {
+                        if (google_address[i].types == "locality,political") {
+                            $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
+                        }
+                    }
                 }
 
-
-
-                //error message        
-                else 
-                {
-                    alert("Geocoder failed due to: " + status);
-                }
+            }
 
 
 
-            });
-        }
-        codeLatLng(customer_location);
-        console.log(customer_location);
-    });
+            //error message        
+            else {
+                alert("Geocoder failed due to: " + status);
+            }
 
+
+
+        });
+    }
+    codeLatLng(customer_location);
+    console.log(customer_location);
+});
 
 
 
 function setSelection(shape) {
-       // clearSelection();
-selectedShape = shape;
-shape.setEditable(true);
+    // clearSelection();
+    selectedShape = shape;
+    shape.setEditable(true);
 
 }
 
 var customer_location = new google.maps.LatLng(47.368594, 8.514404);
 
-      //This next function starts the map and deals with the polygon overlay
-      function initialize() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-		    zoom: 20,
-            //disbling 45 degree tilt
-            tilt: 0,
-            //disabling zooming and panning with the next 4 items
-            //draggable: false, 
-            //zoomControl: false, 
-            //scrollwheel: false, 
-            disableDoubleClickZoom: true,
-            //the next one hides the rest of the tools on the map    
-            disableDefaultUI: true,
-		    center: customer_location,
-		    mapTypeId: google.maps.MapTypeId.HYBRID
-        });
 
-        var polyOptions = {
-          strokeWeight: 0,
-          fillOpacity: 0.45,
-          editable: true,
 
-        };
-        // Creates a drawing manager attached to the map that allows the user to draw
-        // markers, lines, and shapes.
-        drawingManager = new google.maps.drawing.DrawingManager({
-           //the next line makes the control options invisible
-          drawingControl: false,
-          drawingMode: google.maps.drawing.OverlayType.POLYGON,
-          polygonOptions: polyOptions,
-          map: map
-        });
+//This next function starts the map and deals with the polygon overlay
+function initialize() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 20,
+        //disbling 45 degree tilt
+        tilt: 0,
+        //disabling zooming and panning with the next 4 items
+        //draggable: false, 
+        //zoomControl: false, 
+        //scrollwheel: false, 
+        disableDoubleClickZoom: true,
+        //the next one hides the rest of the tools on the map    
+        disableDefaultUI: true,
+        center: customer_location,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    });
 
-        google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
-            if (e.type != google.maps.drawing.OverlayType.MARKER) {
+    var polyOptions = {
+        strokeWeight: 0,
+        fillOpacity: 0.45,
+        editable: true,
+
+    };
+    // Creates a drawing manager attached to the map that allows the user to draw
+    // markers, lines, and shapes.
+    drawingManager = new google.maps.drawing.DrawingManager({
+        //the next line makes the control options invisible
+        drawingControl: false,
+        drawingMode: google.maps.drawing.OverlayType.POLYGON,
+        polygonOptions: polyOptions,
+        map: map
+    });
+
+    google.maps.event.addListener(drawingManager, 'overlaycomplete', function (e) {
+        if (e.type != google.maps.drawing.OverlayType.MARKER) {
             // Switch back to non-drawing mode after drawing a shape.
             drawingManager.setDrawingMode(null);
 
@@ -184,117 +184,103 @@ var customer_location = new google.maps.LatLng(47.368594, 8.514404);
 
             var newShape = e.overlay;
             newShape.type = e.type;
-            google.maps.event.addListener(newShape, 'click', function() {
-              setSelection(newShape);
+            google.maps.event.addListener(newShape, 'click', function () {
+                setSelection(newShape);
             });
             setSelection(newShape);
-          }
-
-        });
-
-      function deleteSelectedShape() {
-        if (selectedShape) {
-       
-          selectedShape.setMap(null);
-          drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
         }
-      }
-        
-        // Clear the current selection when the drawing mode is changed, or when the
-        // map is clicked.
+
+    });
+
+    function deleteSelectedShape() {
+        if (selectedShape) {
+
+            selectedShape.setMap(null);
+            drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+        }
+    }
+
+    // Clear the current selection when the drawing mode is changed, or when the
+    // map is clicked.
     //This is commented out so the shape cannot be unselected(next two lines):
-        //google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
-       // google.maps.event.addListener(map, 'click', clearSelection);
-        //ATTENTION: reactivate this as soon as the delete button is implemented
-       // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
+    //google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
+    // google.maps.event.addListener(map, 'click', clearSelection);
+    //ATTENTION: reactivate this as soon as the delete button is implemented
+    // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
 
     //the next line helps us to get the data from the user, also we extract the area
-google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
+    google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
 
-    latlng_coordinates = (polygon.getPath().getArray());
+        latlng_coordinates = (polygon.getPath().getArray());
 
-    area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+        area = google.maps.geometry.spherical.computeArea(polygon.getPath());
 
+    });
+
+}
+
+
+//get data to transfer to server
+$('#sendData').click(function () {
+    $('#dataPanel').empty();
+    //if(null==creator.showData()){
+
+    //stop the form from executing
+    //  $('form').submit(function(e) {
+    //	    alert('submit clicked');
+    //	    e.preventDefault();
+    //  });
+
+    //  $(".fehlermeldungbox").lightbox_me({
+    //    centered: true
+    // });
+    //alert("no data given")';
+    //alert("you forgot to mark roof");
+
+    // }
+
+    // else{
+
+    //extracting data to be handed over to django
+    var LatLng = new Array();
+    var Dist = new Array();
+    var Head = new Array();
+    //var coordinates = creator.showData().match(/[0-9.]+/g);
+    //for(var i=0; i <(coordinates.length)/2; i++)
+
+    for (var i = 0; i < latlng_coordinates.length; i++) {
+        //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
+
+        if (i > 0) {
+            Dist[i - 1] = google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i - 1], latlng_coordinates[i]);
+            Head[i - 1] = google.maps.geometry.spherical.computeHeading(latlng_coordinates[i - 1], latlng_coordinates[i]);
+
+
+        }
+        //to find distance/heading of last vertice
+        if (i == 0) {
+            Dist[latlng_coordinates.length - 1] = google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[latlng_coordinates.length - 1], latlng_coordinates[0]);
+            Head[latlng_coordinates.length - 1] = google.maps.geometry.spherical.computeHeading(latlng_coordinates[latlng_coordinates.length - 1], latlng_coordinates[0]);
+
+
+        }
+
+
+    }
+
+    $('#geoData').append('<input type="hidden" name="coordinates" value="' + latlng_coordinates + '">');
+    $('#geoData').append('<input type="hidden" name="area" value="' + area + '">');
+    $('#geoData').append('<input type="hidden" name="distances" value="' + Dist + '">');
+    $('#geoData').append('<input type="hidden" name="headings" value="' + Head + '">');
+    alert("stop execution");
+
+    //  }
 });
 
-   }
-
-
-    //get data to transfer to server
-	    $('#sendData').click(function(){ 
-			    $('#dataPanel').empty();
-			    //if(null==creator.showData()){
-				
-				    //stop the form from executing
-				  //  $('form').submit(function(e) {
-				//	    alert('submit clicked');
-				//	    e.preventDefault();
-				  //  });
-
-				  //  $(".fehlermeldungbox").lightbox_me({
-					//    centered: true
-				   // });
-				    //alert("no data given")';
-				    //alert("you forgot to mark roof");
-
-			   // }
-                
-               // else{
-
-					    //extracting data to be handed over to django
-					    var LatLng = new Array();
-					    var Dist = new Array();
-					    var Head = new Array();
-					    //var coordinates = creator.showData().match(/[0-9.]+/g);
-					    //for(var i=0; i <(coordinates.length)/2; i++)
-
-					    for(var i=0; i <latlng_coordinates.length; i++)
-					    {
-						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
-                           
-						    if (i>0)
-						    {
-							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i-1],latlng_coordinates[i]);
-							    Head[i-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[i-1],latlng_coordinates[i]);
-
-
-						    }
-                            //to find distance/heading of last vertice
-						    if (i == 0)
-						    {
-							    Dist[latlng_coordinates.length-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[latlng_coordinates.length-1],latlng_coordinates[0]);
-							    Head[latlng_coordinates.length-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[latlng_coordinates.length-1],latlng_coordinates[0]);
-
-
-						    }
-
-
-					    }
 
 
 
-					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +latlng_coordinates+'">');                    
-					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
-					    $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
-					    $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
-                        alert("stop execution");
-	
-			  //  }
-	     });
-
-
-
-
-
-   
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
-
-
-	
+google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 
 
