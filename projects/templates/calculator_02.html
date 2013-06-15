@@ -158,7 +158,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 			   // }
                 
                // else{
-    alert(latlng_coordinates[0]);
+
 					    //extracting data to be handed over to django
 					    var LatLng = new Array();
 					    var Dist = new Array();
@@ -168,11 +168,11 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 					    for(var i=0; i <3; i++)
 					    {
 						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
-                            LatLng[i]=llatlng_coordinates[i]
+                            LatLng[i]=latlng_coordinates[i]
 						    if (i>0)
 						    {
-							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(LatLng[i-1],LatLng[i]);
-							    Head[i-1]= google.maps.geometry.spherical.computeHeading(LatLng[i-1],LatLng[i]);
+							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i-1],latlng_coordinates[i]);
+							    Head[i-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[i-1],latlng_coordinates[i]);
                                 alert(Dist[1]);
 						    }
 					    }
