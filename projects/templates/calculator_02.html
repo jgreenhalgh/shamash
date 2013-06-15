@@ -129,10 +129,10 @@
        // google.maps.event.addListener(map, 'click', clearSelection);
         //ATTENTION: reactivate this as soon as the delete button is implemented
        // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
-
+var coordinates;
     //the next line helps us to get the data from the user
 google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
-    var coordinates = (polygon.getPath().getArray());
+    coordinates = (polygon.getPath().getArray());
     console.log(coordinates);
     alert(coordinates[0]);
 });
