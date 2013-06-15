@@ -53,36 +53,30 @@ $(document).ready(function(){
       var drawingManager;
       var selectedShape;
       var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
-      //var selectedColor;
-     // var colorButtons = {};
+
       var latlng_coordinates;
       var area;
       var address = "{{selected_address}}";
 
-    //This is commented out so the shape cannot be unselected
-      //function clearSelection() {
-      //  if (selectedShape) {
-       //   selectedShape.setEditable(false);
-       //   selectedShape = null;
-      //  }
-      //}
+
        var my_new_variable;
     var customer_location;
     var latitude;
-    
+       var latlng = new google.maps.LatLng(-34.397, 150.644);
+        alert(latLng);
 
     //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
     //attention, point is not a latlng object , customer_location is!
-    var geocoder = new GClientGeocoder();
-    var point = geocoder.getLatLng(address, function (point) {
-        var latitude = point.y;
+    var geocoder = new google.maps.Geocoder();
+    geocoder.getLatLng(address, function (point) {
+         latitude = point.y;
         var longitude = point.x;
         var customer_location = new google.maps.LatLng(latitude, longitude);
 
     });
 
     //getting exact data of the customer
-    console.log(point);
+    console.log(latitude);
     function codeLatLng(customer_location) {
         geocoder = new google.maps.Geocoder();
         var latlng = customer_location;
@@ -133,7 +127,7 @@ $(document).ready(function(){
 
 
 
-
+//These next two functions starts the map and deals with the polygon overlay
 function setSelection(shape) {
     // clearSelection();
     selectedShape = shape;
@@ -145,7 +139,7 @@ function setSelection(shape) {
 
 
 
-//This next function starts the map and deals with the polygon overlay
+
 function initialize() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 20,
