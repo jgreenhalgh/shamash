@@ -137,7 +137,8 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 
     latlng_coordinates = (polygon.getPath().getArray());
     console.log(latlng_coordinates);
-    area = google.maps.geometry.spherical.computeArea(polygon);
+    area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+                           console.log(area);
 });
 
 
