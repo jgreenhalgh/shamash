@@ -67,7 +67,7 @@ $(document).ready(function(){
       //  }
       //}
        var my_new_variable;
-var customer_location;
+    var customer_location;
     var latitude;
 
 
@@ -75,14 +75,14 @@ var customer_location;
     //attention, point is not a latlng object , customer_location is!
     var geocoder = new GClientGeocoder();
     var point = geocoder.getLatLng(address, function (point) {
-        latitude = point.y;
+        var latitude = point.y;
         var longitude = point.x;
         var customer_location = new google.maps.LatLng(latitude, longitude);
 
     });
 
     //getting exact data of the customer
-    console.log(latitude);
+    console.log(longitude);
     function codeLatLng(customer_location) {
         geocoder = new google.maps.Geocoder();
         var latlng = customer_location;
