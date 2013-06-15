@@ -65,82 +65,83 @@
       //  }
       //}
 $(function () {
-        //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
-        var geocoder = new GClientGeocoder();
+    //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
+    var geocoder = new GClientGeocoder();
 
 
 
- 
-        //create map
-        //attention, point is not a latlng object , customer_location is!
-        var point = geocoder.getLatLng(address, function (point) {
-            var latitude = point.y;
-            var longitude = point.x;
-            var customer_location = new google.maps.LatLng(latitude, longitude);
-    console.log(customer_location);
+
+    //create map
+    //attention, point is not a latlng object , customer_location is!
+    var point = geocoder.getLatLng(address, function (point) {
+        var latitude = point.y;
+        var longitude = point.x;
+        var customer_location = new google.maps.LatLng(latitude, longitude);
+        console.log(customer_location);
 
 
 
-            //getting exact data of the customer
+        //getting exact data of the customer
 
-            function codeLatLng(customer_location) {
-                geocoder = new google.maps.Geocoder();
+        function codeLatLng(customer_location) {
+            geocoder = new google.maps.Geocoder();
+            var latlng = customer_location;
+          
+            geocoder.geocode({
+                'latLng': latlng,
+                'region': 'ch'
+            }, function (results, status) {
+                //regional biasing for switzerland
 
-                var latlng = customer_location;
-                geocoder.geocode({
-                    'latLng': latlng,
-                    'region': 'ch'
-                }, function (results, status) {
-                    //regional biasing for switzerland
 
 
+                if (status == google.maps.GeocoderStatus.OK) {
+                    //checking whether there are any data                       
+                    if (results[1]) {
 
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        //checking whether there are any data                       
-                        if (results[1]) {
-
-                            var google_address = results[0].address_components;
-                            //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
-                            //unfortunately the different parts of the address are not always in the same position so we have to cycle through
-                            for (var i = 0; i < google_address.length; i++) {
-                                if (google_address[i].types == "postal_code") {
-                                    $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
-                                }
-                            }
-                            for (var i = 0; i < google_address.length; i++) {
-                                if (google_address[i].types == "locality,political") {
-                                    $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
-                                }
+                        var google_address = results[0].address_components;
+                        //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
+                        //unfortunately the different parts of the address are not always in the same position so we have to cycle through
+                        for (var i = 0; i < google_address.length; i++) {
+                            if (google_address[i].types == "postal_code") {
+                                $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
                             }
                         }
-
+                        for (var i = 0; i < google_address.length; i++) {
+                            if (google_address[i].types == "locality,political") {d
+                                $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
+                            }
+                        }
                     }
 
+                }
 
 
 
-                    console.log(customer_location);
-                    //error message        
-                    else {
-                        alert("Geocoder failed due to: " + status);
-                    }
+
+                console.log(customer_location);
+                //error message        
+                else {
+                    alert("Geocoder failed due to: " + status);
+                }
 
 
 
-                });
-            }
-            codeLatLng(customer_location);
-            console.log(customer_location);
-        });
+            });
+        }
+        codeLatLng(customer_location);
+        console.log(customer_location);
+    });
 
- });
+});
 
-      function setSelection(shape) {
+
+function setSelection(shape) {
        // clearSelection();
-        selectedShape = shape;
-        shape.setEditable(true);
+selectedShape = shape;
+shape.setEditable(true);
 
-      }
+}
 
 var customer_location = new google.maps.LatLng(47.368594, 8.514404);
 
@@ -220,6 +221,8 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 
 });
 
+   }
+
 
     //get data to transfer to server
 	    $('#sendData').click(function(){ 
@@ -287,7 +290,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 
 
 
-      }
+   
       google.maps.event.addDomListener(window, 'load', initialize);
 
 
