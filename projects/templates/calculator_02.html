@@ -59,17 +59,25 @@ $(document).ready(function(){
       var address = "{{selected_address}}";
 
 
-       var my_new_variable;
-    var customer_location;
-    var latitude;
-       var latlng = new google.maps.LatLng(-34.397, 150.644);
-        alert(latlng);
 
+
+
+function codeAddress() {
+    var address = document.getElementById("address").value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+
+            console.log("success"+ results[0]);
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
     //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
     //attention, point is not a latlng object , customer_location is!
     var geocoder = new google.maps.Geocoder();
     geocoder.getLatLng(address, function (point) {
-         latitude = point.y;
+        var latitude = point.y;
         var longitude = point.x;
         var customer_location = new google.maps.LatLng(latitude, longitude);
 
