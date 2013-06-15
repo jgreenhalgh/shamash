@@ -58,7 +58,7 @@ $(document).ready(function(){
       var area;
       var address = "{{selected_address}}";
 
-
+      var my_results;
 
 
 var geocoder = new google.maps.Geocoder();
@@ -68,15 +68,16 @@ function get_coordinates() {
       if (status == google.maps.GeocoderStatus.OK) {
 
             console.log("success"+ results[0]);
+            my_results = results;
       } 
 
         else 
         {
         alert("Geocode was not successful for the following reason: " + status);
         }
-
+    
     });
-    return results[0];
+
   }
     results=get_coordinates();
 
