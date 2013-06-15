@@ -55,6 +55,8 @@
      // var colorButtons = {};
       var latlng_coordinates;
       var area;
+      var address = "{{selected_address}}";
+      var customer_location;
     //This is commented out so the shape cannot be unselected
       //function clearSelection() {
       //  if (selectedShape) {
@@ -63,12 +65,12 @@
       //  }
       //}
 $(function () {
-        //this script is for loading the map at the correct coordinates and drawing the polygon on it
+        //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
         var geocoder = new GClientGeocoder();
 
 
 
-        var address = "{{selected_address}}";
+ 
         //create map
         //attention, point is not a latlng object , customer_location is!
         var point = geocoder.getLatLng(address, function (point) {
@@ -132,7 +134,7 @@ $(function () {
 
       }
 
-var customer_location = new google.maps.LatLng(47.368594, 8.514404);
+//var customer_location = new google.maps.LatLng(47.368594, 8.514404);
 
       //This next function starts the map and deals with the polygon overlay
       function initialize() {
