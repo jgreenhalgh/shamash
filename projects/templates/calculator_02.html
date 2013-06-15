@@ -64,22 +64,20 @@
        //   selectedShape = null;
       //  }
       //}
+
+
+
 $(function () {
     //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
-    var geocoder = new GClientGeocoder();
-
-
-
-
-    //create map
     //attention, point is not a latlng object , customer_location is!
+    var geocoder = new GClientGeocoder();
     var point = geocoder.getLatLng(address, function (point) {
         var latitude = point.y;
         var longitude = point.x;
         var customer_location = new google.maps.LatLng(latitude, longitude);
         console.log(customer_location);
 
- });
+
 
         //getting exact data of the customer
 
@@ -129,7 +127,7 @@ $(function () {
         }
         codeLatLng(customer_location);
         console.log(customer_location);
-   
+    });
 
 });
 
