@@ -57,14 +57,14 @@
       var area;
 
 
-
+    //--------------------------getting exact data of the customer----------------------//
 
 var geocoder = new GClientGeocoder();
 
 
     
 	 var address = "{{selected_address}}";
-	  //create map
+
     //attention, point is not a latlng object , customer_location is!
 	 var point = geocoder.getLatLng(address, function(point) {
 	     var latitude = point.y;
@@ -72,9 +72,6 @@ var geocoder = new GClientGeocoder();
 	     var customer_location = new google.maps.LatLng(latitude, longitude);
 
 
-
-
-    //--------------------------getting exact data of the customer----------------------//
     function codeLatLng(customer_location) 
         {
         geocoder = new google.maps.Geocoder();
@@ -83,9 +80,7 @@ var geocoder = new GClientGeocoder();
          geocoder.geocode({'latLng': latlng,'region':'ch' }, function(results, status) 
             {
                //regional biasing for switzerland
-            
-               
-             
+
              if (status == google.maps.GeocoderStatus.OK) 
                  {
                  //checking whether there are any data                       
@@ -119,9 +114,11 @@ var geocoder = new GClientGeocoder();
                 }
     });
    }
+
+//running the function above
     codeLatLng(customer_location); 
 
-    //--------------------------end of getting exact data of the customer-------------------------//
+//--------------------------end of getting exact data of the customer-------------------------//
 
 
 
