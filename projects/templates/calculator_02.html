@@ -132,6 +132,7 @@
 var latlng_coordinates;
     //the next line helps us to get the data from the user
 google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
+
     latlng_coordinates = (polygon.getPath().getArray());
     console.log(latlng_coordinates);
 
@@ -173,11 +174,11 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 						    {
 							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i-1],latlng_coordinates[i]);
 							    Head[i-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[i-1],latlng_coordinates[i]);
-                                alert(Dist[1]);
+                                //alert(Dist[1]);
 						    }
 					    }
 					    var area = google.maps.geometry.spherical.computeArea(LatLng);
-					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +coordinates+'">');                    
+					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +latlng_coordinates+'">');                    
 					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
 					    $('#geoData').append('<input type="hidden" name="distances" value="' +Dist+'">');      
 					    $('#geoData').append('<input type="hidden" name="headings" value="' +Head+'">'); 
