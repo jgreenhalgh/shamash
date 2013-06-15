@@ -67,14 +67,32 @@ function get_coordinates() {
     geocoder.geocode( { 'address': address, 'region': 'ch'}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
 
-            console.log("success"+ results[0]);
-            my_results = results[0];
-      } 
+                //checking whether there are any data                       
+                if (results[1]) {
+
+                    var google_address = results[0].address_components;
+                    //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
+                    //unfortunately the different parts of the address are not always in the same position so we have to cycle through
+                    for (var i = 0; i < google_address.length; i++) {
+                        if (google_address[i].types == "postal_code") {
+                            $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
+                        }
+                    }
+                    for (var i = 0; i < google_address.length; i++) {
+                        if (google_address[i].types == "locality,political") {
+                            $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
+                        }
+                    }
+                }
+
+            }
+       
 
         else 
         {
         alert("Geocode was not successful for the following reason: " + status);
         }
+}
 
     });
                 console.log(my_results);
