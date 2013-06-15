@@ -141,29 +141,29 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
     //get data to transfer to server
 	    $('#sendData').click(function(){ 
 			    $('#dataPanel').empty();
-			    if(null==creator.showData()){
+			    //if(null==creator.showData()){
 				
 				    //stop the form from executing
-				    $('form').submit(function(e) {
-					    alert('submit clicked');
-					    e.preventDefault();
-				    });
+				  //  $('form').submit(function(e) {
+				//	    alert('submit clicked');
+				//	    e.preventDefault();
+				  //  });
 
-				    $(".fehlermeldungbox").lightbox_me({
-					    centered: true
-				    });
+				  //  $(".fehlermeldungbox").lightbox_me({
+					//    centered: true
+				   // });
 				    //alert("no data given")';
 				    //alert("you forgot to mark roof");
 
-			    }
+			   // }
                 
-                else{
+               // else{
 			            
 					    //extracting data to be handed over to django
 					    var LatLng = new Array();
 					    var Dist = new Array();
 					    var Head = new Array();
-					    var coordinates = creator.showData().match(/[0-9.]+/g);
+					    //var coordinates = creator.showData().match(/[0-9.]+/g);
 					    for(var i=0; i <(coordinates.length)/2; i++)
 					    {
 						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
