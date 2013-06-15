@@ -134,7 +134,7 @@
 google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
     var coordinates = (polygon.getPath().getArray());
     console.log(coordinates);
-    alert(coordinates);
+    alert(coordinates[0]);
 });
 
 
