@@ -7,87 +7,184 @@
 
 
 {% block content_header %}
-<!-- ==============================================
-		 Stuff for Inline Validation Below! 															-->
+	<!-- START PAGE CSS -->
+	<link rel="stylesheet" href="{{STATIC_URL}}/firstpagejuni/style_startpage.css" type="text/css" media="screen">
+	<!-- JQuery Script for VIMEO Navigation -->
+	<script src="{{STATIC_URL}}/firstpagejuni/js/froogaloop2.min.js"></script>
+	<script>
+	$(document).ready(function() {
+	var iframe = $('#player1')[0],
+		player = $f(iframe),
+		status = $('.status');
 
-<!-- Bootstrap JS -->
-	  <script src="{{STATIC_URL}}/inline_validation_static/bootstrap.min.css"></script>
+	// When the player is ready, add listeners for pause, finish, and playProgress
+	player.addEvent('ready', function() {
+		status.text('ready');
+		
+		player.addEvent('pause', onPause);
+		player.addEvent('finish', onFinish);
+		player.addEvent('playProgress', onPlayProgress);
+	});
 
-<!-- Validate plugin -->
-		<script src="{{STATIC_URL}}/inline_validation_static/jquery.validate.js"></script>
+	// Call the API when a button is pressed
+	$('button').bind('click', function() {
+		player.api($(this).text().toLowerCase());
+	});
 
-<!-- stylesheet for inline validation -->
-    <link href="{{STATIC_URL}}/inline_validation_static/inline_validation_style.css" rel="stylesheet">
+	function onPause(id) {
+		status.text('paused');
+	}
 
+	function onFinish(id) {
+		status.text('finished');
+	}
 
-<!-- Scripts specific to this page -->
-		<script src="{{STATIC_URL}}/inline_validation_static/inline_validation_script.js"></script>
+	function onPlayProgress(data, id) {
+		status.text(data.seconds + 's played');
+	if(data.seconds > 0 && data.seconds < 2) { $('#step1').removeClass('s1p').addClass('s1a'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); $('#step4').removeClass('s4a').addClass('s4p'); };
+	if(data.seconds > 2 && data.seconds < 4) { $('#step2').removeClass('s2p').addClass('s2a'); $('#step1').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); $('#step4').removeClass('s4a').addClass('s4p'); };
+	if(data.seconds > 4 && data.seconds < 6) { $('#step3').removeClass('s3p').addClass('s3a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step4').removeClass('s4a').addClass('s4p'); };
+	if(data.seconds > 8 && data.seconds < 10) { $('#step4').removeClass('s4p').addClass('s4a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); }
+	}
+	});
+	</script>
 
-<!-- ==============================================
-		 End Inline Validation Stuff 															-->
+	<!-- JQuery Validation Script -->
+	<script src="{{STATIC_URL}}/firstpagejuni/js/jquery.validate.js"></script>
+	<!-- JQuery Validation Scripting 1. JQuery 2. CSS-->
+	<script>
+	$(document).ready(function(){
+	
+		$.validator.setDefaults({
+			errorClass: 'formerror',
+			errorElement: 'div',
+		});
+		
+		$("#formstartpage").validate({
+		  // for the rules, use the id-names of the fields
+		  rules: {
+			 wohnort: { 
+				required: false,
+				minlength: 2,
+			},
+			 address: { 
+				required: true,
+				minlength: 2,
+			}
+			},
+			messages: {
+				wohnort: {
+					required: "Bitte tragen Sie einen Wohnort ein",
+					minlength: "Ung&uuml;ltiger Ort"
+				},
+				strasse: {
+					required: "Bitte tragen Sie eine Strasse ein",
+					minlength: "Ung&uuml;ltiger Ort"
+				},
+			},
+		
+			success: function(element) {
+				element.remove();
+			}
+			
+		});
+		
+		$('#formstartpage').submit(function() {
+			var valid = $("#formstartpage").valid();
+			if (valid) {
+				// Success Code...
+				console.log(1);
+				$.post('save.php', $(this))
+			} else {
+				// Failure Code...
+				console.log(0);
+			}
+		});
+		
+
+	});
+	</script>
+	<!-- CSS Style for the Validation script -->
+	<style type="text/css">
+	.formerror {
+		color:#fff;
+		font-family: Arial, sans-serif;
+		font-size:13px;
+		font-weight:bold;
+		line-height:15px;
+		padding-bottom:10px;
+		text-align:center;
+	}
+	input.formerror {
+		  background: url({{STATIC_URL}}/firstpagejuni/error.png) no-repeat right; 
+		  background-color: rgba(0,0,0,0.1);
+		  border: solid 1px #feabab;
+		  text-align:left;
+	}
+	input.valid {
+		  background: url({{STATIC_URL}}/firstpagejuni/ok.png) no-repeat right; 
+		  background-color: rgba(0,0,0,0.1);
+
+	}
+   </style>														
 
 {% endblock %}
 
 {% block content %}
-				<div class="row">
-				
+<div class="center">
 
-				    <div id="demo" class="tab-pane active">
-<!-- notes .alert -->
-						<form action="" id="contact-form" class="form-horizontal">
-						  <fieldset>
-						    <legend>Sample Contact Form <small>(will not submit any information)</small></legend>
+	<div class="header"> 
+		<img src="{{STATIC_URL}}/firstpagejuni/logo.png" />
+	</div>
 
-						    <div class="control-group">
-						      <label class="control-label" for="name">Your Name</label>
-						      <div class="controls">
-						        <input type="text" class="input-xlarge" name="name" id="name">
-						      </div>
-						    </div>
-						    <div class="control-group">
-						      <label class="control-label" for="email">Email Address</label>
-						      <div class="controls">
-						        <input type="text" class="input-xlarge" name="email" id="email">
-						      </div>
-						    </div>
 
-	              <div class="form-actions">
-			            <button type="submit" class="btn btn-primary btn-large">Submit</button>
-	    			      <button type="reset" class="btn">Cancel</button>
-	        			</div>
-						  </fieldset>
-						</form>
-			
+	<div class="container_bigmac">
+		<div class="bigmac">
+			<!--<iframe id="player1" style="margin-left:87px; margin-top:20px;" src="http://player.vimeo.com/video/27855315?api=1&player_id=player1" width="479" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>-->
+			<iframe style="margin-left:94px; margin-top:28px;" id="player1" src="http://player.vimeo.com/video/2431879?api=1&player_id=player1&amp;autoplay=1&amp;loop=1" width="473" height="296" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<!-- <p>Video status: <span class="status">...</span></p>
+<p><button>Play</button> <button>Pause</button></p> -->
 
-			</div><!-- .row -->
-
-<!--  finish: inline validated form -->
-	<div class="start_headertwo">
-		<div class="container_12">
-			<div class="grid_6">
-				<h1>Sch&auml;tzen Sie Ihr Solarpotential:</h1>
-				<p>
-				Herzlich Willkommen bei InstantSolar.ch <br />Ihre indiviueller Rechner f&uuml;r Photovoltaik- und Solarthermieanlagen.
-
-<!--  Testnachricht hier: <span style="font-weight:bold;">{{message}}</span> -->
-				</p>
-			
-			</div>
-<div class="row">
-				
-
-			<form action="/panel/" method="post">
-			{% csrf_token %}
-				<p>
-            Geben Sie Ihren Wohnort, Strasse und Strassennummer ein:
-                </p>
-			
-				<input class="wohnadresse" type="text" name="address"/> <br />
-				<input type="submit" class="solarpotentialbutton" value="Weiter"/> 
-			</form>
-			</div>
+		</div>
+		<div class="bigmacnav">
+			<a href="#"><div id="step1" class="steps s1a"></div></a>
+			<a href="#"><div id="step2" class="steps s2p"></div></a>
+			<a href="#"><div id="step3" class="steps s3p"></div></a>
+			<a href="#"><div id="step4" class="steps s4p"></div></a>
+			<a href="#"><div class="clear"></div></a>
 		</div>
 	</div>
+	
+	
+	<div class="searchbox">
+		<h2>Sch&auml;tzen Sie Ihr <br/>  Solarpotential.</h2>
+
+			<h3>Ihre Adresse</h3>
+
+				<form action="/panel/" method="post">
+        		{% csrf_token %}
+
+				<div style="height:150px;">
+				<input type="text" name="address" id="address" placeholder="Strasse + Strassennummer" />
+				<input type="text" name="wohnort" id="wohnort"  placeholder="Postleizahl und Wohnort" />
+				</div>
+				<a href="#" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">oder</span><a href="#"><input type="submit" value="weiter" class="button" ></a>
+				
+				<p class="smalltextunderbutton">kostenlos und sicher</p>
+				</form>
+				<!--
+				<div style="margin-top:50px;">
+				<a href="#" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">oder</span><a href="#" class="button">weiter</a>
+				<p class="smalltextunderbutton"> kostenlos&nbsp;und&nbsp;sicher</p>
+				</div>
+				-->
+				<br/>
+					<div id="footer"></div>
+	</div>
+	
+</div>
+
+<div class="clear"></div>
 {% endblock %}
 
 

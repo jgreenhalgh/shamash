@@ -1,0 +1,93 @@
+{% extends "calculator_base.html" %}
+
+{% block calc_01_active %}active{% endblock %}
+
+{% block header_inbody_step14 %}
+{% endblock %}
+
+
+{% block content_header %}
+<!-- ==============================================
+		 Stuff for Inline Validation Below! 															-->
+
+<!-- Bootstrap JS -->
+	  <script src="{{STATIC_URL}}/inline_validation_static/bootstrap.min.css"></script>
+
+<!-- Validate plugin -->
+		<script src="{{STATIC_URL}}/inline_validation_static/jquery.validate.js"></script>
+
+<!-- stylesheet for inline validation -->
+    <link href="{{STATIC_URL}}/inline_validation_static/inline_validation_style.css" rel="stylesheet">
+
+
+<!-- Scripts specific to this page -->
+		<script src="{{STATIC_URL}}/inline_validation_static/inline_validation_script.js"></script>
+
+<!-- ==============================================
+		 End Inline Validation Stuff 															-->
+
+{% endblock %}
+
+{% block content %}
+				<div class="row">
+				
+
+				    <div id="demo" class="tab-pane active">
+<!-- notes .alert -->
+						<form action="" id="contact-form" class="form-horizontal">
+						  <fieldset>
+						    <legend>Sample Contact Form <small>(will not submit any information)</small></legend>
+
+						    <div class="control-group">
+						      <label class="control-label" for="name">Your Name</label>
+						      <div class="controls">
+						        <input type="text" class="input-xlarge" name="name" id="name">
+						      </div>
+						    </div>
+						    <div class="control-group">
+						      <label class="control-label" for="email">Email Address</label>
+						      <div class="controls">
+						        <input type="text" class="input-xlarge" name="email" id="email">
+						      </div>
+						    </div>
+
+	              <div class="form-actions">
+			            <button type="submit" class="btn btn-primary btn-large">Submit</button>
+	    			      <button type="reset" class="btn">Cancel</button>
+	        			</div>
+						  </fieldset>
+						</form>
+			
+
+			</div><!-- .row -->
+
+<!--  finish: inline validated form -->
+	<div class="start_headertwo">
+		<div class="container_12">
+			<div class="grid_6">
+				<h1>Sch&auml;tzen Sie Ihr Solarpotential:</h1>
+				<p>
+				Herzlich Willkommen bei InstantSolar.ch <br />Ihre indiviueller Rechner f&uuml;r Photovoltaik- und Solarthermieanlagen.
+
+<!--  Testnachricht hier: <span style="font-weight:bold;">{{message}}</span> -->
+				</p>
+			
+			</div>
+<div class="row">
+				
+
+			<form action="/panel/" method="post">
+			{% csrf_token %}
+				<p>
+            Geben Sie Ihren Wohnort, Strasse und Strassennummer ein:
+                </p>
+			
+				<input class="wohnadresse" type="text" name="address"/> <br />
+				<input type="submit" class="solarpotentialbutton" value="Weiter"/> 
+			</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
