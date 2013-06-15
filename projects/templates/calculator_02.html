@@ -64,7 +64,7 @@ $(document).ready(function(){
 var geocoder = new google.maps.Geocoder();
 function get_coordinates() {
 
-    geocoder.geocode( { 'address': address}, function(results, status) {
+    geocoder.geocode( { 'address': address, 'region': 'ch'}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
 
             console.log("success"+ results[0]);
@@ -132,7 +132,7 @@ customer_location =new google.maps.LatLng(47.368594, 8.514404);
 
         });
     }
-    codeLatLng(customer_location);
+
 
     my_new_variable = "bla";
 
