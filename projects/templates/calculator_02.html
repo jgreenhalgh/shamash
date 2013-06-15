@@ -48,9 +48,6 @@
       }
     </style>
     <script type="text/javascript">
-
-
-$(function () {
       var drawingManager;
       var selectedShape;
       var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
@@ -70,7 +67,7 @@ $(function () {
        var my_new_variable;
 
 
-
+$(function () {
     //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
     //attention, point is not a latlng object , customer_location is!
     var geocoder = new GClientGeocoder();
@@ -126,9 +123,9 @@ $(function () {
         });
     }
     codeLatLng(customer_location);
-    //console.log(customer_location);
+    console.log(customer_location);
     my_new_variable = "bla";
-
+});
 
     console.log(my_new_variable);
 
@@ -283,8 +280,6 @@ $('#sendData').click(function () {
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-});
     </script>
 
 
