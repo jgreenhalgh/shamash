@@ -68,7 +68,7 @@ function get_coordinates() {
       if (status == google.maps.GeocoderStatus.OK) {
 
             console.log("success"+ results[0]);
-            my_results[0] = results[0];
+            my_results = results[0];
       } 
 
         else 
@@ -77,8 +77,8 @@ function get_coordinates() {
         }
 
     });
-                console.log(my_results[0]);
-  }
+                console.log(my_results);
+}
 
 get_coordinates();
 //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
