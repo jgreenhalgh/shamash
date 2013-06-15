@@ -72,16 +72,17 @@ function get_coordinates() {
         alert("Geocode was not successful for the following reason: " + status);
       }
     });
-    
+    return results;
   }
-    get_coordinates();
+    results=get_coordinates();
 
 //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
     //attention, point is not a latlng object , customer_location is!
 
 
     //getting exact data of the customer
-customer_location =new google.maps.LatLng(47.368594, 8.514404);
+//customer_location =new google.maps.LatLng(47.368594, 8.514404);
+customer_location =results[0].geometry.location;
     function codeLatLng(customer_location) {
         geocoder = new google.maps.Geocoder();
         var latlng = customer_location;
