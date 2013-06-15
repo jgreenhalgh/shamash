@@ -69,7 +69,7 @@ $(document).ready(function(){
        var my_new_variable;
     var customer_location;
     var latitude;
-
+    
 
     //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
     //attention, point is not a latlng object , customer_location is!
@@ -82,7 +82,7 @@ $(document).ready(function(){
     });
 
     //getting exact data of the customer
-    console.log(longitude);
+    console.log(latitude);
     function codeLatLng(customer_location) {
         geocoder = new google.maps.Geocoder();
         var latlng = customer_location;
