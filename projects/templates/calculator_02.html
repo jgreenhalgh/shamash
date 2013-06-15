@@ -129,12 +129,12 @@
        // google.maps.event.addListener(map, 'click', clearSelection);
         //ATTENTION: reactivate this as soon as the delete button is implemented
        // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click', deleteSelectedShape);
-var coordinates;
+var latlng_coordinates;
     //the next line helps us to get the data from the user
 google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
-    coordinates = (polygon.getPath().getArray());
-    console.log(coordinates);
-    alert(coordinates[0]);
+    latlng_coordinates = (polygon.getPath().getArray());
+    console.log(latlng_coordinates);
+    alert(latlng_coordinates[0]);
 });
 
 
@@ -158,7 +158,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 			   // }
                 
                // else{
-    alert(coordinates[0]);
+    alert(latlng_coordinates[0]);
 					    //extracting data to be handed over to django
 					    var LatLng = new Array();
 					    var Dist = new Array();
@@ -167,7 +167,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 					    for(var i=0; i <(coordinates.length)/2; i++)
 					    {
 						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
-                            LatLng[i]=coordinates[i]
+                            LatLng[i]=llatlng_coordinates[i]
 						    if (i>0)
 						    {
 							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(LatLng[i-1],LatLng[i]);
