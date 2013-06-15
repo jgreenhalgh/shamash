@@ -58,7 +58,7 @@ $(function () {
       var latlng_coordinates;
       var area;
       var address = "{{selected_address}}";
-      var customer_location;
+
     //This is commented out so the shape cannot be unselected
       //function clearSelection() {
       //  if (selectedShape) {
@@ -76,11 +76,11 @@ $(function () {
     var point = geocoder.getLatLng(address, function (point) {
         var latitude = point.y;
         var longitude = point.x;
-        customer_location = new google.maps.LatLng(latitude, longitude);
+        var customer_location = new google.maps.LatLng(latitude, longitude);
 
     });
     //getting exact data of the customer
-    console.log(customer_location);
+    console.log(point.customer_location);
     function codeLatLng(customer_location) {
         geocoder = new google.maps.Geocoder();
         var latlng = customer_location;
