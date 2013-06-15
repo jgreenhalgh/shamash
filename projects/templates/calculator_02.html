@@ -133,8 +133,8 @@ $(function () {
         shape.setEditable(true);
 
       }
-
-//var customer_location = new google.maps.LatLng(47.368594, 8.514404);
+    console.log(customer_location);
+var customer_location = new google.maps.LatLng(47.368594, 8.514404);
 
       //This next function starts the map and deals with the polygon overlay
       function initialize() {
@@ -240,7 +240,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 					    var Head = new Array();
 					    //var coordinates = creator.showData().match(/[0-9.]+/g);
 					    //for(var i=0; i <(coordinates.length)/2; i++)
-    console.log("got until before loop");
+
 					    for(var i=0; i <latlng_coordinates.length; i++)
 					    {
 						    //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
@@ -250,7 +250,7 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 							    Dist[i-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i-1],latlng_coordinates[i]);
 							    Head[i-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[i-1],latlng_coordinates[i]);
 
-                                console.log(Dist[i-1]);
+
 						    }
                             //to find distance/heading of last vertice
 						    if (i == 0)
@@ -258,13 +258,13 @@ google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polyg
 							    Dist[latlng_coordinates.length-1]= google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[latlng_coordinates.length-1],latlng_coordinates[0]);
 							    Head[latlng_coordinates.length-1]= google.maps.geometry.spherical.computeHeading(latlng_coordinates[latlng_coordinates.length-1],latlng_coordinates[0]);
 
-                                console.log(Dist[latlng_coordinates.length-1]);
+
 						    }
 
 
 					    }
 
-                                console.log(area);
+
 
 					    $('#geoData').append('<input type="hidden" name="coordinates" value="' +latlng_coordinates+'">');                    
 					    $('#geoData').append('<input type="hidden" name="area" value="' +area+'">');              
