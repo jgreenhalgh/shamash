@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 
 
-
+var geocoder = new google.maps.Geocoder();
 function get_coordinates() {
 
     geocoder.geocode( { 'address': address}, function(results, status) {
