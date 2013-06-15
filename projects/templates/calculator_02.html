@@ -74,9 +74,7 @@ $(function () {
     var point = geocoder.getLatLng(address, function (point) {
         var latitude = point.y;
         var longitude = point.x;
-        var customer_location = new google.maps.LatLng(latitude, longitude);
-
-
+        customer_location = new google.maps.LatLng(latitude, longitude);
     });
     //getting exact data of the customer
 
@@ -128,7 +126,7 @@ $(function () {
     console.log(customer_location);
 });
 
-
+    console.log(customer_location);
 
 function setSelection(shape) {
     // clearSelection();
