@@ -64,7 +64,7 @@
        //   selectedShape = null;
       //  }
       //}
-
+       var my_new_variable;
 
 
 $(function () {
@@ -123,10 +123,11 @@ $(function () {
         });
     }
     codeLatLng(customer_location);
-
+    console.log(customer_location);
+    my_new_variable = customer_location;
 });
 
-    console.log(customer_location);
+    console.log(my_new_variable);
 
 function setSelection(shape) {
     // clearSelection();
