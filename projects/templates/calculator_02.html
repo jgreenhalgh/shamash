@@ -78,7 +78,7 @@ $(function () {
             var longitude = point.x;
             var customer_location = new google.maps.LatLng(latitude, longitude);
     console.log(customer_location);
-        });
+
 
 
             //getting exact data of the customer
@@ -118,7 +118,7 @@ $(function () {
 
 
 
-    console.log(customer_location);
+                    console.log(customer_location);
                     //error message        
                     else {
                         alert("Geocoder failed due to: " + status);
@@ -129,8 +129,8 @@ $(function () {
                 });
             }
             codeLatLng(customer_location);
-    console.log(customer_location);
-       
+            console.log(customer_location);
+        });
 
  });
 
