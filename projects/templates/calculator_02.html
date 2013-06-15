@@ -68,7 +68,7 @@ function get_coordinates() {
       if (status == google.maps.GeocoderStatus.OK) {
 
             console.log("success"+ results[0]);
-            my_results = results;
+            my_results[0] = results[0];
       } 
 
         else 
