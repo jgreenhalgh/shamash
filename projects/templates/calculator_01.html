@@ -3,6 +3,10 @@
 {% block calc_01_active %}active{% endblock %}
 
 
+{% block header_inbody_step14 %}
+
+{% endblock %}
+
 
 
 {% block content_header %}
@@ -32,7 +36,7 @@
 
 	function onPause(id) {
 		status.text('paused');
-	}
+		}
 
 	function onFinish(id) {
 		status.text('finished');
@@ -53,13 +57,16 @@
 	<!-- JQuery Validation Scripting 1. JQuery 2. CSS-->
 	<script>
 	$(document).ready(function(){
+
+		// disable the submit button
+		// $('#submitbutton').attr('disabled', 'disabled');
 	
 		$.validator.setDefaults({
 			errorClass: 'formerror',
 			errorElement: 'div',
 		});
 		
-		$("#formstartpage").validate({
+		$("#formaction").validate({
 		  // for the rules, use the id-names of the fields
 		  rules: {
 			 wohnort: { 
@@ -88,17 +95,19 @@
 			
 		});
 		
-		$('#formstartpage').submit(function() {
-			var valid = $("#formstartpage").valid();
+		/* $('#formaction').submit(function() {
+			var valid = $("#formaction").valid();
 			if (valid) {
 				// Success Code...
-				console.log(1);
-				$.post('save.php', $(this))
+				// Die Idea behind this is to re-enabling the submit button bz remove the disabling-attribute
+				
+				 $('#submitbutton').removeAttr('disabled');
 			} else {
-				// Failure Code...
-				console.log(0);
+
+				 $('#submitbutton').attr('disabled', 'disabled');
 			}
-		});
+		}); */
+
 		
 
 	});
@@ -160,14 +169,16 @@
 
 			<h3>Ihre Adresse</h3>
 
-				<form action="/panel/" method="post">
+				<form id="formaction" action="/panel/" method="post">
         		{% csrf_token %}
 
 				<div style="height:150px;">
 				<input type="text" name="address" id="address" placeholder="Strasse + Strassennummer" />
 				<input type="text" name="wohnort" id="wohnort"  placeholder="Postleizahl und Wohnort" />
 				</div>
-				<a href="#" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">oder</span><a href="#"><input type="submit" value="weiter" class="button" ></a>
+				<a href="#" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">oder</span><a href="#"><input id="submitbutton" type="submit" name="submit" value="weiter" class="button" ></a>
+
+				<!-- der Submitbutton wird mit jQuery activiert oder deaktiviert -->
 				
 				<p class="smalltextunderbutton">kostenlos und sicher</p>
 				</form>
