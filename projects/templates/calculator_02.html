@@ -12,162 +12,104 @@
 <script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
 
 <!--NEUES Skript fuer Google Maps Anzeige: -->
-<script type="text/javascript"
-      src="http://maps.google.com/maps/api/js?sensor=false&libraries=drawing"></script>
-
-    <style type="text/css">
-      #map, html, body {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-      }
-
-      #panel {
-        width: 200px;
-        font-family: Arial, sans-serif;
-        font-size: 13px;
-        float: right;
-        margin: 10px;
-      }
-
-      #color-palette {
-        clear: both;
-      }
-
-      .color-button {
-        width: 14px;
-        height: 14px;
-        font-size: 0;
-        margin: 2px;
-        float: left;
-        cursor: pointer;
-      }
-
-      #delete-button {
-        margin-top: 5px;
-      }
-    </style>
-    <script type="text/javascript">
-
-$(document).ready(function(){
-      var drawingManager;
-      var selectedShape;
-      var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
-
-      var latlng_coordinates;
-      var area;
-      var address = "{{selected_address}}";
-
-      var my_results;
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=drawing"></script>
 
 
+<style type="text/css">
+#map, html, body {
+padding: 0;
+margin: 0;
+height: 100%;
+}
+
+#panel {
+width: 200px;
+font-family: Arial, sans-serif;
+font-size: 13px;
+float: right;
+margin: 10px;
+}
+
+#color-palette {
+clear: both;
+}
+
+.color-button {
+width: 14px;
+height: 14px;
+font-size: 0;
+margin: 2px;
+float: left;
+cursor: pointer;
+}
+
+#delete-button {
+margin-top: 5px;
+}
+</style>
+
+
+
+<script type="text/javascript">
+
+
+var drawingManager;
+var selectedShape;
+var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
+
+var latlng_coordinates;
+var area;
+var address = "{{selected_address}}";
+
+var my_results;   
 var geocoder = new google.maps.Geocoder();
-function get_coordinates() {
+$(document).ready(function(){
 
-    geocoder.geocode( { 'address': address, 'region': 'ch'}, function(results, status) {
+function get_coordinates(callback) {
+
+    geocoder.geocode( { 'address': address, 'region': 'ch'}, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
 
-                //checking whether there are any data                       
-                if (results[1]) {
-
-                    var google_address = results[0].address_components;
-                    //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
-                    //unfortunately the different parts of the address are not always in the same position so we have to cycle through
-                    for (var i = 0; i < google_address.length; i++) {
-                        if (google_address[i].types == "postal_code") {
-                            $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
-                        }
-                    }
-                    for (var i = 0; i < google_address.length; i++) {
-                        if (google_address[i].types == "locality,political") {
-                            $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
-                        }
+            //checking whether there are any data                       
+            if (results[1]) {
+                
+                var google_address = results[0].address_components;
+                //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
+                //unfortunately the different parts of the address are not always in the same position so we have to cycle through
+                for (var i = 0; i < google_address.length; i++) {
+                    if (google_address[i].types == "postal_code") {
+                        $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
                     }
                 }
-
+                for (var i = 0; i < google_address.length; i++) {
+                    if (google_address[i].types == "locality,political") {
+                        $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
+                    }
+                }
             }
-       
-
-        else 
-        {
-        alert("Geocode was not successful for the following reason: " + status);
+            else 
+            {
+            alert("Geocode was not successful for the following reason: " + status);
+            }
         }
-
-
     });
 }
 
 get_coordinates();
 
-
 //this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
-    //attention, point is not a latlng object , customer_location is!
+//attention, point is not a latlng object , customer_location is!
 
 
-    //getting exact data of the customer
+//getting exact data of the customer
 customer_location =new google.maps.LatLng(47.368594, 8.514404);
-//customer_location =results[0].geometry.location;
-    function codeLatLng(customer_location) {
-        geocoder = new google.maps.Geocoder();
-        var latlng = customer_location;
-
-        geocoder.geocode({
-            'latLng': latlng,
-            'region': 'ch'
-        }, function (results, status) {
-            //regional biasing for switzerland
-
-
-
-            if (status == google.maps.GeocoderStatus.OK) {
-                //checking whether there are any data                       
-                if (results[1]) {
-
-                    var google_address = results[0].address_components;
-                    //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
-                    //unfortunately the different parts of the address are not always in the same position so we have to cycle through
-                    for (var i = 0; i < google_address.length; i++) {
-                        if (google_address[i].types == "postal_code") {
-                            $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
-                        }
-                    }
-                    for (var i = 0; i < google_address.length; i++) {
-                        if (google_address[i].types == "locality,political") {
-                            $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
-                        }
-                    }
-                }
-
-            }
-
-
-
-            //error message        
-            else {
-                alert("Geocoder failed due to: " + status);
-            }
-
-
-
-        });
-    }
-
-
-    my_new_variable = "bla";
-
-
 
 //These next two functions starts the map and deals with the polygon overlay
 function setSelection(shape) {
     // clearSelection();
     selectedShape = shape;
     shape.setEditable(true);
-
 }
-
- 
-
-
 
 
 function initialize() {
@@ -190,8 +132,9 @@ function initialize() {
         strokeWeight: 0,
         fillOpacity: 0.45,
         editable: true,
-
     };
+
+
     // Creates a drawing manager attached to the map that allows the user to draw
     // markers, lines, and shapes.
     drawingManager = new google.maps.drawing.DrawingManager({
@@ -217,8 +160,8 @@ function initialize() {
             });
             setSelection(newShape);
         }
-
     });
+
 
     function deleteSelectedShape() {
         if (selectedShape) {
@@ -242,10 +185,10 @@ function initialize() {
         latlng_coordinates = (polygon.getPath().getArray());
 
         area = google.maps.geometry.spherical.computeArea(polygon.getPath());
-
     });
-
 }
+}
+
 
 
 //get data to transfer to server
@@ -311,7 +254,8 @@ $('#sendData').click(function () {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 });
-    </script>
+
+</script>
 
 
 
