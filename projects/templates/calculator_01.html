@@ -55,7 +55,7 @@
 	$(document).ready(function(){
 
 		// disable the submit button
-		$('#submitbutton').attr('disabled', 'disabled');
+		// $('#submitbutton').attr('disabled', 'disabled');
 	
 		$.validator.setDefaults({
 			errorClass: 'formerror',
@@ -97,10 +97,10 @@
 				// Success Code...
 				// Die Idea behind this is to re-enabling the submit button bz remove the disabling-attribute
 				
-				$('#submitbutton').removeAttr('disabled');
+				 $('#submitbutton').removeAttr('disabled');
 			} else {
 
-				$('#submitbutton').attr('disabled', 'disabled');
+				// $('#submitbutton').attr('disabled', 'disabled');
 			}
 		});
 		
