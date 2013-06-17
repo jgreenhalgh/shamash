@@ -68,12 +68,12 @@ $(document).ready(function(){
 
     //here we are getting a few address components to be put into the form that 
     //is sent to django with the send button
-    function get_address_for_form() {
+    function get_address_for_form(callback) {
 
         geocoder.geocode( { 'address': address, 'region': 'ch'}, function (results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
                 alert(address);
-                alert("these are results 0: "+ results[0].address_components);
+                alert("these are results 0: "+ results[0].address_components[1].long_name);
                 //alert("these are the results 1 : "+ results[1]);
                 //checking whether there are any data                       
                 if (results[0]) {  
