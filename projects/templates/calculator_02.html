@@ -76,8 +76,9 @@ $(document).ready(function(){
                 //checking whether there are any data                       
                 if (results[1]) {  
                     //getting latng coordinates for the map
+                    customer_location =new google.maps.LatLng(47.368594, 8.514404);
+
                     callback();
-                    map.setCenter(results[0].geometry.location);                    
                     //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
                     //unfortunately the different parts of the address are not always in the same position so we have to cycle through
 
@@ -107,7 +108,6 @@ $(document).ready(function(){
 
 
     //getting exact data of the customer
-    customer_location =new google.maps.LatLng(47.368594, 8.514404);
 
     //These next two functions starts the map and deals with the polygon overlay
     function setSelection(shape) {
