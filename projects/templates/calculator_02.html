@@ -76,7 +76,7 @@ $(document).ready(function(){
                 alert("these are results 0: "+ results[0].address_components);
                 //alert("these are the results 1 : "+ results[1]);
                 //checking whether there are any data                       
-                if (results[1]) {  
+                if (results[0]) {  
                     var google_address = results[0].address_components;
                     //getting latng coordinates for the map
                     customer_location =new google.maps.LatLng(47.368594, 8.514404);
