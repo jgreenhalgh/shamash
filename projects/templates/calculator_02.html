@@ -76,9 +76,7 @@ $(document).ready(function(){
                 //checking whether there are any data                       
                 if (results[1]) {  
                     //getting latng coordinates for the map
-                    customer_location = results[0].geometry.location; 
-                    //loading map
-                    initialize_map();                 
+                    map.setCenter(results[0].geometry.location);                    
                     //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
                     //unfortunately the different parts of the address are not always in the same position so we have to cycle through
 
@@ -233,7 +231,7 @@ $(document).ready(function(){
 
 
 
-    //google.maps.event.addDomListener(window, 'load', initialize_map);
+    google.maps.event.addDomListener(window, 'load', initialize_map);
 });
 </script>
 
