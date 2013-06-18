@@ -187,9 +187,9 @@ $(document).ready(function(){
         //This is commented out so the shape cannot be unselected(next two lines):
         //google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
         // google.maps.event.addListener(map, 'click', clearSelection);
-        //ATTENTION: reactivate this as soon as the delete button is implemented
-        // google.maps.event.addDomListener(document.getElementById('delete-button'), 'click',
-        // deleteSelectedShape);
+        
+        //Delete botton's action
+         google.maps.event.addDomListener(document.getElementById('reset_button'), 'click',  deleteSelectedShape);
 
         //the next line helps us to get the data from the user, also we extract the area
         google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
@@ -401,7 +401,7 @@ $(document).ready(function(){
 
 
 </form>
-<div id="geoData"><input id="reset" type="submit" value="Neu Starten"  /> </div>
+<div id="geoData"><input id="reset_button" type="submit" value="Neu Starten"  /> </div>
 {% endblock %}
 
 
