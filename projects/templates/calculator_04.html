@@ -251,17 +251,16 @@
       <form action="" method="post">
      <div class="field">
         <label for = "id_message">Here comes the commentary</label>
-        {{form.commentary}}
-        {{form.email}}
+  
     </div>
     </form>
 
 
 
             <input type="hidden" name="offerte_einholen" value="offerte_einholen">
-			<label class="eingabetext"> Name * <input type="text" name="name"  /> </label>
-			<label class="eingabetext"> Email * <input type="text" name="email" /> </label>
-			<label class="eingabetext"> Kommentar <textarea rows="3" cols="22"> </textarea> </label>
+			<label class="eingabetext"> Name *  {{form.name}}</label>
+			<label class="eingabetext"> Email * {{form.email}} </label>
+			<label class="eingabetext"> Kommentar {{form.commentary}}</label>
 			<input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
 			<p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
 			</form>
