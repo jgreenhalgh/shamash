@@ -246,7 +246,6 @@
 			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
 			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
 			<form method="post" action="/user/compare/#register" id="offerteabschicken">
-            {% csrf_token %}
 
       <form action="" method="post">
      <div class="field">
@@ -263,6 +262,8 @@
 			<input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
 			<p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
 			</form>
+            {% csrf_token %}
+
 		</div>
 	</div>	
 	<div class="links">
