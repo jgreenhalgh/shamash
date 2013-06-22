@@ -304,6 +304,7 @@ $(".schliessen").click(function(e){
 
 
 	<!-- >>>> START PROMPT BOX OFFER -->
+        {% for company in list_of_companies %}
 <div class="box_getoffer" id="{{company.id}}">
 	<div class="rechts">
 		<div class="inner">
@@ -336,6 +337,7 @@ $(".schliessen").click(function(e){
 		</div>
 	</div>
 </div>
+    {% endfor %}
 
 </ul>
 
