@@ -4,6 +4,7 @@
 
 {% block header_inhead %}
 
+<!-- ..................START POPUP BOXES ..................................-->
 
 
 <!-- Offerten Popup boX -->
@@ -35,6 +36,39 @@ $(".schliessen").click(function(e){
 
 });
 </script>
+
+<!-- Popup, once quote has been requested -->
+<script type="text/javascript" id="sourcecode">
+    $(document).ready(function(){
+        if ({{offer_request_sent}})
+        {
+            // die boxen werden im CSS mit display:none; nicht gezeigt
+            $("p.offertenbutton").click(function(e){
+                // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+                var gettheclasses=$(this).attr("class").split(' ');
+                $("#"+gettheclasses[1]).lightbox_me({
+                    centered: true,
+                    onLoad: function() {
+                        $(".inner").find('input:first').focus()
+                    },
+                });
+            e.preventDefault();
+            });
+
+            // SCHLIESSEN-Button in der Box
+            $(".schliessen").click(function(e){ 
+                $(this).trigger('close');
+            });
+
+            // toggle the warnnachrichtbox in den STEPS
+
+            $(".closetoggle").click(function(){
+                $(".steps_warnnachricht").slideToggle("fast");
+            });
+        }
+    });
+</script>
+<!-- ....................END POPUP BOXES ....................................-->
 
 <!-- Calculating distances between user and company Script -->
 
