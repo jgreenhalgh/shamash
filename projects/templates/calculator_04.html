@@ -43,17 +43,16 @@ $(".schliessen").click(function(e){
         if ({{quote_request_sent}})
         {
             // die boxen werden im CSS mit display:none; nicht gezeigt
-            $("p.offertenbutton").click(function(e){
-                // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
-                var gettheclasses=$(this).attr("class").split(' ');
-                $("#"+gettheclasses[1]).lightbox_me({
-                    centered: true,
-                    onLoad: function() {
-                        $(".inner").find('input:first').focus()
-                    },
-                });
-            e.preventDefault();
+
+            // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+            var gettheclasses=$(this).attr("class").split(' ');
+            $("#"+gettheclasses[1]).lightbox_me({
+                centered: true,
+                onLoad: function() {
+                    $(".inner").find('input:first').focus()
+                },
             });
+
 
             // SCHLIESSEN-Button in der Box
             $(".schliessen").click(function(e){ 
@@ -296,7 +295,7 @@ $(".schliessen").click(function(e){
 		<div class="grid_4 vier">
 			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 			<a href="#"><p class="pinbutton"></p></a>
-			<a href="#"><p class="offertenbutton getoffer_1">Offerte einholen</p></a>
+			<a href="#"><p class="offertenbutton {{company.name}}">Offerte einholen</p></a>
 		</div>
 	</div> <div class="clear"></div>
 	</li>
@@ -305,7 +304,7 @@ $(".schliessen").click(function(e){
 
 
 	<!-- >>>> START PROMPT BOX OFFER -->
-<div class="box_getoffer" id="getoffer_1">
+<div class="box_getoffer" id="{{company.name}}">
 	<div class="rechts">
 		<div class="inner">
 			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
@@ -313,6 +312,7 @@ $(".schliessen").click(function(e){
 			<form method="post" action="/request_quote/" id="offerteabschicken"
 
             <input type="hidden" name="offerte_einholen" value="offerte_einholen">
+             <input type="hidden" name="company_name" value="{{company.name}}">
 			<label class="eingabetext"> Name *  {{form.name}}</label>
 			<label class="eingabetext"> Email * {{form.email}} </label>
 			<label class="eingabetext"> Kommentar {{form.commentary}}</label>
