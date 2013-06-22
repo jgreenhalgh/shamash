@@ -40,7 +40,7 @@ $(".schliessen").click(function(e){
 <!-- Popup, once quote has been requested -->
 <script type="text/javascript" id="sourcecode">
     $(document).ready(function(){
-        if ({{offer_request_sent}})
+        if ({{quote_request_sent}}==false)
         {
             // die boxen werden im CSS mit display:none; nicht gezeigt
             $("p.offertenbutton").click(function(e){
