@@ -295,7 +295,7 @@ $(".schliessen").click(function(e){
 		<div class="grid_4 vier">
 			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 			<a href="#"><p class="pinbutton"></p></a>
-			<a href="#"><p class="offertenbutton getoffer_1">Offerte einholen</p></a>
+			<a href="#"><p class="offertenbutton {{company.id}}">Offerte einholen</p></a>
 		</div>
 	</div> <div class="clear"></div>
 	</li>
@@ -304,7 +304,7 @@ $(".schliessen").click(function(e){
 
 
 	<!-- >>>> START PROMPT BOX OFFER -->
-<div class="box_getoffer" id="getoffer_1">
+<div class="box_getoffer" id="{{company.id}}">
 	<div class="rechts">
 		<div class="inner">
 			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
