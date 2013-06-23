@@ -312,8 +312,8 @@ $(".schliessen").click(function(e){
 			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
 			<form method="post" action="/request_quote/" id="offerteabschicken"
 
-            <input type="hidden" name="company_name" value="{{company.name}}">
-            <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" id = "id_company_name"></label>
+            <input type="hidden" name="company_selected" value="{{company.name}}">
+            <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" id = "id_company_selected"></label>
 			<label class="eingabetext"> Name *  {{form.name}}</label>
 			<label class="eingabetext"> Email * {{form.email}} </label>
 			<label class="eingabetext"> Kommentar {{form.commentary}}</label>
