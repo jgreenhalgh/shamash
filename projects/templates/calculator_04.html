@@ -225,6 +225,8 @@ $(".schliessen").click(function(e){
 </script>
 {% endblock %}
 
+
+
 {% block content %}
 	<div class="bigoverview_step4">
 		<div class="container_12">
@@ -237,8 +239,7 @@ $(".schliessen").click(function(e){
 								<h3>F&uuml;r folgende Angaben wurden die Berechnungen gemacht</h3>
 								<p class="smalltextindropdown">
 								Mit der Sonnenenergie Strom poduzieren Hier kommt eipoduzieren Hier kommt ein kleiner erkl&auml;runpoduzieren Hier kommt ein kleiner erkl&auml;runn kleiner erkl&auml;rungstext und auch eine kleine Infographic rechts.
-								</p>
-								
+								</p>	
 						</li>
 					</ul>
 				</li></a>
@@ -251,127 +252,158 @@ $(".schliessen").click(function(e){
 				<a href="/user/compare#register"><span class="greensmallbutton">Jetzt kostenlos registrieren</span></a>
 			</p>
 			
-			</div>
-					
+			</div>			
 		</div>
 	</div>
 	
-<div class="container_16 step4_boxes">
-	<div class="grid_16 waswichtig">
-		<h3>Was ist Ihnen wichtig?</h3>
-		<ul class="s4_auswahl">
-			<a href="#"><li data="a" class="s4ListSelect">Bewertung sortieren</li></a>
-			<a href="#"><li data="b" class="s4ListSelect ">Nähe zu Ihrer Adresse sortieren</li></a>
-			<a href="#"><li data="c" class="s4ListSelect ">Produkte-Herkunftsland sortieren</li></a>
 
-		</ul>
-	</div>
-	
-		
+    <div class="container_16 step4_boxes">
+    	<div class="grid_16 waswichtig">
+    		<h3>Was ist Ihnen wichtig?</h3>
+    		<ul class="s4_auswahl">
+    			<a href="#"><li data="a" class="s4ListSelect">Bewertung sortieren</li></a>
+    			<a href="#"><li data="b" class="s4ListSelect ">Nähe zu Ihrer Adresse sortieren</li></a>
+    			<a href="#"><li data="c" class="s4ListSelect ">Produkte-Herkunftsland sortieren</li></a>
+    		</ul>
+    	</div>
+        	
+        		
 
-	<div class="clear"></div>
-	
-	<p class="linie"> </p>
-	
-<!-- One BIG List -->
-<ul class="s4ul" id="company_list">
-	{% for company in list_of_companies %}
-	<!-- START BOX -->
-	<li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
-	<div class="firemoverview">
-		<div class="grid_4 eins">
-			<h2>{{company.name}}</h2>
-			<ul>
-				<li class="standort">{{company.gemeinde}}</li>
-				<li class="projects">{{company.number_of_successful_projects}} erfolgreiche Projeke</li>
-			</ul>
-		</div>
-		<div class="grid_4 zwei">
-			<ul>
-				<li>Produkt <span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></li>
-				<li>Geschätze Anlagekosten <span>{{company.price}}</span></li>
-				<li>Geschätze Amortisationszeit <span>{{company.amortization_time}}</span></li>
-				<li>Geschätzer Profit nach 25 Jahren <span>{{company.profit_25}}</span></li>
-			</ul>
-		</div>
-		<div class="grid_4 zwei">
-			<ul>
-				<li>Bewertung <span><div id="star{{company.id}}"></div></span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-				<li>Anlagenleistung <span>4 kWh</span></li>
-			</ul>		
-		</div>
-		<div class="grid_4 vier">
-			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<a href="#"><p class="pinbutton"></p></a>
-			<a href="#"><p class="offertenbutton {{company.id}}">Offerte einholen</p></a>
-		</div>
-	</div> <div class="clear"></div>
-	</li>
-	<!-- END BOX -->
-    {% endfor %}
+    	<div class="clear"></div>
+    	<p class="linie"> </p>	
 
+        <!-- This is the list of Companies as retrieved by Django-->
+        <ul class="s4ul" id="company_list">
 
-	<!-- >>>> START PROMPT BOX OFFER -->
- {% for company in list_of_companies %}
-<div class="box_getoffer" id="{{company.id}}">
-	<div class="rechts">
-		<div class="inner">
-			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
-			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
-			<form method="post" action="/request_quote/" id="offerteabschicken">
-
-            <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
-            <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
-			<label class="eingabetext"> Name *  {{form.name}}</label>
-			<label class="eingabetext"> Email * {{form.email}} </label>
-			<label class="eingabetext"> Kommentar {{form.commentary}}</label>
-			<input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
-			<p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
-            {% csrf_token %}
-
-			</form>
-
-		</div>
-	</div>	
-	<div class="links">
-		<div class="inner">
-			<h1>Ihr Projekt von lorem ipsum dolor sit amet</h1>
-			<p class="projektuebersicht">
-			
-			Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
-			
-			<br/>
-			Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
-			</p>
-		</div>
-	</div>
-</div>
-    {% endfor %}
-
-</ul>
+        	{% for company in list_of_companies %}
+        	<!-- START BOX -->
+        	<li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
+        	<div class="firemoverview">
+        		<div class="grid_4 eins">
+        			<h2>{{company.name}}</h2>
+        			<ul>
+        				<li class="standort">{{company.gemeinde}}</li>
+        				<li class="projects">{{company.number_of_successful_projects}} erfolgreiche Projeke</li>
+        			</ul>
+        		</div>
+        		<div class="grid_4 zwei">
+        			<ul>
+        				<li>Produkt <span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></li>
+        				<li>Geschätze Anlagekosten <span>{{company.price}}</span></li>
+        				<li>Geschätze Amortisationszeit <span>{{company.amortization_time}}</span></li>
+        				<li>Geschätzer Profit nach 25 Jahren <span>{{company.profit_25}}</span></li>
+        			</ul>
+        		</div>
+        		<div class="grid_4 zwei">
+        			<ul>
+        				<li>Bewertung <span><div id="star{{company.id}}"></div></span></li>
+        				<li>Anlagenleistung <span>4 kWh</span></li>
+        				<li>Anlagenleistung <span>4 kWh</span></li>
+        				<li>Anlagenleistung <span>4 kWh</span></li>
+        			</ul>		
+        		</div>
+        		<div class="grid_4 vier">
+        			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        			<a href="#"><p class="pinbutton"></p></a>
+        			<a href="#"><p class="offertenbutton {{company.id}}">Offerte einholen</p></a>
+        		</div>
+        	</div> <div class="clear"></div>
+        	</li>
+        	<!-- END BOX -->
+            {% endfor %}
 
 
-	
-	<p class="linie"> </p>
-	<div class="grid_6 wieweiter">
-		<h3> Wie geht es weiter? </h3>
-		<p>Lorem ipsum dolor sit amet, conse porttitor. Fuis vulputate sed, mollis sit amet lorem.</p>
-	</div>
+            <!-- >>>> This is a number of prompt boxes for each element in the companies list above -->
+             {% for company in list_of_companies %}
+                <div class="box_getoffer" id="{{company.id}}">
+                	<div class="rechts">
+                		<div class="inner">
+                			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
+                			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
+                			<form method="post" action="/request_quote/" id="offerteabschicken">
+
+                            <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
+                            <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
+                			<label class="eingabetext"> Name *  {{form.name}}</label>
+                			<label class="eingabetext"> Email * {{form.email}} </label>
+                			<label class="eingabetext"> Kommentar {{form.commentary}}</label>
+                			<input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
+                			<p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
+                            {% csrf_token %}
+
+                			</form>
+
+                		</div>
+                	</div>	
+                	<div class="links">
+                		<div class="inner">
+                			<h1>Ihr Projekt von lorem ipsum dolor sit amet</h1>
+                			<p class="projektuebersicht">
+                			
+                			Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
+                			
+                			<br/>
+                			Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
+                			</p>
+                		</div>
+                	</div>
+                </div>
+            {% endfor %}
+        </ul>
+
+
+        <!-- This prompt box appears if a quote request has been made successfully-->
+        <div class="box_getoffer" id="{{company.id}}">
+            <div class="rechts">
+                <div class="inner">
+                    <a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
+                    <p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
+                    <form method="post" action="/request_quote/" id="offerteabschicken">
+
+                    <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
+                    <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
+                    <label class="eingabetext"> Name *  {{form.name}}</label>
+                    <label class="eingabetext"> Email * {{form.email}} </label>
+                    <label class="eingabetext"> Kommentar {{form.commentary}}</label>
+                    <input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
+                    <p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
+                    {% csrf_token %}
+
+                    </form>
+
+                </div>
+            </div>  
+            <div class="links">
+                <div class="inner">
+                    <h1>Ihr Projekt von lorem ipsum dolor sit amet</h1>
+                    <p class="projektuebersicht">
+                    
+                    Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
+                    
+                    <br/>
+                    Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        	
+    	<p class="linie"> </p>
+    	<div class="grid_6 wieweiter">
+    		<h3> Wie geht es weiter? </h3>
+    		<p>Lorem ipsum dolor sit amet, conse porttitor. Fuis vulputate sed, mollis sit amet lorem.</p>
+    	</div>
 
 
 
 
-	<div class="grid_6 wieweiter2">
-		<p>Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen.</p>
-		
-	</div>
-	
-	<div class="grid_4 wieweiter2">
-		<a href="/user/compare#register"><p class="biggreenbutton"> Hier der Weiterbutton </p></a>
-	</div>
-
-</div>
-
+    	<div class="grid_6 wieweiter2">
+    		<p>Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen.</p>
+    		
+    	</div>
+    	
+    	<div class="grid_4 wieweiter2">
+    		<a href="/user/compare#register"><p class="biggreenbutton"> Hier der Weiterbutton </p></a>
+    	</div>
+    </div>
 {% endblock %}
