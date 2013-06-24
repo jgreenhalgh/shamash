@@ -240,9 +240,9 @@ $(".schliessen").click(function(e){
 				Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. <br>
 
                 {% if messages %}
-<ul class="messages"> {% if messages.success %} Success message is here ! {% endif %}
+<ul class="messages"> 
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ messages }}</li>
     {% endfor %}
 </ul>
 {% endif %}
