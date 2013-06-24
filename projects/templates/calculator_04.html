@@ -4,76 +4,7 @@
 
 {% block header_inhead %}
 
-<!-- ..................START POPUP BOXES ..................................-->
 
-
-<!-- Offerten Popup boX -->
-<script type="text/javascript" id="sourcecode">
-$(document).ready(function(){
-// die boxen werden im CSS mit display:none; nicht gezeigt
-$("p.offertenbutton").click(function(e){
-    // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
-    var gettheclasses=$(this).attr("class").split(' ');
-    $("#"+gettheclasses[1]).lightbox_me({
-        centered: true,
-        onLoad: function() {
-            $(".inner").find('input:first').focus()
-        },
-    });
-e.preventDefault();
-});
-
-// SCHLIESSEN-Button in der Box
-$(".schliessen").click(function(e){ 
-    $(this).trigger('close');
-});
-
-// toggle the warnnachrichtbox in den STEPS
-
-    $(".closetoggle").click(function(){
-        $(".steps_warnnachricht").slideToggle("fast");
-    });
-
-});
-</script>
-
-<!-- Popup, once QUOTE has been REQUESTED -->
-<!--(checking with django tags whether success tag is present in messages)-->
-    
-{% if messages %}
-    {% for message in messages %}
-        {% if message.tags == "success" %} 
-            <script type="text/javascript" id="sourcecode">
-                alert("successfully started sxript");
-                $(document).ready(function(){
-   
-                    // die boxen werden im CSS mit display:none; nicht gezeigt
-                    $("#quote_request_success_box_id").lightbox_me({
-                        centered: true,
-                        onLoad: function() {
-                            $(".inner").find('input:first').focus()
-                        },
-                    });
-
-
-                    // SCHLIESSEN-Button in der Box
-                    $(".schliessen").click(function(e){ 
-                        $(this).trigger('close');
-                    });
-
-                    // toggle the warnnachrichtbox in den STEPS
-
-                    $(".closetoggle").click(function(){
-                        $(".steps_warnnachricht").slideToggle("fast");
-                    });
-                });
-                alert("successfully ended sxript");
-            </script>
-        {% endif %}
-    {% endfor %}
-{% endif %}
-
-<!-- ....................END POPUP BOXES ....................................-->
 
 <!-- Calculating distances between user and company Script -->
 
@@ -93,7 +24,7 @@ $(".schliessen").click(function(e){
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
         //the sorting algorithm works by sorting in descending order. When I tried to add 1/my_distance to the attribute
         //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
-     $("#company_li_{{company.id}}").attr("b", 10000-my_distance/1000);
+        $("#company_li_{{company.id}}").attr("b", 10000-my_distance/1000);
 
 
         {% endfor %}
@@ -221,6 +152,82 @@ $(".schliessen").click(function(e){
 
     });
 </script>
+
+
+<!-- ..................START POPUP BOXES ..................................-->
+
+
+<!-- Offerten Popup boX -->
+<script type="text/javascript" id="sourcecode">
+    $(document).ready(function(){
+
+        // die boxen werden im CSS mit display:none; nicht gezeigt
+        $("p.offertenbutton").click(function(e){
+            // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+            var gettheclasses=$(this).attr("class").split(' ');
+            $("#"+gettheclasses[1]).lightbox_me({
+                centered: true,
+                onLoad: function() {
+                    $(".inner").find('input:first').focus()
+                },
+            });
+            e.preventDefault();
+        });
+
+        // SCHLIESSEN-Button in der Box
+        $(".schliessen").click(function(e){ 
+            $(this).trigger('close');
+        });
+
+        // toggle the warnnachrichtbox in den STEPS
+
+        $(".closetoggle").click(function(){
+            $(".steps_warnnachricht").slideToggle("fast");
+        });
+
+    });
+
+</script>
+
+<!-- Popup, once QUOTE has been REQUESTED -->
+<!--(checking with django tags whether success tag is present in messages)-->
+    
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == "success" %} 
+            <script type="text/javascript" id="sourcecode">
+                alert("successfully started sxript");
+                $(document).ready(function(){
+   
+                    // die boxen werden im CSS mit display:none; nicht gezeigt
+                    $("#quote_request_success_box_id").lightbox_me({
+                        centered: true,
+                        onLoad: function() {
+                            $(".inner").find('input:first').focus()
+                        },
+                    });
+
+
+                    // SCHLIESSEN-Button in der Box
+                    $(".schliessen").click(function(e){ 
+                        $(this).trigger('close');
+                    });
+
+                    // toggle the warnnachrichtbox in den STEPS
+
+                    $(".closetoggle").click(function(){
+                        $(".steps_warnnachricht").slideToggle("fast");
+                    });
+                });
+                alert("successfully ended sxript");
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<!-- ....................END POPUP BOXES ....................................-->
+
+
 {% endblock %}
 
 
