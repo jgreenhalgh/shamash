@@ -44,6 +44,7 @@ $(".schliessen").click(function(e){
     {% for message in messages %}
         {% if message.tags == "success" %} 
             <script type="text/javascript" id="sourcecode">
+                alert("successfully started sxript");
                 $(document).ready(function(){
    
                     // die boxen werden im CSS mit display:none; nicht gezeigt
