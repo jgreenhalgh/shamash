@@ -237,7 +237,15 @@ $(".schliessen").click(function(e){
 				<h2> wurden {{request.session.number_of_companies}} lokale Solaranbieter gefunden. THE MESSAGE IS : {{message}} </h2>	
 			</ul>
 			<p class="untertitel">
-				Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen.
+				Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. <br>
+
+                {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 				<a href="/user/compare#register"><span class="greensmallbutton">Jetzt kostenlos registrieren</span></a>
 			</p>
 			
