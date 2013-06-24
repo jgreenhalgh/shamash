@@ -37,36 +37,43 @@ $(".schliessen").click(function(e){
 });
 </script>
 
-<!-- Popup, once quote has been requested -->
-<script type="text/javascript" id="sourcecode">
-    $(document).ready(function(){
-        if ({{quote_request_sent}})
-        {
-            // die boxen werden im CSS mit display:none; nicht gezeigt
+<!-- Popup, once QUOTE has been REQUESTED -->
+<!--(checking with django tags whether success tag is present in messages)-->
+    
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == "success" %} 
+            <script type="text/javascript" id="sourcecode">
+                $(document).ready(function(){
+   
+                    // die boxen werden im CSS mit display:none; nicht gezeigt
 
-            // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
-            var gettheclasses=$(this).attr("class").split(' ');
-            $("#"+gettheclasses[1]).lightbox_me({
-                centered: true,
-                onLoad: function() {
-                    $(".inner").find('input:first').focus()
-                },
-            });
+                    // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+                    var gettheclasses=$(this).attr("class").split(' ');
+                    $("#"+gettheclasses[1]).lightbox_me({
+                        centered: true,
+                        onLoad: function() {
+                            $(".inner").find('input:first').focus()
+                        },
+                    });
 
 
-            // SCHLIESSEN-Button in der Box
-            $(".schliessen").click(function(e){ 
-                $(this).trigger('close');
-            });
+                    // SCHLIESSEN-Button in der Box
+                    $(".schliessen").click(function(e){ 
+                        $(this).trigger('close');
+                    });
 
-            // toggle the warnnachrichtbox in den STEPS
+                    // toggle the warnnachrichtbox in den STEPS
 
-            $(".closetoggle").click(function(){
-                $(".steps_warnnachricht").slideToggle("fast");
-            });
-        }
-    });
-</script>
+                    $(".closetoggle").click(function(){
+                        $(".steps_warnnachricht").slideToggle("fast");
+                    });
+                });
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 <!-- ....................END POPUP BOXES ....................................-->
 
 <!-- Calculating distances between user and company Script -->
@@ -239,13 +246,7 @@ $(".schliessen").click(function(e){
 			<p class="untertitel">
 				Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. <br>
 
-                {% if messages %}
-<ul class="messages"> 
-    {% for message in messages %}
-    <li{% if message.tags == "success" %} class="{{ message.tags }}">successfully got success tag{% endif %}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+
 				<a href="/user/compare#register"><span class="greensmallbutton">Jetzt kostenlos registrieren</span></a>
 			</p>
 			
