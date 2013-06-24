@@ -48,10 +48,7 @@ $(".schliessen").click(function(e){
                 $(document).ready(function(){
    
                     // die boxen werden im CSS mit display:none; nicht gezeigt
-
-                    // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
-                    var gettheclasses=$(this).attr("class").split(' ');
-                    $("#"+gettheclasses[1]).lightbox_me({
+                    $("#my_class").lightbox_me({
                         centered: true,
                         onLoad: function() {
                             $(".inner").find('input:first').focus()
@@ -386,6 +383,7 @@ $(".schliessen").click(function(e){
                 </div>
             </div>
         </div>
+        <!-- END prompt box for sucessfull quot request-->
 
         	
     	<p class="linie"> </p>
