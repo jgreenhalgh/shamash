@@ -48,7 +48,7 @@ $(".schliessen").click(function(e){
                 $(document).ready(function(){
    
                     // die boxen werden im CSS mit display:none; nicht gezeigt
-                    $("#my_class").lightbox_me({
+                    $("#quote_request_success_box_id").lightbox_me({
                         centered: true,
                         onLoad: function() {
                             $(".inner").find('input:first').focus()
@@ -350,7 +350,7 @@ $(".schliessen").click(function(e){
 
 
         <!-- This prompt box appears if a quote request has been made successfully-->
-        <div class="box_getoffer" id="{{company.id}}">
+        <div class="box_getoffer" id="quote_request_success_box_id">
             <div class="rechts">
                 <div class="inner">
                     <a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
