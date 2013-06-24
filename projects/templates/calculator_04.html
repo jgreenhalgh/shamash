@@ -242,7 +242,7 @@ $(".schliessen").click(function(e){
                 {% if messages %}
 <ul class="messages"> 
     {% for message in messages %}
-    <li{% if message.tags == "success" %} class="{{ message.tags }}"{% endif %}>successfully go the success tag</li>
+    <li{% if message.tags == "success" %} class="{{ message.tags }}">successfully got success tag{% endif %}</li>
     {% endfor %}
 </ul>
 {% endif %}
