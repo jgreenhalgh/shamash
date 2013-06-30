@@ -103,12 +103,17 @@
             //$('ul#company_list>li').tsort({attr:'a'});
 
            
-            // toggle the list
-            if ($('.s4ListSelect').hasClass("checked"))
+            // untoggling each element that is toggles
+            $("li.s4list").each(function () 
             {
-                $('.s4ListSelect').toggleClass("checked");
-            }
+                if ($(this).hasClass("checked"))
+                    {
+                        $('.s4ListSelect').toggleClass("checked");
+                    }
+            });
+            //toggling the element clicked
             $(this).toggleClass("checked");
+
 
             // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
             //input:checkbox[name=sortieren]:checked
