@@ -196,7 +196,6 @@
     {% for message in messages %}
         {% if message.tags == "success" %} 
             <script type="text/javascript" id="sourcecode">
-                alert("successfully started sxript");
                 $(window).load(function(){
                 
                     // die boxen werden im CSS mit display:none; nicht gezeigt
@@ -219,7 +218,6 @@
                         $(".steps_warnnachricht").slideToggle("fast");
                     });
                 });
-                alert("successfully ended sxript");
             </script>
         {% endif %}
     {% endfor %}
