@@ -102,13 +102,13 @@
         $(".s4ListSelect").click(function () {
             //$('ul#company_list>li').tsort({attr:'a'});
 
-            $(this).toggleClass("checked");
+           
             // toggle the list
             if ($('#closeness_id').hasClass("checked"))
             {
                 $('#closeness_id').toggleClass("checked");
             }
-
+            $(this).toggleClass("checked");
 
             // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
             //input:checkbox[name=sortieren]:checked
