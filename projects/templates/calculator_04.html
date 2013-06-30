@@ -104,7 +104,7 @@
 
             $(this).toggleClass("checked");
             // toggle the list
-            
+            $('#closeness_id').toggleClass("checked");
 
 
             // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
@@ -262,11 +262,11 @@
 
     <div class="container_16 step4_boxes">
     	<div class="grid_16 waswichtig">
-    		<h3>Was ist Ihnen wichtig?</h3>
+    		<h3>Sortieren Nach</h3>
     		<ul class="s4_auswahl">
-    			<a href="#"><li data="a" class="s4ListSelect">Bewertung sortieren</li></a>
-    			<a href="#"><li data="b" class="s4ListSelect ">Nähe zu Ihrer Adresse sortieren</li></a>
-    			<a href="#"><li data="c" class="s4ListSelect ">Produkte-Herkunftsland sortieren</li></a>
+    			<a href="#"><li id = "customer_rating_id" data="a" class="s4ListSelect">Kundenbewertungen</li></a>
+    			<a href="#"><li id = "closeness_id"  data="b" class="s4ListSelect ">Nähe zu Ihnen</li></a>
+    			<a href="#"><li id = "product_source"  data="c" class="s4ListSelect ">Produkte-Herkunftsland</li></a>
     		</ul>
     	</div>
         	
