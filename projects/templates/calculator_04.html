@@ -104,7 +104,10 @@
 
             $(this).toggleClass("checked");
             // toggle the list
-            $('#closeness_id').toggleClass("checked");
+            if $('#closeness_id').hasClass("checked")
+            {
+                $('#closeness_id').toggleClass("checked");
+            }
 
 
             // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
