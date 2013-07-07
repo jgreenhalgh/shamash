@@ -574,7 +574,10 @@ $(document).ready(function() {
         </div>
         
 
-        <form id="formsteptwo"action="">
+      
+
+        <form action="/results_photo/" method="post" id="formsteptwo" class="postforresults">    
+{% csrf_token %}
 
         <div class="grid_6" style="margin-top: 10px;">
 
@@ -771,10 +774,13 @@ $(document).ready(function() {
 
             <div class="widgtitlewhitebg">
 
+
             <!-- type='hidden'  -->
-            <input value="" id="dachtyphidden" name="rooftype" style="margin-top:-999px; position: absolute;">
-            <input value="" value="" id="dachwinkelhidden" name="tilt" style="margin-top:-999px; position: absolute;">
+            <input value="" id="dachtyphidden" class="rooftypevalue" name="rooftype" style="margin-top:-999px; position: absolute;">
+            <input value="" value="" id="dachwinkelhidden" class="tiltvalue" name="tilt" style="margin-top:-999px; position: absolute;">
             <input value="" id="personenimhaushidden" name="person" style="margin-top:-999px; position: absolute;">
+
+        
 
 
            
@@ -782,7 +788,7 @@ $(document).ready(function() {
                 <div id="geoData">
 
                     <!-- Submit button -->
-                    <a href="#"><input id="sendData" type="submit" value="Solarpotential berechnen" class="button" /></a>
+                    <input id="sendData" type="submit" value="Weiter" class="button" />
 
                 </div>
 
@@ -815,12 +821,9 @@ $(document).ready(function() {
 
 
 
-<form action="/results_photo/" method="post" class="postforresults">	
-{% csrf_token %}
 
-                <input type="text" value="{{ selected_address }}" class="strasseinput" >
-				<input class="tiltvalue" type="hidden" name="tilt" value="25" style="display: none;" /> 
-				<input class="rooftypevalue" type="hidden" name="rooftype" value="Satteldach" style="display: none;"  />
+
+       
 
 
   
@@ -833,10 +836,3 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-            <!-- <p class="zahluebersicht"><span>Dachfl&auml;che w&auml;hlen:</span></p> -->
-            <p class="step2p" style="width:100%; text-align:center;">Anleitung:Navigieren Sie zu Ihrem Haus. Klicken Sie mit Ihrer Mause die vier Ecken Ihres Daches. Klicken Sie zum Schluss wieder auf den ersten Ecken um abzuschliessen. Wenn Sie neu starten m&ouml;chten, klicken sie auf den "Neu Starten" Knopf</p>
-        
