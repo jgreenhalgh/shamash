@@ -292,10 +292,192 @@ $(document).ready(function(){
 });
 </script>
 
-	
+
+<!-- Stylesheet Step 2 -->
+<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep2.css" type="text/css">
+
+<!-- CSS + JQuery Validate Additional Functions for Step 2-->
+
+<style type="text/css">
+    .formerror {
+        color:#fff;
+        font-family: Arial, sans-serif;
+        font-size:13px;
+        font-weight:bold;
+        line-height:15px;
+        padding-bottom:10px;
+        text-align:center;
+    }
+    input.formerror {
+          background: url(http://151.236.216.105:8080/firstpagejuni/error.png) no-repeat right; 
+          background-color: rgba(0,0,0,0.1);
+          border: solid 1px #feabab;
+          text-align:left;
+    }
+    input.valid {
+          background: url(http://151.236.216.105:8080/firstpagejuni/ok.png) no-repeat right; 
+          background-color: rgba(0,0,0,0.1);
+
+    }
+
+
+.valid {
+    background-color: yellow,
+    color:red,
+    width: 100px,
+}
+   </style>
+
+<script> 
+/* This scripts adds the highliting class to the .dachbox class (the small different roof-images) */
+
+$(document).ready(function() {
+    /* for the DACHTYP */
+    $(".dachbox").click(function(){
+      $(".dachbox").removeClass("dachactive");
+      $(this).addClass("dachactive");
+
+
+
+    });
+    $('input[name="dachtyp"]').click(function() {
+        /* dachtyp is the id of the hidden field, where to post the value from */
+    $('#dachtyphidden').val(this.value);
+      $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
+
+    });
+
+    /* for the DACHWINKEL */
+    $(".winkelbox").click(function(){
+      $(".winkelbox").removeClass("winkelactive");
+      $(this).addClass("winkelactive");
+    });
+    $('input[name="dachwinkel"]').click(function() {
+
+    $('#dachwinkelhidden').val(this.value);
+    $('input.degreeinput').val("");
+    $("#dachwinkelhidden").keyup();
+    });
+    /* put the costum input field into the hidden box*/
+    $('input.degreeinput').keyup(function(){
+        $('#dachwinkelhidden').val("");
+        $('#dachwinkelhidden').val($('input.degreeinput').val());
+        $("#dachwinkelhidden").keyup();
+    });
+
+
+
+    /* for the PERSONEN */
+    $(".personbox").click(function(){
+      $(".personbox").removeClass("personactive");
+      $(this).addClass("personactive");
+      $("#personenimhaushidden").keyup();
+    });
+
+    $('input[name="personen"]').click(function() {
+        $('#personenimhaushidden').val(this.value);
+        $('input.personsinput').val("");
+        $("#personenimhaushidden").keyup();
+    });
+    /* put the costum input field into the hidden box*/
+    $('input.personsinput').keyup(function(){
+        $('#personenimhaushidden').val($('input.personsinput').val());
+        $("#personenimhaushidden").keyup();
+    });
+
+});
+</script>
+
+<script>
+/* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
+$(document).ready(function() {
+    
+    $("#formsteptwo").validate({
+        
+            errorElement:'span',
+            //validElement:'success',
+
+            errorPlacement: function(error, element) {
+                if(element.attr('name') == 'tilt'){
+                
+                    error.insertAfter('span#tiltspan').addClass('error');
+                    //error.css('color','red');
+                    //error.addClass('error');
+                };
+                if(element.attr('name') == 'rooftype'){
+                    error.insertAfter('span#rooftypspan').addClass('error');
+                    //error.css('color','red');
+                    //error.addClass('error');
+                };
+                if(element.attr('name') == 'person'){
+                    error.insertAfter('span#personspan').addClass('error');
+                    //error.css('color','blue');
+                    //error.addClass('error');
+                }
+            },
+
+
+        /* here are the rules.  */
+        rules: {
+            rooftype: {
+                required:true,
+            },
+            tilt: {
+                required:true,
+            },
+            person: {
+                required:true,
+            },
+        },
+            messages: {
+                rooftype: {
+                    required:"&nbsp;",
+                },
+                tilt: {
+                    required:"&nbsp;",
+                },
+                person: {
+                    required:"&nbsp;",
+                },                          
+            },
+                
+        success: function(label) {
+            label.removeClass("error").addClass("check");
+        },
+    });
+
+});
+</script>
+
+<style type="text/css">
+.check{
+    background: url("ok.png") center  no-repeat;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    float:right;
+    margin-left: -40px;
+}
+
+.error{
+    background: url("error.png") center center no-repeat;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    float:right;
+    margin-left: -40px;
+}
+
+</style>
+
 <title>Schritt 2, Details eingeben</title>
 
+
+
 {% endblock %}
+
 
 {% block warnnachricht %}
 	{% if selected_address in "Ramistrasse 101, Zurich Ihre Wohnadresse" %}
@@ -329,80 +511,328 @@ $(document).ready(function(){
 	Fehlermeldung, kein Polygon ausgew&auml;lt.
 </div>
 
-<form action="/results_photo/" method="post" class="postforresults">	
-{% csrf_token %}
-<div class="bigoverview_step2">
-	<div class="container_12">
-		<div class="grid_3 informationstep2">
-			<img width="63" height="59" class="showDachhere" src="" />
-			<input type="text" value="{{ selected_address }}" class="strasseinput" >
-		</div>
-		<div class="grid_3 step2_2">
-		
-		
-		
-			<p class="zahluebersicht"><span>Dachtyp w&auml;hlen:</span></p>
-			
-				<select name="rooftype_select" id="rooftype-select">
-					
-					<option value="Satteldach" data-imagesrc="{{STATIC_URL}}/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
-					<option value="Zeltdach" data-imagesrc="{{STATIC_URL}}/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
-					<option value="Walmdach" data-imagesrc="{{STATIC_URL}}/img/haus3_32.png" data-description="Kleine Beschreibung">Walmdach</option>
-					<option value="Flachdach" data-imagesrc="{{STATIC_URL}}/img/haus4_32.png" data-description="Kleine Beschreibung">Flachdach</option>
-					<option value="Weitere Optionen">Weitere D&auml;cher</option>
-				</select>
 
-		</div>
-		<div class="grid_3">
-		
-			<p class="zahluebersicht"><span>Dachneigung w&auml;hlen:</span></p>
 
-				
-				<select name="tilt_select" id="tilt-select">
-					<option value="0" data-imagesrc="{{STATIC_URL}}/img/angle0_32.png" >0&deg;</option>
-					<option value="25" data-imagesrc="{{STATIC_URL}}/img/angle25_32.png" >25&deg;</option>
-					<option value="35" data-imagesrc="{{STATIC_URL}}/img/angle35_32.png" >35&deg;</option>
-					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
-				</select>
-				
-				<input class="tiltvalue" type="hidden" name="tilt" value="25" style="display: none;" /> 
-				<input class="rooftypevalue" type="hidden" name="rooftype" value="Satteldach" style="display: none;"  />
-		</div>
-		
-		
-		<div class="grid_3">
-				<div id="geoData"><input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton biggreenstep2movetop" /> </div>
-                
-		</div>
+<div class="container_12" id="headernavtop" >
+        
+        <div class="grid_3" >
+            <img src="logo.png" class="logo" />
+        </div>
+        <div class="grid_9">
+            
+            <a href="#"><img class="loginbutton" src="login.png" /> </a>
+            <ul>            
+                    <a href="#"><li>Kontakt</li></a>
+                    <a href="#"><li>&Uuml;ber uns</li></a>
+                    <a href="#"><li >Anbieter direkt vergleichen</li></a>
+                    <a href="#"><li class="active">Solarpotential berechnen</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="container_12" id="headerpagenav">
+        <div class="grid_12" >
+        
+            
+            <a href="#"><img class="back" src="backbutton.png" /></a>
 
-	</div>
-	
-	<div class="clear"></div>
-	<div class="container_12">
-		<div clas="grid_12">
-			<!-- <p class="zahluebersicht"><span>Dachfl&auml;che w&auml;hlen:</span></p> -->
-			<p class="step2p" style="width:100%; text-align:center;">Anleitung:Navigieren Sie zu Ihrem Haus. Klicken Sie mit Ihrer Mause die vier Ecken Ihres Daches. Klicken Sie zum Schluss wieder auf den ersten Ecken um abzuschliessen. Wenn Sie neu starten m&ouml;chten, klicken sie auf den "Neu Starten" Knopf</p>
-		</div>
-		<div class="clear"></div>
-		<div class="grid_12" style="height:430px; width:940px; background-color:#9CA7AC;" id="map"> </div>	
-	</div>
-	<div class="clear"></div>
-	<br />	
+            <span><a href="#">Startseite</a>    /   <a href="#" class="active">Dacheigenschaften eigeneben</a> 
+            </span>
+
+            <a href="#"><img class="forward" src="vorwardbutton.png" /></a>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <!-- CONTAINER STEP 2 -->
+    <div class="container_12" id="overviewbg">
+
+        <div class="grid_6" style="margin-top: 10px;">
+
+            <div class="widgtitlewhitebg">
+                <h2>
+                    <span class="left">1</span>
+                    Dachfl&auml;che einzeichnen
+                    <span class="right">&nbsp;</span>
+                </h2>
+            </div>
+            <div class="widgetgraybg" style="text-align:center; padding-top:20px; padding-bottom:20px; background:url(bgschraffiert.png);">
+
+                <img src="animationdemo.gif" style="border: solid 4px white; "  />
+                <img src="pfeilnachunten.png" style="padding-bottom:10px; padding-left: 20px;" />
+            </div>
+
+            <div class="widgetgraybg ">
+
+                <!-- <div style="background:url('googlemapsdemo.png'); height:350px;"></div> -->
+
+                        <div class="grid_12" style="height:350px; width:460px; background-color:#9CA7AC;" id="map"> </div>  
+
+            </div>
+        </div>
+
+        <form id="formsteptwo"action="">
+
+        <div class="grid_6" style="margin-top: 10px;">
+
+        <div style="" id="wraper-1">
+            <div class="widgtitlewhitebg">
+                <h2>
+                    <span class="left">2</span>
+                    Dachtyp w&auml;hlen
+                    <span class="right" id="rooftypspan">
+
+
+                </span>
+            </h2>
+        </div>
+        <div class="widgetgraybg">
+            
+
+                <label>
+                    <div class="dachbox d1p " >
+                        <p>
+                            <input type="radio" id="dachtyp" name="dachtyp" value="sattel" />
+                            Sattel
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="dachbox d2p " >
+                        <p>
+                            <input type="radio" id="dachtyp" name="dachtyp" value="spitz" />
+                            Spitz
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="dachbox d3p " >
+                        <p>
+                            <input type="radio" id="dachtyp" name="dachtyp" value="keil" />
+                            Keil
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="dachbox d4p " >
+                        <p>
+                            <input type="radio" id="dachtyp" name="dachtyp" value="flach" />
+                            Flach
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="dachbox d5p " >
+                        <p>
+                            <input type="radio" id="dachtyp" name="dachtyp" value="anderes" />
+                            Anderes
+                        </p>
+                    </div>
+                </label>
+                <p style="clear:both;"></p>
+
+            </div>
+        </div>
+
+            <div class="widgtitlewhitebg">
+                <h2>
+                    <span class="left">3</span>
+                    Dachwinkel w&auml;hlen
+                    <span class="right" id="tiltspan"></span>
+                </h2>
+            </div>
+            <div class="widgetgraybg">
+
+                <!-------- WINKEL -->
+
+                <label>
+                    <div class="winkelbox w5p " >
+                        <p>
+                            <input type="radio" id="winkel60" name="dachwinkel" value="0" />
+                            0&deg;
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="winkelbox w4p " >
+                        <p>
+                            <input type="radio" id="winkel60" name="dachwinkel" value="15" />
+                            15&deg;
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="winkelbox w3p " >
+                        <p>
+                            <input type="radio" id="winkel60" name="dachwinkel" value="30" />
+                            30&deg;
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="winkelbox w1p " >
+                        <p>
+                            <input type="radio" id="winkel60" name="dachwinkel" value="60" />
+                            60&deg;
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="winkelbox w5p " >
+                        <input class="degreeinput" type="name" type="text" value=""/>
+
+                        <br/>
+
+                        <p class="andererwinkelp">
+                            <input type="radio" id="winkel60" name="dachwinkel" value="0" />
+                            Anderer
+                        </p>
+                    </div>
+                </label>
+
+                <p style="clear:both;"></p>
+
+            </div>
+
+            <div class="widgtitlewhitebg">
+                <h2>
+                    <span class="left">4</span>
+                    Anzahl Personen w&auml;hlen
+
+
+                <span class="right" id="personspan">
+
+
+                </span>
+
+                </h2>
+            </div>
+            <div class="widgetgraybg">
+                <label>
+                    <div class="personbox p1p" >
+                        <p>
+                            <input type="radio" id="winkel60" name="personen" value="1-2" />
+                            1-2
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="personbox p2p" >
+                        <p>
+                            <input type="radio" id="winkel60" name="personen" value="3-4" />
+                            3-4
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="personbox p3p" >
+                        <p>
+                            <input type="radio" id="winkel60" name="personen" value="5-6" />
+                            5-6
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="personbox p4p" >
+                        <p>
+                            <input type="radio" id="winkel60" name="personen" value="7-8" />
+                            7-8
+                        </p>
+                    </div>
+                </label>
+
+                <label>
+                    <div class="personbox p5p" >
+                        <input class="personsinput" type="name" type="text" value="" />
+
+                        <p class="andererwinkelp">
+                            Anderer
+                        </p>
+                    </div>
+                </label>
+
+                <p style="clear:both;"></p>
+
+            </div>
+
+            <div class="widgtitlewhitebg">
+
+            <!-- type='hidden'  -->
+            <input value="" id="dachtyphidden" name="rooftype" style="margin-top:-999px; position: absolute;">
+            <input value="" value="" id="dachwinkelhidden" name="tilt" style="margin-top:-999px; position: absolute;">
+            <input value="" id="personenimhaushidden" name="person" style="margin-top:-999px; position: absolute;">
+
+
+           
+
+                <div id="geoData">
+
+                    <!-- Submit button -->
+                    <a href="#"><input id="sendData" type="submit" value="Solarpotential berechnen" class="button" /></a>
+
+                </div>
+
+                <div id="geoData"><input id="reset_button" type="submit" value="Neu Starten"  /> </div>
+
+        </form>
+    </div>
 
 </div>
 
+</div>
+    <div class="container_12" id="overviewbgbottom">
+        <div class="grid_12" >
+            &nbsp;
+        </div>
+    </div>
 
 
-	<div class="container_12">
-			<div class="grid_8"><p class="step2p" ></p></div>
-			<!-- <div class="grid_4"   id="geoData"><input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton biggreenstep2move" /> </div> -->
-			<div class="clear"></div>
-			
-	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form action="/results_photo/" method="post" class="postforresults">	
+{% csrf_token %}
+
+                <input type="text" value="{{ selected_address }}" class="strasseinput" >
+				<input class="tiltvalue" type="hidden" name="tilt" value="25" style="display: none;" /> 
+				<input class="rooftypevalue" type="hidden" name="rooftype" value="Satteldach" style="display: none;"  />
+
+
+  
+		
 
 
 </form>
-<div id="geoData"><input id="reset_button" type="submit" value="Neu Starten"  /> </div>
+
 {% endblock %}
 
 
+
+
+
+
+
+            <!-- <p class="zahluebersicht"><span>Dachfl&auml;che w&auml;hlen:</span></p> -->
+            <p class="step2p" style="width:100%; text-align:center;">Anleitung:Navigieren Sie zu Ihrem Haus. Klicken Sie mit Ihrer Mause die vier Ecken Ihres Daches. Klicken Sie zum Schluss wieder auf den ersten Ecken um abzuschliessen. Wenn Sie neu starten m&ouml;chten, klicken sie auf den "Neu Starten" Knopf</p>
+        
