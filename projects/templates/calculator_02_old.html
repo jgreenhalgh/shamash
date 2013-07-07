@@ -1,0 +1,408 @@
+{% extends "calculator_base.html" %}
+{% block calc_02_active %}active{% endblock %}
+{% block calc_02_step2_active%}active{% endblock%}
+{% block title %}Schritt Zwei{% endblock %}
+
+{% block header_inhead %}
+
+
+<script src="http://maps.google.com/maps?file=api&amp;v=3&amp;sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"></script>
+<script type="text/javascript" src="{{STATIC_URL}}/polygon.min.js"></script>
+
+<!--NEUES Skript fuer Google Maps Anzeige: -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=drawing"></script>
+
+
+<style type="text/css">
+#map, html, body {
+padding: 0;
+margin: 0;
+height: 100%;
+}
+
+#panel {
+width: 200px;
+font-family: Arial, sans-serif;
+font-size: 13px;
+float: right;
+margin: 10px;
+}
+
+#color-palette {
+clear: both;
+}
+
+.color-button {
+width: 14px;
+height: 14px;
+font-size: 0;
+margin: 2px;
+float: left;
+cursor: pointer;
+}
+
+#delete-button {
+margin-top: 5px;
+}
+</style>
+
+
+
+<script type="text/javascript">
+
+
+var drawingManager;
+var selectedShape;
+var colors = ['#1E90FF', '#FF1493', '#32CD32', '#FF8C00', '#4B0082'];
+
+var latlng_coordinates;
+var area;
+var address = "{{selected_address}}";
+
+var my_results;   
+var geocoder = new google.maps.Geocoder();
+$(document).ready(function(){
+
+
+    //here we are getting a few address components to be put into the form that 
+    //is sent to django with the send button
+    function get_address_for_form(callback) {
+
+        geocoder.geocode( { 'address': address, 'region': 'ch'}, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+                //checking whether there are any data                       
+                if (results[0]) { 
+
+                    //getting latng coordinates for the map
+                    customer_location = results[0].geometry.location;
+                    //executing initialize_map
+                    callback();
+                    
+                    //now looking for the right data and then adding it to the hidden fields, first the zipcode and then the gemeinde
+                    //unfortunately the different parts of the address are not always in the same position so we have to cycle through
+                    var google_address = results[0].address_components;
+                    for (var i = 0; i < google_address.length; i++) {
+                        if (google_address[i].types == "postal_code") {
+                            $('#geoData').append('<input type="hidden" name="postal_code" value="' + google_address[i].long_name + '">');
+                        }
+                    }
+                    for (var i = 0; i < google_address.length; i++) {
+                        if (google_address[i].types == "locality,political") {
+                            $('#geoData').append('<input type="hidden" name="gemeinde" value="' + google_address[i].long_name + '">');
+                        }
+                    }
+                }
+                else 
+                {
+                alert("Geocode was not successful for the following reason: " + status);
+                }
+            }
+        });
+    }
+
+    
+
+    // this script is for loading the map at the correct coordinates and drawing the polygon on itfinding the correct coordinates for the map
+    // attention, point is not a latlng object , customer_location is!
+
+
+    //getting exact data of the customer
+
+    //These next two functions starts the map and deals with the polygon overlay
+    function setSelection(shape) {
+        // clearSelection();
+        selectedShape = shape;
+        shape.setEditable(true);
+    }
+
+
+    function initialize_map() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 20,
+            //disbling 45 degree tilt
+            tilt: 0,
+
+            draggable: true, 
+
+            //disabling zooming with the next 3 items
+            zoomControl: false, 
+            scrollwheel: false, 
+            disableDoubleClickZoom: true,
+            //the next one hides the rest of the tools on the map    
+            disableDefaultUI: true,
+            center: customer_location,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        });
+
+        var polyOptions = {
+            editable: true,
+            strokeColor: "#E3E4FA",
+            strokeOpacity: 1,
+            strokeWeight: 4,
+            fillColor: "#FBB917",
+            fillOpacity: 0.65
+
+        };
+
+
+        // Creates a drawing manager attached to the map that allows the user to draw
+        // markers, lines, and shapes.
+        drawingManager = new google.maps.drawing.DrawingManager({
+            //the next line makes the control options invisible
+            drawingControl: false,
+            drawingMode: google.maps.drawing.OverlayType.POLYGON,
+            polygonOptions: polyOptions,
+            map: map
+        });
+
+        google.maps.event.addListener(drawingManager, 'overlaycomplete', function (e) {
+            if (e.type != google.maps.drawing.OverlayType.MARKER) {
+                // Switch back to non-drawing mode after drawing a shape.
+                drawingManager.setDrawingMode(null);
+
+                // Add an event listener that selects the newly-drawn shape when the user
+                // mouses down on it.
+
+                var newShape = e.overlay;
+                newShape.type = e.type;
+                google.maps.event.addListener(newShape, 'click', function () {
+                    setSelection(newShape);
+                });
+                setSelection(newShape);
+            }
+        });
+
+
+
+        function deleteSelectedShape() {
+            if (selectedShape) {
+
+                selectedShape.setMap(null);
+                drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+            }
+        }
+
+        // Clear the current selection when the drawing mode is changed, or when the
+        // map is clicked.
+        //This is commented out so the shape cannot be unselected(next two lines):
+        //google.maps.event.addListener(drawingManager, 'drawingmode_changed', clearSelection);
+        // google.maps.event.addListener(map, 'click', clearSelection);
+        
+        //Delete botton's action
+         google.maps.event.addDomListener(document.getElementById('reset_button'), 'click',  deleteSelectedShape);
+
+        //the next line helps us to get the data from the user, also we extract the area
+        google.maps.event.addListener(drawingManager, 'polygoncomplete', function (polygon) {
+
+            latlng_coordinates = (polygon.getPath().getArray());
+
+            area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+        });
+    }
+   
+
+    //get data to transfer to server
+    $('#sendData').click(function () {
+        $('#dataPanel').empty();
+
+        //extracting data to be handed over to django
+        var LatLng = new Array();
+        var Dist = new Array();
+        var Head = new Array();
+        //var coordinates = creator.showData().match(/[0-9.]+/g);
+        //for(var i=0; i <(coordinates.length)/2; i++)
+
+        for (var i = 0; i < latlng_coordinates.length; i++) {
+            //LatLng[i] = new google.maps.LatLng(coordinates[2*i], coordinates[2*i+1]);
+
+            if (i > 0) {
+                Dist[i - 1] = google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[i - 1], latlng_coordinates[i]);
+                Head[i - 1] = google.maps.geometry.spherical.computeHeading(latlng_coordinates[i - 1], latlng_coordinates[i]);
+            }
+
+
+            //to find distance/heading of last vertice
+            if (i == 0) {
+                Dist[latlng_coordinates.length - 1] = google.maps.geometry.spherical.computeDistanceBetween(latlng_coordinates[latlng_coordinates.length - 1], latlng_coordinates[0]);
+                Head[latlng_coordinates.length - 1] = google.maps.geometry.spherical.computeHeading(latlng_coordinates[latlng_coordinates.length - 1], latlng_coordinates[0]);
+            }
+        }
+
+        $('#geoData').append('<input type="hidden" name="coordinates" value="' + latlng_coordinates + '">');
+        $('#geoData').append('<input type="hidden" name="area" value="' + area + '">');
+        $('#geoData').append('<input type="hidden" name="distances" value="' + Dist + '">');
+        $('#geoData').append('<input type="hidden" name="headings" value="' + Head + '">');
+    });
+
+
+
+    google.maps.event.addDomListener(window, 'load', get_address_for_form(initialize_map) );
+});
+</script>
+
+
+
+
+<!--Skript Dropdown Items: -->
+
+<script src="{{STATIC_URL}}/js/jquery.selectboxdslick.min.js"></script>
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){ 
+	
+
+	// DROPDOWN SELECT BOX im STEP 2
+	
+	$('#rooftype-select').ddslick({
+		width: 220,
+		imagePosition: "left",			
+		showSelectedHTML: false,
+		onSelected: function(data) {
+			// show the right house, when selected select the ImageSrc with data.selectedData.imageSrc
+			showImgurl = data.selectedData.imageSrc.slice(0,-7)+".png";
+			$(".showDachhere").attr("src", showImgurl);
+			// show the house name in the value of the field
+			showinField = data.selectedData.value;
+			$(".rooftypevalue").attr("value", showinField);
+			// get the Name and do something, if its a Flachdach
+			workingValue = data.selectedData.value;
+			if(workingValue == "Flachdach") {
+				$('#tilt-select').ddslick('select', {index: "0" });
+			}
+			
+		}
+	});
+
+	$('#tilt-select').ddslick({
+		width: 220,
+		imagePosition: "left",			
+		showSelectedHTML: false,
+		onSelected: function(data) {
+			// show the house tilt in the value of the field
+			showinField = data.selectedData.value;
+			$(".tiltvalue").attr("value", showinField);		
+		}
+	});
+	
+	$(".closetoggle").click(function(){
+		$(".steps_warnnachricht").slideToggle("fast");
+	});
+	
+});
+</script>
+
+	
+<title>Schritt 2, Details eingeben</title>
+
+{% endblock %}
+
+{% block warnnachricht %}
+	{% if selected_address in "Ramistrasse 101, Zurich Ihre Wohnadresse" %}
+	<div class="steps_warnnachricht">
+		<div class="container_16">
+		<!-- <div class="grid_16"><!-- <a class="smallbutton" href="#">Zur&uuml;ck zur Startseite</a></p> </div>--> 
+		<div class="grid_8">
+			<p class="kleinertitel" style="margin-top:20px;">Es wurde kein Dach gefunden. (Error: Ramistrasse)</p>
+			<p class="kleinertext">Sie k&ouml;nnen auch ohne Dach. Hier sollte ein guter Text hinkommen, der kurz ist aber erkl&auml;, was man machen kann. Zum Beispiel kann man auch nochmals suchen.
+			</p>
+		</div>
+		<div class="grid_8">
+			<p class="close_button"><a href="#" class="smallbutton closetoggle">Schliessen</a></p> <p class="back_button">
+			<p class="kleinertitel">Suchen Sie hier nach Ihrem Dach:</p>
+				
+			<form action="/panel/" method="post"> {% csrf_token %}
+				<label> <input type="text" class="warnnacheingabe" name="address" onfocus="if (this.value=='Geben Sie hier Ihre Wohnadresse ein') this.value = ''" value="Geben Sie hier Ihre Wohnadresse ein" style="width:230px; margin-top:5px;" /></label>
+				<input type="submit" class="warnsubmit" value="Abschicken" />
+			</form>
+		</div>
+		</div>
+	</div>
+	{% endif %}
+	
+{% endblock %}	
+
+{% block content %}
+
+<!-- Fehlermeldung Box with new Lightbox -->
+<div class="fehlermeldungbox" style="width:200px; height:200px; text-align:center; font-size:13px; padding-top:50px; background-color:#fff; display:none;">
+	Fehlermeldung, kein Polygon ausgew&auml;lt.
+</div>
+
+<form action="/results_photo/" method="post" class="postforresults">	
+{% csrf_token %}
+<div class="bigoverview_step2">
+	<div class="container_12">
+		<div class="grid_3 informationstep2">
+			<img width="63" height="59" class="showDachhere" src="" />
+			<input type="text" value="{{ selected_address }}" class="strasseinput" >
+		</div>
+		<div class="grid_3 step2_2">
+		
+		
+		
+			<p class="zahluebersicht"><span>Dachtyp w&auml;hlen:</span></p>
+			
+				<select name="rooftype_select" id="rooftype-select">
+					
+					<option value="Satteldach" data-imagesrc="{{STATIC_URL}}/img/haus1_32.png" data-description="Kleine Beschreibung">Satteldach</option>
+					<option value="Zeltdach" data-imagesrc="{{STATIC_URL}}/img/haus2_32.png" data-description="Kleine Beschreibung">Zeltdach</option>
+					<option value="Walmdach" data-imagesrc="{{STATIC_URL}}/img/haus3_32.png" data-description="Kleine Beschreibung">Walmdach</option>
+					<option value="Flachdach" data-imagesrc="{{STATIC_URL}}/img/haus4_32.png" data-description="Kleine Beschreibung">Flachdach</option>
+					<option value="Weitere Optionen">Weitere D&auml;cher</option>
+				</select>
+
+		</div>
+		<div class="grid_3">
+		
+			<p class="zahluebersicht"><span>Dachneigung w&auml;hlen:</span></p>
+
+				
+				<select name="tilt_select" id="tilt-select">
+					<option value="0" data-imagesrc="{{STATIC_URL}}/img/angle0_32.png" >0&deg;</option>
+					<option value="25" data-imagesrc="{{STATIC_URL}}/img/angle25_32.png" >25&deg;</option>
+					<option value="35" data-imagesrc="{{STATIC_URL}}/img/angle35_32.png" >35&deg;</option>
+					<option value="45" data-imagesrc="{{STATIC_URL}}/img/angle45_32.png" >45&deg;</option>
+				</select>
+				
+				<input class="tiltvalue" type="hidden" name="tilt" value="25" style="display: none;" /> 
+				<input class="rooftypevalue" type="hidden" name="rooftype" value="Satteldach" style="display: none;"  />
+		</div>
+		
+		
+		<div class="grid_3">
+				<div id="geoData"><input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton biggreenstep2movetop" /> </div>
+                
+		</div>
+
+	</div>
+	
+	<div class="clear"></div>
+	<div class="container_12">
+		<div clas="grid_12">
+			<!-- <p class="zahluebersicht"><span>Dachfl&auml;che w&auml;hlen:</span></p> -->
+			<p class="step2p" style="width:100%; text-align:center;">Anleitung:Navigieren Sie zu Ihrem Haus. Klicken Sie mit Ihrer Mause die vier Ecken Ihres Daches. Klicken Sie zum Schluss wieder auf den ersten Ecken um abzuschliessen. Wenn Sie neu starten m&ouml;chten, klicken sie auf den "Neu Starten" Knopf</p>
+		</div>
+		<div class="clear"></div>
+		<div class="grid_12" style="height:430px; width:940px; background-color:#9CA7AC;" id="map"> </div>	
+	</div>
+	<div class="clear"></div>
+	<br />	
+
+</div>
+
+
+
+	<div class="container_12">
+			<div class="grid_8"><p class="step2p" ></p></div>
+			<!-- <div class="grid_4"   id="geoData"><input id="sendData" type="submit" value="Solarpotential berechnen" class="biggreenbutton biggreenstep2move" /> </div> -->
+			<div class="clear"></div>
+			
+	</div>
+
+
+</form>
+<div id="geoData"><input id="reset_button" type="submit" value="Neu Starten"  /> </div>
+{% endblock %}
+
+
