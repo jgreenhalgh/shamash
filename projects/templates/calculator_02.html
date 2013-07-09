@@ -1,9 +1,11 @@
-{% extends "calculator_base.html" %}
-{% block calc_02_active %}active{% endblock %}
-{% block calc_02_step2_active%}active{% endblock%}
-{% block title %}Schritt Zwei{% endblock %}
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+<head>
+<meta charset="utf-8"/>
 
-{% block header_inhead %}
+<title>{% block title %}Herzlich willkommen zu {{ comapnynamne }}{% endblock %}</title>
+
+
 
 
 <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k" type="text/javascript"></script>
@@ -476,35 +478,11 @@ $(document).ready(function() {
 
 
 
-{% endblock %}
+</head>
+<body>
 
 
-{% block warnnachricht %}
-	{% if selected_address in "Ramistrasse 101, Zurich Ihre Wohnadresse" %}
-	<div class="steps_warnnachricht">
-		<div class="container_16">
-		<!-- <div class="grid_16"><!-- <a class="smallbutton" href="#">Zur&uuml;ck zur Startseite</a></p> </div>--> 
-		<div class="grid_8">
-			<p class="kleinertitel" style="margin-top:20px;">Es wurde kein Dach gefunden. (Error: Ramistrasse)</p>
-			<p class="kleinertext">Sie k&ouml;nnen auch ohne Dach. Hier sollte ein guter Text hinkommen, der kurz ist aber erkl&auml;, was man machen kann. Zum Beispiel kann man auch nochmals suchen.
-			</p>
-		</div>
-		<div class="grid_8">
-			<p class="close_button"><a href="#" class="smallbutton closetoggle">Schliessen</a></p> <p class="back_button">
-			<p class="kleinertitel">Suchen Sie hier nach Ihrem Dach:</p>
-				
-			<form action="/panel/" method="post"> {% csrf_token %}
-				<label> <input type="text" class="warnnacheingabe" name="address" onfocus="if (this.value=='Geben Sie hier Ihre Wohnadresse ein') this.value = ''" value="Geben Sie hier Ihre Wohnadresse ein" style="width:230px; margin-top:5px;" /></label>
-				<input type="submit" class="warnsubmit" value="Abschicken" />
-			</form>
-		</div>
-		</div>
-	</div>
-	{% endif %}
-	
-{% endblock %}	
 
-{% block content %}
 
 <!-- Fehlermeldung Box with new Lightbox -->
 <div class="fehlermeldungbox" style="width:200px; height:200px; text-align:center; font-size:13px; padding-top:50px; background-color:#fff; display:none;">
@@ -809,30 +787,8 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-  
-		
-
-
 </form>
-
-{% endblock %}
+</body>
 
 
 
