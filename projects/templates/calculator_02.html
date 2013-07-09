@@ -335,14 +335,7 @@ $(document).ready(function(){
 
         function validate_rooftype(validated_element)
         {
-            var validator = $("#formsteptwo").validate({
-                
-
-                        
-                success: function(label) {
-                    label.removeClass("error").addClass("check");
-                },
-            });
+            var validator = $("#formsteptwo").validate();
             
             validator.element( validated_element );
             
