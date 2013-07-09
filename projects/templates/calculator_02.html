@@ -425,6 +425,7 @@ $(document).ready(function(){
 
         /* put the costum input field into the hidden box*/
         $('input.degreeinput').keyup(function(){
+            $(".winkelbox").removeClass("winkelactive");
             $('#dachwinkelhidden').val("");
             $('#dachwinkelhidden').val($('input.degreeinput').val());
             $("#dachwinkelhidden").keyup();
@@ -436,7 +437,6 @@ $(document).ready(function(){
         $(".personbox").click(function(){
             $(".personbox").removeClass("personactive");
             $(this).addClass("personactive");
-            $("#personenimhaushidden").keyup();
         });
 
 
