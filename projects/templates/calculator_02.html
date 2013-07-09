@@ -402,6 +402,7 @@ $(document).ready(function(){
 
         $('input[name="dachtyp"]').click(function() {
             /* dachtyp is the id of the hidden field, where to post the value from */
+            $('#dachtyphidden').val("");
             $('#dachtyphidden').val(this.value);
             $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
             validate_rooftype("#dachtyphidden");
