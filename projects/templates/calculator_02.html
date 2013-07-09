@@ -419,6 +419,7 @@ $(document).ready(function(){
             $('#dachwinkelhidden').val(this.value);
             $('input.degreeinput').val("");
             $("#dachwinkelhidden").keyup();
+            validate_rooftype("#dachwinkelhidden");
         });
 
 
@@ -427,6 +428,8 @@ $(document).ready(function(){
             $('#dachwinkelhidden').val("");
             $('#dachwinkelhidden').val($('input.degreeinput').val());
             $("#dachwinkelhidden").keyup();
+            validate_rooftype("#dachwinkelhidden");
+
         });
 
         /* for the PERSONEN */
@@ -441,11 +444,15 @@ $(document).ready(function(){
             $('#personenimhaushidden').val(this.value);
             $('input.personsinput').val("");
             $("#personenimhaushidden").keyup();
+            validate_rooftype("#personenimhaushidden");
+
         });
         /* put the costum input field into the hidden box*/
         $('input.personsinput').keyup(function(){
             $('#personenimhaushidden').val($('input.personsinput').val());
             $("#personenimhaushidden").keyup();
+            validate_rooftype("#personenimhaushidden");
+
         });
 
     });
