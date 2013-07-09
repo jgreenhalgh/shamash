@@ -410,60 +410,62 @@ $(document).ready(function(){
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
 /* $(document).ready(function() {   ----this is commented out so i can check whether the validation and the highlighitng 
     part onclick can work together to validate as soon as a selection is clicked*/
-    
-        $("#formsteptwo").validate({
-            
-                errorElement:'span',
-                //validElement:'success',
+        function input_validation()
+        {
+            $("#formsteptwo").validate({
+                
+                    errorElement:'span',
+                    //validElement:'success',
 
-                errorPlacement: function(error, element) {
-                    if(element.attr('name') == 'tilt'){
-                    
-                        error.insertAfter('span#tiltspan').addClass('error');
-                        //error.css('color','red');
-                        //error.addClass('error');
-                    };
-                    if(element.attr('name') == 'rooftype'){
-                        error.insertAfter('span#rooftypspan').addClass('error');
-                        //error.css('color','red');
-                        //error.addClass('error');
-                    };
-                    if(element.attr('name') == 'person'){
-                        error.insertAfter('span#personspan').addClass('error');
-                        //error.css('color','blue');
-                        //error.addClass('error');
-                    }
-                },
+                    errorPlacement: function(error, element) {
+                        if(element.attr('name') == 'tilt'){
+                        
+                            error.insertAfter('span#tiltspan').addClass('error');
+                            //error.css('color','red');
+                            //error.addClass('error');
+                        };
+                        if(element.attr('name') == 'rooftype'){
+                            error.insertAfter('span#rooftypspan').addClass('error');
+                            //error.css('color','red');
+                            //error.addClass('error');
+                        };
+                        if(element.attr('name') == 'person'){
+                            error.insertAfter('span#personspan').addClass('error');
+                            //error.css('color','blue');
+                            //error.addClass('error');
+                        }
+                    },
 
 
-            /* here are the rules.  */
-            rules: {
-                rooftype: {
-                    required:true,
-                },
-                tilt: {
-                    required:true,
-                },
-                person: {
-                    required:true,
-                },
-            },
-                messages: {
+                /* here are the rules.  */
+                rules: {
                     rooftype: {
-                        required:"&nbsp;",
+                        required:true,
                     },
                     tilt: {
-                        required:"&nbsp;",
+                        required:true,
                     },
                     person: {
-                        required:"&nbsp;",
-                    },                          
+                        required:true,
+                    },
                 },
-                    
-            success: function(label) {
-                label.removeClass("error").addClass("check");
-            },
-        });
+                    messages: {
+                        rooftype: {
+                            required:"&nbsp;",
+                        },
+                        tilt: {
+                            required:"&nbsp;",
+                        },
+                        person: {
+                            required:"&nbsp;",
+                        },                          
+                    },
+                        
+                success: function(label) {
+                    label.removeClass("error").addClass("check");
+                },
+            });
+        }
     });
 </script>
 
