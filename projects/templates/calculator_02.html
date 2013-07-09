@@ -338,31 +338,6 @@ $(document).ready(function(){
             var validator = $("#formsteptwo").validate({
                 
 
-
-
-                /* here are the rules.  */
-                rules: {
-                    rooftype: {
-                        required:true,
-                    },
-                    tilt: {
-                        required:true,
-                    },
-                    person: {
-                        required:true,
-                    },
-                },
-                    messages: {
-                        rooftype: {
-                            required:"&nbsp;",
-                        },
-                        tilt: {
-                            required:"&nbsp;",
-                        },
-                        person: {
-                            required:"&nbsp;",
-                        },                          
-                    },
                         
                 success: function(label) {
                     label.removeClass("error").addClass("check");
