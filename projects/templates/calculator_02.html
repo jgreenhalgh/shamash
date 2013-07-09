@@ -434,13 +434,14 @@ $(document).ready(function(){
         $(".winkelbox").click(function(){
           $(".winkelbox").removeClass("winkelactive");
           $(this).addClass("winkelactive");
-          input_validation();
         });
         $('input[name="dachwinkel"]').click(function() {
 
         $('#dachwinkelhidden').val(this.value);
         $('input.degreeinput').val("");
         $("#dachwinkelhidden").keyup();
+        input_validation();
+
         });
         /* put the costum input field into the hidden box*/
         $('input.degreeinput').keyup(function(){
