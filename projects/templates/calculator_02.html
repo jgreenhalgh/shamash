@@ -449,6 +449,8 @@ $(document).ready(function(){
         });
         /* put the costum input field into the hidden box*/
         $('input.personsinput').keyup(function(){
+            $(".personbox").removeClass("personactive");
+            $('#personenimhaushidden').val("");
             $('#personenimhaushidden').val($('input.personsinput').val());
             $("#personenimhaushidden").keyup();
             validate_rooftype("#personenimhaushidden");
