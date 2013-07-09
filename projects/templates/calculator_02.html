@@ -355,61 +355,7 @@ $(document).ready(function(){
 /* This scripts adds the highliting class to the .dachbox class (the small different roof-images) */
 
     $(document).ready(function() {
-        /* for the DACHTYP */
-        $(".dachbox").click(function(){
-          $(".dachbox").removeClass("dachactive");
-          $(this).addClass("dachactive");
-
-
-
-        });
-        $('input[name="dachtyp"]').click(function() {
-            /* dachtyp is the id of the hidden field, where to post the value from */
-        $('#dachtyphidden').val(this.value);
-          $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
-
-        });
-
-        /* for the DACHWINKEL */
-        $(".winkelbox").click(function(){
-          $(".winkelbox").removeClass("winkelactive");
-          $(this).addClass("winkelactive");
-          input_validation();
-        });
-        $('input[name="dachwinkel"]').click(function() {
-
-        $('#dachwinkelhidden').val(this.value);
-        $('input.degreeinput').val("");
-        $("#dachwinkelhidden").keyup();
-        });
-        /* put the costum input field into the hidden box*/
-        $('input.degreeinput').keyup(function(){
-            $('#dachwinkelhidden').val("");
-            $('#dachwinkelhidden').val($('input.degreeinput').val());
-            $("#dachwinkelhidden").keyup();
-        });
-
-
-
-        /* for the PERSONEN */
-        $(".personbox").click(function(){
-          $(".personbox").removeClass("personactive");
-          $(this).addClass("personactive");
-          $("#personenimhaushidden").keyup();
-        });
-
-        $('input[name="personen"]').click(function() {
-            $('#personenimhaushidden').val(this.value);
-            $('input.personsinput').val("");
-            $("#personenimhaushidden").keyup();
-        });
-        /* put the costum input field into the hidden box*/
-        $('input.personsinput').keyup(function(){
-            $('#personenimhaushidden').val($('input.personsinput').val());
-            $("#personenimhaushidden").keyup();
-
-        });
-/* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
+        /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
 /* $(document).ready(function() {   ----this is commented out so i can check whether the validation and the highlighitng 
     part onclick can work together to validate as soon as a selection is clicked*/
         function input_validation()
@@ -469,6 +415,61 @@ $(document).ready(function(){
             });
         }
         input_validation();
+        /* for the DACHTYP */
+        $(".dachbox").click(function(){
+          $(".dachbox").removeClass("dachactive");
+          $(this).addClass("dachactive");
+
+
+
+        });
+        $('input[name="dachtyp"]').click(function() {
+            /* dachtyp is the id of the hidden field, where to post the value from */
+        $('#dachtyphidden').val(this.value);
+          $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
+
+        });
+
+        /* for the DACHWINKEL */
+        $(".winkelbox").click(function(){
+          $(".winkelbox").removeClass("winkelactive");
+          $(this).addClass("winkelactive");
+          input_validation();
+        });
+        $('input[name="dachwinkel"]').click(function() {
+
+        $('#dachwinkelhidden').val(this.value);
+        $('input.degreeinput').val("");
+        $("#dachwinkelhidden").keyup();
+        });
+        /* put the costum input field into the hidden box*/
+        $('input.degreeinput').keyup(function(){
+            $('#dachwinkelhidden').val("");
+            $('#dachwinkelhidden').val($('input.degreeinput').val());
+            $("#dachwinkelhidden").keyup();
+        });
+
+
+
+        /* for the PERSONEN */
+        $(".personbox").click(function(){
+          $(".personbox").removeClass("personactive");
+          $(this).addClass("personactive");
+          $("#personenimhaushidden").keyup();
+        });
+
+        $('input[name="personen"]').click(function() {
+            $('#personenimhaushidden').val(this.value);
+            $('input.personsinput').val("");
+            $("#personenimhaushidden").keyup();
+        });
+        /* put the costum input field into the hidden box*/
+        $('input.personsinput').keyup(function(){
+            $('#personenimhaushidden').val($('input.personsinput').val());
+            $("#personenimhaushidden").keyup();
+
+        });
+
     });
 </script>
 
