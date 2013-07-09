@@ -331,122 +331,170 @@ $(document).ready(function(){
 <script> 
 /* This scripts adds the highliting class to the .dachbox class (the small different roof-images) */
 
-$(document).ready(function() {
-    /* for the DACHTYP */
-    $(".dachbox").click(function(){
-      $(".dachbox").removeClass("dachactive");
-      $(this).addClass("dachactive");
+    $(document).ready(function() {
+
+        function validate_rooftype()
+        {
+                    $("#formsteptwo").validate({
+            
+                errorElement:'span',
+                //validElement:'success',
+
+                errorPlacement: function(error, element) {
+
+                    if(element.attr('name') == 'rooftype'){
+                        error.insertAfter('span#rooftypspan').addClass('error');
+                        //error.css('color','red');
+                        //error.addClass('error');
+                    };
+
+                },
 
 
+            /* here are the rules.  */
+            rules: {
+                rooftype: {
+                    required:true,
+                },
+                tilt: {
+                    required:true,
+                },
+                person: {
+                    required:true,
+                },
+            },
+                messages: {
+                    rooftype: {
+                        required:"&nbsp;",
+                    },
+                    tilt: {
+                        required:"&nbsp;",
+                    },
+                    person: {
+                        required:"&nbsp;",
+                    },                          
+                },
+                    
+            success: function(label) {
+                label.removeClass("error").addClass("check");
+            },
+        });
+        }
 
-    });
-    $('input[name="dachtyp"]').click(function() {
-        /* dachtyp is the id of the hidden field, where to post the value from */
-    $('#dachtyphidden').val(this.value);
-      $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
+        /* for the DACHTYP */
+        $(".dachbox").click(function(){
+          $(".dachbox").removeClass("dachactive");
+          $(this).addClass("dachactive");
+          validate_rooftype();
+        });
+        $('input[name="dachtyp"]').click(function() {
+            /* dachtyp is the id of the hidden field, where to post the value from */
+        $('#dachtyphidden').val(this.value);
+          $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
+          validate_rooftype();
 
-    });
+        });
 
-    /* for the DACHWINKEL */
-    $(".winkelbox").click(function(){
-      $(".winkelbox").removeClass("winkelactive");
-      $(this).addClass("winkelactive");
-    });
-    $('input[name="dachwinkel"]').click(function() {
+        /* for the DACHWINKEL */
+        $(".winkelbox").click(function(){
+          $(".winkelbox").removeClass("winkelactive");
+          $(this).addClass("winkelactive");
+        });
+        $('input[name="dachwinkel"]').click(function() {
 
-    $('#dachwinkelhidden').val(this.value);
-    $('input.degreeinput').val("");
-    $("#dachwinkelhidden").keyup();
-    });
-    /* put the costum input field into the hidden box*/
-    $('input.degreeinput').keyup(function(){
-        $('#dachwinkelhidden').val("");
-        $('#dachwinkelhidden').val($('input.degreeinput').val());
+        $('#dachwinkelhidden').val(this.value);
+        $('input.degreeinput').val("");
         $("#dachwinkelhidden").keyup();
+        });
+        /* put the costum input field into the hidden box*/
+        $('input.degreeinput').keyup(function(){
+            $('#dachwinkelhidden').val("");
+            $('#dachwinkelhidden').val($('input.degreeinput').val());
+            $("#dachwinkelhidden").keyup();
+        });
+
+
+
+        /* for the PERSONEN */
+        $(".personbox").click(function(){
+          $(".personbox").removeClass("personactive");
+          $(this).addClass("personactive");
+          $("#personenimhaushidden").keyup();
+        });
+
+        $('input[name="personen"]').click(function() {
+            $('#personenimhaushidden').val(this.value);
+            $('input.personsinput').val("");
+            $("#personenimhaushidden").keyup();
+        });
+        /* put the costum input field into the hidden box*/
+        $('input.personsinput').keyup(function(){
+            $('#personenimhaushidden').val($('input.personsinput').val());
+            $("#personenimhaushidden").keyup();
+        });
+
     });
-
-
-
-    /* for the PERSONEN */
-    $(".personbox").click(function(){
-      $(".personbox").removeClass("personactive");
-      $(this).addClass("personactive");
-      $("#personenimhaushidden").keyup();
-    });
-
-    $('input[name="personen"]').click(function() {
-        $('#personenimhaushidden').val(this.value);
-        $('input.personsinput').val("");
-        $("#personenimhaushidden").keyup();
-    });
-    /* put the costum input field into the hidden box*/
-    $('input.personsinput').keyup(function(){
-        $('#personenimhaushidden').val($('input.personsinput').val());
-        $("#personenimhaushidden").keyup();
-    });
-
-});
 </script>
 
 <script>
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
-$(document).ready(function() {
-    
-    $("#formsteptwo").validate({
+    $(document).ready(function() {
         
-            errorElement:'span',
-            //validElement:'success',
+        $("#formsteptwo").validate({
+            
+                errorElement:'span',
+                //validElement:'success',
 
-            errorPlacement: function(error, element) {
-                if(element.attr('name') == 'tilt'){
-                
-                    error.insertAfter('span#tiltspan').addClass('error');
-                    //error.css('color','red');
-                    //error.addClass('error');
-                };
-                if(element.attr('name') == 'rooftype'){
-                    error.insertAfter('span#rooftypspan').addClass('error');
-                    //error.css('color','red');
-                    //error.addClass('error');
-                };
-                if(element.attr('name') == 'person'){
-                    error.insertAfter('span#personspan').addClass('error');
-                    //error.css('color','blue');
-                    //error.addClass('error');
-                }
-            },
+                errorPlacement: function(error, element) {
+                    if(element.attr('name') == 'tilt'){
+                    
+                        error.insertAfter('span#tiltspan').addClass('error');
+                        //error.css('color','red');
+                        //error.addClass('error');
+                    };
+                    if(element.attr('name') == 'rooftype'){
+                        error.insertAfter('span#rooftypspan').addClass('error');
+                        //error.css('color','red');
+                        //error.addClass('error');
+                    };
+                    if(element.attr('name') == 'person'){
+                        error.insertAfter('span#personspan').addClass('error');
+                        //error.css('color','blue');
+                        //error.addClass('error');
+                    }
+                },
 
 
-        /* here are the rules.  */
-        rules: {
-            rooftype: {
-                required:true,
-            },
-            tilt: {
-                required:true,
-            },
-            person: {
-                required:true,
-            },
-        },
-            messages: {
+            /* here are the rules.  */
+            rules: {
                 rooftype: {
-                    required:"&nbsp;",
+                    required:true,
                 },
                 tilt: {
-                    required:"&nbsp;",
+                    required:true,
                 },
                 person: {
-                    required:"&nbsp;",
-                },                          
+                    required:true,
+                },
             },
-                
-        success: function(label) {
-            label.removeClass("error").addClass("check");
-        },
-    });
+                messages: {
+                    rooftype: {
+                        required:"&nbsp;",
+                    },
+                    tilt: {
+                        required:"&nbsp;",
+                    },
+                    person: {
+                        required:"&nbsp;",
+                    },                          
+                },
+                    
+            success: function(label) {
+                label.removeClass("error").addClass("check");
+            },
+        });
 
-});
+    });
 </script>
 
 <style type="text/css">
