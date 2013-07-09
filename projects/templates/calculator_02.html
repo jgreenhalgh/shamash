@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" style="height:auto;">
-<head>
-<meta charset="utf-8"/>
+{% extends "calculator_base.html" %}
+{% block calc_02_active %}active{% endblock %}
+{% block calc_02_step2_active%}active{% endblock%}
+{% block title %}Schritt Zwei{% endblock %}
 
-<title>{% block title %}Herzlich willkommen zu {{ comapnynamne }}{% endblock %}</title>
-
-
-
-<!-- CSS Normilze Stylesheet -->
-<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
-
-<!-- CSS GRID Stylesheet -->
-<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
-
-<!-- JQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
-<!-- JQuery Lightbox Plugin -->
-<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
-
-
-<!-- JQuery Validate Plugin -->
-<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
-
-<!-- CSS Master Stylesheet -->
-<!-- <link rel='stylesheet' href="{{STATIC_URL}}/style.css"/> -->
-
-
+{% block header_inhead %}
 
 
 <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k" type="text/javascript"></script>
@@ -354,124 +331,122 @@ $(document).ready(function(){
 <script> 
 /* This scripts adds the highliting class to the .dachbox class (the small different roof-images) */
 
-    $(document).ready(function() {
-        /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
-/* $(document).ready(function() {   ----this is commented out so i can check whether the validation and the highlighitng 
-    part onclick can work together to validate as soon as a selection is clicked*/
-        function input_validation()
-        {
-            $("#formsteptwo").validate({
-                
-                    errorElement:'span',
-                    //validElement:'success',
-
-                    errorPlacement: function(error, element) {
-                        if(element.attr('name') == 'tilt'){
-                        
-                            error.insertAfter('span#tiltspan').addClass('error');
-                            //error.css('color','red');
-                            //error.addClass('error');
-                        };
-                        if(element.attr('name') == 'rooftype'){
-                            error.insertAfter('span#rooftypspan').addClass('error');
-                            //error.css('color','red');
-                            //error.addClass('error');
-                        };
-                        if(element.attr('name') == 'person'){
-                            error.insertAfter('span#personspan').addClass('error');
-                            //error.css('color','blue');
-                            //error.addClass('error');
-                        }
-                    },
+$(document).ready(function() {
+    /* for the DACHTYP */
+    $(".dachbox").click(function(){
+      $(".dachbox").removeClass("dachactive");
+      $(this).addClass("dachactive");
 
 
-                /* here are the rules.  */
-                rules: {
-                    rooftype: {
-                        required:true,
-                    },
-                    tilt: {
-                        required:true,
-                    },
-                    person: {
-                        required:true,
-                    },
-                },
-                    messages: {
-                        rooftype: {
-                            required:"&nbsp;",
-                        },
-                        tilt: {
-                            required:"&nbsp;",
-                        },
-                        person: {
-                            required:"&nbsp;",
-                        },                          
-                    },
-                        
-                success: function(label) {
-                    label.removeClass("error").addClass("check");
-                },
-            });
-        }
-        input_validation();
-        /* for the DACHTYP */
-        $(".dachbox").click(function(){
-          $(".dachbox").removeClass("dachactive");
-          $(this).addClass("dachactive");
-
-
-
-        });
-        $('input[name="dachtyp"]').click(function() {
-            /* dachtyp is the id of the hidden field, where to post the value from */
-        $('#dachtyphidden').val(this.value);
-          $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
-
-        });
-
-        /* for the DACHWINKEL */
-        $(".winkelbox").click(function(){
-          $(".winkelbox").removeClass("winkelactive");
-          $(this).addClass("winkelactive");
-        });
-        $('input[name="dachwinkel"]').click(function() {
-
-        $('#dachwinkelhidden').val(this.value);
-        $('input.degreeinput').val("");
-        $("#dachwinkelhidden").keyup();
-        input_validation();
-
-        });
-        /* put the costum input field into the hidden box*/
-        $('input.degreeinput').keyup(function(){
-            $('#dachwinkelhidden').val("");
-            $('#dachwinkelhidden').val($('input.degreeinput').val());
-            $("#dachwinkelhidden").keyup();
-        });
-
-
-
-        /* for the PERSONEN */
-        $(".personbox").click(function(){
-          $(".personbox").removeClass("personactive");
-          $(this).addClass("personactive");
-          $("#personenimhaushidden").keyup();
-        });
-
-        $('input[name="personen"]').click(function() {
-            $('#personenimhaushidden').val(this.value);
-            $('input.personsinput').val("");
-            $("#personenimhaushidden").keyup();
-        });
-        /* put the costum input field into the hidden box*/
-        $('input.personsinput').keyup(function(){
-            $('#personenimhaushidden').val($('input.personsinput').val());
-            $("#personenimhaushidden").keyup();
-
-        });
 
     });
+    $('input[name="dachtyp"]').click(function() {
+        /* dachtyp is the id of the hidden field, where to post the value from */
+    $('#dachtyphidden').val(this.value);
+      $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
+
+    });
+
+    /* for the DACHWINKEL */
+    $(".winkelbox").click(function(){
+      $(".winkelbox").removeClass("winkelactive");
+      $(this).addClass("winkelactive");
+    });
+    $('input[name="dachwinkel"]').click(function() {
+
+    $('#dachwinkelhidden').val(this.value);
+    $('input.degreeinput').val("");
+    $("#dachwinkelhidden").keyup();
+    });
+    /* put the costum input field into the hidden box*/
+    $('input.degreeinput').keyup(function(){
+        $('#dachwinkelhidden').val("");
+        $('#dachwinkelhidden').val($('input.degreeinput').val());
+        $("#dachwinkelhidden").keyup();
+    });
+
+
+
+    /* for the PERSONEN */
+    $(".personbox").click(function(){
+      $(".personbox").removeClass("personactive");
+      $(this).addClass("personactive");
+      $("#personenimhaushidden").keyup();
+    });
+
+    $('input[name="personen"]').click(function() {
+        $('#personenimhaushidden').val(this.value);
+        $('input.personsinput').val("");
+        $("#personenimhaushidden").keyup();
+    });
+    /* put the costum input field into the hidden box*/
+    $('input.personsinput').keyup(function(){
+        $('#personenimhaushidden').val($('input.personsinput').val());
+        $("#personenimhaushidden").keyup();
+    });
+
+});
+</script>
+
+<script>
+/* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
+$(document).ready(function() {
+    
+    $("#formsteptwo").validate({
+        
+            errorElement:'span',
+            //validElement:'success',
+
+            errorPlacement: function(error, element) {
+                if(element.attr('name') == 'tilt'){
+                
+                    error.insertAfter('span#tiltspan').addClass('error');
+                    //error.css('color','red');
+                    //error.addClass('error');
+                };
+                if(element.attr('name') == 'rooftype'){
+                    error.insertAfter('span#rooftypspan').addClass('error');
+                    //error.css('color','red');
+                    //error.addClass('error');
+                };
+                if(element.attr('name') == 'person'){
+                    error.insertAfter('span#personspan').addClass('error');
+                    //error.css('color','blue');
+                    //error.addClass('error');
+                }
+            },
+
+
+        /* here are the rules.  */
+        rules: {
+            rooftype: {
+                required:true,
+            },
+            tilt: {
+                required:true,
+            },
+            person: {
+                required:true,
+            },
+        },
+            messages: {
+                rooftype: {
+                    required:"&nbsp;",
+                },
+                tilt: {
+                    required:"&nbsp;",
+                },
+                person: {
+                    required:"&nbsp;",
+                },                          
+            },
+                
+        success: function(label) {
+            label.removeClass("error").addClass("check");
+        },
+    });
+
+});
 </script>
 
 <style type="text/css">
@@ -501,14 +476,35 @@ $(document).ready(function(){
 
 
 
-</head>
+{% endblock %}
 
 
+{% block warnnachricht %}
+	{% if selected_address in "Ramistrasse 101, Zurich Ihre Wohnadresse" %}
+	<div class="steps_warnnachricht">
+		<div class="container_16">
+		<!-- <div class="grid_16"><!-- <a class="smallbutton" href="#">Zur&uuml;ck zur Startseite</a></p> </div>--> 
+		<div class="grid_8">
+			<p class="kleinertitel" style="margin-top:20px;">Es wurde kein Dach gefunden. (Error: Ramistrasse)</p>
+			<p class="kleinertext">Sie k&ouml;nnen auch ohne Dach. Hier sollte ein guter Text hinkommen, der kurz ist aber erkl&auml;, was man machen kann. Zum Beispiel kann man auch nochmals suchen.
+			</p>
+		</div>
+		<div class="grid_8">
+			<p class="close_button"><a href="#" class="smallbutton closetoggle">Schliessen</a></p> <p class="back_button">
+			<p class="kleinertitel">Suchen Sie hier nach Ihrem Dach:</p>
+				
+			<form action="/panel/" method="post"> {% csrf_token %}
+				<label> <input type="text" class="warnnacheingabe" name="address" onfocus="if (this.value=='Geben Sie hier Ihre Wohnadresse ein') this.value = ''" value="Geben Sie hier Ihre Wohnadresse ein" style="width:230px; margin-top:5px;" /></label>
+				<input type="submit" class="warnsubmit" value="Abschicken" />
+			</form>
+		</div>
+		</div>
+	</div>
+	{% endif %}
+	
+{% endblock %}	
 
-<body>
-
-
-
+{% block content %}
 
 <!-- Fehlermeldung Box with new Lightbox -->
 <div class="fehlermeldungbox" style="width:200px; height:200px; text-align:center; font-size:13px; padding-top:50px; background-color:#fff; display:none;">
@@ -520,11 +516,11 @@ $(document).ready(function(){
 <div class="container_12" id="headernavtop" >
         
         <div class="grid_3" >
-            <a href="../calculator/"><img src="{{STATIC_URL}}/step234juli2013/logo.png" class="logo" /></a>
+            <img src="{{STATIC_URL}}/step234juli2013/logo.png" class="logo" />
         </div>
         <div class="grid_9">
             
-            <!-- <a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a> -->
+            <a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a>
             <ul>            
                     <a href="#"><li>Kontakt</li></a>
                     <a href="#"><li>&Uuml;ber uns</li></a>
@@ -537,12 +533,12 @@ $(document).ready(function(){
         <div class="grid_12" >
         
             
-            <a href="../calculator/"><img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" /></a>
+            <a href="#"><img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" /></a>
 
-            <span><a href="../calculator/">Startseite</a>    /   <a href="#" class="active">Dacheigenschaften eigeneben</a> 
+            <span><a href="#">Startseite</a>    /   <a href="#" class="active">Dacheigenschaften eigeneben</a> 
             </span>
 
-            <a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/weiterbutton.png" /></a>
+            <a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/vorwardbutton.png" /></a>
         </div>
     </div>
     <div class="clear"></div>
@@ -813,8 +809,30 @@ $(document).ready(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+  
+		
+
+
 </form>
-</body>
+
+{% endblock %}
 
 
 
