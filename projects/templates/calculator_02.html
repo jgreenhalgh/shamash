@@ -333,7 +333,7 @@ $(document).ready(function(){
 
     $(document).ready(function() {
 
-        function validate_rooftype()
+        function validate_rooftype(validated_element)
         {
             var validator = $("#formsteptwo").validate({
                 
@@ -388,6 +388,7 @@ $(document).ready(function(){
                     label.removeClass("error").addClass("check");
                 },
             });
+            
             validator.element( "#dachtyphidden" );
             
         }
@@ -396,7 +397,7 @@ $(document).ready(function(){
         $(".dachbox").click(function(){
             $(".dachbox").removeClass("dachactive");
             $(this).addClass("dachactive");
-            validate_rooftype();
+            validate_rooftype("#dachtyphidden");
         });
 
 
@@ -404,7 +405,7 @@ $(document).ready(function(){
             /* dachtyp is the id of the hidden field, where to post the value from */
             $('#dachtyphidden').val(this.value);
             $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
-            validate_rooftype();
+            validate_rooftype("#dachtyphidden");
         });
 
 
