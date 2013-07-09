@@ -389,6 +389,23 @@ $(document).ready(function(){
                 },
             });
             
+
+            if(validated_element == "#dachwinkelhidden"){
+            
+                error.insertAfter('span#tiltspan').removeClass('error');
+                //error.css('color','red');
+                //error.addClass('error');
+            };
+            if(validated_element == "#dachtyphidden"){
+                error.insertAfter('span#rooftypspan').removelass('error');
+                //error.css('color','red');
+                //error.addClass('error');
+            };
+            if(validated_element == "#personenimhaushidden"){
+                error.insertAfter('span#personspan').removeClass('check');
+                //error.css('color','blue');
+                //error.addClass('error');
+            };
             validator.element( validated_element );
             
         }
