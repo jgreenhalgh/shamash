@@ -333,12 +333,10 @@ $(document).ready(function(){
 
     $(document).ready(function() {
 
-        function validate_rooftype(validated_element)
+        function element_validation(validated_element)
         {
             var validator = $("#formsteptwo").validate();
-            
-            validator.element( validated_element );
-            
+            validator.element(validated_element);
         }
 
         /* for the DACHTYP */
@@ -353,7 +351,7 @@ $(document).ready(function(){
             $('#dachtyphidden').val("");
             $('#dachtyphidden').val(this.value);
             $("#dachtyphidden").keyup();  // so that there is a keyup on the hiddenfield in order that the script knows, that something is moved in the input field
-            validate_rooftype("#dachtyphidden");
+            element_validation("#dachtyphidden");
         });
 
 
@@ -368,7 +366,7 @@ $(document).ready(function(){
             $('#dachwinkelhidden').val(this.value);
             $('input.degreeinput').val("");
             $("#dachwinkelhidden").keyup();
-            validate_rooftype("#dachwinkelhidden");
+            element_validation("#dachwinkelhidden");
         });
 
 
@@ -378,7 +376,7 @@ $(document).ready(function(){
             $('#dachwinkelhidden').val("");
             $('#dachwinkelhidden').val($('input.degreeinput').val());
             $("#dachwinkelhidden").keyup();
-            validate_rooftype("#dachwinkelhidden");
+            element_validation("#dachwinkelhidden");
 
         });
 
@@ -393,7 +391,7 @@ $(document).ready(function(){
             $('#personenimhaushidden').val(this.value);
             $('input.personsinput').val("");
             $("#personenimhaushidden").keyup();
-            validate_rooftype("#personenimhaushidden");
+            element_validation("#personenimhaushidden");
 
         });
         /* put the costum input field into the hidden box*/
@@ -402,7 +400,7 @@ $(document).ready(function(){
             $('#personenimhaushidden').val("");
             $('#personenimhaushidden').val($('input.personsinput').val());
             $("#personenimhaushidden").keyup();
-            validate_rooftype("#personenimhaushidden");
+            element_validation("#personenimhaushidden");
 
         });
 
