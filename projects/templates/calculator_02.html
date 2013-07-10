@@ -214,6 +214,8 @@ $(document).ready(function(){
             latlng_coordinates = (polygon.getPath().getArray());
 
             area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+            //appending the message "polygon_completed" in a hidden field so that it can be validated by the validation script
+            $('#polygoncompletehidden').append("polygon_completed");
         });
     }
    
@@ -424,16 +426,8 @@ $(document).ready(function(){
 
         //these two function validate 
         $(".dachbox").click(function(){
-            $(".dachbox").removeClass("dachactive");
+            $(".grid_6").removeClass("dachactive");
             $(this).addClass("dachactive");
-        });
-
-
-        $('input[name="dachtyp"]').click(function() {
-            $('#dachtyphidden').val("");
-            $('#dachtyphidden').val(this.value);
-            $("#dachtyphidden").keyup(); 
-            element_validation("#dachtyphidden");
         });
 
 
