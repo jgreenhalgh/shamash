@@ -1,17 +1,27 @@
-{% extends "calculator_base.html" %}
-{% block calc_02_active %}active{% endblock %}
-{% block calc_02_step3_active%}active{% endblock%}
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+<head>
+<meta charset="utf-8"/>
 
-{% comment %}
-			TODO: Somehow tell the content  block header_inbody_1, that we are on the startpage, so add
-			the active classs to the logo!
-{% endcomment %}
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
 
-{% comment %}
-		
-{% endcomment %}
+<!-- CSS GRID Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
 
-{% block content_header %}
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+
+<!-- JQuery Lightbox Plugin -->
+<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
+
+
+<!-- JQuery Validate Plugin -->
+<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
+
+
+
 
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -81,9 +91,8 @@ $(document).ready(function() {
 	<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css">
 
 
-{% endblock %}
-
-{% block content %}
+</head>
+<body>
 
 
 
@@ -94,7 +103,7 @@ $(document).ready(function() {
 		</div>
 		<div class="grid_9">
 			
-			<a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a>
+			<!-- <a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a> -->
 			<ul>			
 					<a href="#"><li>Kontakt</li></a>
 					<a href="#"><li>&Uuml;ber uns</li></a>
@@ -112,7 +121,7 @@ $(document).ready(function() {
 			<span><a href="#">Startseite</a>    /   <a href="#">Dacheigenschaften eigeneben</a>   /   <a href="#" class="active">Potential berechnen</a> 
 			</span>
 
-			<a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/vorwardbutton.png" /></a>
+			<a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/weiterbutton.png" /></a>
 		</div>
 	</div>
 	<div class="container_12" id="overviewbg">
@@ -468,4 +477,5 @@ gewissen Zeit sich in einen Profit umwandeln. Navigieren Sie
 		</form>
 
 	</div>
-{% endblock %}
+
+</body>
