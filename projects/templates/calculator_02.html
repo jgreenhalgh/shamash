@@ -457,7 +457,16 @@ $(document).ready(function(){
 
 
         //first clean page of last time's values if back buton is hit
+
         window.onunload = function(){};
+
+        function element_validation(validated_element)
+        {
+            var validator = $("#formsteptwo").validate();
+            validator.element(validated_element);
+        }
+        element_validation("#personenimhaushidden");
+
         $('span[for = polygoncompletehidden]').remove();
         $('#dachwinkelhidden').val("");
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
