@@ -1,10 +1,25 @@
-{% extends "calculator_base.html" %}
-{% block calc_02_active %}active{% endblock %}
-{% block calc_02_step2_active%}active{% endblock%}
-{% block title %}Schritt Zwei{% endblock %}
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+<head>
+<meta charset="utf-8"/>
 
-{% block header_inhead %}
 
+
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+
+<!-- CSS GRID Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- JQuery Lightbox Plugin -->
+<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
+
+
+<!-- JQuery Validate Plugin -->
+<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
 
 <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k" type="text/javascript"></script>
 
@@ -517,35 +532,9 @@ $(document).ready(function(){
 
 
 
-{% endblock %}
 
-
-{% block warnnachricht %}
-	{% if selected_address in "Ramistrasse 101, Zurich Ihre Wohnadresse" %}
-	<div class="steps_warnnachricht">
-		<div class="container_16">
-		<!-- <div class="grid_16"><!-- <a class="smallbutton" href="#">Zur&uuml;ck zur Startseite</a></p> </div>--> 
-		<div class="grid_8">
-			<p class="kleinertitel" style="margin-top:20px;">Es wurde kein Dach gefunden. (Error: Ramistrasse)</p>
-			<p class="kleinertext">Sie k&ouml;nnen auch ohne Dach. Hier sollte ein guter Text hinkommen, der kurz ist aber erkl&auml;, was man machen kann. Zum Beispiel kann man auch nochmals suchen.
-			</p>
-		</div>
-		<div class="grid_8">
-			<p class="close_button"><a href="#" class="smallbutton closetoggle">Schliessen</a></p> <p class="back_button">
-			<p class="kleinertitel">Suchen Sie hier nach Ihrem Dach:</p>
-				
-			<form action="/panel/" method="post"> {% csrf_token %}
-				<label> <input type="text" class="warnnacheingabe" name="address" onfocus="if (this.value=='Geben Sie hier Ihre Wohnadresse ein') this.value = ''" value="Geben Sie hier Ihre Wohnadresse ein" style="width:230px; margin-top:5px;" /></label>
-				<input type="submit" class="warnsubmit" value="Abschicken" />
-			</form>
-		</div>
-		</div>
-	</div>
-	{% endif %}
-	
-{% endblock %}	
-
-{% block content %}
+</head>
+<body>
 
 <!-- Fehlermeldung Box with new Lightbox -->
 <div class="fehlermeldungbox" style="width:200px; height:200px; text-align:center; font-size:13px; padding-top:50px; background-color:#fff; display:none;">
@@ -561,7 +550,7 @@ $(document).ready(function(){
         </div>
         <div class="grid_9">
             
-            <a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a>
+            <!--<a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a>-->
             <ul>            
                     <a href="#"><li>Kontakt</li></a>
                     <a href="#"><li>&Uuml;ber uns</li></a>
@@ -579,7 +568,7 @@ $(document).ready(function(){
             <span><a href="#">Startseite</a>    /   <a href="#" class="active">Dacheigenschaften eigeneben</a> 
             </span>
 
-            <a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/vorwardbutton.png" /></a>
+            <a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/weiterbutton.png" /></a>
         </div>
     </div>
     <div class="clear"></div>
@@ -596,10 +585,22 @@ $(document).ready(function(){
                     <span class="right">&nbsp;</span>
                 </h2>
             </div>
-            <div class="widgetgraybg" style="text-align:center; padding-top:20px; padding-bottom:20px; background:url({{STATIC_URL}}/step234juli2013/bgschraffiert.png);">
+            <div class="widgetgraybg" style="text-align:center; padding-top:20px; padding-bottom:20px; background:#65d5ff;">
 
-                <img src="{{STATIC_URL}}/step234juli2013/animationdemo.gif" style="border: solid 4px white; "  />
-                <img src="{{STATIC_URL}}/step234juli2013/pfeilnachunten.png" style="padding-bottom:10px; padding-left: 20px;" />
+                <span class="beispielroundend"> Beispiel:</span>
+
+                <div class="textstep2dachflaeche">
+                Markieren Sie die Dachfl&auml;che ihres gesamten Daches auf der untenstehenden Karte durch anklicken der Ecken! <br /> 
+                <a href="#"><p class="zuruecksetzenbutton"> Markierung zur&uuml;cksetzen. </p></a>
+                </div>
+
+
+
+                <img src="animationdemo.gif" style="border: solid 4px white; float:right; margin-right:20px;"  />
+                <p style="background: url('{{STATIC_URL}}/step234juli2013/overlaymap.png') no-repeat; position:relative; width:460px; height:20px; top: 124px; left:0px;" src="" />
+
+                <p style="clear:both"></p>
+
             </div>
 
             <div class="widgetgraybg ">
@@ -874,7 +875,6 @@ $(document).ready(function(){
 
 </form>
 
-{% endblock %}
-
+</body>
 
 
