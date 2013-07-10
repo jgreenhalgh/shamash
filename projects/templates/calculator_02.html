@@ -197,6 +197,7 @@ $(document).ready(function(){
                 selectedShape.setMap(null);
                 drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
             }
+            return false;
         }
 
         // Clear the current selection when the drawing mode is changed, or when the
@@ -218,7 +219,7 @@ $(document).ready(function(){
             $('#polygoncompletehidden').append("polygon_completed");
 
         });
-        return false;
+
     }
    
 
