@@ -456,6 +456,10 @@ $(document).ready(function(){
 <script>
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
     $(document).ready(function() {
+
+        //first clean page of last time's values if back buton is hit
+        $('span[for = polygoncompletehidden]').remove();
+
         
         $("#formsteptwo").validate({
             
