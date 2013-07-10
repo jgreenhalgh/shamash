@@ -607,7 +607,8 @@ p {
 	}
 
     .zuruecksetzenbutton {
-        
+    	margin-top: 10px;
+        border: 1px solid #65D5FF;
         position:relative;
         /* top:75px;
         left:270px;
