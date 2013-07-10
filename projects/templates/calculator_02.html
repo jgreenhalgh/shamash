@@ -467,6 +467,11 @@ $(document).ready(function(){
                         error.insertAfter('span#personspan').addClass('error');
                         //error.css('color','blue');
                         //error.addClass('error');
+                    };
+                    if(element.attr('name') == 'polygoncomplete'){
+                        error.insertAfter('span#polygonspan').addClass('error');
+                        //error.css('color','blue');
+                        //error.addClass('error');
                     }
                 },
 
@@ -482,6 +487,9 @@ $(document).ready(function(){
                 person: {
                     required:true,
                 },
+                polygoncomplete: {
+                    required:true,
+                },
             },
                 messages: {
                     rooftype: {
@@ -492,7 +500,10 @@ $(document).ready(function(){
                     },
                     person: {
                         required:"&nbsp;",
-                    },                          
+                    },      
+                    polygoncomplete: {
+                        reequired:"&nbsp;",
+                    },                    
                 },
                     
             success: function(label) {
@@ -580,7 +591,11 @@ $(document).ready(function(){
                 <h2>
                     <span class="left">1</span>
                     Dachfl&auml;che einzeichnen
-                    <span class="right">&nbsp;</span>
+                    
+                    <span class="right" id="polygonspan">&nbsp;</span>
+
+
+
                 </h2>
             </div>
             <div class="widgetgraybg" style="text-align:center; padding-top:20px; padding-bottom:20px; background:#b9ecff;">
