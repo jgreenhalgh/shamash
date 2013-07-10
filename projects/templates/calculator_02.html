@@ -366,19 +366,6 @@ $(document).ready(function(){
 <script> 
 /* This scripts adds the highliting class to the .dachbox class (the small different roof-images) */
 
-        //first clean page of last time's values if back buton is hit
-
-        window.onunload = function(){};
-
-        function element_validation(validated_element)
-        {
-            var validator = $("#formsteptwo").validate();
-            validator.element(validated_element);
-        }
-        element_validation("#personenimhaushidden");
-
-        $('span[for = polygoncompletehidden]').remove();
-        $('#dachwinkelhidden').val("");
     $(document).ready(function() {
         //this function is called every time an element of the form has to be 
         //validated individually.
@@ -469,9 +456,14 @@ $(document).ready(function(){
 <script>
 
 
+
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
     $(document).ready(function() {
 
+        //first clean page of last time's values if back buton is hit
+        window.onunload = function(){};
+        $('span[for = polygoncompletehidden]').remove();
+        $('#dachwinkelhidden').val("");
 
         
         $("#formsteptwo").validate({
