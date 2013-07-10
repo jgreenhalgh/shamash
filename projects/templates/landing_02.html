@@ -70,8 +70,8 @@ Sie, als Anbieter von Photovoltaik oder Solarthermie in der Schweiz, k&ouml;nnen
 <div class="grid_12" style="text-align:center; padding: 20px 0px; ">
 <hr class="landing_sepline" style=" margin: 25px 70px; border-bottom: 1px solid #6085a3;"/>
 
-<form action="/" method="post">
-<input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" style="color:white;" />
+<form action="/landing_02/" method="post">
+<input type="text" value="Ihre Emailadresse" class="landinput_news" onfocus="if(this.value == 'Ihre Emailadresse') { this.value = ''; }" value="Ihre Emailadresse" name= "customer_email_adress" />
 {% csrf_token %}	
 <input type="submit" name="submit_button" value="Weitere Informationen erhalten" class="landbutton_newsletter" />
 
