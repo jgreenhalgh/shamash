@@ -225,7 +225,7 @@ $(document).ready(function(){
                 var validator = $("#formsteptwo").validate();
                 validator.element(validated_element);
             }
-
+            $('span[for = polygoncompletehidden]').remove();
             $('#polygoncompletehidden').val('1');
             $('#polygoncompletehidden').keyup();
             element_validation("#polygoncompletehidden");
