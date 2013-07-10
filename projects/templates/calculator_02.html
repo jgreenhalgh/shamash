@@ -196,7 +196,9 @@ $(document).ready(function(){
 
                 selectedShape.setMap(null);
                 drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+                //removing the tick/error marks as
                 $('span[for = polygoncompletehidden]').remove();
+                //removing the values that the script is validating on
                 $('#polygoncompletehidden').val('');
 
                 e.preventDefault();
