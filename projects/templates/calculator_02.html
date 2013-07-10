@@ -196,6 +196,7 @@ $(document).ready(function(){
 
                 selectedShape.setMap(null);
                 drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
+                $('span[for = polygoncompletehidden]').remove();
                 e.preventDefault();
             }
 
@@ -229,14 +230,6 @@ $(document).ready(function(){
             $('#polygoncompletehidden').val('1');
             $('#polygoncompletehidden').keyup();
             element_validation("#polygoncompletehidden");
-            $('#polygonspan').next().removeClass("error");
-
-
-
-
-
-
-
 
 
 
