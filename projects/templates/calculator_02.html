@@ -332,20 +332,22 @@ $(document).ready(function(){
 /* This scripts adds the highliting class to the .dachbox class (the small different roof-images) */
 
     $(document).ready(function() {
-
+        //this function is called every time an element of the form has to be 
+        //validated individually.
         function element_validation(validated_element)
         {
             var validator = $("#formsteptwo").validate();
             validator.element(validated_element);
         }
 
-        /* for the DACHTYP */
+        /* for the DACHTYP changing classes*/
         $(".dachbox").click(function(){
             $(".dachbox").removeClass("dachactive");
             $(this).addClass("dachactive");
         });
 
-
+        //in this function the value selected by the user is added to the hidden field and the validation is done on this element
+        //and this element only. all the other functions in this script work analogously
         $('input[name="dachtyp"]').click(function() {
             /* dachtyp is the id of the hidden field, where to post the value from */
             $('#dachtyphidden').val("");
@@ -403,6 +405,24 @@ $(document).ready(function(){
             element_validation("#personenimhaushidden");
 
         });
+
+
+        //these two function validate 
+        $(".dachbox").click(function(){
+            $(".dachbox").removeClass("dachactive");
+            $(this).addClass("dachactive");
+        });
+
+
+        $('input[name="dachtyp"]').click(function() {
+            $('#dachtyphidden').val("");
+            $('#dachtyphidden').val(this.value);
+            $("#dachtyphidden").keyup(); 
+            element_validation("#dachtyphidden");
+        });
+
+
+
 
     });
 </script>
@@ -800,6 +820,7 @@ $(document).ready(function(){
             <input value="" id="dachtyphidden" class="rooftypevalue" name="rooftype" style="margin-top:-999px; position: absolute;">
             <input value="" value="" id="dachwinkelhidden" class="tiltvalue" name="tilt" style="margin-top:-999px; position: absolute;">
             <input value="" id="personenimhaushidden" name="person" style="margin-top:-999px; position: absolute;">
+            <input value="" id="polygoncompletehidden" name="polygoncomplete" style="margin-top:-999px; position: absolute;">
 
         
 
