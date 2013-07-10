@@ -191,12 +191,12 @@ $(document).ready(function(){
 
 
 
-        function deleteSelectedShape() {
+        function deleteSelectedShape(e) {
             if (selectedShape) {
 
                 selectedShape.setMap(null);
                 drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
-                return false;
+                e.preventDefault();
             }
 
         }
