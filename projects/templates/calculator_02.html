@@ -217,8 +217,19 @@ $(document).ready(function(){
 
             area = google.maps.geometry.spherical.computeArea(polygon.getPath());
             //appending the message "polygon_completed" in a hidden field so that it can be validated by the validation script
+
+            //this first function is to make sure, that a check mark appears as soon as the polygon is complete
+            //and not only when the "weiter" button of the form is clicked
+            function element_validation(validated_element)
+            {
+                var validator = $("#formsteptwo").validate();
+                validator.element(validated_element);
+            }
+
             $('#polygoncompletehidden').val('1');
             $('#polygoncompletehidden').keyup();
+            element_validation("#polygoncompletehidden");
+
 
 
 
@@ -437,6 +448,7 @@ $(document).ready(function(){
 
 
 
+
     });
 </script>
 
@@ -468,8 +480,7 @@ $(document).ready(function(){
                         //error.css('color','blue');
                         //error.addClass('error');
                     };
-                    if(element.attr('name') == 'polygoncomplete'){
-                        error.insertAfter('span#polygonspan').addClass('error');
+                    if(element.attr('name') == 'polygoncomplete'){                        error.insertAfter('span#polygonspan').addClass('error');
                         //error.css('color','blue');
                         //error.addClass('error');
                     }
