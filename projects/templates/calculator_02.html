@@ -460,12 +460,17 @@ $(document).ready(function(){
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
     $(document).ready(function() {
 
-        //first clean page of last time's values if back buton is hit
+        //first clean page of last time's values if back buton is hit to have a clean slate
         window.onunload = function(){};
-        $('span[for = polygoncompletehidden]').remove();
         $('#dachwinkelhidden').val("");
+        $('#personenimhaushidden').val("");
+        $('input.degreeinput').val("");
+        $('input.personsinput').val("");
+        $('#dachtyphidden').val("");
+        $('#polygoncompletehidden').val('');
 
-        
+
+        //now do the actual validation script
         $("#formsteptwo").validate({
             
                 errorElement:'span',
