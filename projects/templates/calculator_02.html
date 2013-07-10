@@ -217,7 +217,11 @@ $(document).ready(function(){
 
             area = google.maps.geometry.spherical.computeArea(polygon.getPath());
             //appending the message "polygon_completed" in a hidden field so that it can be validated by the validation script
-            $('#polygoncompletehidden').append("polygon_completed");
+            $('#polygoncompletehidden').val('1');
+            $('#polygoncompletehidden').keyup();
+
+
+
 
         });
 
@@ -847,30 +851,7 @@ $(document).ready(function(){
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-  
-		
-
-
+   
 </form>
 
 </body>
