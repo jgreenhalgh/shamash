@@ -454,11 +454,15 @@ $(document).ready(function(){
 
 
 <script>
+
+
+        //first clean page of last time's values if back buton is hit
+        window.onunload = function(){};
+         alert('inline alert');
+        $('span[for = polygoncompletehidden]').remove();
 /* VALIDATION SCRIPT MAINLY OF THE HIDDEN INPUT FIELDS */
     $(document).ready(function() {
 
-        //first clean page of last time's values if back buton is hit
-        $('span[for = polygoncompletehidden]').remove();
 
         
         $("#formsteptwo").validate({
