@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" style="height:auto;">
 <head>
-<meta charset="utf-8"/>
+	<meta charset="utf-8"/>
 
-<!-- CSS Normilze Stylesheet -->
-<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+	<!-- CSS Normilze Stylesheet -->
+	<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
 
-<!-- CSS GRID Stylesheet -->
-<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
+	<!-- CSS GRID Stylesheet -->
+	<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
 
-<!-- JQuery -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<!-- JQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
+	<!-- JQuery Lightbox Plugin -->
+	<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
 
-<!-- JQuery Lightbox Plugin -->
-<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
+	<!-- JQuery Validate Plugin -->
+	<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
 
-
-<!-- JQuery Validate Plugin -->
-<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
-
-
-
-
-<script type='text/javascript'>
+	<script type='text/javascript'>
 $(document).ready(function() {
 
     //Deteremines the current URL, eg www.example.com
@@ -63,10 +58,8 @@ $(document).ready(function() {
 
 </script>
 
-
-
-<!-- Popup Login-Function -->
-<script type="text/javascript" id="sourcecode">
+	<!-- Popup Login-Function -->
+	<script type="text/javascript" id="sourcecode">
 $(document).ready(function() {
  
         var registerBox=window.location.hash;
@@ -85,410 +78,560 @@ $(document).ready(function() {
 });
 </script>
 
+	<!-- Header Version Juli 2013 -->
 
-<!-- Header Version Juli 2013 -->
-
-	<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css">
-
-
-</head>
+	<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css"></head>
 <body>
 
+	<div class="container_12" id="headernavtop" >
 
-
-<div class="container_12" id="headernavtop" >
-		
 		<div class="grid_3" >
 			<img src="{{STATIC_URL}}/step234juli2013/logo.png" class="logo" />
 		</div>
 		<div class="grid_9">
-			
-			<!-- <a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a> -->
-			<ul>			
-					<a href="#"><li>Kontakt</li></a>
-					<a href="#"><li>&Uuml;ber uns</li></a>
-					<a href="#"><li>Anbieter direkt vergleichen</li></a>
-					<a href="#"><li class="active">Solarpotential berechnen</li></a>
-			</ul>
-		</div>
-	</div>
-	<div class="container_12" id="headerpagenav">
-		<div class="grid_12" >
-		
-			
-			<a href="#"><img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" /></a>
 
-			<span><a href="#">Startseite</a>    /   <a href="#">Dacheigenschaften eigeneben</a>   /   <a href="#" class="active">Potential berechnen</a> 
-			</span>
-
-			<a href="#"><img class="forward" src="{{STATIC_URL}}/step234juli2013/weiterbutton.png" /></a>
-		</div>
+			<!-- <a href="#">
+			<img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" />
+		</a>
+		-->
+		<ul>
+			<a href="#">
+				<li>Kontakt</li>
+			</a>
+			<a href="#">
+				<li>&Uuml;ber uns</li>
+			</a>
+			<a href="#">
+				<li>Anbieter direkt vergleichen</li>
+			</a>
+			<a href="#">
+				<li class="active">Solarpotential berechnen</li>
+			</a>
+		</ul>
 	</div>
-	<div class="container_12" id="overviewbg">
-		<div class="grid_12" >
-			<h3>SEHEN SIE HIER IHR PERS&Ouml;NLICHEN &Uuml;BERBLICK</h3>
-			<h2>Ihr Dach einigt sich sehr gut f&uuml;r eine Photovoltaikanlage.</h2>
-		</div>
-		<div class="grid_2 informationbox">
-			<p>Genutzte Dachfl&auml;che</p>
-			<p>Energie</p>
-			<p>Ersparnis</p>
-			<p>CO2-Sachen</p>
-		</div>
-		<div class="grid_4">
-			<div class="bigboxblue">
-				<h5>Empfohlenes Solarpotential</h5>
-					<p class="info"> Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum</p>
-					<p class="lines"> tes <span> test </span> test </p>
-					<p class="lines"> tes <span> test </span> test </p>
-					<p class="lines"> tes <span> test </span> test </p>
-					<p class="lines"> tes <span> test </span> test </p>
-		
-				<br />
-				<p class="showdetailsbutton">Details werden angezeigt <img src="arrowdown.png" /></p>
-				<br />
-			</div>
-		</div>
-		<div class="grid_1"> &nbsp;</div>
-		<div class="grid_4">
-			<div class="bigboxwhite">
-				<h5>Maximales Solarpotential</h5>
-					<p class="info"> Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum</p>
-					<p class="lines"> tes <span> test </span> test </p>
-					<p class="lines"> tes <span> test </span> test </p>
-					<p class="lines"> tes <span> test </span> test </p>
-					<p class="lines"> tes <span> test </span> test </p>
-		
-				<br />
+</div>
+<div class="container_12" id="headerpagenav">
+	<div class="grid_12" >
+
+		<a href="#">
+			<img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" />
+		</a>
+
+		<span>
+			<a href="#">Startseite</a>
+			/
+			<a href="#">Dacheigenschaften eigeneben</a>
+			/
+			<a href="#" class="active">Potential berechnen</a>
+		</span>
+
+		<a href="#">
+			<img class="forward" src="{{STATIC_URL}}/step234juli2013/weiterbutton.png" />
+		</a>
+	</div>
+</div>
+<div class="container_12" id="overviewbg">
+	<div class="grid_12" >
+		<h3>SEHEN SIE HIER IHR PERS&Ouml;NLICHEN &Uuml;BERBLICK</h3>
+		<h2>
+			Ihr Dach einigt sich sehr gut f&uuml;r eine Photovoltaikanlage.
+		</h2>
+	</div>
+	<div class="grid_2 informationbox">
+		<p>Genutzte Dachfl&auml;che</p>
+		<p>Energie</p>
+		<p>Ersparnis</p>
+		<p>CO2-Sachen</p>
+	</div>
+	<div class="grid_4">
+		<div class="bigboxblue">
+			<h5>Empfohlenes Solarpotential</h5>
+			<p class="info">
+				Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
 				test
-				<br />
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
+			</p>
 
-			</div>	
-		</div>
-		<div class="grid_1"></div>
-			<br> <br><br> <br><br> <br>
-		
-	</div>	
-	<div class="container_12" id="overviewbgbottom">
-		<div class="grid_12" >
-			<img src="{{STATIC_URL}}/step234juli2013/overviewbgarrow.png" />
+			<br />
+			<p class="showdetailsbutton">
+				Details werden angezeigt
+				<img src="arrowdown.png" />
+			</p>
+			<br />
 		</div>
 	</div>
-	<div class="container_12">
-		<div class="grid_4 overviewclass" >
-			<img src="{{STATIC_URL}}/step234juli2013/overview1.png" />
-			<h4>WHAT TO EXPECT</h4>
-			<h2>General Overview</h2>
-
-			<p class="overviewtext">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
-
+	<div class="grid_1">&nbsp;</div>
+	<div class="grid_4">
+		<div class="bigboxwhite">
+			<h5>Maximales Solarpotential</h5>
+			<p class="info">
+				Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
+			</p>
+			<p class="lines">
+				tes
+				<span>test</span>
+				test
 			</p>
 
-			<p class="littlebox"> 
-					Electric output <span>12 kWh</span> 
-			</p>
-			<p class="littleboxdetails">
-				Details:
-			</p>
-			<p class="littleboxunderline">
-				Installationskosten 
-				<span class="frage">
-					<a href="#"><img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" /></a>
-				</span> 
-				<span>{{price_medium}} CHF</span> 
-			</p>
-			<p class="littleboxunderline">
-			Profit nach 25 Jahren		
-
-				<span class="frage"> &nbsp; </span>
-				<span>{{profit_25_medium}} CHF</span>
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum  
-				<span class="frage">
-					<a href="#"><img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" /></a>
-				</span> 
-				<span>500 kwH</span> 
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum 
-				<span class="frage"> &nbsp; </span>
-				<span>500 kwH</span>
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum  
-				<span class="frage">
-					<a href="#"><img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" /></a>
-				</span> 
-				<span>500 kwH</span> 
-			</p>
-		</div>
-		<div class="grid_4 overviewclass" >
-			<img src="{{STATIC_URL}}/step234juli2013/overview2.png" />
-			<h4>WHAT TO EXPECT</h4>
-			<h2>General Overview</h2>
-
-			<p class="overviewtext">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
-
-			</p>
-
-			<p class="littlebox"> 
-					Electric output <span>12 kWh</span> 
-			</p>
-			<p class="littleboxdetails">
-				Details:
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum  
-				<span class="frage">
-					<a href="#"><img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" /></a>
-				</span> 
-				<span>500 kwH</span> 
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum 
-				<span class="frage"> &nbsp; </span>
-				<span>500 kwH</span>
-			</p>
-
-
-
-		</div>
-		<div class="grid_4 overviewclass" >
-				<img src="{{STATIC_URL}}/step234juli2013/overview3.png" />
-				<h4>WHAT TO EXPECT</h4>
-				<h2>General Overview</h2>
-
-
-			<p class="overviewtext">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
-
-			</p>
-
-			<p class="littlebox"> 
-					Electric output <span>12 kWh</span> 
-			</p>
-			<p class="littleboxdetails">
-				Details:
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum  
-				<span class="frage">
-					<a href="#"><img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" /></a>
-				</span> 
-				<span>500 kwH</span> 
-			</p>
-			<p class="littleboxunderline">
-				Lorem ipsum 
-				<span class="frage"> &nbsp; </span>
-				<span>500 kwH</span>
-			</p>
-
-
-		</div>
-
-		<div class="grid_12 weiterstep3">
-			
-			<div>
-				<h4>LOREM IPSUM DOLOR SIT AMET NON PLUS ULTRA</h4>
-				<h2>Lorem ipsum dolor sit amet</h2>
-			</div>
-
-						<a href="#">
-				<input type="submit" value="weiter" class="button" ></a>
-
+			<br />
+			test
+			<br />
 
 		</div>
 	</div>
+	<div class="grid_1"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br></div>
+<div class="container_12" id="overviewbgbottom">
+	<div class="grid_12" >
+		<img src="{{STATIC_URL}}/step234juli2013/overviewbgarrow.png" />
+	</div>
+</div>
+<div class="container_12">
+	<div class="grid_4 overviewclass" >
+		<img src="{{STATIC_URL}}/step234juli2013/overview1.png" />
+		<h4>WHAT TO EXPECT</h4>
+		<h2>General Overview</h2>
 
+		<p class="overviewtext">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
+		</p>
 
+		<p class="littlebox">
+			Electric output
+			<span>12 kWh</span>
+		</p>
+		<p class="littleboxdetails">Details:</p>
+		<p class="littleboxunderline">
+			Installationskosten
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
+			<span>{{price_medium}} CHF</span>
+		</p>
+		<p class="littleboxunderline">
+			Profit nach 25 Jahren
+			<span class="frage">&nbsp;</span>
+			<span>{{profit_25_medium}} CHF</span>
+		</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
+			<span>500 kwH</span>
+		</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">&nbsp;</span>
+			<span>500 kwH</span>
+		</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
+			<span>500 kwH</span>
+		</p>
+	</div>
+	<div class="grid_4 overviewclass" >
+		<img src="{{STATIC_URL}}/step234juli2013/overview2.png" />
+		<h4>WHAT TO EXPECT</h4>
+		<h2>General Overview</h2>
 
+		<p class="overviewtext">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
+		</p>
+
+		<p class="littlebox">
+			Electric output
+			<span>12 kWh</span>
+		</p>
+		<p class="littleboxdetails">Details:</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
+			<span>500 kwH</span>
+		</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">&nbsp;</span>
+			<span>500 kwH</span>
+		</p>
+
+	</div>
+	<div class="grid_4 overviewclass" >
+		<img src="{{STATIC_URL}}/step234juli2013/overview3.png" />
+		<h4>WHAT TO EXPECT</h4>
+		<h2>General Overview</h2>
+
+		<p class="overviewtext">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
+		</p>
+
+		<p class="littlebox">
+			Electric output
+			<span>12 kWh</span>
+		</p>
+		<p class="littleboxdetails">Details:</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
+			<span>500 kwH</span>
+		</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">&nbsp;</span>
+			<span>500 kwH</span>
+		</p>
+
+	</div>
+
+	<div class="grid_12 weiterstep3">
+
+		<div>
+			<h4>LOREM IPSUM DOLOR SIT AMET NON PLUS ULTRA</h4>
+			<h2>Lorem ipsum dolor sit amet</h2>
+		</div>
+
+		<a href="#">
+			<input type="submit" value="weiter" class="button" ></a>
+
+	</div>
+</div>
 
 <div class="bigoverview">
-		<div class="container_12">
-			<div class="grid_6">
-				<h1>Personalisierte &Uuml;berblick f&uuml;r Ihr Haus:</h1>
-			</div>
-				
-			<div class="grid_6">	
-				<ul id="dropdownphotovoltaik">
-					<li class="selectdown"><a href="#">{{installation_type}}</a>
-						<ul>
-							<li><a href="http://www.instantsolar.ch/results_photo/">
-									<h3>Stromproduktion mit Solarzellen</h3>
-									<span>
+	<div class="container_12">
+		<div class="grid_6">
+			<h1>Personalisierte &Uuml;berblick f&uuml;r Ihr Haus:</h1>
+		</div>
+
+		<div class="grid_6">
+			<ul id="dropdownphotovoltaik">
+				<li class="selectdown">
+					<a href="#">{{installation_type}}</a>
+					<ul>
+						<li>
+							<a href="http://www.instantsolar.ch/results_photo/">
+								<h3>Stromproduktion mit Solarzellen</h3>
+								<span>
 									Mit der Sonnenenergie Strom poduzieren Hier kommt eipoduzieren Hier kommt ein kleiner erkl&auml;runpoduzieren Hier kommt ein kleiner erkl&auml;runn kleiner erkl&auml;rungstext und auch eine kleine Infographic rechts.
-									</span>
-									</a>
-							</li>
-							
-							<span class="trennlinie"> </span>
-							
-							<li><a href="http://www.instantsolar.ch/results_thermal/">
-									<h3>Warmwasseraufbereitung mit Sonnenenergie</h3>
-									<span>
+								</span>
+							</a>
+						</li>
+
+						<span class="trennlinie"></span>
+
+						<li>
+							<a href="http://www.instantsolar.ch/results_thermal/">
+								<h3>Warmwasseraufbereitung mit Sonnenenergie</h3>
+								<span>
 									Mit der Solarthermie Strom poduzieren Hier kommt ein poduzieren Hier kommtpoduzieren Hier kommt ein kleiner erkl&auml;runpoduzieren Hier kommt ein kleiner erkl&auml;run ein kleiner erkl&auml;runkleiner erkl&auml;rungstext und auch eine kleine Infographic rechts.
-									</span>
-									</a>
+								</span>
+							</a>
+						</li>
+
+					</ul>
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="grid_3 step3home">{{selected_address}}</div>
+		<div class="grid_3 step3homeinfo">
+			<ul>
+				<li>{{rooftype}}</li>
+				<li>{{tilt}}&deg Neigung</li>
+				<li>{{orientation}}</li>
+				<li>Fl&auml;che {{effective_area_rounded}} m^2</li>
+			</ul>
+		</div>
+		<div class="grid_3 step3electr">
+			Wir empfehlen Ihnen Lorem ipsum dolor sit amet. Auf basis das kann man irgendwie editieren.
+		</div>
+
+		<div class="clear"></div>
+
+		<!-- Auswahl von den 3 -->
+
+		<div class="grid_4">
+			<div class="boxinnen" href="/plant/1">
+				<div >
+					<span>{{area_small_str}} m&sup2</span>
+					{{power_output_small}} kWh
+				</div>
+				<h3>
+					Kleine Version
+					<h3>
+						<p class="kleinertext">
+							Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.
+						</span>
+						<ul>
+							<li>
+								Installationskosten
+								<span>{{price_small}} Fr.</span>
 							</li>
-							
+							<li>
+								Amortisationszeit
+								<span>{{amortization_time_small}} Jahre</span>
+							</li>
+							<li>
+								Profit nach 25 Jahren
+								<span>{{profit_25_small}} Fr.</span>
+							</li>
+							<li>
+								CO2 in km Autofahrt
+								<span>{{km_driveable_small}} km</span>
+							</li>
 						</ul>
-					</li>
-				</ul>
-				
-			</div>	
-			
-			<div class="grid_3 step3home">{{selected_address}}</div> 
-			<div class="grid_3 step3homeinfo">
-				<ul>
-					<li>{{rooftype}}</li>
-					<li>{{tilt}}&deg Neigung</li>
-					<li>{{orientation}}</li>
-					<li>Fl&auml;che {{effective_area_rounded}} m^2</li>
-				</ul>
-			</div>
-			<div class="grid_3 step3electr">
-				Wir empfehlen Ihnen Lorem ipsum dolor sit amet. Auf basis das kann man irgendwie editieren.
-			</div>
-
-			<div class="clear"></div>  
-
-			
-			<!-- Auswahl von den 3 -->
-
-			    <div class="grid_4">
-				    <div class="boxinnen" href="/plant/1">
-					    <div ><span>{{area_small_str}} m&sup2</span> {{power_output_small}} kWh </div>
-					    <h3> Kleine Version <h3>
-					    <p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
-					    <ul>
-						    <li>Installationskosten <span>{{price_small}} Fr.</span></li>
-						    <li>Amortisationszeit <span>{{amortization_time_small}} Jahre</span></li>
-						    <li>Profit nach 25 Jahren<span>{{profit_25_small}} Fr.</span></li>
-                            <li>CO2 in km Autofahrt<span>{{km_driveable_small}} km</span></li>
-					    </ul>
-					    <p class="buttonauswaehlen" > Ausw&auml;hlen </p>
-				    </div>
-			    </div>
-            </a>
+						<p class="buttonauswaehlen" >Ausw&auml;hlen</p>
+					</div>
+				</div>
+			</a>
 
 			<div class="grid_4">
 				<div class="boxinnen ausgewaehlt" href="/plant/2" >
-					<div><span>{{area_medium_str}} m&sup2</span> {{power_output_medium}} kWh </div>
-					<h3> Mittlere Version <h3>
-					<p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
-					<ul>
-						<li>Installationskosten <span>{{price_medium}} Fr.</span></li>
-						<li>Amortisationszeit <span>{{amortization_time_medium}} Jahre</span></li>
-						<li>Profit nach 25 Jahren <span>{{profit_25_medium}} Fr.</span></li>
-                        <li>CO2 in km Autofahrt<span>{{km_driveable_medium}} km</span></li>
-					</ul>
-					<p class="buttonauswaehlen"> Ausgew&auml;hlt </p>
-				</div>
-			</div>
-			
-			<div class="grid_4">
-				<div class="boxinnen" href="/plant/3" >
-					<div><span>{{area_large_str}} m&sup2</span> {{power_output_large}} kWh </div>
-					<h3> Grosse Version <h3>
-					<p class="kleinertext">Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.</span>
-					<ul>
-						<li>Installationskosten <span>{{price_large}} Fr.</span></li>
-						<li>Amortisationszeit <span>{{amortization_time_large}} Jahre</span></li>
-						<li>Profit nach 25 Jahren <span>{{profit_25_large}} Fr.</span></li>
-						<li>CO2 in km Autofahrt <span>{{km_driveable_large}} km</span></li>
-					</ul>
-					<p class="buttonauswaehlen"> Ausw&auml;hlen </p>
-				</div>
-			</div>
-			
-			<div class="clear"></div> 
-		</div>
-	</div>
-
-
-	<div class="container_16 step3content">
-	
-			<div class="first">
-				<div class="grid_8">
-					<h2>Gesch&auml;tzte Kosten und gesch&auml;tzte Einnahmen</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet neque orci. Praesent a leo quis nibh pretium eleifend sed a ipsum. Aenean a mauris ut risus viverra laoreet iaculis at metus. Integer mattis pellentesque mollis. Cras adipiscing libero non sem tempus pretium ultricies dolor cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.  </p>
-				</div>
-				<div class="grid_7 push_1">
-					<div class="grid_2 alpha preistag">	<span>Gesch&auml;tzte <br />Installationskosten </span><p class="erstezahl active" id="selected_price_div" >{{price_medium}} Fr.</p></div>
-					<div class="grid_3 preistag">		<span>Subventionen<br />und Steuerabzug</span><p class="zweitezahl">6'000 Fr.</p></div>
-					<div class="grid_2 omega preistag">	<span>Stromerspranis<br />oder KEV</span><p class="drittezahl">450 Fr.</p></div>	
-					<div class="grid_7 alpha">
-						<p class="bubble">
-							<span>Hier kommt eine todo: dass es springt!</span><br />
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu purus non massa facilisis. Nullam eu purus no.
-						</p>
+					<div>
+						<span>{{area_medium_str}} m&sup2</span>
+						{{power_output_medium}} kWh
 					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="clear"></div>
-			</div>	
-			
-			<div class="second">
-				<div class="grid_8"> 
-				
-					<p class="bubble"> test </p> <br/>
-					<p class="progress_bar"></p>
-					<span class="zeitanzeige">2012</span><span class="zeitanzeige">3. Jahr</span><span class="zeitanzeige">6. Jahr</span><span class="zeitanzeige last">9.Jahr</span>
-				</div>
-				<div class="grid_7 push_1">
-					<h2>Projekt &uuml;ber die Zeit</h2>
-					<p> Sehen Sie hier, wie sich die Investionskosten innerhalb einer 
+					<h3>
+						Mittlere Version
+						<h3>
+							<p class="kleinertext">
+								Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.
+							</span>
+							<ul>
+								<li>
+									Installationskosten
+									<span>{{price_medium}} Fr.</span>
+								</li>
+								<li>
+									Amortisationszeit
+									<span>{{amortization_time_medium}} Jahre</span>
+								</li>
+								<li>
+									Profit nach 25 Jahren
+									<span>{{profit_25_medium}} Fr.</span>
+								</li>
+								<li>
+									CO2 in km Autofahrt
+									<span>{{km_driveable_medium}} km</span>
+								</li>
+							</ul>
+							<p class="buttonauswaehlen">Ausgew&auml;hlt</p>
+						</div>
+					</div>
+
+					<div class="grid_4">
+						<div class="boxinnen" href="/plant/3" >
+							<div>
+								<span>{{area_large_str}} m&sup2</span>
+								{{power_output_large}} kWh
+							</div>
+							<h3>
+								Grosse Version
+								<h3>
+									<p class="kleinertext">
+										Hier kommt eine kleine Beschreibung hin, was man mit dem Produkt erreichen kann.
+									</span>
+									<ul>
+										<li>
+											Installationskosten
+											<span>{{price_large}} Fr.</span>
+										</li>
+										<li>
+											Amortisationszeit
+											<span>{{amortization_time_large}} Jahre</span>
+										</li>
+										<li>
+											Profit nach 25 Jahren
+											<span>{{profit_25_large}} Fr.</span>
+										</li>
+										<li>
+											CO2 in km Autofahrt
+											<span>{{km_driveable_large}} km</span>
+										</li>
+									</ul>
+									<p class="buttonauswaehlen">Ausw&auml;hlen</p>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+						</div>
+					</div>
+
+					<div class="container_16 step3content">
+
+						<div class="first">
+							<div class="grid_8">
+								<h2>Gesch&auml;tzte Kosten und gesch&auml;tzte Einnahmen</h2>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sit amet neque orci. Praesent a leo quis nibh pretium eleifend sed a ipsum. Aenean a mauris ut risus viverra laoreet iaculis at metus. Integer mattis pellentesque mollis. Cras adipiscing libero non sem tempus pretium ultricies dolor cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+								</p>
+							</div>
+							<div class="grid_7 push_1">
+								<div class="grid_2 alpha preistag">
+									<span>
+										Gesch&auml;tzte
+										<br />
+										Installationskosten
+									</span>
+									<p class="erstezahl active" id="selected_price_div" >{{price_medium}} Fr.</p>
+								</div>
+								<div class="grid_3 preistag">
+									<span>
+										Subventionen
+										<br />
+										und Steuerabzug
+									</span>
+									<p class="zweitezahl">6'000 Fr.</p>
+								</div>
+								<div class="grid_2 omega preistag">
+									<span>
+										Stromerspranis
+										<br />
+										oder KEV
+									</span>
+									<p class="drittezahl">450 Fr.</p>
+								</div>
+								<div class="grid_7 alpha">
+									<p class="bubble">
+										<span>Hier kommt eine todo: dass es springt!</span>
+										<br />
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu purus non massa facilisis. Nullam eu purus no.
+									</p>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="second">
+							<div class="grid_8">
+
+								<p class="bubble">test</p>
+								<br/>
+								<p class="progress_bar"></p>
+								<span class="zeitanzeige">2012</span>
+								<span class="zeitanzeige">3. Jahr</span>
+								<span class="zeitanzeige">6. Jahr</span>
+								<span class="zeitanzeige last">9.Jahr</span>
+							</div>
+							<div class="grid_7 push_1">
+								<h2>Projekt &uuml;ber die Zeit</h2>
+								<p>
+									Sehen Sie hier, wie sich die Investionskosten innerhalb einer 
 gewissen Zeit sich in einen Profit umwandeln. Navigieren Sie
-&uuml;ber den Punkt, um zu sehen, wieviel es kostet. </p>
-				</div>
-				<div class="clear"></div>
-			</div>
-			
-			<div class="third">
-				<div class="grid_16">
-					<h2>&Uuml;bersicht &uuml;ber Subventionen</h2>
-					<p>
-					Sehen Sie hier, wie sich die Investionskosten innerhalb einer  gewissen Zeit sich in einen Profit umwandeln. Navigieren Sie
+&uuml;ber den Punkt, um zu sehen, wieviel es kostet.
+								</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<div class="third">
+							<div class="grid_16">
+								<h2>&Uuml;bersicht &uuml;ber Subventionen</h2>
+								<p>
+									Sehen Sie hier, wie sich die Investionskosten innerhalb einer  gewissen Zeit sich in einen Profit umwandeln. Navigieren Sie
 &uuml;ber den Punkt, um zu sehen, wieviel es kostet. Navigieren Sie &uuml;ber den Punkt, um zu sehen, wieviel.
-					</p>
-				</div>
-				<div class="grid_8">
-					<div class="links">
-							<ul class="ulleft">
-								<h2> Baubewilligung </h2>
-								<li></li>
-								<li class="alt"><p class="pdf"> <span>10 OKTOBER 2012</span></p> Neue Bestimmung Herunterladen</li>
-							</ul>
+								</p>
+							</div>
+							<div class="grid_8">
+								<div class="links">
+									<ul class="ulleft">
+										<h2>Baubewilligung</h2>
+										<li></li>
+										<li class="alt">
+											<p class="pdf">
+												<span>10 OKTOBER 2012</span>
+											</p>
+											Neue Bestimmung Herunterladen
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="grid_7 push_1">
+								<div class="rechts">
+									<ul class="ulright">
+										<h2>Subventionen</h2>
+										<li>
+											Gemeinde: {{communal_subsidies}}
+											<br>Kontakt: {{communal_contact}}, {{communal_link}}</li>
+
+										<li class="alt">Neue Bestimmung Herunterladen {{gemeinde}}</li>
+									</ul>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+
+						<form action="/compare/" method="post" style="width: 200px;">
+
+							<input type="radio" name="plant_size" value="small">
+							Klein
+							<br>
+							<input type="radio" name="plant_size" value="medium">
+							Mittel
+							<br>
+							<input type="radio" name="plant_size" value="large">
+							Gross
+							<br>
+							{% csrf_token %}
+							<input type="submit" value="WEITER zu SCHRITT 3 mit den DATEN" class="wtfbutton" />
+						</form>
+
 					</div>
-				</div>
-				<div class="grid_7 push_1"> 
-					<div class="rechts">
-							<ul class="ulright">
-								<h2> Subventionen </h2>
-								<li>Gemeinde: {{communal_subsidies}} <br> Kontakt: {{communal_contact}}, {{communal_link}}</li>
-
-								<li class="alt">Neue Bestimmung Herunterladen {{gemeinde}}</li>
-							</ul>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-
-
-		
-        <form action="/compare/" method="post" style="width: 200px;">
-        
-      	<input type="radio" name="plant_size" value="small">Klein<br>
-      	<input type="radio" name="plant_size" value="medium">Mittel<br>
-      	<input type="radio" name="plant_size" value="large">Gross<br>
-      	
-        {% csrf_token %}	
-		<input type="submit" value="WEITER zu SCHRITT 3 mit den DATEN" class="wtfbutton" />
-		</form>
-
-	</div>
 
 </body>
