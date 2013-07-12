@@ -325,3 +325,83 @@ body {
 	width: 15px;
 
 }
+
+/* weiter section */
+
+.weiterstep3 {
+
+	border-top: solid 2px #D6E0E2;
+	border-bottom: solid 2px #D6E0E2;
+	padding: 20px 0px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+
+}
+
+.weiterstep3 div {
+	float:left;
+	margin-left:230px;
+	text-align: right;
+}
+
+.weiterstep3 div h4 {
+	text-align: center;
+	color: #949ea8;
+	font-size: 13px;
+	font-family: Arial, "Helvetica", Sans-serif;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+.weiterstep3 div h2 {
+	color: black;
+	font-size: 22px;
+	font-family: Arial, "Helvetica", Sans-serif;
+	font-weight: bold;
+	margin: 0px ;
+	padding: 0px;
+}
+
+/* - big green button */
+
+/* ----------------- Big green weiter- Button ----------------- */
+			.button {
+
+
+				float:right;
+				margin-right: 220px;
+
+
+				display: inline-block;
+
+
+				border: 0px;
+				font-family: Arial;
+				color: #ffffff;
+				font-size: 20px;
+				padding-top: 10px;
+				padding-right: 40px;
+				padding-bottom: 10px;
+				padding-left: 30px;
+				margin-left: 10px;
+				text-decoration: none;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-box-shadow: 0px 3px 0px #0d944a;
+				-moz-box-shadow: 0px 3px 0px #0d944a;
+				box-shadow: 0px 3px 0px #0d944a;
+				text-shadow: 0px 1px 4px #096332;
+				background-color: #11c966;
+				background: #11c966 url(arrowgreen.png) no-repeat right; 
+				cursor: pointer;
+			}
+			.button:hover {
+				background: #0d944a;
+				background: #11c966 url(arrowgreen_hover.png) no-repeat right; 
+				cursor: pointer;
+			}
+
+/* --- */
