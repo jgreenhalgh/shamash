@@ -78,9 +78,31 @@ $(document).ready(function() {
 });
 </script>
 
+	
+
+
 	<!-- Header Version Juli 2013 -->
 
 	<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css"></head>
+
+<!-- Step 3 Click between the big selection boxes: change of content and design
+	The "Empfohlenes Solarpotential"-Box ist at first load the selected one. 
+	the left box has an unique id "boxone"
+	and the right box has a unique id "boxtwo"
+
+ -->
+ <script type='text/javascript'>
+// see description above
+
+//on click of boxtwo (right box), if the box has tha class bigboxwhite, change the style of the box by adding the class "bigboxblue" to it and remove the class "bigboxblue" fromt the first box. change also the button (from white to blue) and move the big arrow from the content-area under the box
+
+
+
+
+ </script>
+
+
+
 <body>
 
 	<div class="container_12" id="headernavtop" >
@@ -133,7 +155,7 @@ $(document).ready(function() {
 		<p>CO2-Sachen</p>
 	</div>
 	<div class="grid_4">
-		<div class="bigboxblue">
+		<div id="boxone" class="bigboxblue">
 			<h5>Empfohlenes Solarpotential</h5>
 			<p class="info">
 				Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum
@@ -166,7 +188,7 @@ $(document).ready(function() {
 	</div>
 	<div class="grid_1">&nbsp;</div>
 	<div class="grid_4">
-		<div class="bigboxwhite">
+		<div id="boxtwo" class="bigboxwhite">
 			<h5>Maximales Solarpotential</h5>
 			<p class="info">
 				Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum
