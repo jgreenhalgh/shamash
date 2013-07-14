@@ -108,7 +108,7 @@ $(document).ready(function() {
 	  	// change the button-class
 	  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
 	  	// change button text
-	  	$('#buttonboxtwo').html('Details werden angezeigt <img src="arrowdown.png" />');
+	  	$('#buttonboxtwo').html('Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" />');
 
 	  	// change the class of box one to bigboxwhite
 	  	$('#boxone').removeClass('bigboxblue').addClass('bigboxwhite');
@@ -140,7 +140,7 @@ $(document).ready(function() {
 	  	// change the button-class of button one
 	  	$('#buttonboxone').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
 	  	// change button text
-	  	$('#buttonboxone').html('Details werden angezeigt <img src="arrowdown.png" />');
+	  	$('#buttonboxone').html('Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" />');
 
 	  	// change the class of box two to bigboxwhite
 	  	$('#boxtwo').removeClass('bigboxblue').addClass('bigboxwhite');
@@ -240,7 +240,7 @@ $(document).ready(function() {
 					<p class="lines"> tes <span> test </span> test </p>
 		
 				<br />
-				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src="arrowdown.png" /></p>
+				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src=""{{STATIC_URL}}/step234juli2013/arrowdown.png" /></p>
 				<br />
 			</div>
 		</div>
@@ -269,7 +269,9 @@ $(document).ready(function() {
 	<br></div>
 <div class="container_12" id="overviewbgbottom">
 	<div class="grid_12" >
-		<img src="{{STATIC_URL}}/step234juli2013/overviewbgarrow.png" />
+		<div class="grid_12" >
+			<p class="overviewarrowclass" /> &nbsp;</p>
+		</div>
 	</div>
 </div>
 <div class="container_12">
