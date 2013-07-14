@@ -20,7 +20,7 @@
 
 	<script type='text/javascript'>
 $(document).ready(function() {
-
+	//AJAX stuff
     //Deteremines the current URL, eg www.example.com
     var currentpath = window.location;
 
@@ -275,15 +275,15 @@ $(document).ready(function() {
 <div class="container_12">
 	<div class="grid_4 overviewclass" >
 		<img src="{{STATIC_URL}}/step234juli2013/overview1.png" />
-		<h4>WHAT TO EXPECT</h4>
-		<h2>General Overview</h2>
+		<h4>Was Sie erwarten k&ouml;nnen</h4>
+		<h2>Energieproduktion</h2>
 
 		<p class="overviewtext">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
 		</p>
 
 		<p class="littlebox">
-			Electric output
+			Anlageleistung
 			<span>12 kWh</span>
 		</p>
 		<p class="littleboxdetails">Details:</p>
@@ -297,9 +297,9 @@ $(document).ready(function() {
 			<span>{{price_medium}} CHF</span>
 		</p>
 		<p class="littleboxunderline">
-			Profit nach 25 Jahren
+			Staatliche Zusch&uuml;sse in 25 Jahren
 			<span class="frage">&nbsp;</span>
-			<span>{{profit_25_medium}} CHF</span>
+			<span>{{subsidies}} CHF</span>
 		</p>
 		<p class="littleboxunderline">
 			Lorem ipsum
@@ -311,9 +311,9 @@ $(document).ready(function() {
 			<span>500 kwH</span>
 		</p>
 		<p class="littleboxunderline">
-			Lorem ipsum
+			Profit nach 25 Jahren
 			<span class="frage">&nbsp;</span>
-			<span>500 kwH</span>
+			<span>{{profit_25_medium}}</span>
 		</p>
 		<p class="littleboxunderline">
 			Lorem ipsum
@@ -327,18 +327,32 @@ $(document).ready(function() {
 	</div>
 	<div class="grid_4 overviewclass" >
 		<img src="{{STATIC_URL}}/step234juli2013/overview2.png" />
-		<h4>WHAT TO EXPECT</h4>
-		<h2>General Overview</h2>
+		<h4>Was Sie erwarten k&ouml;nnen</h4>
+		<h2>Finanziell</h2>
 
 		<p class="overviewtext">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
 		</p>
 
 		<p class="littlebox">
-			Electric output
-			<span>12 kWh</span>
+			Installationskosten
+			<span>{{price_medium}}</span>
 		</p>
 		<p class="littleboxdetails">Details:</p>
+		<p class="littleboxunderline">
+			bla
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
+			<span>bla CHF</span>
+		</p>
+		<p class="littleboxunderline">
+			Staatliche Zusch&uuml;sse in 25 Jahren
+			<span class="frage">&nbsp;</span>
+			<span>{{subsidies}} CHF</span>
+		</p>
 		<p class="littleboxunderline">
 			Lorem ipsum
 			<span class="frage">
@@ -349,16 +363,24 @@ $(document).ready(function() {
 			<span>500 kwH</span>
 		</p>
 		<p class="littleboxunderline">
-			Lorem ipsum
+			Profit nach 25 Jahren
 			<span class="frage">&nbsp;</span>
+			<span>{{profit_25_medium}}</span>
+		</p>
+		<p class="littleboxunderline">
+			Lorem ipsum
+			<span class="frage">
+				<a href="#">
+					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
+				</a>
+			</span>
 			<span>500 kwH</span>
 		</p>
-
 	</div>
 	<div class="grid_4 overviewclass" >
 		<img src="{{STATIC_URL}}/step234juli2013/overview3.png" />
-		<h4>WHAT TO EXPECT</h4>
-		<h2>General Overview</h2>
+		<h4>Was Sie erwarten k&ouml;nnen </h4>
+		<h2>Umwelt</h2>
 
 		<p class="overviewtext">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur sagittis.
