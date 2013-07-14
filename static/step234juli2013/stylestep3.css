@@ -248,9 +248,14 @@ body {
 	background: url("overviewbgbottom.png") repeat-x #eceef1;
 }
 
-#overviewbgbottom img {
-
-	padding-left: 280px;
+#overviewbgbottom .overviewarrowclass {
+	height:31px;
+	width: 40px;
+	margin: 0px;
+	padding: 0px;
+	background: url("overviewbgarrow.png") no-repeat;	
+	margin-left: 285px;
+	
 }
 
 .overviewclass {
