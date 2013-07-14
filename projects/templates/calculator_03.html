@@ -78,9 +78,107 @@ $(document).ready(function() {
 });
 </script>
 
+	
+
+
 	<!-- Header Version Juli 2013 -->
 
 	<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css"></head>
+
+
+<!-- Step 3 Click between the big selection boxes: change of content and design
+	The "Empfohlenes Solarpotential"-Box ist at first load the selected one. 
+	the left box has an unique id "boxone"
+	and the right box has a unique id "boxtwo"
+
+ -->
+ <script type='text/javascript'>
+// see description above
+
+//on click of boxtwo (right box), if the box has tha class bigboxwhite, change the style of the box by adding the class "bigboxblue" to it and remove the class "bigboxblue" fromt the first box. change also the button (from white to blue) and move the big arrow from the content-area under the box
+
+//id for the buttons: left: buttonboxone and right: buttonboxtwo
+
+$(document).ready(function() {
+	$('#boxtwo').click(function(){
+	  // check if box two has the class "bigboxwhite"
+	  if ($('#boxtwo').hasClass('bigboxwhite') == true) {
+	  	// change the class of boxtwo to bigboxblue
+	  	$('#boxtwo').removeClass('bigboxwhite').addClass('bigboxblue');
+	  	// change the button-class
+	  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
+	  	// change button text
+	  	$('#buttonboxtwo').html('Details werden angezeigt <img src="arrowdown.png" />');
+
+	  	// change the class of box one to bigboxwhite
+	  	$('#boxone').removeClass('bigboxblue').addClass('bigboxwhite');
+	  	// change button of button one 
+	  	$('#buttonboxone').removeClass('detailsuntenanzeigen1').addClass('detailsuntenanzeigen2');
+	  	// change text of button one
+	  	$('#buttonboxone').html('Details anzeigen');
+
+	  	// move arrow underneath the box two
+	  	$('.overviewarrowclass').css({'margin-left':'690px'});	
+
+	  }
+	  else {
+	  	// do nothing (box two is already selected)
+	  	// scroll down to the selection ?
+
+
+
+	  };
+	});
+
+	// if you click on box one and it is not selected (has the class bigboxwhite)
+
+		$('#boxone').click(function(){
+	  // check if box one has the class "bigboxwhite"
+	  if ($('#boxone').hasClass('bigboxwhite') == true) {
+	  	// change the class of boxone to bigboxblue
+	  	$('#boxone').removeClass('bigboxwhite').addClass('bigboxblue');
+	  	// change the button-class of button one
+	  	$('#buttonboxone').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
+	  	// change button text
+	  	$('#buttonboxone').html('Details werden angezeigt <img src="arrowdown.png" />');
+
+	  	// change the class of box two to bigboxwhite
+	  	$('#boxtwo').removeClass('bigboxblue').addClass('bigboxwhite');
+	  	// change button of button two 
+	  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen1').addClass('detailsuntenanzeigen2');
+	  	// change text of button two
+	  	$('#buttonboxtwo').html('Details anzeigen');
+
+	  	// move arrow underneath the box one
+	  	$('.overviewarrowclass').css({'margin-left':'285px'});	
+	  }
+	  else {
+	  	// do nothing (box two is already selected)
+	  	// scroll down to the selection ?
+	  };
+	});
+
+	// scroll down, if click on box one or box two
+	$('#boxtwo').click(function(){
+		  	// scroll down
+	  	$('html, body').animate({
+        	scrollTop: $( "#myAnchor" ).offset().top}, 600);
+    		return false;
+    });
+
+	$('#boxone').click(function(){
+		  	// scroll down
+	  	$('html, body').animate({
+        	scrollTop: $( "#myAnchor" ).offset().top}, 600);
+    		return false;
+    });
+
+});
+
+ </script>
+
+
+
 <body>
 
 	<div class="container_12" id="headernavtop" >
@@ -126,79 +224,43 @@ $(document).ready(function() {
 			Ihr Dach einigt sich sehr gut f&uuml;r eine Photovoltaikanlage.
 		</h2>
 	</div>
-	<div class="grid_2 informationbox">
-		<p>Genutzte Dachfl&auml;che</p>
-		<p>Energie</p>
-		<p>Ersparnis</p>
-		<p>CO2-Sachen</p>
-	</div>
-	<div class="grid_4">
-		<div class="bigboxblue">
-			<h5>Empfohlenes Solarpotential</h5>
-			<p class="info">
-				Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-
-			<br />
-				<p class="detailsuntenanzeigen1">Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" /></p>
-			<br />
+		<div id="myAnchor" class="grid_2 informationbox">
+			<p>Genutzte Dachfl&auml;che</p>
+			<p>Energie</p>
+			<p>Ersparnis</p>
+			<p>CO2-Sachen</p>
 		</div>
-	</div>
-	<div class="grid_1">&nbsp;</div>
-	<div class="grid_4">
-		<div class="bigboxwhite">
-			<h5>Maximales Solarpotential</h5>
-			<p class="info">
-				Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-			<p class="lines">
-				tes
-				<span>test</span>
-				test
-			</p>
-
-			<br />
-								<p class="detailsuntenanzeigen2">Details anzeigen </p>
-			<br />
-
+		<div class="grid_4">
+			<div id="boxone" class="bigboxblue">
+				<h5>Empfohlenes Solarpotential</h5>
+					<p class="info"> Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum</p>
+					<p class="lines"> tes <span> test </span> test </p>
+					<p class="lines"> tes <span> test </span> test </p>
+					<p class="lines"> tes <span> test </span> test </p>
+					<p class="lines"> tes <span> test </span> test </p>
+		
+				<br />
+				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src="arrowdown.png" /></p>
+				<br />
+			</div>
 		</div>
-	</div>
-	<div class="grid_1"></div>
+		<div class="grid_1"> &nbsp;</div>
+		<div class="grid_4">
+			<div id="boxtwo" class="bigboxwhite">
+				<h5>Maximales Solarpotential</h5>
+					<p class="info"> Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum</p>
+					<p class="lines"> tes <span> test </span> test </p>
+					<p class="lines"> tes <span> test </span> test </p>
+					<p class="lines"> tes <span> test </span> test </p>
+					<p class="lines"> tes <span> test </span> test </p>
+		
+				<br />
+								<p id="buttonboxtwo" class="detailsuntenanzeigen2">Details anzeigen </p>
+				<br />
+
+			</div>
+		</div>
+		<div class="grid_1"></div>
 	<br>
 	<br>
 	<br>
