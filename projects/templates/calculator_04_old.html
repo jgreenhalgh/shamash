@@ -1,0 +1,421 @@
+{% extends "calculator_base.html" %}
+{% block calc_02_step4_active%}active{% endblock%}
+{% block calc_04_active %}active{% endblock %}
+
+{% block header_inhead %}
+
+
+
+<!-- Calculating distances between user and company Script -->
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false&amp;key=AIzaSyAZcXhfzbbDh5SayEibA0I2sBa7dvpnR5k"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //creating latlng coordinates of home address
+      	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord}}, {{home_lng_coord}});
+
+	    {% for company in list_of_companies %}
+        //creating latlng coordinates of company address
+      	var company_Latlng = new google.maps.LatLng({{company.lat_coord}}, {{company.lng_coord}});
+
+        //calculting distnace of the two addresses 
+        var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
+        //the sorting algorithm works by sorting in descending order. When I tried to add 1/my_distance to the attribute
+        //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
+        $("#company_li_{{company.id}}").attr("b", 10000-my_distance/1000);
+
+
+        {% endfor %}
+
+
+    });
+</script>
+
+<!-- RATING Script -->
+<script type="text/javascript" src="{{STATIC_URL}}/raty_rating_system/lib/jquery.raty.min.js"></script>
+
+
+<script type="text/javascript">
+    $(function() {
+        //getting some pictures data
+        $.fn.raty.defaults.path = '{{STATIC_URL}}/raty_rating_system/lib/img';
+
+        //for each company the div will have a different name to assign a different number of stars, that'
+        //why we cycle through all companies that will be displayed on this site
+    	{% for company in list_of_companies %}
+          $('#star{{company.id}}').raty({ readOnly: true, score: {{company.stars_average}} });
+        {% endfor %}
+    });
+</script>
+
+<!-- TinySort Sorting Script for sorting the list elements of companies available for installation in the custoemrs area(needed for the next bit to work) -->
+<script type="text/javascript" src="{{STATIC_URL}}/tinysort_jquery_plugin/src/jquery.tinysort.min.js"></script>
+<!-- SORTING Script -->
+<script type='text/javascript'>
+    /*-------- SORTING SCRIPT --------*/
+
+    // variables for the sorting script
+    var selected = new Array();
+    var zwischensumme = new Array();
+
+    // summing function for the variable
+    $.sum = function (arr) {
+        var r = 0;
+        $.each(arr, function (i, v) {
+            r += v;
+        });
+        return r;
+    }
+
+    // jQuery Stuff for sorting script: This script sorts according to the "data" variables in the list items, see the HMTL below
+    $(document).ready(function () {
+
+        // PROMPT BOX fix of the offer
+
+        $("p.offertenbutton").click(function (e) {
+            // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+            var gettheclasses = $(this).attr("class").split(' ');
+
+            $("#" + gettheclasses[1]).lightbox_me({
+                    centered: true,
+                    onLoad: function () {
+                        $(".inner").find('input:first').focus()
+                    }
+                });
+
+            e.preventDefault();
+ 
+        });
+
+        // SCHLIESSEN-Button in der Box
+        $(".schliessen").click(function (e) {
+            $(this).trigger('close');
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -charles
+            return false;
+        });
+
+        // Sorting stuff 
+
+        $(".s4ListSelect").click(function () {
+            //$('ul#company_list>li').tsort({attr:'a'});
+
+           
+            // untoggling each element that is toggles
+            $("li.s4ListSelect").each(function () 
+            {
+                if ($(this).hasClass("checked"))
+                    {
+                        $(this).toggleClass("checked");
+                    }
+            });
+            //toggling the element clicked
+            $(this).toggleClass("checked");
+
+
+            // find out, what checkboxes are checked and put the VALUE in the selceted variable is checked!
+            //input:checkbox[name=sortieren]:checked
+
+
+
+            $(".s4_auswahl .checked").each(function () {
+                selected.push($(this).attr("data"));
+            });
+
+
+
+            // for each list element 
+            $("li.s4list").each(function () {
+                // with .length check the arrays length, how many elements and get the attribute with the same name
+                for (var i = 0; i < selected.length; i++) {
+                    var thisThing = selected[i];
+                    zwischensumme.push(parseInt($(this).attr(thisThing)));
+                    // $(this).html($.sum(zwischensumme));
+                }
+
+                $(this).attr("total", $.sum(zwischensumme));
+
+                //zwischensumme loeschen;
+                zwischensumme = [];
+
+            });
+
+            //Liste sortieren nach 
+            $('ul#company_list>li').tsort({order:"desc",attr:"total"});
+
+
+            // Array loeschen
+            selected = [];
+            // total value loeschen
+            $("li").each(function () {
+                $(this).attr("total", "");
+
+            });
+            // this prevents the screen from jumping back all the time(in terms of scrolling) -charles
+            return false;
+        });
+
+
+    });
+</script>
+
+
+<!-- ..................START POPUP BOXES ..................................-->
+
+
+<!-- Offerten Popup boX -->
+<script type="text/javascript" id="sourcecode">
+    $(document).ready(function(){
+
+        // die boxen werden im CSS mit display:none; nicht gezeigt
+        $("p.offertenbutton").click(function(e){
+            // es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+            var gettheclasses=$(this).attr("class").split(' ');
+            $("#"+gettheclasses[1]).lightbox_me({
+                centered: true,
+                onLoad: function() {
+                    $(".inner").find('input:first').focus()
+                },
+            });
+            e.preventDefault();
+        });
+
+        // SCHLIESSEN-Button in der Box
+        $(".schliessen").click(function(e){ 
+            $(this).trigger('close');
+        });
+
+        // toggle the warnnachrichtbox in den STEPS
+
+        $(".closetoggle").click(function(){
+            $(".steps_warnnachricht").slideToggle("fast");
+        });
+
+    });
+
+</script>
+
+<!-- Popup, once QUOTE has been REQUESTED -->
+<!--(checking with django tags whether success tag is present in messages)-->
+    
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == "success" %} 
+            <script type="text/javascript" id="sourcecode">
+                $(window).load(function(){
+                
+                    // die boxen werden im CSS mit display:none; nicht gezeigt
+                    $("#quote_request_success_box_id").lightbox_me({
+                        centered: true,
+                        onLoad: function() {
+                            $(".inner").find('input:first').focus()
+                        },
+                    });
+
+
+                    // SCHLIESSEN-Button in der Box
+                    $(".schliessen").click(function(e){ 
+                        $(this).trigger('close');
+                    });
+
+                    // toggle the warnnachrichtbox in den STEPS
+
+                    $(".closetoggle").click(function(){
+                        $(".steps_warnnachricht").slideToggle("fast");
+                    });
+                });
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<!-- ....................END POPUP BOXES ....................................-->
+
+
+{% endblock %}
+
+
+
+{% block content %}
+	<div class="bigoverview_step4">
+		<div class="container_12">
+			<div class="grid_12" style="text-align:center,">
+			<ul id="dropdownphotovoltaik">
+			<h1> F&uuml;r </h1>
+				<a href="index.php"><li class="selectdown" style="float:left">Hauptstrasse 18, D&uuml;debndorf
+					 <ul>
+						<li>
+								<h3>F&uuml;r folgende Angaben wurden die Berechnungen gemacht</h3>
+								<p class="smalltextindropdown">
+								Mit der Sonnenenergie Strom poduzieren Hier kommt eipoduzieren Hier kommt ein kleiner erkl&auml;runpoduzieren Hier kommt ein kleiner erkl&auml;runn kleiner erkl&auml;rungstext und auch eine kleine Infographic rechts.
+								</p>	
+						</li>
+					</ul>
+				</li></a>
+				<h2> wurden {{request.session.number_of_companies}} lokale Solaranbieter gefunden. THE MESSAGE IS : {{message}} </h2>	
+			</ul>
+			<p class="untertitel">
+				Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. <br>
+
+
+				<a href="/user/compare#register"><span class="greensmallbutton">Jetzt kostenlos registrieren</span></a>
+			</p>
+			
+			</div>			
+		</div>
+	</div>
+	
+
+    <div class="container_16 step4_boxes">
+    	<div class="grid_16 waswichtig">
+    		<h3>Sortieren Nach: </h3>
+    		<ul class="s4_auswahl">
+    			<a href="#"><li id = "customer_rating_id" data="a" class="s4ListSelect">Kundenbewertungen</li></a>
+    			<a href="#"><li id = "closeness_id"  data="b" class="s4ListSelect ">Nähe zu Ihnen</li></a>
+    			<a href="#"><li id = "product_source"  data="c" class="s4ListSelect ">Produkte-Herkunftsland</li></a>
+    		</ul>
+    	</div>
+        	
+        		
+
+    	<div class="clear"></div>
+    	<p class="linie"> </p>	
+
+        <!-- This is the list of Companies as retrieved by Django-->
+        <ul class="s4ul" id="company_list">
+
+        	{% for company in list_of_companies %}
+        	<!-- START BOX -->
+        	<li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
+        	<div class="firemoverview">
+        		<div class="grid_4 eins">
+        			<h2>{{company.name}}</h2>
+        			<ul>
+        				<li class="standort">{{company.gemeinde}}</li>
+        				<li class="projects">{{company.number_of_successful_projects}} erfolgreiche Projeke</li>
+        			</ul>
+        		</div>
+        		<div class="grid_4 zwei">
+        			<ul>
+        				<li>Produkt <span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></li>
+        				<li>Geschätze Anlagekosten <span>{{company.price}}</span></li>
+        				<li>Geschätze Amortisationszeit <span>{{company.amortization_time}}</span></li>
+        				<li>Geschätzer Profit nach 25 Jahren <span>{{company.profit_25}}</span></li>
+        			</ul>
+        		</div>
+        		<div class="grid_4 zwei">
+        			<ul>
+        				<li>Bewertung <span><div id="star{{company.id}}"></div></span></li>
+        				<li>Anlagenleistung <span>4 kWh</span></li>
+        				<li>Anlagenleistung <span>4 kWh</span></li>
+        				<li>Anlagenleistung <span>4 kWh</span></li>
+        			</ul>		
+        		</div>
+        		<div class="grid_4 vier">
+        			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        			<a href="#"><p class="pinbutton"></p></a>
+        			<a href="#"><p class="offertenbutton {{company.id}}">Offerte einholen</p></a>
+        		</div>
+        	</div> <div class="clear"></div>
+        	</li>
+        	<!-- END BOX -->
+            {% endfor %}
+
+
+            <!-- >>>> This is a number of prompt boxes for each element in the companies list above -->
+             {% for company in list_of_companies %}
+                <div class="box_getoffer" id="{{company.id}}">
+                	<div class="rechts">
+                		<div class="inner">
+                			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
+                			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
+                			<form method="post" action="/request_quote/" id="offerteabschicken">
+
+                            <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
+                            <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
+                			<label class="eingabetext"> Name *  {{form.name}}</label>
+                			<label class="eingabetext"> Email * {{form.email}} </label>
+                			<label class="eingabetext"> Kommentar {{form.commentary}}</label>
+                			<input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
+                			<p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
+                            {% csrf_token %}
+
+                			</form>
+
+                		</div>
+                	</div>	
+                	<div class="links">
+                		<div class="inner">
+                			<h1>Ihr Projekt von lorem ipsum dolor sit amet</h1>
+                			<p class="projektuebersicht">
+                			
+                			Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
+                			
+                			<br/>
+                			Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
+                			</p>
+                		</div>
+                	</div>
+                </div>
+            {% endfor %}
+        </ul>
+
+
+        <!-- This prompt box appears if a quote request has been made successfully-->
+        <div class="box_getoffer" id="quote_request_success_box_id">
+            <div class="rechts">
+                <div class="inner">
+                    <a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
+                    <p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
+                    <form method="post" action="/request_quote/" id="offerteabschicken">
+
+                    <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
+                    <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
+                    <label class="eingabetext"> Name *  {{form.name}}</label>
+                    <label class="eingabetext"> Email * {{form.email}} </label>
+                    <label class="eingabetext"> Kommentar {{form.commentary}}</label>
+                    <input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
+                    <p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
+                    {% csrf_token %}
+
+                    </form>
+
+                </div>
+            </div>  
+            <div class="links">
+                <div class="inner">
+                    <h1>Herzlichen Glückwunsch! Sie werden in kürze eine kostenlose und unverbindliche Offerte erhalten</h1>
+                    <p class="projektuebersicht">
+                    
+                    Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
+                    
+                    <br/>
+                    Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- END prompt box for sucessfull quot request-->
+
+        	
+    	<p class="linie"> </p>
+    	<div class="grid_6 wieweiter">
+    		<h3> Wie geht es weiter? </h3>
+    		<p>Lorem ipsum dolor sit amet, conse porttitor. Fuis vulputate sed, mollis sit amet lorem.</p>
+    	</div>
+
+
+
+
+    	<div class="grid_6 wieweiter2">
+    		<p>Bultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen. ultrices eu consequat dictum, Diese Anbieter sind direkt an Registriern und anbieter vergleichen.</p>
+    		
+    	</div>
+    	
+    	<div class="grid_4 wieweiter2">
+    		<a href="/user/compare#register"><p class="biggreenbutton"> Hier der Weiterbutton </p></a>
+    	</div>
+    </div>
+{% endblock %}
