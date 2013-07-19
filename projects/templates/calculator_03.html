@@ -333,7 +333,11 @@ $(document).ready(function() {
 
 		<p class="littlebox">
 			Kosten Nach Subventionen
-			<span>{{bottom_line_cost_medium}} CHF</span>
+			<span>{% load l10n %}
+			{% localize on %}
+			{{bottom_line_cost_medium}} CHF
+			{% endlocalize %}
+			</span>
 		</p>
 		<p class="littleboxdetails">Details:</p>
 		<p class="littleboxunderline">
