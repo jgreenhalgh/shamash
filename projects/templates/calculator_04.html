@@ -368,6 +368,23 @@ $(".schliessen").click(function(e){
         <h2> Lorem ipsum dolor sit amet. {{message}}. </h2>
     </div>
 
+    <div class="grid_16 waswichtig">
+    <h3>Sortieren Nach: </h3>
+    <ul class="s4_auswahl">
+        <a href="#"><li id = "customer_rating_id" data="a" class="s4ListSelect">Kundenbewertungen</li></a>
+        <a href="#"><li id = "closeness_id"  data="b" class="s4ListSelect ">Nähe zu Ihnen</li></a>
+        <a href="#"><li id = "product_source"  data="c" class="s4ListSelect ">Produkte-Herkunftsland</li></a>
+    </ul>
+</div>
+
+<div class="container_12" id="overviewbgbottom">
+    <div class="grid_12" >
+        <div class="grid_12" >
+            <p class="overviewarrowclass" /> &nbsp;</p>
+        </div>
+    </div>
+</div>
+
 </div>
 
 
@@ -423,8 +440,72 @@ $(".schliessen").click(function(e){
         			<a href="#"><p class="offertenbutton {{company.id}}">Offerte einholen</p></a>
         		</div>
         	</div> <div class="clear"></div>
-        	</li>
+        	
         	<!-- END BOX -->
+
+            <!-- STEP 4 BOX NEW START -->
+            <div class="container_12">
+                <div class="step4_box_anbieter">
+                <div class="grid_5 box_anbieter_title">
+                    <h1>Sunconnect</h1>
+                    <h3>Untetritel firma</h3>
+                </div>
+
+                <div class="grid_2 box_anbieter_title_info_one">
+                    <p class="check">Standort</p>
+                    <p class="check">Mitarbeiter</p>
+                    <p class="check">Gr&uuml;ndung</p>
+                </div>
+                <div class="grid_3 box_anbieter_title_info_one">
+                    <p>Standort<span>Richterswil</span></p>
+                    <p>Mitarbeiter<span>15</span></p>
+                    <p>Gr&uuml;ndung<span>2007</span></p>
+                </div>
+                <div class="grid_2">
+                    <p class="step4_star_move">
+                    <img src="step4_star_on.png" /> <img src="step4_star_on.png" /> <img src="step4_star_on.png" /> <img src="step4_star_on.png" /> <img src="step4_star_off.png" />
+                    </p>
+                </div>
+                <div class="grid_12 step4_untetitel_box">
+                    Gesch&auml;tzte Kosten für eine <span>xy kWh-Anlage</span> an der <span>Schwamendingenstrasse 88:</span>
+                </div>
+                <div class="grid_3 ">
+                    <div class="step4_boxinformation">
+                    <h2>Finanziell</h2>
+                    <p>Gesch&auml;tzte Kosten <span>24000</span></p>
+                    </div>
+                </div>
+                <div class="grid_3">
+                <div class="step4_boxinformation">
+            
+                    <h2>Technische Details</h2>
+                    <p>Anlageleistung <span>test</span></p>
+                    <p>Verwendeter Wechselrichter <span>test</span></p>
+                    </div>
+
+                </div>
+                    <div class="grid_3">
+                    <div class="step4_boxinformation">
+
+                    <h2>Technische Details</h2>
+                    <p>Verwendete Solarmodule <span>test</span></p>
+                    <p>Verwendeter Wechselrichter <span>test</span></p>
+                            </div>
+
+                </div>
+                
+
+                <div class="grid_3 buttongridrechts" >
+                    <a href="#"><p class="greenofferbutton">Offerte anfordern</p></a>
+                    <p class="unterdemoffertenbutton">Unverbindlich, kostenlos, <br/>unkompliziert</p>
+                </div>
+                <div style="clear"></div>
+
+                </div>
+
+            </div>
+            </li>
+            <!-- STEP 4 BOX NEW STOP -->            
             {% endfor %}
 
 
