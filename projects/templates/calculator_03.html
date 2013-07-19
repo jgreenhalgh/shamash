@@ -242,7 +242,7 @@ $(document).ready(function() {
 			<p>Energieproduktion</p>
 			<p>Deckung Eigenbedarf</p>
 			<p>Ersparnis Stromrechnung</p>
-			<p>Gespartes CO2</p>
+			<p>Gespartes CO<sub>2</sub></p>
 		</div>
 		<div class="grid_4">
 			<div id="boxone" class="bigboxblue">
@@ -252,7 +252,7 @@ $(document).ready(function() {
 					<p class="lines"> <span> {{power_output_medium}} kWH</span>  saubere Energie aus der Schweiz </p>
 					<p class="lines"> Deckung von <span> {{percent_of_electricity_from_plant_medium}} % </span>  Ihres Strom-Eigenbedarfes </p>
 					<p class="lines"> Einsparung von <span> {{money_saved_medium}} CHF</span> an Stromrechnung </p>
-					<p class="lines"> Reduktion von <span> {{co_2_saved_medium}} Tonnen CO2</span> Ausstoss </p>
+					<p class="lines"> Reduktion von <span> {{co_2_saved_medium}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
 				<br />
 				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" /></p>
 				<br />
@@ -266,7 +266,7 @@ $(document).ready(function() {
 					<p class="lines"> <span> {{power_output_large}} kWH</span>  saubere Energie aus der Schweiz </p>
 					<p class="lines"> Deckung von <span> {{percent_of_electricity_from_plant_large}} % </span>  Ihres Strom-Eigenbedarfes </p>
 					<p class="lines"> Einsparung von <span> {{money_saved_large}} CHF</span> an Stromrechnung </p>
-					<p class="lines"> Reduktion von <span> {{co_2_saved_large}} Tonnen CO2</span> Ausstoss </p>
+					<p class="lines"> Reduktion von <span> {{co_2_saved_large}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
 				<br />
 								<p id="buttonboxtwo" class="detailsuntenanzeigen2">Details anzeigen </p>
 				<br />
@@ -411,7 +411,7 @@ $(document).ready(function() {
 		<p class="littleboxunderline">
 			in B&auml;umen <br>(welche das CO<sub>2</sub> absorbieren) 
 			<span class="frage">&nbsp;</span>
-			<span>{co2_tree_equivalent_medium}} B&auml;ume</span>
+			<span>{{co2_tree_equivalent_medium}} B&auml;ume</span>
 		</p>
 
 	</div>
@@ -589,7 +589,7 @@ $(document).ready(function() {
 								<span>{{profit_25_small}} Fr.</span>
 							</li>
 							<li>
-								CO2 in km Autofahrt
+								CO<sub>2</sub> in km Autofahrt
 								<span>{{km_driveable_small}} km</span>
 							</li>
 						</ul>
@@ -624,7 +624,7 @@ $(document).ready(function() {
 									<span>{{profit_25_medium}} Fr.</span>
 								</li>
 								<li>
-									CO2 in km Autofahrt
+									CO<sub>2</sub> in km Autofahrt
 									<span>{{km_driveable_medium}} km</span>
 								</li>
 
@@ -659,7 +659,7 @@ $(document).ready(function() {
 											<span>{{profit_25_large}} Fr.</span>
 										</li>
 										<li>
-											CO2 in km Autofahrt
+											CO<sub>2</sub> in km Autofahrt
 											<span>{{km_driveable_large}} km</span>
 										</li>
 									</ul>
