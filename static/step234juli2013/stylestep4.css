@@ -805,7 +805,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	padding: 0px;
 	padding-left: 10px;
 	padding-top: 35px;
-	padding-right: 5px;
+	padding-right: 0px;
 }
 
 .step4_boxinformation h2 {
