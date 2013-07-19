@@ -247,8 +247,22 @@ $(".schliessen").click(function(e){
 </script>
 
 
-<!-- ..................START POPUP BOXES ..................................-->
+<!-- SCRIPT TO MOVE THE ARROW UNDER THE SELECTION LIST-->
 
+<!-- ..................START POPUP BOXES ..................................-->
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('[data=a]').click(function(){
+       $('.overviewarrowclassstep4').css({'margin-left':'215px'});    
+    });
+    $('[data=b]').click(function(){
+       $('.unterdemoffertenbutton').css({'margin-left':'448px'});    
+    });
+    $('[data=c]').click(function(){
+       $('.unterdemoffertenbutton').css({'margin-left':'667px'});    
+    });
+});
+</script>
 
 <!-- Offerten Popup boX -->
 <script type="text/javascript" id="sourcecode">
@@ -452,10 +466,10 @@ $(".schliessen").click(function(e){
                     <p>Mitarbeiter<span>15</span></p>
                     <p>Gr&uuml;ndung<span>2007</span></p>
                 </div>
-                <div class="grid_2">
+                <div class="grid_2" style="text-align:center;">
                     
                         <div class="step4_star_move" id="star{{company.id}}"></div>
-                    <!--<img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_off.png" />-->
+                   
                     
                 </div>
                 <div class="grid_12 step4_untetitel_box">
