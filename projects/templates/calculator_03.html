@@ -178,6 +178,16 @@ $(document).ready(function() {
  </script>
 
 
+<!-- QTip CSS + JQuery/File -->
+<link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.css" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.js"></script>
+ <script type='text/javascript'>
+$('[data-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+    content: {
+        attr: 'data-tooltip' // Tell qTip2 to look inside this attr for it's content
+    }
+})
+ </script>
 
 <body>
 
@@ -291,7 +301,7 @@ $(document).ready(function() {
 		<p class="littleboxunderline">
 			Gr&ouml;sse Ihrer Anlage
 			<span class="frage">
-				<a href="#">
+				<a href="#" data-tooltip="TEST tootltip">
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
@@ -300,7 +310,7 @@ $(document).ready(function() {
 		<p class="littleboxunderline">
 			Anteil Strom von Solaranlage
 			<span class="frage">
-				<a href="#">
+				<a href="#" data-tooltip="TEST tootltip">
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
