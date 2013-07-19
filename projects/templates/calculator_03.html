@@ -182,11 +182,13 @@ $(document).ready(function() {
 <link type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.css" />
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.js"></script>
  <script type='text/javascript'>
-$('[data-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
-    content: {
-        attr: 'data-tooltip' // Tell qTip2 to look inside this attr for it's content
-    }
-})
+$(document).ready(function() {
+	$('[data-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+	    content: {
+	        attr: 'data-tooltip' // Tell qTip2 to look inside this attr for it's content
+	    }
+	});
+});
  </script>
 </head>
 <body>
