@@ -624,5 +624,206 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .step3projectdurationbox_unten {
 	margin-top: 10px;
-	c
 }
+
+
+/* STEP 4 EUEBERISCHTSBOXEN */
+
+.step4_box_anbieter {
+	margin: 0;
+	padding: 0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: #c2e1ef 0px 0px 5px;
+	-moz-box-shadow: #c2e1ef 0px 0px 5px; 
+	box-shadow: #c2e1ef 0px 0px 5px;
+	background-color: #f1f2f5;
+	width: 960px;
+	margin: 0px 10px;
+	height: 250px;
+	background: url("bg_box_step4_anbieter.png") repeat-x #f1f2f5;
+}
+
+.box_anbieter_title {
+
+}
+
+.box_anbieter_title h1, .box_anbieter_title h3 {
+	font-family: "Arial", Sans-serif;
+	color: #fff;
+	font-size: 20px;
+	margin: 0;
+	padding: 12px 0px 0px 10px;
+	font-weight: bold;
+}
+
+.box_anbieter_title h3 {
+	color: #6f7e8a;
+	font-size: 13px;
+	padding: 0px 0px 0px 10px;
+}
+
+.box_anbieter_title_info_one {
+	border-right: #313940 solid 1px;
+	height: 61px;
+	padding: 0px;
+	margin:0px;
+	padding-top: 10px;
+}
+
+.box_anbieter_title_info_one p {
+	padding: 0px;
+	margin:0px;
+	color: #5e6c79;
+	font-family: "Arial", Sans-serif;
+	font-size: 12px;
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+.box_anbieter_title_info_one span {
+	
+	float: right;
+	padding-right: 15px;
+	color: #fff;
+}
+
+.box_anbieter_title_info_one p.check {
+	color: #fff;
+	font-weight: normal;
+	padding-left: 58px;
+	background: url("step4_check.png") no-repeat;
+	background-position:38px 3px;
+}
+
+.step4_star_move {
+	padding:10px 0px 0px 40px;
+}
+
+.step4_untetitel_box {
+	text-align: center;
+	padding-top: 11px;
+	font-family: "Arial", Sans-serif;
+	font-size: 14px;
+
+	color: #212a31;
+}
+
+.step4_untetitel_box span {
+	font-family: Georgia, Serif;
+	font-style: italic;
+	border-bottom: solid 1px #dce8ee;
+}
+
+.buttongridrechts {
+	margin-top: 35px;
+	text-align: center;
+
+}
+
+.greenofferbutton {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: center;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 10px 10px;
+	width: 150px;
+	margin-left: 25px;
+
+	background: -moz-linear-gradient(
+		top,
+		#97d640 0%,
+		#7dbb36 49%,
+		#64ab22 50%,
+		#4b9d15 75%,
+		#146600);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#97d640),
+		color-stop(0.49, #7dbb36),
+		color-stop(0.50, #64ab22),
+		color-stop(0.75, #4b9d15),
+		to(#146600));
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #d6ffb0;
+	-moz-box-shadow:
+		0px 1px 2px rgba(000,000,000,0.4),
+		inset 1px 1px 2px rgba(192,224,103,1);
+	-webkit-box-shadow:
+		0px 1px 2px rgba(000,000,000,0.4),
+		inset 1px 1px 2px rgba(192,224,103,1);
+	box-shadow:
+		0px 1px 2px rgba(000,000,000,0.4),
+		inset 1px 1px 2px rgba(192,224,103,1);
+	text-shadow:
+		0px 1px 0px rgba(047,077,037,0.7),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.greenofferbutton:hover {
+
+	-moz-box-shadow:
+		0px 1px 2px rgba(35,97,11,1),
+		inset 1px 1px 2px rgba(192,224,103,1);
+	-webkit-box-shadow:
+		0px 1px 2px rgba(35,97,11,1),
+		inset 1px 1px 2px rgba(192,224,103,1);
+	box-shadow:
+		0px 1px 2px rgba(35,97,11,1),
+		inset 1px 1px 2px rgba(192,224,103,1);
+	text-shadow:
+		0px 1px 0px rgba(047,077,037,0.7),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.unterdemoffertenbutton {
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 10px;	
+	color:#788489;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 5px;
+}
+
+.step4_boxinformation {
+	margin: 0px;
+	padding: 0px;
+	padding-left: 10px;
+	padding-top: 35px;
+	padding-right: 5px;
+}
+
+.step4_boxinformation h2 {
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	color: #6b8895;
+	font-size: 18px;
+	font-family: Arial, "Helvetica", Sans-serif;
+	font-weight: normal;
+	margin: 0px 0px 0px 0px ;	
+
+}
+
+.step4_boxinformation p {
+	font-size: 12px;
+	line-height: 17px;
+	font-family: Arial, "Helvetica", Sans-serif;
+	line-height: 20px;
+	color: black;
+	border-bottom: solid 1px #baced7;
+}
+
+.step4_boxinformation p span {
+	float:right;
+	color: black;
+	color: #172335;
+}
+
+/* -------------------------------- */
