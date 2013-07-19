@@ -876,6 +876,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .waswichtig {
+	margin: 0px;
+	padding: 0px;
 	text-align: center;
 }
 
@@ -919,4 +921,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	background: url("overviewbgarrow.png") no-repeat;	
 	margin-left: 215px;
 	
+}
+
+.step4_bigtitle {
+	margin: 0px;
+	padding: 0px;
 }
