@@ -717,7 +717,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .buttongridrechts {
-	margin-top: 35px;
+	padding: 50px 0px 0px 20px;
 	text-align: center;
 
 }
@@ -729,7 +729,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 .offertenbutton {
 	/*position: absolute;*/
 	width: 130px;
-	margin: 50px 0px 0px 10px;
+
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	text-align: center;
