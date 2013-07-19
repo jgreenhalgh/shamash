@@ -699,7 +699,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .step4_star_move {
-	padding:30px 0px 0px 40px;
+	padding:25px 0px 0px 40px;
 }
 
 .step4_untetitel_box {
@@ -707,9 +707,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	padding-top: 11px;
 	font-family: "Arial", Sans-serif;
 	font-size: 14px;
-
 	color: #212a31;
-	margin-top: -5px;
 }
 
 .step4_untetitel_box span {
