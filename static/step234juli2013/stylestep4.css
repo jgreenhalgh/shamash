@@ -927,3 +927,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	margin: 0px;
 	padding: 0px;
 }
+
+.sortierennach {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%
+	padding0px;
+}
