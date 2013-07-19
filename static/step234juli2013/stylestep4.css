@@ -640,7 +640,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	box-shadow: #c2e1ef 0px 0px 5px;
 	background-color: #f1f2f5;
 	width: 960px;
-	margin: 5px 10px;
+	margin: 5px 0px;
+	margin-bottom: 15px;
 	height: 280px;
 	background: url("bg_box_step4_anbieter.png") repeat-x #f1f2f5;
 }
