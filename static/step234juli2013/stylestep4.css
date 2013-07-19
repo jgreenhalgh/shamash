@@ -699,7 +699,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .step4_star_move {
-	padding:30px 0px 0px 40px;
+	padding:25px 0px 0px 40px;
 }
 
 .step4_untetitel_box {
@@ -707,9 +707,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	padding-top: 11px;
 	font-family: "Arial", Sans-serif;
 	font-size: 14px;
-
 	color: #212a31;
-	margin-top: -5px;
 }
 
 .step4_untetitel_box span {
@@ -719,7 +717,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .buttongridrechts {
-	margin-top: 35px;
+	padding: 30px 0px 0px 30px;
 	text-align: center;
 
 }
@@ -729,14 +727,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .offertenbutton {
+	/*position: absolute;*/
+	width: 170px;
+
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	text-align: center;
 	font-weight: bold;
 	color: #ffffff;
-	padding: 10px 10px;
-	width: 100px;
-	margin-left: 0px;
+	padding: 10px 5px;
+	width: 120px; 
+	margin-left: 40px;
+	margin-top: 30px;
 
 	background: -moz-linear-gradient(
 		top,
@@ -794,8 +796,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	color:#788489;
 	margin: 0px;
 	padding: 0px;
-	margin-top: 5px;
-	/*margin-left: 15px;*/
+	margin-top: 0px;
+	margin-left: 25px;
 }
 
 .step4_boxinformation {

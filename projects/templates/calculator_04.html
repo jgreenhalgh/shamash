@@ -364,9 +364,9 @@ $(".schliessen").click(function(e){
     </div>
 </div>
 <div class="container_12" id="overviewbg">
-    <div class="grid_12" >
+    <div class="grid_12" style="margin-bottom:-20px;" >
         <h3>ES WURDEN {{request.session.number_of_companies}} LOKALE SOLARANBIETER GEFUNDEN.</h3>
-        <h2 class="step4_bigtitle"> Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. {{message}}. </h2>
+        <h2 class="step4_bigtitle" style="">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. {{message}}. </h2>
     </div>
 
     <div class="grid_12 waswichtig">
@@ -489,13 +489,16 @@ $(".schliessen").click(function(e){
                 </div>
                 
 
-                <div class="grid_3 buttongridrechts" >
-                    <a href="#"><p class="offertenbutton {{company.id}}">Offerte anfordern</p></a>
-                   <!-- <p class="unterdemoffertenbutton">Unverbindlich, kostenlos, <br/>unkompliziert</p> -->
+                <div class="grid_3" style="margin-left:-10px; margin-right:-30px;" >
+                    <div class="buttongridrechts">
+                        <a href="#"><p class="offertenbutton {{company.id}}">Offerte anfordern</p>
+                        </a>
+                        <p class="unterdemoffertenbutton">Unverbindlich, kostenlos, <br/>unkompliziert</p> 
+                   </div>
                 </div>
                 <div style="clear"></div>
 
-                </div>
+            </div>
 
             </div>
             </li>
