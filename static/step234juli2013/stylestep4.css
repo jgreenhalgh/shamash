@@ -717,7 +717,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .buttongridrechts {
-	padding: 40px 0px 0px 30px;
+	padding: 30px 0px 0px 30px;
 	text-align: center;
 
 }
@@ -728,7 +728,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .offertenbutton {
 	/*position: absolute;*/
-	width: 130px;
+	width: 150px;
 
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
@@ -796,7 +796,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	color:#788489;
 	margin: 0px;
 	padding: 0px;
-	margin-top: 5px;
+	margin-top: 0px;
 	margin-left: 25px;
 }
 
