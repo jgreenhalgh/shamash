@@ -385,28 +385,17 @@ $(".schliessen").click(function(e){
     </div>
 </div>
 
+    <div class="step4_boxes">
 
-	
-    <div class="container_12 step4_boxes">
-    	<!-- <div class="grid_16 waswichtig">
-    		<h3>Sortieren Nach: </h3>
-    		<ul class="s4_auswahl">
-    			<a href="#"><li id = "customer_rating_id" data="a" class="s4ListSelect">Kundenbewertungen</li></a>
-    			<a href="#"><li id = "closeness_id"  data="b" class="s4ListSelect ">Nähe zu Ihnen</li></a>
-    			<a href="#"><li id = "product_source"  data="c" class="s4ListSelect ">Produkte-Herkunftsland</li></a>
-    		</ul>
-    	</div> -->
-        	
-        		
 
     	<div class="clear"></div>
-    	<p class="linie"> </p>	
+    	
 
         <!-- This is the list of Companies as retrieved by Django-->
         <ul class="s4ul" id="company_list">
 
         	{% for company in list_of_companies %}
-        	<!-- START BOX -->
+        	<!-- OLD BOX 
         	<li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
         	<div class="firemoverview">
         		<div class="grid_4 eins">
@@ -442,26 +431,31 @@ $(".schliessen").click(function(e){
         	<!-- END BOX -->
 
             <!-- STEP 4 BOX NEW START -->
+            
+            <li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
             <div class="container_12">
                 <div class="step4_box_anbieter">
                 <div class="grid_5 box_anbieter_title">
-                    <h1>Sunconnect</h1>
+                    <h1>{{company.name}}</h1>
                     <h3>Untetritel firma</h3>
                 </div>
 
                 <div class="grid_2 box_anbieter_title_info_one">
-                    <p class="check">Standort</p>
-                    <p class="check">Mitarbeiter</p>
+                    <p class="check">{{company.gemeinde}}</p>
+                    
+                    <p class="check">{{company.number_of_successful_projects}}</p>
                     <p class="check">Gr&uuml;ndung</p>
+                    <p class="check">Lipsum</p>
                 </div>
                 <div class="grid_3 box_anbieter_title_info_one">
-                    <p>Standort<span>Richterswil</span></p>
+                    <p>Produkt<span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></p>
                     <p>Mitarbeiter<span>15</span></p>
                     <p>Gr&uuml;ndung<span>2007</span></p>
                 </div>
                 <div class="grid_2">
                     <p class="step4_star_move">
-                    <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_off.png" />
+                        <div id="star{{company.id}}"></div>
+                    <!--<img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_on.png" /> <img src="{{STATIC_URL}}/step234juli2013/step4_star_off.png" />-->
                     </p>
                 </div>
                 <div class="grid_12 step4_untetitel_box">
@@ -470,7 +464,9 @@ $(".schliessen").click(function(e){
                 <div class="grid_3 ">
                     <div class="step4_boxinformation">
                     <h2>Finanziell</h2>
-                    <p>Gesch&auml;tzte Kosten <span>24000</span></p>
+                    <p>Gesch&auml;tzte Anlagekosten <span>{{company.price}}</span></p>
+                    <p>Gesch&auml;tzte Amortisationszeit <span>{{company.amortization_time}}</span></p>
+                    <p>Gesch&auml;tztr Profit nach 25 Jahren <span>{{company.profit_25}}</span></p>
                     </div>
                 </div>
                 <div class="grid_3">
@@ -494,7 +490,7 @@ $(".schliessen").click(function(e){
                 
 
                 <div class="grid_3 buttongridrechts" >
-                    <a href="#"><p class="greenofferbutton">Offerte anfordern</p></a>
+                    <a href="#"><p class="offertenbutton {{company.id}}">Offerte anfordern</p></a>
                     <p class="unterdemoffertenbutton">Unverbindlich, kostenlos, <br/>unkompliziert</p>
                 </div>
                 <div style="clear"></div>

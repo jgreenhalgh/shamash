@@ -639,9 +639,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	-moz-box-shadow: #c2e1ef 0px 0px 5px; 
 	box-shadow: #c2e1ef 0px 0px 5px;
 	background-color: #f1f2f5;
-	width: 960px;
-	margin: 0px 10px;
-	height: 250px;
+	width: 940px;
+	margin: 5px 0px;
+	margin-bottom: 15px;
+	height: 280px;
 	background: url("bg_box_step4_anbieter.png") repeat-x #f1f2f5;
 }
 
@@ -708,6 +709,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	font-size: 14px;
 
 	color: #212a31;
+	margin-top: -5px;
 }
 
 .step4_untetitel_box span {
@@ -722,15 +724,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 }
 
-.greenofferbutton {
+.buttongridrechts a, .buttongridrechts a:hover {
+	text-decoration: none;
+}
+
+.offertenbutton {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	text-align: center;
 	font-weight: bold;
 	color: #ffffff;
 	padding: 10px 10px;
-	width: 150px;
-	margin-left: 25px;
+	width: 100px;
+	margin-left: 0px;
 
 	background: -moz-linear-gradient(
 		top,
@@ -764,7 +770,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 		0px 1px 0px rgba(255,255,255,0.3);
 }
 
-.greenofferbutton:hover {
+.offertenbutton:hover {
 
 	-moz-box-shadow:
 		0px 1px 2px rgba(35,97,11,1),
@@ -789,6 +795,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	margin: 0px;
 	padding: 0px;
 	margin-top: 5px;
+	/*margin-left: 15px;*/
 }
 
 .step4_boxinformation {
@@ -929,9 +936,101 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .sortierennach {
-	margin-top: 10px;
+	margin-top: -190px;
 	margin-bottom: 10px;
 	text-align: center;
 	width: 100%
 	padding0px;
 }
+
+
+/* HIDDEN OFFER BOX */
+.box_getoffer {
+  display: none;
+  width: 800px;
+  height: 400px;
+  color: ;
+  background-color: #fff;
+}
+.box_getoffer .inner {
+  margin: 40px 20px 40px 20px;
+}
+.box_getoffer h1 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.box_getoffer .eingabetext {
+  font-weight: bold;
+  color: ;
+  margin-bottom: 30px;
+}
+.box_getoffer .smalltext {
+  font-size: 11px;
+  clear: both;
+  text-align: center;
+  padding-top: 15px;
+  line-height: 13px;
+}
+.box_getoffer .schliessen {
+  float: right;
+  display: block;
+  padding: 5px;
+  font-size: 10px;
+  color: ;
+  margin-top: -20px;
+}
+.box_getoffer label {
+  clear: both;
+  display: block;
+}
+.box_getoffer label.error {
+  color: red;
+  float: right;
+  font-size: 11px;
+  margin-top: -5px;
+}
+.box_getoffer input,
+.box_getoffer textarea {
+  float: right;
+  background-color: #fff;
+  padding: 3px 10px 3px 10px;
+  font-size: 13px;
+  margin-top: -3px;
+}
+.box_getoffer input[type="submit"] {
+  background-position: 225px 8px;
+}
+.box_getoffer p,
+.box_getoffer label {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: normal;
+  color: ;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.box_getoffer .rechts {
+  float: right;
+  background-color: ;
+  border-left: 1px solid ;
+  width: 300px;
+  height: 100%;
+  background-image: url(img/anbieter_leftshadow.png);
+  background-repeat: repeat-y;
+}
+.box_getoffer .links {
+  float: left;
+  height: 100%;
+  width: 498px;
+}
+.box_getoffer .links .projektuebersicht {
+  border-width: 1px 0px 1px 0px;
+  padding: 10px 0px;
+  width: 100%;
+}
+.box_getoffer .button {
+  clear: both;
+  float: right;
+  font-color: #fff;
+  background-position: 225px 8px;
+  margin-right: 10px;
