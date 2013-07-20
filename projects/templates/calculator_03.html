@@ -57,31 +57,32 @@
                 $('#selected_e_percentage_span').append(data.percent_of_electricity_from_plant_selected + " %");  
 
 				$('#selected_bottoml_cost_span').empty();
-                $('#selected_bottoml_cost_span').append(data.bottom_line_cost_selected + " kWh"); 
+                $('#selected_bottoml_cost_span').append(data.bottom_line_cost_selected + " CHF");
+
                 $('#selected_price_span').empty();
-                $('#selected_price_span').append(data.price_selected + " kWh"); 
+                $('#selected_price_span').append(data.price_selected + " CHF"); 
 
                 $('#selected_subsidies_span').empty();
-                $('#selected_subsidies_span').append(data.subsidies_selected + " kWh");  
+                $('#selected_subsidies_span').append(data.subsidies_selected + " CHF");  
 
                 $('#selected_money_saved_span').empty();
-                $('#selected_money_saved_span').append(data.money_saved_selected + " kWh");
+                $('#selected_money_saved_span').append(data.money_saved_selected + " CHF");
 
 
 				$('#selected_amortization_span').empty();
-                $('#selected_amortization_span').append(data.amortization_selected + " %");  
+                $('#selected_amortization_span').append(data.amortization_selected + " Jahre");  
 
 				$('#selected_profit_span').empty();
-                $('#selected_profit_span').append(data.profit_selected + " kWh");
-                 
+                $('#selected_profit_span').append(data.profit_selected + " CHF");
+
                 $('#selected_co2_saved_span').empty();
-                $('#selected_co2_saved_span').append(data.co2_selected + " kWh"); 
+                $('#selected_co2_saved_span').append(data.co2_selected + " Tonnen pro Jahr"); 
 
                 $('#selected_km_drivable_span').empty();
-                $('#selected_km_drivable_span').append(data.km_driveable_selected + " kWh");  
+                $('#selected_km_drivable_span').append(data.km_driveable_selected + " km");  
 
                 $('#selected_co2_tree_span').empty();
-                $('#selected_co2_tree_span').append(data.co2_tree_equivalent_selected + " kWh"); 
+                $('#selected_co2_tree_span').append(data.co2_tree_equivalent_selected + " B&auml;ume"); 
   
             });
 
@@ -391,7 +392,7 @@ $(document).ready(function() {
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span id= "selected_price_span">{{price_large}} CHF</span>
+			<span id= "selected_price_span">{{price_medium}} CHF</span>
 		</p>
 		<p class="littleboxunderline">
 			Subventionen in 25 Jahren
@@ -452,13 +453,13 @@ $(document).ready(function() {
 		</p>
 		<p class="littleboxdetails">Details:</p>
 		<p class="littleboxunderline">
-			in km Autofahrt 
+			in Distanz Autofahrt 
 			<span class="frage">
 				<a href="#" data-tooltip="Autos stossen ebenfalls CO<sub>2</sub> aus. Durch den Kauf einer Photovoltaikanlage der ausgew&auml;hlten Gr&ouml;sse kompensieren Sie so viele kilometer Autofahrt.">
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span id= "selected_km_drivable_span">{{km_driveable_medium}}</span>
+			<span id= "selected_km_drivable_span">{{km_driveable_medium}} km</span>
 		</p>
 		<p class="littleboxunderline">
 			in B&auml;umen <br>(welche das CO<sub>2</sub> absorbieren) 
