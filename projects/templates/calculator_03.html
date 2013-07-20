@@ -21,44 +21,43 @@
 <script type='text/javascript'>
 
 
-	$(document).ready(function() {
-		//AJAX stuff
-	    //Deteremines the current URL, eg www.example.com
-	    var currentpath = window.location;
+$(document).ready(function() {
+	//AJAX stuff
+    //Deteremines the current URL, eg www.example.com
+    var currentpath = window.location;
 
-	    //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
-	    
+    //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
+    
 
-	    //The following calls a function when a "slug" link is clicked... - *1
+    //The following calls a function when a "slug" link is clicked... - *1
         $('.selector_box').click(
-            function(){
-                //Stores which slug link was clicked as the variable "object"
-                var object = $(this);
+                function(){
+                        //Stores which slug link was clicked as the variable "object"
+                        var object = $(this);
 
-                //When clicked the color changes to blue. This was used more when debugging
-                //$(this).css("background-color","blue");
-                
-                //The url for the request is taken from the <a> object
-                var url = object.attr("href");
+                        //When clicked the color changes to blue. This was used more when debugging
+                        //$(this).css("background-color","blue");
+                        
+                        //The url for the request is taken from the <a> object
+                        var url = object.attr("href");
 
-                //The request path is fixed, i.e "www.example.com" + "slug/1/"
-                var call_url = currentpath + url;
+                        //The request path is fixed, i.e "www.example.com" + "slug/1/"
+                        var call_url = currentpath + url;
 
-                //Next up is our bread and butter. 
-     
-                $.get(call_url, function(data) {
-                    $('#selected_power_span').empty();
-                    $('#selected_power_span').append(data.power_output_selected + " kWh");  
+                        //Next up is our bread and butter. 
+             
+                        $.get(call_url, function(data) {
+                            $('#selected_power_span').empty();
+                            $('#selected_power_span').append("sele" + " Cents");  
 
-                    //$('#selected_power_span').append(data.price_selected + " Fr.");   
+                            //$('#selected_power_span').append(data.price_selected + " Fr.");  
+                           
+                        });
+
+                        return false;
                 });
-
-            return false;
-
-            });
-		}
-		alert("we got to the end");
-	});
+	alert("we got to the end");
+});
 
 </script>
 
