@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" style="height:auto;">
 <head>
-	<meta charset="utf-8"/>
+<meta charset="utf-8"/>
 
-	<!-- CSS Normilze Stylesheet -->
-	<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
 
-	<!-- CSS GRID Stylesheet -->
-	<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
+<!-- CSS GRID Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
 
-	<!-- JQuery -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
-	<!-- JQuery Lightbox Plugin -->
-	<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
+<!-- JQuery Lightbox Plugin -->
+<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
 
-	<!-- JQuery Validate Plugin -->
-	<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
+<!-- JQuery Validate Plugin -->
+<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
 
-	<script type='text/javascript'>
+<script type='text/javascript'>
+
+
 $(document).ready(function() {
 	//AJAX stuff
     //Deteremines the current URL, eg www.example.com
@@ -47,8 +49,10 @@ $(document).ready(function() {
                         //Next up is our bread and butter. 
              
                         $.get(call_url, function(data) {
-                            $('#selected_price_div').empty();
-                            $('#selected_price_div').append(data.price_selected + " Fr.");  
+                            $('#selected_power_span').empty();
+                            $('#selected_power_span').append("50" + " Cents");  
+
+                            //$('#selected_power_span').append(data.price_selected + " Fr.");  
                            
                         });
 
@@ -245,7 +249,9 @@ $(document).ready(function() {
 			<p>Gespartes CO<sub>2</sub></p>
 		</div>
 		<div class="grid_4">
-			<div id="boxone" class="bigboxblue">
+			<!-- if the user clicks this box the ajax link /plant/(somenumber) is called andit fills the 
+			right data into the details panels -->
+			<div id="boxone" class="bigboxblue" href="/plant/1">
 				<h5>Optimale Anlage f&uuml;r Ihr Dach</h5>
 					<p class="info"> Eine solche Anlage deckt mindestens Hundert Prozent Ihres Energiebedarfes und ist eine optimale Version bez&uuml;glich Kosten und Nutzen. 
 					</p>
@@ -301,7 +307,7 @@ $(document).ready(function() {
 
 		<p class="littlebox">
 			Anlageleistung
-			<span>{{power_output_medium}} kWh
+			<span id= "selected_power_span">{{power_output_medium}} kWh
 				<a href="#" data-tooltip="Etwa diese Menge an Strom produziert die Anlage w&auml;rend einem Jahr. Zum Vergleich: Eine Gl&uuml;hbirne verbraucht etwa 40 kWh pro Jahr">
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
