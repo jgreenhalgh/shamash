@@ -47,7 +47,7 @@
  
             $.get(call_url, function(data) {
                 $('#selected_power_span').empty();
-                $('#selected_power_span').append(power_output_selected + " kWh");  
+                $('#selected_power_span').append(data.power_output_selected + " kWh");  
 
                 //$('#selected_power_span').append(data.price_selected + " Fr.");    
             });
