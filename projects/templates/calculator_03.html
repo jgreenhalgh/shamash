@@ -84,19 +84,19 @@
 
 
 				$('#selected_amortization_span').empty();
-                $('#selected_amortization_span').append(addApostr(data.amortization_selected) + " Jahre");  
+                $('#selected_amortization_span').append(data.amortization_selected + " Jahre");  
 
 				$('#selected_profit_span').empty();
                 $('#selected_profit_span').append(addApostr(data.profit_selected) + " CHF");
 
                 $('#selected_co2_saved_span').empty();
-                $('#selected_co2_saved_span').append(addApostr(data.co2_selected) + " Tonnen pro Jahr"); 
+                $('#selected_co2_saved_span').append(data.co2_selected + " Tonnen pro Jahr"); 
 
                 $('#selected_km_drivable_span').empty();
                 $('#selected_km_drivable_span').append(addApostr(data.km_driveable_selected) + " km");  
 
                 $('#selected_co2_tree_span').empty();
-                $('#selected_co2_tree_span').append(addApostr(data.co2_tree_equivalent_selected) + " B&auml;ume"); 
+                $('#selected_co2_tree_span').append(data.co2_tree_equivalent_selected + " B&auml;ume"); 
   
             });
 
