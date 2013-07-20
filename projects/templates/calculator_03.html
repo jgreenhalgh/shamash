@@ -30,7 +30,7 @@ $(document).ready(function() {
     
 
     //The following calls a function when a "slug" link is clicked... - *1
-        $('.selector_box').click(
+        $('#selector_box').click(
                 function(){
                         //Stores which slug link was clicked as the variable "object"
                         var object = $(this);
@@ -249,7 +249,7 @@ $(document).ready(function() {
 		<div class="grid_4">
 			<!-- if the user clicks this box the ajax link /plant/(somenumber) is called andit fills the 
 			right data into the details panels -->
-			<div id="boxone" class="bigboxblue, selector_box" href="/plant/2">
+			<div id="boxone" class="bigboxblue" id="selector_box" href="/plant/2">
 				<h5>Optimale Anlage f&uuml;r Ihr Dach</h5>
 					<p class="info"> Eine solche Anlage deckt mindestens Hundert Prozent Ihres Energiebedarfes und ist eine optimale Version bez&uuml;glich Kosten und Nutzen. 
 					</p>
@@ -264,7 +264,7 @@ $(document).ready(function() {
 		</div>
 		<div class="grid_1"> &nbsp;</div>
 		<div class="grid_4">
-			<div id="boxtwo" class="bigboxwhite, selector_box" href="/plant/3">
+			<div id="boxtwo" class="bigboxwhite" id="selector_box" href="/plant/3">
 				<h5>Gr&ouml;sstm&ouml;gliche Anlage f&uuml;r Ihr Dach </h5>
 					<p class="info"> Eine solche Anlage nutzt Ihr Dach maximal aus und produziert somit die f&uuml;r Ihre Dachfl&auml;che gr&ouml;sstm&ouml;gliche Energie</p>
 					<p class="lines"> <span> {{power_output_large}} kWH</span>  saubere Energie aus der Schweiz </p>
