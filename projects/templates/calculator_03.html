@@ -43,12 +43,26 @@
             //The request path is fixed, i.e "www.example.com" + "slug/1/"
             var call_url = currentpath + url;
 
+            //This funtion adds apostrophes to separate the thousands which is otherwise done
+            //by django template formatting
+            function addApostr(nStr) {
+			    nStr += '';
+			    var x = nStr.split('.');
+			    var x1 = x[0];
+			    var x2 = x.length > 1 ? '.' + x[1] : '';
+			    var rgx = /(\d+)(\d{3})/;
+			    while (rgx.test(x1)) {
+			        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			    }
+			    return x1 + x2;
+			}
+
             //In the next step we empty the vlaues in the detail sections
             //and fill them with new values from django's ajax view
  
             $.get(call_url, function(data) {
                 $('#selected_power_span').empty();
-                $('#selected_power_span').append(data.power_output_selected + " kWh"); 
+                $('#selected_power_span').append(addApostrdata.power_output_selected) + " kWh"); 
 
                 $('#selected_area_span').empty();
                 $('#selected_area_span').append(data.area_selected + " m<sup>2</sup>");  
