@@ -56,14 +56,16 @@
 				$('#selected_e_percentage_span').empty();
                 $('#selected_e_percentage_span').append(data.percent_of_electricity_from_plant_selected + " %");  
 
-				// $('#selected_power_span').empty();
-    //             $('#selected_power_span').append(data.power_output_selected + " kWh"); 
+				$('#selected_bottoml_cost_span').empty();
+                $('#selected_bottoml_cost_span').append(data.bottom_line_cost_selected + " kWh"); 
+                $('#selected_price_span').empty();
+                $('#selected_price_span').append(data.price_selected + " kWh"); 
 
-    //             $('#selected_power_span').empty();
-    //             $('#selected_power_span').append(data.power_output_selected + " kWh"); 
+                $('#selected_subsidies_span').empty();
+                $('#selected_subsidies_span').append(data.subsidies_selected + " kWh");  
 
-    //             $('#selected_power_span').empty();
-    //             $('#selected_power_span').append(data.power_output_selected + " kWh");  
+                $('#selected_money_saved_span').empty();
+                $('#selected_money_saved_span').append(data.money_saved_selected + " kWh"); 
   
             });
 
@@ -373,7 +375,7 @@ $(document).ready(function() {
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span>{{price_medium}} CHF</span>
+			<span id= "selected_price_span">{{price_medium}} CHF</span>
 		</p>
 		<p class="littleboxunderline">
 			Subventionen in 25 Jahren
@@ -382,7 +384,7 @@ $(document).ready(function() {
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span>{{subsidies}} CHF</span>
+			<span id= "selected_subsidies_span">{{subsidies}} CHF</span>
 		</p>
 		<p class="littleboxunderline">
 			Einsparungen pro Monat
@@ -391,7 +393,7 @@ $(document).ready(function() {
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span>{{money_saved_medium}} CHF</span>
+			<spanid= "selected_money_saved_span"> {{money_saved_medium}} CHF</span>
 		</p>
 		<p class="littleboxunderline">
 			Amortiastionszeit
