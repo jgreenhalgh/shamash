@@ -62,7 +62,7 @@
  
             $.get(call_url, function(data) {
                 $('#selected_power_span').empty();
-                $('#selected_power_span').append(addApostrdata.power_output_selected) + " kWh"); 
+                $('#selected_power_span').append(addApostr(data.power_output_selected) + " kWh"); 
 
                 $('#selected_area_span').empty();
                 $('#selected_area_span').append(data.area_selected + " m<sup>2</sup>");  
