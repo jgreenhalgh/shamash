@@ -43,13 +43,28 @@
             //The request path is fixed, i.e "www.example.com" + "slug/1/"
             var call_url = currentpath + url;
 
-            //Next up is our bread and butter. 
+            //In the next step we empty the vlaues in the detail sections
+            //and fill them with new values from django's ajax view
  
             $.get(call_url, function(data) {
                 $('#selected_power_span').empty();
-                $('#selected_power_span').append(data.power_output_selected + " kWh");  
+                $('#selected_power_span').append(data.power_output_selected + " kWh"); 
 
-                //$('#selected_power_span').append(data.price_selected + " Fr.");    
+                $('#selected_area_span').empty();
+                $('#selected_area_span').append(data.area_selected + " m<sup>2</sup>");  
+
+				$('#selected_e_percentage_span').empty();
+                $('#selected_e_percentage_span').append(data.percent_of_electricity_from_plant_selected + " %");  
+
+				// $('#selected_power_span').empty();
+    //             $('#selected_power_span').append(data.power_output_selected + " kWh"); 
+
+    //             $('#selected_power_span').empty();
+    //             $('#selected_power_span').append(data.power_output_selected + " kWh"); 
+
+    //             $('#selected_power_span').empty();
+    //             $('#selected_power_span').append(data.power_output_selected + " kWh");  
+  
             });
 
             return false;
@@ -319,7 +334,7 @@ $(document).ready(function() {
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span>{{area_medium_str}} m<sup>2</sup></span>
+			<span id= "selected_area_span">{{area_medium_str}} m<sup>2</sup></span>
 		</p>
 		<p class="littleboxunderline">
 			Deckung Ihres Strombedarfes
@@ -328,7 +343,7 @@ $(document).ready(function() {
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
 				</a>
 			</span>
-			<span>{{percent_of_electricity_from_plant_medium}}%</span>
+			<span id= "selected_e_percentage_span">{{percent_of_electricity_from_plant_medium}}%</span>
 		</p>
 
 	</div>
@@ -343,7 +358,7 @@ $(document).ready(function() {
 
 		<p class="littlebox">
 			Kosten Nach Subventionen
-			<span>
+			<span id= "selected_bottoml_cost_span">
 			{{bottom_line_cost_medium}} CHF
 				<a href="#" data-tooltip="Das sind die gesch&auml;tzen Kosten anch Abzug aller Subventionen, welche man f&uuml;r die Anlage w&auml;rend seiner Lebensdauer erh&auml;hlt. Dieses kann entweder aus einer einmaligen Beitragszahlungen oder aus einer Einspeiseverg&uuml;tung bestehen, welche w&auml;hrend der gesamten Lebensdauer der Anlage ausbezahlt wird.">
 					<img src="{{STATIC_URL}}/step234juli2013/fragezeichen.png" />
