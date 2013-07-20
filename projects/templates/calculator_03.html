@@ -21,72 +21,70 @@
 <script type='text/javascript'>
 
 
-$(document).ready(function() {
-	//AJAX stuff
-    //Deteremines the current URL, eg www.example.com
-    var currentpath = window.location;
+	$(document).ready(function() {
+		//AJAX stuff
+	    //Deteremines the current URL, eg www.example.com
+	    var currentpath = window.location;
 
-    //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
-    
+	    //Initally, each link turned to red. This is an indicator the jQuery is working correctly.
+	    
 
-    //The following calls a function when a "slug" link is clicked... - *1
-        $('.selector_box').click(
-                function(){
-                        //Stores which slug link was clicked as the variable "object"
-                        var object = $(this);
+	    //The following calls a function when a "slug" link is clicked... - *1
+        $('.selector_box').click(function(){
+            //Stores which slug link was clicked as the variable "object"
+            var object = $(this);
 
-                        //When clicked the color changes to blue. This was used more when debugging
-                        //$(this).css("background-color","blue");
-                        
-                        //The url for the request is taken from the <a> object
-                        var url = object.attr("href");
+            //When clicked the color changes to blue. This was used more when debugging
+            //$(this).css("background-color","blue");
+            
+            //The url for the request is taken from the <a> object
+            var url = object.attr("href");
 
-                        //The request path is fixed, i.e "www.example.com" + "slug/1/"
-                        var call_url = currentpath + url;
+            //The request path is fixed, i.e "www.example.com" + "slug/1/"
+            var call_url = currentpath + url;
 
-                        //Next up is our bread and butter. 
-             
-                        $.get(call_url, function(data) {
-                            $('#selected_power_span').empty();
-                            $('#selected_power_span').append("sele" + " Cents");  
+            //Next up is our bread and butter. 
+ 
+            $.get(call_url, function(data) {
+                $('#selected_power_span').empty();
+                $('#selected_power_span').append(power_output_selected + " kWh");  
 
-                            //$('#selected_power_span').append(data.price_selected + " Fr.");  
-                           
-                        });
+                //$('#selected_power_span').append(data.price_selected + " Fr.");    
+            });
 
-                        return false;
-                });
-	alert("we got to the end");
-});
-
+            return false;
+        });
+	});
 </script>
 
-	<!-- Popup Login-Function -->
-	<script type="text/javascript" id="sourcecode">
-$(document).ready(function() {
- 
-        var registerBox=window.location.hash;
-        if (window.location == "http://www.instantsolar.ch/results_thermal/") {
-			// show loginbox
-			// alert("du bist drin");
-			
-			
-			$(".prompt_box_login").lightbox_me({
-				centered: true,
-				onLoad: function() {
-			$(".inner").find('input:first').focus()
-			},
-			});	
-		}
-});
+
+
+<!-- Popup Login-Function -->
+<script type="text/javascript" id="sourcecode">
+	$(document).ready(function() {
+	 
+	        var registerBox=window.location.hash;
+	        if (window.location == "http://www.instantsolar.ch/results_thermal/") {
+				// show loginbox
+				// alert("du bist drin");
+				
+				
+				$(".prompt_box_login").lightbox_me({
+					centered: true,
+					onLoad: function() {
+				$(".inner").find('input:first').focus()
+				},
+				});	
+			}
+	});
 </script>
 
 	
 
 
-	<!-- Header Version Juli 2013 -->
+<!-- Header Version Juli 2013 -->
 
-	<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css">
+<link rel="stylesheet" href="{{STATIC_URL}}/step234juli2013/stylestep3.css" type="text/css">
 
 
 <!-- Step 3 Click between the big selection boxes: change of content and design
@@ -95,90 +93,91 @@ $(document).ready(function() {
 	and the right box has a unique id "boxtwo"
 
  -->
- <script type='text/javascript'>
+
+<script type='text/javascript'>
 // see description above
 
 //on click of boxtwo (right box), if the box has tha class bigboxwhite, change the style of the box by adding the class "bigboxblue" to it and remove the class "bigboxblue" fromt the first box. change also the button (from white to blue) and move the big arrow from the content-area under the box
 
 //id for the buttons: left: buttonboxone and right: buttonboxtwo
 
-$(document).ready(function() {
-	$('#boxtwo').click(function(){
-	  // check if box two has the class "bigboxwhite"
-	  if ($('#boxtwo').hasClass('bigboxwhite') == true) {
-	  	// change the class of boxtwo to bigboxblue
-	  	$('#boxtwo').removeClass('bigboxwhite').addClass('bigboxblue');
-	  	// change the button-class
-	  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
-	  	// change button text
-	  	$('#buttonboxtwo').html('Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" />');
+	$(document).ready(function() {
+		$('#boxtwo').click(function(){
+		  // check if box two has the class "bigboxwhite"
+		  if ($('#boxtwo').hasClass('bigboxwhite') == true) {
+		  	// change the class of boxtwo to bigboxblue
+		  	$('#boxtwo').removeClass('bigboxwhite').addClass('bigboxblue');
+		  	// change the button-class
+		  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
+		  	// change button text
+		  	$('#buttonboxtwo').html('Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" />');
 
-	  	// change the class of box one to bigboxwhite
-	  	$('#boxone').removeClass('bigboxblue').addClass('bigboxwhite');
-	  	// change button of button one 
-	  	$('#buttonboxone').removeClass('detailsuntenanzeigen1').addClass('detailsuntenanzeigen2');
-	  	// change text of button one
-	  	$('#buttonboxone').html('Details anzeigen');
+		  	// change the class of box one to bigboxwhite
+		  	$('#boxone').removeClass('bigboxblue').addClass('bigboxwhite');
+		  	// change button of button one 
+		  	$('#buttonboxone').removeClass('detailsuntenanzeigen1').addClass('detailsuntenanzeigen2');
+		  	// change text of button one
+		  	$('#buttonboxone').html('Details anzeigen');
 
-	  	// move arrow underneath the box two
-	  	$('.overviewarrowclass').css({'margin-left':'690px'});	
+		  	// move arrow underneath the box two
+		  	$('.overviewarrowclass').css({'margin-left':'690px'});	
 
-	  }
-	  else {
-	  	// do nothing (box two is already selected)
-	  	// scroll down to the selection ?
+		  }
+		  else {
+		  	// do nothing (box two is already selected)
+		  	// scroll down to the selection ?
 
 
 
-	  };
-	});
+		  };
+		});
 
-	// if you click on box one and it is not selected (has the class bigboxwhite)
+		// if you click on box one and it is not selected (has the class bigboxwhite)
+
+			$('#boxone').click(function(){
+		  // check if box one has the class "bigboxwhite"
+		  if ($('#boxone').hasClass('bigboxwhite') == true) {
+		  	// change the class of boxone to bigboxblue
+		  	$('#boxone').removeClass('bigboxwhite').addClass('bigboxblue');
+		  	// change the button-class of button one
+		  	$('#buttonboxone').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
+		  	// change button text
+		  	$('#buttonboxone').html('Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" />');
+
+		  	// change the class of box two to bigboxwhite
+		  	$('#boxtwo').removeClass('bigboxblue').addClass('bigboxwhite');
+		  	// change button of button two 
+		  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen1').addClass('detailsuntenanzeigen2');
+		  	// change text of button two
+		  	$('#buttonboxtwo').html('Details anzeigen');
+
+		  	// move arrow underneath the box one
+		  	$('.overviewarrowclass').css({'margin-left':'285px'});	
+		  }
+		  else {
+		  	// do nothing (box two is already selected)
+		  	// scroll down to the selection ?
+		  };
+		});
+
+		// scroll down, if click on box one or box two
+		$('#boxtwo').click(function(){
+			  	// scroll down
+		  	$('html, body').animate({
+	        	scrollTop: $( "#myAnchor" ).offset().top}, 600);
+	    		return false;
+	    });
 
 		$('#boxone').click(function(){
-	  // check if box one has the class "bigboxwhite"
-	  if ($('#boxone').hasClass('bigboxwhite') == true) {
-	  	// change the class of boxone to bigboxblue
-	  	$('#boxone').removeClass('bigboxwhite').addClass('bigboxblue');
-	  	// change the button-class of button one
-	  	$('#buttonboxone').removeClass('detailsuntenanzeigen2').addClass('detailsuntenanzeigen1');
-	  	// change button text
-	  	$('#buttonboxone').html('Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" />');
+			  	// scroll down
+		  	$('html, body').animate({
+	        	scrollTop: $( "#myAnchor" ).offset().top}, 600);
+	    		return false;
+	    });
 
-	  	// change the class of box two to bigboxwhite
-	  	$('#boxtwo').removeClass('bigboxblue').addClass('bigboxwhite');
-	  	// change button of button two 
-	  	$('#buttonboxtwo').removeClass('detailsuntenanzeigen1').addClass('detailsuntenanzeigen2');
-	  	// change text of button two
-	  	$('#buttonboxtwo').html('Details anzeigen');
-
-	  	// move arrow underneath the box one
-	  	$('.overviewarrowclass').css({'margin-left':'285px'});	
-	  }
-	  else {
-	  	// do nothing (box two is already selected)
-	  	// scroll down to the selection ?
-	  };
 	});
 
-	// scroll down, if click on box one or box two
-	$('#boxtwo').click(function(){
-		  	// scroll down
-	  	$('html, body').animate({
-        	scrollTop: $( "#myAnchor" ).offset().top}, 600);
-    		return false;
-    });
-
-	$('#boxone').click(function(){
-		  	// scroll down
-	  	$('html, body').animate({
-        	scrollTop: $( "#myAnchor" ).offset().top}, 600);
-    		return false;
-    });
-
-});
-
- </script>
+</script>
 
 
 <!-- QTip CSS + JQuery/File -->
