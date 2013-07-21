@@ -22,6 +22,48 @@
 <!-- JQuery Validate Plugin -->
 <script src="{{STATIC_URL}}/jquery.validate.js"/></script>
 
+<!-- JQuery Validate for STEP 4!  -->
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $.validator.setDefaults({
+        errorClass: 'formerror',
+        errorElement: 'div',
+    });
+    
+    $("#offerteabschicken").validate({
+      // for the rules, use the id-names of the fields
+      rules: {
+         name: { 
+            required: true,
+            minlength: 2,
+        },
+         email: { 
+            required: true,
+            minlength: 2,
+        }
+        },
+        messages: {
+            name: {
+                required: "Bitte NAME",
+                minlength: "Ung&uuml;ltiger Ort"
+            },
+            email: {
+                required: "Bitte Email",
+                minlength: "Ung&uuml;ltiger Ort"
+            },
+        },
+    
+        success: function(element) {
+            element.remove();
+        }
+        
+    });
+    
+
+});
+</script>
+
 <!-- CSS Master Stylesheet 
 <link rel='stylesheet' href="{{STATIC_URL}}/style.css"/> 
 -->

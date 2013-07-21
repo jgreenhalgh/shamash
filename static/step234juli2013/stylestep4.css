@@ -1124,7 +1124,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 }
 
-.box_getoffer .box_content label input, .box_getoffer .box_content label select {
+.box_getoffer .box_content label input, .box_getoffer .box_content label select, .box_getoffer .box_content label textarea {
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 16px;
 	float:right;
