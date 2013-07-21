@@ -294,8 +294,11 @@ body {
 }
 
 .overviewclass p.littlebox span.question {
+	float: right;
 	position: absolute;
 	padding-left: 10px;
+	background-color: #B1C5CB;
+	color: #fff;
 }
 
 .overviewclass p.littleboxdetails {
