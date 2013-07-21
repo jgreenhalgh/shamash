@@ -302,6 +302,8 @@ $(document).ready(function() {
 			<p>Deckung Eigenbedarf</p>
 			<p>Ersparnis Stromrechnung</p>
 			<p>Gespartes CO<sub>2</sub></p>
+			<p></p>
+			<p id="myAnchor"></p>
 		</div>
 		<div class="grid_4">
 			<!-- if the user clicks this box the ajax link /plant/(somenumber) is called andit fills the 
@@ -313,7 +315,7 @@ $(document).ready(function() {
 					<p class="lines"> <span> {{power_output_medium}} kWH</span>  saubere Energie aus der Schweiz </p>
 					<p class="lines"> Deckung von <span> {{percent_of_electricity_from_plant_medium}} % </span>  Ihres Strom-Eigenbedarfes </p>
 					<p class="lines"> Einsparung von <span> {{money_saved_medium}} CHF</span> an Stromrechnung </p>
-					<p  id="myAnchor"  class="lines"> Reduktion von <span> {{co_2_saved_medium}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
+					<p    class="lines"> Reduktion von <span> {{co_2_saved_medium}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
 				<br/>
 				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" /></p>
 				<br />
