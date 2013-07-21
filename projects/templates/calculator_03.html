@@ -313,8 +313,8 @@ $(document).ready(function() {
 					<p class="lines"> <span> {{power_output_medium}} kWH</span>  saubere Energie aus der Schweiz </p>
 					<p class="lines"> Deckung von <span> {{percent_of_electricity_from_plant_medium}} % </span>  Ihres Strom-Eigenbedarfes </p>
 					<p class="lines"> Einsparung von <span> {{money_saved_medium}} CHF</span> an Stromrechnung </p>
-					<p class="lines"> Reduktion von <span> {{co_2_saved_medium}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
-				<br id="myAnchor" />
+					<p  id="myAnchor"  class="lines"> Reduktion von <span> {{co_2_saved_medium}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
+				<br/>
 				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" /></p>
 				<br />
 			</div>
@@ -588,12 +588,12 @@ $(document).ready(function() {
 
 		
 		
-	<form action="/compare/" method="post" style="width: 200px;">
+	<form action="/compare/" method="post">
 
-							<input id="step2radiobutton_med" type="radio" name="plant_size" value="medium" checked>
+							<input id="step2radiobutton_med" type="radio" name="plant_size" value="medium" style="margin-top:-9999px; position: absolute;" checked>
 							Mittel
 							<br>
-							<input id="step2radiobutton_big" type="radio" name="plant_size" value="large">
+							<input id="step2radiobutton_big" type="radio" style="margin-top:-9999px; position: absolute;" name="plant_size" value="large">
 							Gross
 							<br>
 							{% csrf_token %}
