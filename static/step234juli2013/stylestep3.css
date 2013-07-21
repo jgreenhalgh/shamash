@@ -348,7 +348,10 @@ body {
 
 /* weiter section */
 
+
 .weiterstep3 {
+
+	background: #F2F2F2;
 
 	border-top: solid 2px #D6E0E2;
 	border-bottom: solid 2px #D6E0E2;
@@ -360,7 +363,7 @@ body {
 
 .weiterstep3 div {
 	float:left;
-	margin-left:200px;
+	margin-left: 130px;
 	text-align: right;
 }
 
