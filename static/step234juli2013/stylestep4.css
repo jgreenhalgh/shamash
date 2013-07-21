@@ -1045,6 +1045,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	width: 945px;
 	height: 587px;
 	background: url("step4_bg_offerbox.png") no-repeat;
+	display: none;
 }
 
 .box_getoffer .box_sidebar_left {
