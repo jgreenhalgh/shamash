@@ -491,17 +491,20 @@ $(document).ready(function() {
             <li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
             <div class="container_12">
                 <div class="step4_box_anbieter">
-                <div class="grid_5 box_anbieter_title">
+                <div class="grid_4 box_anbieter_title">
                     <h1>{{company.name}}</h1>
                     <h3>Untetritel firma</h3>
                 </div>
 
-                <div class="grid_2 box_anbieter_title_info_one">
-                    <p class="check">{{company.gemeinde}}</p>
+                <div class="grid_3 box_anbieter_title_info_one">
+                    <!--<p class="check">{{company.gemeinde}}</p>
                     
                     <p class="check">{{company.number_of_successful_projects}}</p>
                     <p class="check">Gr&uuml;ndung</p>
-                    <p class="check">Lipsum</p>
+                    <p class="check">Lipsum</p>-->
+                    <p>Standort<span>{{company.gemeinde}}</span></p>
+                    <p>Gr&uuml;ndung<span>2007</span></p>
+                    <p>Lipsum<span>Horovitz</span></p>
                 </div>
                 <div class="grid_3 box_anbieter_title_info_one">
                     <p>Produkt<span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></p>

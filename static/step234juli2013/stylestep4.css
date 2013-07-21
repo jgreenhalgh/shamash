@@ -632,12 +632,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 .step4_box_anbieter {
 	margin: 0;
 	padding: 0;
+	border: 0px solid #ffffff;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	-webkit-box-shadow: #c2e1ef 0px 0px 5px;
-	-moz-box-shadow: #c2e1ef 0px 0px 5px; 
-	box-shadow: #c2e1ef 0px 0px 5px;
+	-webkit-box-shadow: #98cbf3 0px 0px 5px;
+	-moz-box-shadow: #98cbf3 0px 0px 5px; 
+	box-shadow: #98cbf3 0px 0px 5px;
 	background-color: #f1f2f5;
 	width: 940px;
 	margin: 5px 0px;
@@ -646,14 +647,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	background: url("bg_box_step4_anbieter.png") repeat-x #f1f2f5;
 }
 
+.step4_box_anbieter:hover {
+	-webkit-box-shadow: #008cf8 0px 0px 5px;
+	-moz-box-shadow: #008cf8 0px 0px 5px; 
+	box-shadow: #008cf8 0px 0px 5px;	
+
+	transition: 0.2s;
+}
+
 .box_anbieter_title {
 
 }
 
 .box_anbieter_title h1, .box_anbieter_title h3 {
 	font-family: "Arial", Sans-serif;
-	color: #07111C;
-	text-shadow:0px 1px #ffffff;
+	color: #ffffff;
+	text-shadow:0px 1px #185183;
 	font-size: 20px;
 	margin: 0;
 	padding: 12px 0px 0px 10px;
@@ -661,14 +670,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 .box_anbieter_title h3 {
-	color: #6f7e8a;
-	text-shadow:0px 1px #ffffff;
+	color: #abccea;
+	text-shadow:0px 1px #185183;
 	font-size: 13px;
 	padding: 0px 0px 0px 10px;
 }
 
 .box_anbieter_title_info_one {
-	border-right: #F1F2F5 solid 1px;
+	border-right: #6098ca solid 1px;
 	height: 61px;
 	padding: 0px;
 	margin:0px;
@@ -678,22 +687,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 .box_anbieter_title_info_one p {
 	padding: 0px;
 	margin:0px;
-	color: #5e6c79;
+	color: #d6e5f3;
 	font-family: "Arial", Sans-serif;
 	font-size: 12px;
 	padding-left: 15px;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 .box_anbieter_title_info_one span {
-	
+	font-weight: normal;
 	float: right;
 	padding-right: 15px;
-	color: #0E2033;
+	color: #ffffff;
+	text-shadow:0px 1px #185183;
 }
 
 .box_anbieter_title_info_one p.check {
-	color: #0E2033;
+	color: #abd7ff;
 	font-weight: normal;
 	padding-left: 58px;
 	background: url("step4_check.png") no-repeat;
