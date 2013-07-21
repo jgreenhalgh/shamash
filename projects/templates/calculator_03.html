@@ -170,6 +170,10 @@
 		  	// move arrow underneath the box two
 		  	$('.overviewarrowclass').css({'margin-left':'690px'});	
 
+		  	// check the big-radiobutton (id="step2radiobutton_big") and remove checked from (id="step2radiobutton_med")
+		  	$("#step2radiobutton_med").removeAttr("checked");
+		  	$("#step2radiobutton_big").attr("checked", "checked");
+
 		  }
 		  else {
 		  	// do nothing (box two is already selected)
@@ -200,7 +204,12 @@
 		  	$('#buttonboxtwo').html('Details anzeigen');
 
 		  	// move arrow underneath the box one
-		  	$('.overviewarrowclass').css({'margin-left':'285px'});	
+		  	$('.overviewarrowclass').css({'margin-left':'285px'});
+
+		  	// check the middle-radiobutton (id="step2radiobutton_med") and remove checked from (id="step2radiobutton_big")
+		  	$("#step2radiobutton_big").removeAttr("checked");
+		  	$("#step2radiobutton_med").attr("checked", "checked");
+
 		  }
 		  else {
 		  	// do nothing (box two is already selected)
@@ -493,6 +502,7 @@ $(document).ready(function() {
 
 		<div class="clear"></div>
 
+		<!--
 		<div class="grid_2 step3projectdurationbox">
 			<div class="arrow_box">
 					<h2>STANDORT W&Auml;HLEN</h2>
@@ -527,6 +537,7 @@ $(document).ready(function() {
 					<p>Lorem ipsum dolor sit amet sit amet sit amet dolor sit amet sit amet sit amet</p>
 			</div>
 		</div>
+		-->
 
 		<div class="grid_12 greentimeline">
 		</div>
@@ -579,13 +590,10 @@ $(document).ready(function() {
 		
 	<form action="/compare/" method="post" style="width: 200px;">
 
-							<input type="radio" name="plant_size" value="small">
-							Klein
-							<br>
-							<input type="radio" name="plant_size" value="medium">
+							<input id="step2radiobutton_med" type="radio" name="plant_size" value="medium" checked>
 							Mittel
 							<br>
-							<input type="radio" name="plant_size" value="large">
+							<input id="step2radiobutton_big" type="radio" name="plant_size" value="large">
 							Gross
 							<br>
 							{% csrf_token %}
