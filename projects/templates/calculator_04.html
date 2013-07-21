@@ -523,7 +523,68 @@ $(document).ready(function() {
             <!-- >>>> This is a number of prompt boxes for each element in the companies list above s --> 
              {% for company in list_of_companies %}
                 <div class="box_getoffer" id="{{company.id}}">
-                	<div class="rechts">
+                	
+
+                    <div class="box_sidebar_left">
+            <div style="padding:40px 20px 20px 20px;">
+                <h2>Suntech Gmbh</h2>
+                <p>Untertitel Solaranbieter</p>
+            </div>
+        </div>
+        <div class="box_content">
+            <div style="padding:40px 20px 20px 40px;">
+                <a href="#"><span class="schliessen">Schliessen</span></a>
+                <h2>Kostenlose Offerten einholen</h2>
+                <p>Untertitel Solaranbieter</p>
+
+                    <form method="post" action="/request_quote/" id="offerteabschicken">
+
+                    <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
+                    <label> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
+
+                    <div class="separator">&nbsp;</div>    
+                    <label> Name <span>*</span>  {{form.name}} <input name="name" type="text" /></label>
+                    <div class="separator">&nbsp;</div>    
+                    <label> Email <span>*</span> {{form.email}} <input name="email" type="text" /></label>
+                    <div class="separator">&nbsp;</div>    
+                    <label> Kommentar {{form.commentary}} <input type="text" /></label>
+
+                    <div class="separator">&nbsp;</div>    
+                    <label>
+                            Lorem ipsum? <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+                    </label>
+
+                    <div class="separator">&nbsp;</div>    
+                    <label>
+                            Lorem ipsum? <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="opel">Opel</option>
+          <option value="audi">Audi</option>
+        </select>
+                    </label>
+            </div>
+        </div>
+        <div class="box_footer">
+            <div style="padding:40px 20px 20px 40px;">
+                
+                <p class="">Lorem ipsum dolor sit amet non.</p>
+
+                <input type="submit" value="Offerte einholen" class="button_popup_step4" >
+                {% csrf_token %}
+                </form>
+
+                <p style="clear: both; "></p>
+                <p class="under">kostenlos und unverbindlich</p>
+            </div>
+        </div>                    
+
+                    <!--<div class="rechts">
                 		<div class="inner">
                 			<a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
                 			<p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
@@ -554,6 +615,7 @@ $(document).ready(function() {
                 			</p>
                 		</div>
                 	</div>
+                    -->
                 </div>
             {% endfor %}
         </ul>
