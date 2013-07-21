@@ -296,7 +296,11 @@ body {
 .overviewclass p.littlebox span.question {
 	float: right;
 	position: absolute;
-	padding-left: 10px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-left: 10px;
+	font-weight: normal;
+	font-style: italic;
 	background-color: #B1C5CB;
 	color: #fff;
 }
@@ -316,7 +320,7 @@ body {
 	border-bottom: solid 1px #e4eaeb;
 	text-align: left;
 	margin: 0px;
-	padding: 8px 15px 8px 20px;
+	padding: 15px 15px 8px 20px;
 	font-size: 14px;
 	font-family: Arial, "Helvetica", Sans-serif;
 	color: black;	
@@ -356,7 +360,7 @@ body {
 
 .weiterstep3 div {
 	float:left;
-	margin-left:230px;
+	margin-left:200px;
 	text-align: right;
 }
 
