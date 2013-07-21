@@ -652,7 +652,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .box_anbieter_title h1, .box_anbieter_title h3 {
 	font-family: "Arial", Sans-serif;
-	color: #fff;
+	color: #07111C;
+	text-shadow:0px 1px #ffffff;
 	font-size: 20px;
 	margin: 0;
 	padding: 12px 0px 0px 10px;
@@ -661,12 +662,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .box_anbieter_title h3 {
 	color: #6f7e8a;
+	text-shadow:0px 1px #ffffff;
 	font-size: 13px;
 	padding: 0px 0px 0px 10px;
 }
 
 .box_anbieter_title_info_one {
-	border-right: #313940 solid 1px;
+	border-right: #F1F2F5 solid 1px;
 	height: 61px;
 	padding: 0px;
 	margin:0px;
@@ -687,11 +689,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	
 	float: right;
 	padding-right: 15px;
-	color: #fff;
+	color: #0E2033;
 }
 
 .box_anbieter_title_info_one p.check {
-	color: #fff;
+	color: #0E2033;
 	font-weight: normal;
 	padding-left: 58px;
 	background: url("step4_check.png") no-repeat;
