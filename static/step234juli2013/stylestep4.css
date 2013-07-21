@@ -1046,12 +1046,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 24px;
 	font-weight: bold;
+	text-shadow:0px 1px #185183;
+
 }
 
 .box_getoffer .box_sidebar_left p {
 	margin: 0px;
 	padding: 4px 0px 0px 0px;
-	color: #6b7a8a;
+	color: #cae4f2;
+	text-shadow:0px 1px #185183;
+
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 16px;
 }
@@ -1083,6 +1087,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 24px;
 	font-weight: bold;
+
 }
 
 .box_getoffer .box_content p {
