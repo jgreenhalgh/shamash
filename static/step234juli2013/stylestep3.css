@@ -290,6 +290,11 @@ body {
 .overviewclass p.littlebox span {
 	color: black;
 	font-weight: bold;
+	padding-left: 5px;
+}
+
+.overviewclass p.littlebox span.question {
+	position: absolute;
 	padding-left: 10px;
 }
 
