@@ -946,7 +946,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 
-/* HIDDEN OFFER BOX */
+/* HIDDEN OFFER BOX 
 .box_getoffer {
   display: none;
   width: 800px;
@@ -1035,7 +1035,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
   float: right;
   font-color: #fff;
   background-position: 225px 8px;
-  margin-right: 10px;
+  margin-right: 10px; 
+ } */
 
   /* OFFERTEN POPUP BOX */
 
