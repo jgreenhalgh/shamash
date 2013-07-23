@@ -489,7 +489,7 @@ $(document).ready(function() {
                 <div class="grid_3 ">
                     <div class="step4_boxinformation">
                     <h2>Finanziell</h2>
-                    <p>Anlagekosten <span>ca. {{company.price}}  {{company.reference_product}}({{company.reference_product.country_of_origin}})</span></p>
+                    <p>Anlagekosten <span>ca. {{company.price}}  </span></p>
                     <p>Amortisationszeit <span>ca. {{company.amortization_time}}</span></p>
                     <p>Profit nach 25 Jahren <span>ca. {{company.profit_25}}</span></p>
                     </div>
@@ -498,8 +498,8 @@ $(document).ready(function() {
                 <div class="step4_boxinformation">
             
                     <h2>Technische Details</h2>
-                    <p>Anlageleistung <span>test</span></p>
-                    <p>Verwendeter Wechselrichter <span>test</span></p>
+                    <p>Marke <span>{{company.reference_product}}</span></p>
+                    <p>Produktherkunft <span>{{company.reference_product.country_of_origin}}</span></p>
                     </div>
 
                 </div>
@@ -507,8 +507,8 @@ $(document).ready(function() {
                     <div class="step4_boxinformation">
 
                     <h2>Technische Details</h2>
-                    <p>Verwendete Solarmodule <span>test</span></p>
-                    <p>Verwendeter Wechselrichter <span>test</span></p>
+                    <p>Anlagefl&auml;che <span>{{area}}</span></p>
+                    <p>Verwendeter Wechselrichter <span>{{company.reference_product.country_of_origin}}</span></p>
                             </div>
 
                 </div>
