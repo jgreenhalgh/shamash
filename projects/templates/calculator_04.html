@@ -451,40 +451,6 @@ $(document).ready(function() {
         <ul class="s4ul" id="company_list">
 
         	{% for company in list_of_companies %}
-        	<!-- OLD BOX 
-        	<li class="s4list" id="company_li_{{company.id}}" a="{{company.stars_average}}" b="0" c="5" d="8" total="">
-        	<div class="firemoverview">
-        		<div class="grid_4 eins">
-        			<h2>{{company.name}}</h2>
-        			<ul>
-        				<li class="standort">{{company.gemeinde}}</li>
-        				<li class="projects">{{company.number_of_successful_projects}} erfolgreiche Projeke</li>
-        			</ul>
-        		</div>
-        		<div class="grid_4 zwei">
-        			<ul>
-        				<li>Produkt <span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></li>
-        				<li>Geschätze Anlagekosten <span>{{company.price}}</span></li>
-        				<li>Geschätze Amortisationszeit <span>{{company.amortization_time}}</span></li>
-        				<li>Geschätzer Profit nach 25 Jahren <span>{{company.profit_25}}</span></li>
-        			</ul>
-        		</div>
-        		<div class="grid_4 zwei">
-        			<ul>
-        				<li>Bewertung <span><div id="star{{company.id}}"></div></span></li>
-        				<li>Anlagenleistung <span>4 kWh</span></li>
-        				<li>Anlagenleistung <span>4 kWh</span></li>
-        				<li>Anlagenleistung <span>4 kWh</span></li>
-        			</ul>		
-        		</div>
-        		<div class="grid_4 vier">
-        			<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        			<a href="#"><p class="pinbutton"></p></a>
-        			<a href="#"><p class="offertenbutton {{company.id}}">Offerte einholen</p></a>
-        		</div>
-        	</div> <div class="clear"></div>
-        	
-        	<!-- END BOX -->
 
             <!-- STEP 4 BOX NEW START -->
             
@@ -503,13 +469,13 @@ $(document).ready(function() {
                     <p class="check">Gr&uuml;ndung</p>
                     <p class="check">Lipsum</p>-->
                     <p>Standort<span>{{company.gemeinde}}</span></p>
-                    <p>Gr&uuml;ndung<span>2007</span></p>
-                    <p>Dienstleistungen<span>Horowitz</span></p>
+                    <p>Gr&uuml;ndung<span>xy</span></p>
+                    <p>Mitarbeiterzahl<span>xy </span></p>
                 </div>
                 <div class="grid_3 box_anbieter_title_info_one">
-                    <p>Produkteherkunft<span>{{company.reference_product}}({{company.reference_product.country_of_origin}})</span></p>
-                    <p>Mitarbeiter<span>15</span></p>
-                    <p>Gr&uuml;ndung<span>2007</span></p>
+                    <p>Dienstleistungen<span>xy , xy</span></p>
+                    <p><span>xy, xy</span></p>
+                    <p>#Realisierte Projekte<span>xy</span></p>
                 </div>
                 <div class="grid_2" style="text-align:center;">
                     
@@ -523,7 +489,7 @@ $(document).ready(function() {
                 <div class="grid_3 ">
                     <div class="step4_boxinformation">
                     <h2>Finanziell</h2>
-                    <p>Gesch&auml;tzte Anlagekosten <span>{{company.price}}</span></p>
+                    <p>Gesch&auml;tzte Anlagekosten <span>{{company.price}}  {{company.reference_product}}({{company.reference_product.country_of_origin}})</span></p>
                     <p>Gesch&auml;tzte Amortisationszeit <span>{{company.amortization_time}}</span></p>
                     <p>Gesch&auml;tztr Profit nach 25 Jahren <span>{{company.profit_25}}</span></p>
                     </div>
