@@ -469,13 +469,13 @@ $(document).ready(function() {
                     <p class="check">Gr&uuml;ndung</p>
                     <p class="check">Lipsum</p>-->
                     <p>Standort<span>{{company.gemeinde}}</span></p>
-                    <p>Gr&uuml;ndung<span>xy</span></p>
-                    <p>Mitarbeiterzahl<span>xy</span></p>
+                    <p>Gr&uuml;ndung<span>{{company.year_of_founding}}</span></p>
+                    <p>Mitarbeiterzahl<span>{{company.number_of_employees}}</span></p>
                 </div>
                 <div class="grid_3 box_anbieter_title_info_one">
                     <p>Dienstleistungen<span>xy , xy</span></p>
                     <p><span>xy, xy</span></p>
-                    <p>#Realisierte Projekte<span>xy</span></p>
+                    <p>#Realisierte Projekte<span>{{company.number_of_successful_projects}}</span></p>
                 </div>
                 <div class="grid_2" style="text-align:center;">
                     
@@ -489,9 +489,9 @@ $(document).ready(function() {
                 <div class="grid_3 ">
                     <div class="step4_boxinformation">
                     <h2>Finanziell</h2>
-                    <p>Anlagekosten <span>ca. {{company.price}}  </span></p>
-                    <p>Amortisationszeit <span>ca. {{company.amortization_time}}</span></p>
-                    <p>Profit nach 25 Jahren <span>ca. {{company.profit_25}}</span></p>
+                    <p>Anlagekosten <span>ca. {{company.price}} CHF </span></p>
+                    <p>Amortisationszeit <span>ca. {{company.amortization_time}} CHF</span></p>
+                    <p>Profit nach 25 Jahren <span>ca. {{company.profit_25}} CHF</span></p>
                     </div>
                 </div>
                 <div class="grid_3">
@@ -507,8 +507,8 @@ $(document).ready(function() {
                     <div class="step4_boxinformation">
 
                     <h2>Technische Details</h2>
-                    <p>Anlagefl&auml;che <span>{{area}}</span></p>
-                    <p>Verwendeter Wechselrichter <span>{{company.reference_product.country_of_origin}}</span></p>
+                    <p>Anlagefl&auml;che <span>{{area}} m<sup>2</sup></span></p>
+                    <p>Panel Effizienz <span>{{company.reference_product.country_of_origin}} %</span></p>
                             </div>
 
                 </div>
