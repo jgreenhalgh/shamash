@@ -542,14 +542,24 @@ $(document).ready(function(){
     });
 
 
+
+
 /* ON CLICK .forward (small weiter-button  in the header)->  CLICK ON BUTTON (big green button) with id #sendData */
 $(document).ready(function() {
         $('.forward').click(function() {
-            $("#sendData").click(); 
+            $("#sendData").trigger('click');
             return false;
         });
  });
 
+</script>
+
+<!-- Go Back function -->
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
 </script>
 
 <style type="text/css">
@@ -599,8 +609,8 @@ $(document).ready(function() {
             
             <!--<a href="#"><img class="loginbutton" src="{{STATIC_URL}}/step234juli2013/login.png" /> </a>-->
             <ul>            
-                    <a href="sub#kontakt"><li>Kontakt</li></a>
-                    <a href="sub#ueberuns"><li>&Uuml;ber uns</li></a>
+                    <a href="/sub#kontakt"><li>Kontakt</li></a>
+                    <a href="/sub#ueberuns"><li>&Uuml;ber uns</li></a>
                     <!--<a href="#"><li >Anbieter direkt vergleichen</li></a>-->
                     <a href="#"><li class="active">Solarpotential berechnen</li></a>
             </ul>
@@ -610,7 +620,7 @@ $(document).ready(function() {
         <div class="grid_12" >
         
             
-            <a href="#"><img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" /></a>
+            <a href="#" onclick="goBack()"><img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" /></a>
 
             <span><a href="http://www.solarpotential.ch">Startseite</a>    /   <a href="#" class="active">Dacheigenschaften eigeneben</a> 
             </span>
