@@ -50,6 +50,45 @@
 	if(data.seconds > 45 && data.seconds < 105) { $('#step4').removeClass('s4p').addClass('s4a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); }
 	}
 	});
+
+
+	// SEEKTO FUNCTION JQUERY
+	// THIS ONE SEEKS TO THE SECONDS IT HAS TO GO IN THE VIDEO
+	// FROM http://jsfiddle.net/alexh58/QyUpd/
+
+	$(document).ready(function() {
+
+	if (window.addEventListener){
+    window.addEventListener('message', handleMsg, false);
+}
+else {
+    window.attachEvent('onmessage', handleMsg, false);
+}
+
+function handleMsg(event) {
+    var data = JSON.parse(event.data);
+    if(data.event) {
+        console.log(event);
+    }      
+}
+
+function postToiFrame(action, val) {
+    var data = { method: action };
+    data.value = val;
+    console.log(data);
+    $("#main_video")[0].contentWindow.postMessage(JSON.stringify(data), "http://player.vimeo.com/video/71187829");
+
+}
+
+$("a.gossekclass").click(function() {
+    postToiFrame("seekTo", $(this).attr('seekTo'));
+    return false;
+});
+
+
+
+	});	
+
 	</script>
 
 	<!-- JQuery Validation Script -->
@@ -192,6 +231,10 @@
 				</div>
 				-->
 				<br/>
+
+				    <p><a class="gossekclass" href="#" seekTo="157" id="clicky">Skip to a cool part of this video!</a></p>
+    <p><a class="gossekclass" href="#" seekTo="17" id="clicky">Skip to a cool part of this video!</a></p>
+				
 					<div id="footer"></div>
 	</div>
 	
