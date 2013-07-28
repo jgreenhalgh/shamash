@@ -547,7 +547,7 @@ $(document).ready(function(){
 /* ON CLICK .forward (small weiter-button  in the header)->  CLICK ON BUTTON (big green button) with id #sendData */
 $(document).ready(function() {
         $('.forward').click(function() {
-            $("#sendData").trigger('click');
+            $("#sendData").trigger('click').keyup();
             return false;
         });
  });
