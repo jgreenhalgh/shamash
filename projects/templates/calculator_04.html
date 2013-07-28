@@ -421,7 +421,13 @@ $(document).ready(function() {
 </div>
 <div class="container_12" id="overviewbg">
     <div class="grid_12" style="margin-bottom:-20px;" >
-        <h3>ES WURDEN {{request.session.number_of_companies}} LOKALE SOLARANBIETER GEFUNDEN.</h3>
+        <h3>ES WURDEN {{request.session.number_of_companies}} LOKALE SOLARANBIETER GEFUNDEN. 
+
+            {% for error in form.errors %}
+                {{error}}
+            {% endfor %}
+
+</h3>
         <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. {{message}} </h2>
     </div>
 
@@ -628,9 +634,9 @@ $(document).ready(function() {
 
                     <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
                     <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
-                    <label class="eingabetext"> Name *  {{form.name}}</label> {{ form.name.errors }}
-                    <label class="eingabetext"> Email * {{form.email}} </label>{{ form.email.errors }}
-                    <label class="eingabetext"> Kommentar {{form.commentary}}</label>{{ form.commentary.errors }}
+                    <label class="eingabetext"> Name *  {{form.name}}</label>
+                    <label class="eingabetext"> Email * {{form.email}} </label>
+                    <label class="eingabetext"> Kommentar {{form.commentary}}</label>
                     <input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
                     <p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
                     {% csrf_token %}
