@@ -1,12 +1,5 @@
 {% extends "calculator_base.html" %}
 
-{% block calc_01_active %}active{% endblock %}
-
-
-{% block header_inbody_step14 %}
-
-{% endblock %}
-
 
 
 {% block content_header %}
@@ -181,7 +174,7 @@ $("a.gossekclass").click(function() {
 <div class="center">
 
 	<div class="header"> 
-		<img src="{{STATIC_URL}}/step234juli2013/logo_start.png" />
+		<a href="#"><img src="{{STATIC_URL}}/step234juli2013/logo_start.png" /></a>
 
 		<img class="jetztinzuerich" src="{{STATIC_URL}}/step234juli2013/jetztinzuerich2.png" />
 	</div>
@@ -218,7 +211,7 @@ $("a.gossekclass").click(function() {
 				<input type="text" name="strasse" id="strasse" placeholder="Strasse + Strassennummer" />
 				<input type="text" name="wohnort" id="wohnort"  placeholder="Postleizahl und Wohnort" />
 				</div>
-				<a href="#" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">oder</span><a href="#"><input id="submitbutton" type="submit" name="submit" value="weiter" class="button" ></a>
+				<a href="/sub/" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">oder</span><a href="#"><input id="submitbutton" type="submit" name="submit" value="weiter" class="button" ></a>
 
 				<!-- der Submitbutton wird mit jQuery activiert oder deaktiviert -->
 				
