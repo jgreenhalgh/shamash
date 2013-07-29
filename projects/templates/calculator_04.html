@@ -2,7 +2,7 @@
 <html lang="en" style="height:auto;">
 <head>
 <meta charset="utf-8"/>
-<title>Title Step 4</title>
+<title>Kostenlose Offerten anfordern</title>
 <!-- Modernizer Script -->
   <!--  <script src="{{STATIC_URL}}/modernizr-2.5.3.min.js"></script> -->
 
@@ -383,15 +383,15 @@ $(document).ready(function() {
     <div class="container_12" id="headernavtop" >
         
         <div class="grid_3" >
-            <img src="{{STATIC_URL}}/step234juli2013/logo.png" class="logo" />
+            <a href="http://www.solarpotential.ch"><img src="{{STATIC_URL}}/step234juli2013/logo.png" class="logo" /></a>
         </div>
         <div class="grid_9">
             
             <!--<a href="#"><img class="loginbutton" src="login.png" /> </a>-->
             <ul>            
-                    <a href="#"><li>Kontakt</li></a>
-                    <a href="#"><li>&Uuml;ber uns</li></a>
-                    <a href="#"><li>Anbieter direkt vergleichen</li></a>
+                    <a href="/sub#kontakt"><li>Kontakt</li></a>
+                    <a href="/sub#ueberuns"><li>&Uuml;ber uns</li></a>
+                    <!--<a href="#"><li >Anbieter direkt vergleichen</li></a>-->
                     <a href="#"><li class="active">Solarpotential berechnen</li></a>
             </ul>
         </div>
@@ -405,11 +405,11 @@ $(document).ready(function() {
         </a>
 
         <span style="line-height:27px;">
-            <a href="#">Startseite</a>
+            <a href="http://www.solarpotential.ch/">Startseite</a>
             /
-            <a href="#">Dacheigenschaften eigeneben</a>
+            <a href="/panel/">Dacheigenschaften eigeneben</a>
             /
-            <a href="#" >Potential berechnen</a>
+            <a href="/results_photo/" >Potential berechnen</a>
             /
             <a href="#" class="active">Anbieter vergleichen</a>
         </span>
@@ -428,7 +428,7 @@ $(document).ready(function() {
             {% endfor %}
 
 </h3>
-        <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. {{message}} </h2>
+        <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. <!--{{message}} --></h2>
     </div>
 
     <div class="grid_12 waswichtig">
