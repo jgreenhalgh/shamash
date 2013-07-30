@@ -343,7 +343,7 @@ $(document).ready(function() {
     
 {% if messages %}
     {% for message in messages %}
-        {% if message.tags == "success" %} 
+        {% if message == "Quote requested" %} 
             <script type="text/javascript" id="sourcecode">
                 $(window).load(function(){
                 
