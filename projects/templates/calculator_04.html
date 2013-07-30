@@ -343,7 +343,7 @@ $(document).ready(function() {
     
 {% if messages %}
     {% for message in messages %}
-        {% if message == "Quote requested" %} 
+        {% if message.tags == "success" %} 
             <script type="text/javascript" id="sourcecode">
                 $(window).load(function(){
                 
@@ -428,7 +428,7 @@ $(document).ready(function() {
             {% endfor %}
 
 </h3>
-        <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. <!--{{message}} --></h2>
+        <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. {{message}} </h2>
     </div>
 
     <div class="grid_12 waswichtig">
