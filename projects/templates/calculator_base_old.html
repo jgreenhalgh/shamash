@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" style="height:auto;">
+<head>
+<meta charset="utf-8"/>
+<title>{% block title %}Herzlich willkommen zu {{ comapnynamne }}{% endblock %}</title>
+<!-- Modernizer Script -->
+  <!--	<script src="{{STATIC_URL}}/modernizr-2.5.3.min.js"></script> -->
+
+<!-- CSS Normilze Stylesheet -->
+<link rel="stylesheet" href="{{STATIC_URL}}/normalize.css"/>
+
+<!-- CSS GRID Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/960.css"/>
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- JQuery Lightbox Plugin -->
+<script src="{{STATIC_URL}}/jquery.lightbox_me.js"/></script>
+
+
+<!-- JQuery Validate Plugin -->
+<script src="{{STATIC_URL}}/jquery.validate.js"/></script>
+
+<!-- CSS Master Stylesheet -->
+<link rel='stylesheet' href="{{STATIC_URL}}/style.css"/> 
+
+
+
+<!-- Dimmer Function NEW mit Plugin -->
+<script type="text/javascript" id="sourcecode">
+$(document).ready(function(){
+
+/*--------------- Login Box ueber Step 1 - 4 -------*/
+$(".loginclass").click(function(e){
+	$(".prompt_box_login").lightbox_me({
+		centered: true,
+		onLoad: function() {
+			$(".inner").find('input:first').focus()
+		},
+	});	
+});
+
+/*--------------- Offerten im Step 4 ---------------*/
+// die boxen werden im CSS mit display:none; nicht gezeigt
+$("p.offertenbutton").click(function(e){
+	// es werden die classen rausgelesen aus dem p, und die zweite classe als ID dann gesucht
+	var gettheclasses=$(this).attr("class").split(' ');
+	$("#"+gettheclasses[1]).lightbox_me({
+		centered: true,
+		onLoad: function() {
+			$(".inner").find('input:first').focus()
+		},
+	});
+e.preventDefault();
+});
+
+// SCHLIESSEN-Button in der Box
+$(".schliessen").click(function(e){	
+	$(this).trigger('close');
+});
+
+// toggle the warnnachrichtbox in den STEPS
+
+	$(".closetoggle").click(function(){
+		$(".steps_warnnachricht").slideToggle("fast");
+	});
+
+});
+</script>
+
+
+{% block header_inhead %} <!-- Header from DjangoTemplates --> {% endblock %}
+
+
+<!-- Google Analytics Code Snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41062478-1', 'instantsolar.ch');
+  ga('send', 'pageview');
+
+</script>
+
+
+<!-- Giving a Block to extend for the header(eg calculator_03) -->
+{% block content_header %}
+{% endblock %}	
+
+
+</head>
+
+
+<body  class="bodynomargin">
+
+<!-- PROMPT Box NEW -->
+ <div class="prompt_box_login">
+	<a href="#"><span class="schliessen"> SCHLIESSEN </span></a>
+	<h2>Verwalten Sie Ihre Solaranlage</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse eget imperdiet dolor. 
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse eget imperdiet dolor.  <span style="color:red">{{message}}</span>
+			<form action={{request.get_full_path}} method="post">
+				{% csrf_token %}
+				<label><span>{{loginlogout}}:</span></label><input type="text" name="username" onfocus="if(this.value == 'Ihre Email') { this.value = ''; }" value="Ihre Email"  /> <br class="spacer" />
+				<label><span>Passwort:</span></label><input type="password" name="password"  onfocus="if(this.value == 'Ihr Passwort') { this.value = ''; }" value="Ihr Passwort" /> <br class="spacer" /> 
+				<label><span> </span> </label><input type="submit" value="{{loginlogout}}" name="loginlogour" class="buttoncener"/> 
+			</form>
+	</p>
+</div>
+
+
+ <!--
+<div class="start_headertop">
+	<div class="container_12">
+		<div class="grid_2"><a href="http://151.236.216.105"><h1 class="{% block calc_01_active %} {% endblock %}">instantSolar</h1></a></div>
+		<div class="grid_8 centerlist">
+			<ul>
+				<a href="http://151.236.216.105/"><li class="verschiebenlinks">Was ist Shamash?</li></a>
+				<a href="http://151.236.216.105/results/"><li class="{% block calc_02_active %}{% endblock %}">Solardachrechner</li></a>
+				<a href="http://151.236.216.105/compare/"><li class="{% block calc_04_active %}{% endblock %}">Anbieter direkt vergleichen</li></a>
+			</ul>
+		</div>
+		
+		{% if loginlogout == "login" %}
+		<div class="grid_2 loginclass">
+		<a href="#">Login</a></div>
+        {% else %}{% if loginlogout == "logout" %}
+		<div class="grid_2 logoutclass">		
+			
+			
+			<form action={{request.get_full_path}} method="post">
+			{% csrf_token %}
+			<p class="logoutbuttonname"><span>{{request.user.username}}</span>
+			<input type="hidden" name="logout_request" value="logout_request">
+			<input type="submit" value="{{loginlogout}}" name="loginlogout" class="logoutbutton"/> </p>
+			</form>
+		</div>
+        {% else %}Weiss nicht{% endif %}{% endif %}
+	</div>
+</div>
+-->
+
+
+
+{% block warnnachricht %}
+{% endblock %}	
+
+{% block content %}
+{% endblock %}	
+
+{% block footer %}
+<!--
+	<div  class="container_12 startfooter" >
+		
+		<div class="grid_3" style="padding:0px">
+			<div class="hilfegrid">
+			<h2>H&auml;ufig gestellte Fragen</h2>
+			<ul>
+				<li>Solarpotential einfach bestimmen</li>
+				<li>Solaranbieter direkt vergleichen</li>
+				<li>Solarthermie oder Photovoltaik?</li>
+				<li></li>
+				<li> 044 311 32 34</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div class="grid_3">
+			<h2>Solarenergie f&uuml;r Ihr Haus</h2>
+			<ul>
+				<li>Weshalb Solarenergie?</li>
+				<li>Photovoltaik oder Solarthermie?</li>
+				<li>Solarpontential bestimmen</li>
+				<li>Solarenergie im Kanton Z&uuml;rich</li>
+			</ul>
+		</div>
+		
+		<div class="grid_3">
+			<h2>F&uuml;r Solaranbieter</h2>
+			<ul>
+				<li>Was ist das ganze?</li>
+				<li>Vorteile von Shamash</li>
+				<li>Anmeldung</li>
+			</ul>
+		</div>
+		<div class="grid_3">
+			<h2>&Uuml;ber Shamash</h2>
+			<ul>
+				<li>&Uuml;ber Shamash</li>
+				<li>Wer wir sind</li>
+				<li>Neuigkeiten</li>
+				<li>Facebook</li>
+			</ul>
+		</div>
+	</div>
+-->
+{% endblock %}
+</body>
+</html>
