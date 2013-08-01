@@ -428,7 +428,7 @@ $(document).ready(function() {
             {% endfor %}
 
 </h3>
-        <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. <!--{{message}} --></h2>
+        <h2 class="step4_bigtitle" style="margin-bottom:5px;">Vergleichen Sie im Nachfolgenden die Anbieter und fordern Sie eine kostenlose Offerte an. {{message}} </h2>
     </div>
 
     <div class="grid_12 waswichtig">
@@ -490,18 +490,18 @@ $(document).ready(function() {
                 </div>
                 <div class="grid_3 ">
                     <div class="step4_boxinformation">
-                    <h2>Finanziell</h2>
-                    <p>Anlagekosten <span>ca. {{company.price}} CHF </span></p>
-                    <p>Amortisationszeit <span>ca. {{company.amortization_time}} Jahre</span></p>
-                    <p>Profit nach 25 Jahren <span>ca. {{company.profit_25}} CHF</span></p>
+                    <h2>Finanziell:</h2>
+                    <p>Anlagekosten: <span>ca. {{company.price}} CHF </span></p>
+                    <p>Amortisationszeit: <span>ca. {{company.amortization_time}} Jahre</span></p>
+                    <p>Profit nach 25 Jahren: <span>ca. {{company.profit_25}} CHF</span></p>
                     </div>
                 </div>
                 <div class="grid_3">
                 <div class="step4_boxinformation">
             
                     <h2>Technische Details</h2>
-                    <p>Marke <span>{{company.reference_product}}</span></p>
-                    <p>Produkteherkunft <span>{{company.reference_product.country_of_origin}}</span></p>
+                    <p>Marke: <span>{{company.reference_product}}</span></p>
+                    <p>Produkteherkunft: <span>{{company.reference_product.country_of_origin}}</span></p>
                     </div>
 
                 </div>
@@ -509,8 +509,8 @@ $(document).ready(function() {
                     <div class="step4_boxinformation">
 
                     <h2> &nbsp;</h2>
-                    <p>Anlagefl&auml;che <span>{{area}} m<sup>2</sup></span></p>
-                    <p>Panel Effizienz <span>{{company.reference_product.efficiency}} %</span></p>
+                    <p>Anlagefl&auml;che: <span>{{area}} m<sup>2</sup></span></p>
+                    <p>Panel Effizienz: <span>{{company.reference_product.efficiency}} %</span></p>
                             </div>
 
                 </div>
