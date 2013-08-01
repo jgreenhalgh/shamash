@@ -26,7 +26,8 @@ $(document).ready(function(){
             minlength: 2,
         },
          phone: {
-            required: false,
+            required: true,
+            milength: 9,
          },
         },
         messages: {
@@ -524,7 +525,7 @@ $(document).ready(function() {
                     <div class="separator">&nbsp;</div>    
                     <label> Email <span>*</span> {{form.email}}</label>
                     <div class="separator">&nbsp;</div>   
-                    <label> Telefon  {{form.phone}}</label>
+                    <label> Telefon  <span>*</span> {{form.phone}}</label>
                     <div class="separator">&nbsp;</div>    
                     <label> Nachricht an {{company.name}} {{form.commentary}}</label>
 
