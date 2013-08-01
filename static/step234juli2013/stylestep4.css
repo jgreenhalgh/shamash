@@ -12,8 +12,6 @@ body {
 /* LIST elements don't show bullets */
 ul {
    list-style: none;
-   margin: 0;
-   padding: 0;
 }
 
 li {
