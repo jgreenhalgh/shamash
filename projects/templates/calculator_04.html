@@ -509,7 +509,7 @@ $(document).ready(function() {
         <div class="box_content">
             <div style="padding:40px 20px 20px 40px;">
                 <a href="#"><span class="schliessen">Schliessen</span></a>
-                <h2>Treten Sie mit  Offerten {{company.name}} in Kontakt</h2>
+                <h2>Treten Sie mit {{company.name}} in Kontakt</h2>
                 <p></p>
 
                     <form method="post" action="/request_quote/" id="offerteabschicken">
@@ -522,9 +522,9 @@ $(document).ready(function() {
                     <div class="separator">&nbsp;</div>    
                     <label> Email <span>*</span> {{form.email}}</label>
                     <div class="separator">&nbsp;</div>   
-                    <label> Telefon <span>*</span>  {{form.telefon}}</label>
+                    <label> Telefon <span>*</span>  {{form.phone}}</label>
                     <div class="separator">&nbsp;</div>    
-                    <label> Kommentar {{form.commentary}}</label>
+                    <label> Nachricht an {{company.name}} {{form.commentary}}</label>
 
                     <div class="separator">&nbsp;</div>    
                     <label>
