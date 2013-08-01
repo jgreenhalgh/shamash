@@ -1,186 +1,176 @@
 {% extends "calculator_base.html" %}
 
 
-
 {% block content_header %}
-	<!-- START PAGE CSS -->
-	<link rel="stylesheet" href="{{STATIC_URL}}/firstpagejuni/style_startpage.css" type="text/css" media="screen">
-	<!-- JQuery Script for VIMEO Navigation -->
-	<script src="{{STATIC_URL}}/firstpagejuni/js/froogaloop2.min.js"></script>
-	<script>
-	$(document).ready(function() {
-	var iframe = $('#player1')[0],
-		player = $f(iframe),
-		status = $('.status');
+<!-- Page CSS, Step 1 -->
+<link rel="stylesheet" href="{{STATIC_URL}}/firstpagejuni/style_startpage.css" type="text/css" media="screen">
 
-	// When the player is ready, add listeners for pause, finish, and playProgress
-	player.addEvent('ready', function() {
-		status.text('ready');
-		
-		player.addEvent('pause', onPause);
-		player.addEvent('finish', onFinish);
-		player.addEvent('playProgress', onPlayProgress);
-	});
+<!-- JQuery Script for VIMEO Navigation for STep 1 -->
+<script src="{{STATIC_URL}}/firstpagejuni/js/froogaloop2.min.js"></script>
+<script>
+$(document).ready(function() {
+var iframe = $('#player1')[0],
+	player = $f(iframe),
+	status = $('.status');
 
-	// Call the API when a button is pressed
-	$('button').bind('click', function() {
-		player.api($(this).text().toLowerCase());
-	});
+// When the player is ready, add listeners for pause, finish, and playProgress
+player.addEvent('ready', function() {
+	status.text('ready');
+	
+	player.addEvent('pause', onPause);
+	player.addEvent('finish', onFinish);
+	player.addEvent('playProgress', onPlayProgress);
+});
 
-	function onPause(id) {
-		status.text('paused');
-		}
+// Call the API when a button is pressed
+$('button').bind('click', function() {
+	player.api($(this).text().toLowerCase());
+});
 
-	function onFinish(id) {
-		status.text('finished');
+function onPause(id) {
+	status.text('paused');
 	}
 
-	function onPlayProgress(data, id) {
-		status.text(data.seconds + 's played');
-	if(data.seconds > 0 && data.seconds < 10) { $('#step1').removeClass('s1p').addClass('s1a'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); $('#step4').removeClass('s4a').addClass('s4p'); };
-	if(data.seconds > 10 && data.seconds < 22) { $('#step2').removeClass('s2p').addClass('s2a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step3').removeClass('s3a').addClass('s3p'); $('#step4').removeClass('s4a').addClass('s4p'); };
-	if(data.seconds > 22 && data.seconds < 45) { $('#step3').removeClass('s3p').addClass('s3a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step4').removeClass('s4a').addClass('s4p'); };
-	if(data.seconds > 45 && data.seconds < 105) { $('#step4').removeClass('s4p').addClass('s4a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); }
-	}
-	});
+function onFinish(id) {
+	status.text('finished');
+}
+
+function onPlayProgress(data, id) {
+	status.text(data.seconds + 's played');
+if(data.seconds > 0 && data.seconds < 10) { $('#step1').removeClass('s1p').addClass('s1a'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); $('#step4').removeClass('s4a').addClass('s4p'); };
+if(data.seconds > 10 && data.seconds < 22) { $('#step2').removeClass('s2p').addClass('s2a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step3').removeClass('s3a').addClass('s3p'); $('#step4').removeClass('s4a').addClass('s4p'); };
+if(data.seconds > 22 && data.seconds < 45) { $('#step3').removeClass('s3p').addClass('s3a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step4').removeClass('s4a').addClass('s4p'); };
+if(data.seconds > 45 && data.seconds < 105) { $('#step4').removeClass('s4p').addClass('s4a'); $('#step1').removeClass('s1a').addClass('s1p'); $('#step2').removeClass('s2a').addClass('s2p'); $('#step3').removeClass('s3a').addClass('s3p'); }
+}
+});
 
 
-	// SEEKTO FUNCTION JQUERY
-	// THIS ONE SEEKS TO THE SECONDS IT HAS TO GO IN THE VIDEO
-	// FROM http://jsfiddle.net/alexh58/QyUpd/
+// SEEKTO FUNCTION JQUERY
+// THIS ONE SEEKS TO THE SECONDS IT HAS TO GO IN THE VIDEO
+// FROM http://jsfiddle.net/alexh58/QyUpd/
 
-	$(document).ready(function() {
+$(document).ready(function() {
 
-	if (window.addEventListener){
-    window.addEventListener('message', handleMsg, false);
+if (window.addEventListener){
+window.addEventListener('message', handleMsg, false);
 }
 else {
-    window.attachEvent('onmessage', handleMsg, false);
+window.attachEvent('onmessage', handleMsg, false);
 }
 
 function handleMsg(event) {
-    var data = JSON.parse(event.data);
-    if(data.event) {
-        console.log(event);
-    }      
+var data = JSON.parse(event.data);
+if(data.event) {
+    console.log(event);
+}      
 }
 
 function postToiFrame(action, val) {
-    var data = { method: action };
-    data.value = val;
-    console.log(data);
-    $("#main_video")[0].contentWindow.postMessage(JSON.stringify(data), "http://player.vimeo.com/video/71187829");
+var data = { method: action };
+data.value = val;
+console.log(data);
+$("#main_video")[0].contentWindow.postMessage(JSON.stringify(data), "http://player.vimeo.com/video/71187829");
 
 }
 
 $("a.gossekclass").click(function() {
-    postToiFrame("seekTo", $(this).attr('seekTo'));
-    return false;
+postToiFrame("seekTo", $(this).attr('seekTo'));
+return false;
 });
 
 
 
-	});	
+});	
+</script>
 
-	</script>
+<!-- JQuery Validation Script, Step 1 -->
+<script src="{{STATIC_URL}}/firstpagejuni/js/jquery.validate.js"></script>
+<!-- JQuery Validation Scripting 1. JQuery 2. CSS-->
+<script>
+$(document).ready(function(){
 
-	<!-- JQuery Validation Script -->
-	<script src="{{STATIC_URL}}/firstpagejuni/js/jquery.validate.js"></script>
-	<!-- JQuery Validation Scripting 1. JQuery 2. CSS-->
-	<script>
-	$(document).ready(function(){
+	// disable the submit button
+	// $('#submitbutton').attr('disabled', 'disabled');
 
-		// disable the submit button
-		// $('#submitbutton').attr('disabled', 'disabled');
-	
-		$.validator.setDefaults({
-			errorClass: 'formerror',
-			errorElement: 'div',
-		});
-		
-		$("#formaction").validate({
-		  // for the rules, use the id-names of the fields
-		  rules: {
-			 wohnort: { 
-				required: true,
-				minlength: 2,
-			},
-			 strasse: { 
-				required: true,
-				minlength: 2,
-			}
-			},
-			messages: {
-				wohnort: {
-					required: "Bitte tragen Sie einen Wohnort ein",
-					minlength: "Ung&uuml;ltiger Ort"
-				},
-				strasse: {
-					required: "Bitte tragen Sie eine Strasse ein",
-					minlength: "Ung&uuml;ltiger Ort"
-				},
-			},
-		
-			success: function(element) {
-				element.remove();
-			}
-			
-		});
-		
-		/* $('#formaction').submit(function() {
-			var valid = $("#formaction").valid();
-			if (valid) {
-				// Success Code...
-				// Die Idea behind this is to re-enabling the submit button bz remove the disabling-attribute
-				
-				 $('#submitbutton').removeAttr('disabled');
-			} else {
-
-				 $('#submitbutton').attr('disabled', 'disabled');
-			}
-		}); */
-
-		
-
+	$.validator.setDefaults({
+		errorClass: 'formerror',
+		errorElement: 'div',
 	});
-	</script>
-	<!-- CSS Style for the Validation script -->
-	<style type="text/css">
-	.formerror {
-		color:#fff;
-		font-family: Arial, sans-serif;
-		font-size:13px;
-		font-weight:bold;
-		line-height:15px;
-		padding-bottom:10px;
-		text-align:left;
-	}
-	input.formerror {
-		  background: url({{STATIC_URL}}/firstpagejuni/error.png) no-repeat right; 
-		  background-color: rgba(0,0,0,0.1);
-		  border: solid 1px #feabab;
-		  text-align:left;
-	}
-	input.valid {
-		  background: url({{STATIC_URL}}/firstpagejuni/ok.png) no-repeat right; 
-		  background-color: rgba(0,0,0,0.1);
+	
+	$("#formaction").validate({
+	  // for the rules, use the id-names of the fields
+	  rules: {
+		 wohnort: { 
+			required: true,
+			minlength: 2,
+		},
+		 strasse: { 
+			required: true,
+			minlength: 2,
+		}
+		},
+		messages: {
+			wohnort: {
+				required: "Bitte tragen Sie einen Wohnort ein",
+				minlength: "Ung&uuml;ltiger Ort"
+			},
+			strasse: {
+				required: "Bitte tragen Sie eine Strasse ein",
+				minlength: "Ung&uuml;ltiger Ort"
+			},
+		},
+	
+		success: function(element) {
+			element.remove();
+		}
+		
+	});
+	
+	/* $('#formaction').submit(function() {
+		var valid = $("#formaction").valid();
+		if (valid) {
+			// Success Code...
+			// Die Idea behind this is to re-enabling the submit button bz remove the disabling-attribute
+			
+			 $('#submitbutton').removeAttr('disabled');
+		} else {
 
-	}
-   </style>														
+			 $('#submitbutton').attr('disabled', 'disabled');
+		}
+	}); */
+
+	
+
+});
+</script>
+<!-- CSS Style for the Validation script -->
+<style type="text/css">
+.formerror {
+	color:#fff;
+	font-family: Arial, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	line-height:15px;
+	padding-bottom:10px;
+	text-align:left;
+}
+input.formerror {
+	  background: url({{STATIC_URL}}/firstpagejuni/error.png) no-repeat right; 
+	  background-color: rgba(0,0,0,0.1);
+	  border: solid 1px #feabab;
+	  text-align:left;
+}
+input.valid {
+	  background: url({{STATIC_URL}}/firstpagejuni/ok.png) no-repeat right; 
+	  background-color: rgba(0,0,0,0.1);
+
+}
+</style>														
 
 <title>Solarpotential.ch - Kostenlos Ihr Solarpotential bestimmen!</title>
 {% endblock %}
 
 {% block content %}
-
-<!-- Clicktale Analyticstools - Account kir...kar@gm -->
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-
 <div class="center">
 
 	<div class="header"> 
@@ -242,25 +232,6 @@ var WRInitTime=(new Date()).getTime();
 </div>
 
 <div class="clear"></div>
-
-<!-- Clicktale second code -->
-  
-<!-- ClickTale Bottom part -->
-
-<script type='text/javascript'>
-// The ClickTale Balkan Tracking Code may be programmatically customized using hooks:
-// 
-//   function ClickTalePreRecordingHook() { /* place your customized code here */  }
-//
-// For details about ClickTale hooks, please consult the wiki page http://wiki.clicktale.com/Article/Customizing_code_version_2
-
-document.write(unescape("%3Cscript%20src='"+
-(document.location.protocol=='https:'?
-"https://clicktalecdn.sslcs.cdngc.net/www08/ptc/7b65a347-9dcc-464d-b5ce-8067be507d21.js":
-"http://cdn.clicktale.net/www08/ptc/7b65a347-9dcc-464d-b5ce-8067be507d21.js")+"'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-
-<!-- ClickTale end of Bottom part -->
 
 {% endblock %}
 
