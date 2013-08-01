@@ -9,6 +9,17 @@ body {
 	background-color: #f9f9f9;
 }
 
+/* LIST elements don't show bullets */
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
 /* -------------- TOP HEADER BLUE NAVIGATION -------------- */
 
 #headernavtop {
