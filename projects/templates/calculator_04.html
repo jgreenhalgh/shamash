@@ -148,7 +148,7 @@ $(".schliessen").click(function(e){
     $(document).ready(function () {
 
         //creating latlng coordinates of home address
-      	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord|stringformat:"f" }}, {{home_lng_coord|stringformat:"f" }});
+      	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord|stringformat:"f" }}, {{home_lng_coord|stringformat:"f"}});
         console.log(my_home_Latlng)
 	    {% for company in list_of_companies %}
         //creating latlng coordinates of company address
@@ -162,6 +162,8 @@ $(".schliessen").click(function(e){
         //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
         $("#company_li_{{company.id}}").attr("b", 1000000-my_distance/100);
 
+        //also adding the country of origin to the product
+        $("#company_li_{{company.id}}").attr("c", {{company.reference_product.country_of_origin}});
 
         {% endfor %}
 
