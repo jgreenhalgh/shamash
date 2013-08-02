@@ -79,14 +79,29 @@ html {
 .searchbox {
 	float:left;
 	width:430px; /* 1100px (center) - 660px (bigmac) */
+	
+
 }
 
 h4 {
-    font-size: 12px;
+    font-size: 15px;
 	font-family: Arial, 'Asap', sans-serif;
-	font-weight: 700;
+	font-weight:normal;
 	color: white;
-	text-shadow: 1px 1px 1px #191a31; 
+	/*text-shadow: 1px 1px 1px #191a31; */
+	margin:-60px 0px 40px 0px;
+	text-align:center;
+	padding: 7px 5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background:rgba(12,3,38,0.15);
+}
+
+h4 a {
+    border-bottom: dashed 1px #ffffff;
+    cursor: pointer;
+    cursor: hand;
 }
 
 h2, h3 {
@@ -94,10 +109,12 @@ h2, h3 {
 	font-weight: 700;
 	color: white;
 	text-shadow: 1px 1px 1px #191a31; 
+	text-align:center;
 }
 h2 {
-	margin-top:-10px;
-	margin-bottom:40px;
+	margin-top:5px;
+	margin-left:10px;
+	margin-bottom:20px;
 	
 	font-size:50px;
 	width: 400px;
