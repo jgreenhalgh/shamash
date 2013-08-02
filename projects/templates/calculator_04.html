@@ -148,7 +148,7 @@ $(".schliessen").click(function(e){
     $(document).ready(function () {
 
         //creating latlng coordinates of home address
-      	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord}}, {{home_lng_coord}});
+      	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord|stringformat:"f" }}, {{home_lng_coord|stringformat:"f" }});
         console.log(my_home_Latlng)
 	    {% for company in list_of_companies %}
         //creating latlng coordinates of company address
