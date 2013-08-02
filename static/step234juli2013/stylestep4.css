@@ -1035,6 +1035,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
   /* OFFERTEN POPUP BOX */
 
 
+
 .box_getoffer {
 	width: 945px;
 	height: 587px;
@@ -1170,6 +1171,41 @@ height:56px;
 
 .box_footer {
     text-align:center;
+}
+
+.box_getoffer_successful {
+    background-color:white;
+    background-image:none;
+
+    height:250px;
+}
+
+.box_getoffer_successful h1 {
+    text-align:center;
+ 	color: black;
+	font-family: Arial, "Helvetica", Sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 10px;   
+	margin-top:120px;
+}
+
+.box_getoffer_successful .schliessen {
+position: absolute;
+
+	margin-left: 810px;
+	margin-top: 50px;
+	padding: 5px;
+	background-color: #efefef;
+	color:#2B7197;
+
+	border: solid 1px #7c8b9d;
+	font-family: Arial, "Helvetica", Sans-serif;
+	font-size: 14px;
+	font-weight:bold;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
 
 .button_popup_step4 {
