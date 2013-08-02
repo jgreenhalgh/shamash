@@ -154,12 +154,13 @@ $(".schliessen").click(function(e){
         //creating latlng coordinates of company address
       	var company_Latlng = new google.maps.LatLng({{company.lat_coord}}, {{company.lng_coord}});
         console.log(company_Latlng);
+        console.log(my_home_Latlng)
         //calculting distnace of the two addresses 
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
         console.log(my_distance)
         //the sorting algorithm works by sorting in descending order. When I tried to add 1/my_distance to the attribute
         //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
-        $("#company_li_{{company.id}}").attr("b", 10000-my_distance/1000);
+        $("#company_li_{{company.id}}").attr("b", 1000000-my_distance/100);
 
 
         {% endfor %}
