@@ -935,12 +935,105 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	margin-top: -190px;
 	margin-bottom: 10px;
 	text-align: center;
-	width: 100%;
-	padding: 0px;
+	width: 100%
+	padding0px;
 }
 
 
-/* BOX GET OFFER */
+/* HIDDEN OFFER BOX 
+.box_getoffer {
+  display: none;
+  width: 800px;
+  height: 400px;
+  color: ;
+  background-color: #fff;
+}
+.box_getoffer .inner {
+  margin: 40px 20px 40px 20px;
+}
+.box_getoffer h1 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.box_getoffer .eingabetext {
+  font-weight: bold;
+  color: ;
+  margin-bottom: 30px;
+}
+.box_getoffer .smalltext {
+  font-size: 11px;
+  clear: both;
+  text-align: center;
+  padding-top: 15px;
+  line-height: 13px;
+}
+.box_getoffer .schliessen {
+  float: right;
+  display: block;
+  padding: 5px;
+  font-size: 10px;
+  color: ;
+  margin-top: -20px;
+}
+.box_getoffer label {
+  clear: both;
+  display: block;
+}
+.box_getoffer label.error {
+  color: red;
+  float: right;
+  font-size: 11px;
+  margin-top: -5px;
+}
+.box_getoffer input,
+.box_getoffer textarea {
+  float: right;
+  background-color: #fff;
+  padding: 3px 10px 3px 10px;
+  font-size: 13px;
+  margin-top: -3px;
+}
+.box_getoffer input[type="submit"] {
+  background-position: 225px 8px;
+}
+.box_getoffer p,
+.box_getoffer label {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: normal;
+  color: ;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.box_getoffer .rechts {
+  float: right;
+  background-color: ;
+  border-left: 1px solid ;
+  width: 300px;
+  height: 100%;
+  background-image: url(img/anbieter_leftshadow.png);
+  background-repeat: repeat-y;
+}
+.box_getoffer .links {
+  float: left;
+  height: 100%;
+  width: 498px;
+}
+.box_getoffer .links .projektuebersicht {
+  border-width: 1px 0px 1px 0px;
+  padding: 10px 0px;
+  width: 100%;
+}
+.box_getoffer .button {
+  clear: both;
+  float: right;
+  font-color: #fff;
+  background-position: 225px 8px;
+  margin-right: 10px; 
+ } */
+
+  /* OFFERTEN POPUP BOX */
+
 
 .box_getoffer {
 	width: 945px;
@@ -1133,51 +1226,6 @@ height:56px;
 
 }
 
-/* BOX IF SUCCESSFUL */
-
-.box_getoffer_successful {
-	width: 945px;
-	height: 587px;
-	text-align: center;
-	background-color: #FBFBFB;
-	background-image: none;
-}
-
-.box_getoffer_successful .schliessen {
-	position: absolute;
-	margin-left: 446px;
-	margin-top: 0px;
-	padding: 5px;
-	background-color: #efefef;
-	color:#2B7197;
-
-	border: solid 1px #7c8b9d;
-	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 12px;	
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-}
-
-.box_getoffer_successful h1 {
-	margin: 0px;
-	padding: 0px;
-	color: black;
-	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 20px;
-	font-weight: bold;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-.box_getoffer_successful p {
-	text-align: center;
-	margin: 0px;
-	padding: 0px 0px 0px 0px;
-	color: #71777e;
-	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 16px;	
-}
 
 
 /* */
