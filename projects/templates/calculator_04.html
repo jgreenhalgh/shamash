@@ -17,7 +17,6 @@ $(document).ready(function(){
       // for the rules, use the id-names of the fields
       rules: {
          name: { 
-
             required: true,
             minlength: 2,
         },
@@ -25,7 +24,11 @@ $(document).ready(function(){
             email:true,
             required: true,
             minlength: 2,
-        }
+        },
+         phone: {
+            required: true,
+            minlength: 8,
+         },
         },
         messages: {
             name: {
@@ -362,7 +365,7 @@ $(document).ready(function() {
 
     <div class="grid_12" >
 
-        <a href="#">
+        <a href="/results_photo/">
             <img class="back" src="{{STATIC_URL}}/step234juli2013/backbutton.png" />
         </a>
 
@@ -509,7 +512,7 @@ $(document).ready(function() {
         <div class="box_content">
             <div style="padding:40px 20px 20px 40px;">
                 <a href="#"><span class="schliessen">Schliessen</span></a>
-                <h2>Treten Sie mit  Offerten {{company.name}} in Kontakt</h2>
+                <h2>Treten Sie mit {{company.name}} in Kontakt</h2>
                 <p></p>
 
                     <form method="post" action="/request_quote/" id="offerteabschicken">
@@ -522,9 +525,9 @@ $(document).ready(function() {
                     <div class="separator">&nbsp;</div>    
                     <label> Email <span>*</span> {{form.email}}</label>
                     <div class="separator">&nbsp;</div>   
-                    <label> Telefon <span>*</span>  {{form.phone}}</label>
+                    <label> Telefon  <span>*</span> {{form.phone}}</label>
                     <div class="separator">&nbsp;</div>    
-                    <label> Kommentar {{form.commentary}}</label>
+                    <label> Nachricht an {{company.name}} {{form.commentary}}</label>
 
                     <div class="separator">&nbsp;</div>    
                     <label>
@@ -532,7 +535,7 @@ $(document).ready(function() {
 
                     </label>
                     <div class="separator">&nbsp;</div> 
-                    <label> Empfehlen Sie uns Ihre Bekannte! {{form.recommended_email}}</label>
+                    <label> Empfehlen Sie uns weiter {{form.recommended_email}}</label>
                     
 
             </div>
@@ -589,38 +592,16 @@ $(document).ready(function() {
 
 
         <!-- This prompt box appears if a quote request has been made successfully-->
-        <div class="box_getoffer" id="quote_request_success_box_id">
-            <div class="rechts">
-                <div class="inner">
-                    <a href="#"><span class="schliessen">SCHLIESSEN</span></a> <h1>Offerte anfordern:</h1>
-                    <p>Kleiner Text kommt hier, der das alles ein weing klarer macht </p>
-                    <form method="post" action="/request_quote/" id="offerteabschicken">
+        <div class="box_getoffer box_getoffer_successful" id="quote_request_success_box_id">
+        
+                    <a href="#"><span class="schliessen">SCHLIESSEN</span></a> 
 
-                    <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
-                    <label class="eingabetext"> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
-                    <label class="eingabetext"> Name *  {{form.name}}</label>
-                    <label class="eingabetext"> Email * {{form.email}} </label>
-                    <label class="eingabetext"> Kommentar {{form.commentary}}</label>
-                    <input type="submit" class="biggreenbutton button" value="Kostenlose Offerte anfordern" />
-                    <p class="smalltext"> Hiermit erklaeren Sie sich einverstanden, dass Ihre Seele verkauft wird.</p>
-                    {% csrf_token %}
 
-                    </form>
-
-                </div>
-            </div>  
-            <div class="links">
-                <div class="inner">
+             
+   
                     <h1>Herzlichen Glückwunsch! Sie werden in kürze eine kostenlose und unverbindliche Offerte erhalten</h1>
-                    <p class="projektuebersicht">
-                    
-                    Nulla nisl metus, placerat vitae malesuada sed, blandit eget eros. Mauris eleifend facilisis mauris ac ornare. Suspendisse quis nisi tellus. Integer at odio lobortis ante aliquam ullamcorper. Proin eu mauris at ligula eleifend accumsan vitae at lectus. Praesent elementum orci mi. Pellentesque suscipit erat vitae tellus placerat consequat.
-                    
-                    <br/>
-                    Moeglichkeiten: Kleine Rechnung aufstellen vergleichen mit Backend!
-                    </p>
-                </div>
-            </div>
+   
+
         </div>
         <!-- END prompt box for sucessfull quot request-->
 

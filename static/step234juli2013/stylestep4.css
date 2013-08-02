@@ -9,6 +9,15 @@ body {
 	background-color: #f9f9f9;
 }
 
+/* LIST elements don't show bullets */
+ul {
+   list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
 /* -------------- TOP HEADER BLUE NAVIGATION -------------- */
 
 #headernavtop {
@@ -1041,6 +1050,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .box_getoffer .box_sidebar_left h2 {
 	margin: 0px;
+
 	padding: 0px;
 	color: #ffffff;
 	font-family: Arial, "Helvetica", Sans-serif;
@@ -1068,10 +1078,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .box_getoffer .box_content .schliessen {
 	position: absolute;
-	margin-left: 442px;
+	margin-left: 446px;
 	margin-top: 0px;
 	padding: 5px;
 	background-color: #efefef;
+	color:#2B7197;
+
 	border: solid 1px #7c8b9d;
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 12px;	
@@ -1085,14 +1097,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	padding: 0px;
 	color: black;
 	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: bold;
+	margin-bottom: 10px;
 
 }
 
 .box_getoffer .box_content p {
 	margin: 0px;
-	padding: 4px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 	color: #71777e;
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 16px;
@@ -1100,7 +1113,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .box_getoffer .box_content label {
 	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	margin-top: 300px;
 
 }
@@ -1109,34 +1122,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	clear:both; 
 	margin: 0px; 
 	padding:0px; 
-	height: 30px;
+	height: 20px;
 	width: 40px;
 	display: block;
+
 
 }
 
 .box_getoffer .box_content label input, .box_getoffer .box_content label select, .box_getoffer .box_content label textarea {
 	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 16px;
+	font-size: 15px;
 	float:right;
 	width: 250px;
-	padding: 10px;
-	margin-top: -10px;
+	padding: 10px 7px;
+	margin-top: -7px;
 
 	border:solid 1px #7b8e9c;
+}
+
+textarea {
+height:56px;
 }
 
 .box_getoffer .box_content label span {
 	color:red;
 }
 
-.box_getoffer .box_content label input:focus, .box_getoffer .box_content label select:focus {
+.box_getoffer .box_content label input:focus, .box_getoffer .box_content label select:focus, .box_getoffer .box_content label textarea:focus {
 	font-family: Arial, "Helvetica", Sans-serif;
-	font-size: 16px;
+
 	float:right;
-	width: 250px;
-	padding: 10px;
-	margin-top: -10px;
+
+
 
 	border:solid 1px #10a85c;
 		-webkit-box-shadow: 0px 0px 0px #ffffff;
@@ -1159,11 +1176,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 				font-family: Arial, "Helvetica", Sans-serif;
 				color: #ffffff;
 				font-size: 20px;
-				padding-top: 10px;
+				padding-top: 7px;
 				padding-right: 40px;
 				padding-bottom: 10px;
 				padding-left: 30px;
-				margin-left: 10px;
+				margin-top: -7px;
+				margin-right: 130px;        /* von Rechts grossen Button verschieben */
 				text-decoration: none;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
@@ -1188,6 +1206,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	float: left;
 	padding: 0px;
 	margin: 0px;
+
 	margin-top: 17px;
 	font-family: Georgia, "Helvetica", Sans-serif;
 	font-style: italic;
@@ -1199,9 +1218,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 	float: right;
 	font-family: Arial, "Helvetica", Sans-serif;
 	font-size: 11px;
-	font-style: normal;
+	font-style: italic;
 	margin-top: 4px;
-	margin-right: 40px;
+	margin-top: 7px;
+	margin-right: 190px;           /* von Rechts kleinen Text verschieben */
 	color: #63696e;
 
 }

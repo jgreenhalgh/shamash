@@ -82,6 +82,21 @@ return false;
 });	
 </script>
 
+<!-- QTip CSS + JQuery/File -->
+<link type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.css" />
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.js"></script>
+ <script type='text/javascript'>
+$(document).ready(function() {
+	$('[data-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
+	    content: {
+	        attr: 'data-tooltip' // Tell qTip2 to look inside this attr for it's content
+	    },
+	    // position the tooltip
+	    position: { my: 'center left', at: 'center right' },
+	});
+});
+ </script>
+
 <!-- JQuery Validation Script, Step 1 -->
 <script src="{{STATIC_URL}}/firstpagejuni/js/jquery.validate.js"></script>
 <!-- JQuery Validation Scripting 1. JQuery 2. CSS-->
@@ -199,6 +214,7 @@ input.valid {
 	
 	<div class="searchbox">
 
+		<h4>Auf der Suche nach einer <a data-tooltip="Mit einer Photovoltaikanlage (PV-Anlage) k&ouml;nnen Sie mittels Solarzellen die Sonnenstrahlung in elektrische Energie umwandeln und diese nutzen. Finden Sie heraus, wie gut sich Ihr Standort einigt, mit welchen Kosten ein solches Projekt verbunden ist und welche Anbieter in Ihrer Gegend in diesem Bereich t&auml;tig sind.">Photovoltaikanlage</a> in der Schweiz? </h4>
 		<h2>Sch&auml;tzen Sie Ihr <br/>  Solarpotential.</h2>
 
 			<h3>Ihre Adresse</h3>
