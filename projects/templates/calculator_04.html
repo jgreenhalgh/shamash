@@ -13,7 +13,7 @@ $(document).ready(function(){
         errorElement: 'div',
     });
     
-    $("#offerteabschicken").validate({
+    $("form").validate({
       // for the rules, use the id-names of the fields
       rules: {
          name: { 
@@ -46,6 +46,10 @@ $(document).ready(function(){
         }
         
     });
+
+    $('form').each(function () {
+    $(this).validate();
+});
     
 
 });
