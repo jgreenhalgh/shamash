@@ -80,6 +80,11 @@ html {
 	float:left;
 	width:430px; /* 1100px (center) - 660px (bigmac) */
 }
+
+h4 {
+
+}
+
 h2, h3 {
 	font-family: Arial, 'Asap', sans-serif;
 	font-weight: 700;
