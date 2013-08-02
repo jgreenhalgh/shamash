@@ -519,8 +519,9 @@ $(document).ready(function() {
                 <a href="#"><span class="schliessen">Schliessen</span></a>
                 <h2>Treten Sie mit {{company.name}} in Kontakt</h2>
                 <p></p>
-
-                    <form method="post" action="/request_quote/" id="offerteabschicken" class="validateofferteabschicken">
+                    <!--<form method="post" action="/request_quote/" name="form{{company.id}}"   id="offerteabschicken" class="validateofferteabschicken">
+                    -->
+                    <form method="post" action="/request_quote/" name="form{{company.id}}" class="validateofferteabschicken">
 
                     <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
                     <label> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
