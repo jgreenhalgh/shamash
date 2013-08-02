@@ -13,7 +13,7 @@ $(document).ready(function(){
         errorElement: 'div',
     });
     
-    $("form").validate({
+    $(".validateofferteabschicken").validate({
       // for the rules, use the id-names of the fields
       rules: {
          name: { 
@@ -46,13 +46,14 @@ $(document).ready(function(){
         }
         
     });
-
-    $('form').each(function () {
-    $(this).validate();
 });
-    
 
+$(document).ready(function() {
+    $(".validateofferteabschicken").each(function() {
+        $(this).validate();
+    });
 });
+
 </script>
 
 <!-- CSS Master Stylesheet 
@@ -519,7 +520,7 @@ $(document).ready(function() {
                 <h2>Treten Sie mit {{company.name}} in Kontakt</h2>
                 <p></p>
 
-                    <form method="post" action="/request_quote/" id="offerteabschicken">
+                    <form method="post" action="/request_quote/" id="offerteabschicken" class="validateofferteabschicken">
 
                     <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
                     <label> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
