@@ -13,7 +13,7 @@ $(document).ready(function(){
         errorElement: 'div',
     });
     
-    $("#offerteabschicken").validate({
+    $(".validateofferteabschicken").validate({
       // for the rules, use the id-names of the fields
       rules: {
          name: { 
@@ -46,9 +46,46 @@ $(document).ready(function(){
         }
         
     });
-    
-
 });
+
+$(document).ready(function() {
+    $(".validateofferteabschicken").each(function() {
+        $(this).validate({
+      // for the rules, use the id-names of the fields
+      rules: {
+         name: { 
+            required: true,
+            minlength: 2,
+        },
+         email: { 
+            email:true,
+            required: true,
+            minlength: 2,
+        },
+         phone: {
+            required: true,
+            minlength: 8,
+         },
+        },
+        messages: {
+            name: {
+                required: " ",
+                minlength: " "
+            },
+            email: {
+                required: " ", 
+                minlength: " " 
+            },
+        },
+    
+        success: function(element) {
+            element.remove();
+        }
+        
+    });
+    });
+});
+
 </script>
 
 <!-- CSS Master Stylesheet 
@@ -515,8 +552,9 @@ $(document).ready(function() {
                 <a href="#"><span class="schliessen">Schliessen</span></a>
                 <h2>Treten Sie mit {{company.name}} in Kontakt</h2>
                 <p></p>
-
-                    <form method="post" action="/request_quote/" id="offerteabschicken">
+                    <!--<form method="post" action="/request_quote/" name="form{{company.id}}"   id="offerteabschicken" class="validateofferteabschicken">
+                    -->
+                    <form method="post" action="/request_quote/" name="form{{company.id}}" class="validateofferteabschicken">
 
                     <input type="hidden" name="company_selected" value="{{company.name}}" id = "id_company_selected">
                     <label> <input type="hidden" name="offerte_einholen" value="offerte_einholen" ></label>
