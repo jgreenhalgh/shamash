@@ -125,7 +125,7 @@ body {
 }
 
 #overviewbg div.informationbox {
-	padding-top: 125px;
+	padding-top: 126px;
 }
 
 #overviewbg div.informationbox p {
@@ -148,7 +148,7 @@ body {
 	margin: 0px 0px 20px 0px;
 
 	background-color: white;
-	border: solid 1px #3c9fd7;
+	border: solid 2px #3c9fd7;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
@@ -229,7 +229,7 @@ body {
 
 
 	background-color: white;
-	border: solid 1px white;
+	border: solid 2px white;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;

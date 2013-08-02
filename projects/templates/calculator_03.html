@@ -277,6 +277,20 @@ $(document).ready(function() {
 			<!-- if the user clicks this box the ajax link /plant/(somenumber) is called andit fills the 
 			right data into the details panels -->
 			<div id="boxone" class="bigboxblue selector_box" href="/plant/2">
+				<h5>Gr&ouml;sstm&ouml;gliche Anlage f&uuml;r Ihr Dach </h5>
+					<p class="info"> Eine solche Anlage nutzt Ihr Dach maximal aus und produziert somit die f&uuml;r Ihre Dachfl&auml;che gr&ouml;sstm&ouml;gliche Energie</p>
+					<p class="lines"> <span> {{power_output_large}} kWH</span>  saubere Energie aus der Schweiz </p>
+					<p class="lines"> Deckung von <span> {{percent_of_electricity_from_plant_large}} % </span>  Ihres Strom-Eigenbedarfes </p>
+					<p class="lines"> Einsparung von <span> {{money_saved_large}} CHF</span> an Stromrechnung </p>
+					<p class="lines"> Reduktion von <span> {{co_2_saved_large}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
+				<br />
+								<p id="buttonboxtwo" class="detailsuntenanzeigen2">Details anzeigen </p>
+				<br />
+			</div>
+		</div>
+		<div class="grid_1"> &nbsp;</div>
+		<div class="grid_4">
+			<div id="boxtwo" class="bigboxwhite selector_box" href="/plant/3">
 				<h5>Optimale Anlage f&uuml;r Ihr Dach</h5>
 					<p class="info"> Eine solche Anlage deckt einen grossen Ihres Energiebedarfes und ist eine gute Variante bez&uuml;glich Kosten und Nutzen. 
 					</p>
@@ -287,21 +301,6 @@ $(document).ready(function() {
 				<br/>
 				<p id="buttonboxone" class="detailsuntenanzeigen1">Details werden angezeigt <img src="{{STATIC_URL}}/step234juli2013/arrowdown.png" /></p>
 				<br />
-			</div>
-		</div>
-		<div class="grid_1"> &nbsp;</div>
-		<div class="grid_4">
-			<div id="boxtwo" class="bigboxwhite selector_box" href="/plant/3">
-				<h5>Gr&ouml;sstm&ouml;gliche Anlage f&uuml;r Ihr Dach </h5>
-					<p class="info"> Eine solche Anlage nutzt Ihr Dach maximal aus und produziert somit die f&uuml;r Ihre Dachfl&auml;che gr&ouml;sstm&ouml;gliche Energie</p>
-					<p class="lines"> <span> {{power_output_large}} kWH</span>  saubere Energie aus der Schweiz </p>
-					<p class="lines"> Deckung von <span> {{percent_of_electricity_from_plant_large}} % </span>  Ihres Strom-Eigenbedarfes </p>
-					<p class="lines"> Einsparung von <span> {{money_saved_large}} CHF</span> an Stromrechnung </p>
-					<p class="lines"> Reduktion von <span> {{co_2_saved_large}} Tonnen CO<sub>2</sub></span> Ausstoss </p>
-				<br />
-								<p id="buttonboxtwo" class="detailsuntenanzeigen2">Details anzeigen </p>
-				<br />
-
 			</div>
 		</div>
 		<div class="grid_1"></div>
@@ -475,82 +474,6 @@ $(document).ready(function() {
 
 		<div class="clear"></div>
 
-		<!--
-		<div class="grid_2 step3projectdurationbox">
-			<div class="arrow_box">
-					<h2>STANDORT W&Auml;HLEN</h2>
-					<p>Lorem ipsum dolor sit amet </p>
-			</div>
-		</div>
-
-		<div class="grid_2 step3projectdurationbox">
-			<div class="arrow_box">
-					<h2>INSTALLATEUR FINDEN</h2>
-					<p>Lorem ipsum dolor sit amet </p>
-			</div>
-		</div>
-
-		<div class="grid_2 step3projectdurationbox">
-			<div class="arrow_box">
-					<h2>BAUBEWILLIGUNG EINHOLEN</h2>
-					<p>Lorem ipsum dolor sit amet </p>
-			</div>
-		</div>
-
-		<div class="grid_3 step3projectdurationbox">
-			<div class="arrow_box">
-					<h2>INSTALLATION <br/></h2>
-					<p>Lorem ipsum dolor sit amet sit amet sit ametsit amet ipsum dolor sit amet sit amet sit ametsit amet</p>
-			</div>
-		</div>
-
-		<div class="grid_3 step3projectdurationbox">
-			<div class="arrow_box">
-					<h2>NETZANSCHLUSS</h2>
-					<p>Lorem ipsum dolor sit amet sit amet sit amet dolor sit amet sit amet sit amet</p>
-			</div>
-		</div>
-		
-
-		<div class="grid_12 greentimeline">
-		</div>
-
-		<div class="grid_2 step3projectdurationbox_unten">
-			<div class="arrow_box_2">
-					
-					<p>1 Jahr </p>
-			</div>
-		</div>
-
-		<div class="grid_2 step3projectdurationbox_unten">
-			<div class="arrow_box_2">
-					
-					<p>1 Jahr </p>
-			</div>
-		</div>
-
-		<div class="grid_2 step3projectdurationbox_unten">
-			<div class="arrow_box_2">
-					
-					<p>1 Jahr </p>
-			</div>
-		</div>
-
-		<div class="grid_3 step3projectdurationbox_unten">
-			<div class="arrow_box_2">
-					
-					<p>1 Jahr </p>
-			</div>
-		</div>
-
-		<div class="grid_3 step3projectdurationbox_unten">
-			<div class="arrow_box_2">
-					
-					<p>1 Jahr </p>
-			</div>
-		</div>
-
-		-->
 
 	<div class="grid_12 weiterstep3">
 
@@ -563,9 +486,9 @@ $(document).ready(function() {
 		
 	<form action="/compare/" method="post">
 
-							<input id="step2radiobutton_med" type="radio" name="plant_size" value="medium" style="margin-top:-9999px; position: absolute;" checked>
+							<input id="step2radiobutton_med" type="radio" name="plant_size" value="large" style="margin-top:-9999px; position: absolute;" checked>
 					
-							<input id="step2radiobutton_big" type="radio" style="margin-top:-9999px; position: absolute;" name="plant_size" value="large">
+							<input id="step2radiobutton_big" type="radio" style="margin-top:-9999px; position: absolute;" name="plant_size" value="medium">
 						
 							{% csrf_token %}
 					
