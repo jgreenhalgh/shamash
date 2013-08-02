@@ -159,7 +159,7 @@ $(".schliessen").click(function(e){
         console.log(my_distance)
         //the sorting algorithm works by sorting in descending order. When I tried to add 1/my_distance to the attribute
         //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
-        $("#company_li_{{company.id}}").attr("b", my_distance);
+        $("#company_li_{{company.id}}").attr("b", 10000-my_distance/1000);
 
 
         {% endfor %}
