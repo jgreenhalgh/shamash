@@ -92,7 +92,12 @@ $(document).ready(function() {
 	        attr: 'data-tooltip' // Tell qTip2 to look inside this attr for it's content
 	    },
 	    // position the tooltip
-	    position: { my: 'center left', at: 'center right' },
+	    position: {
+	    	corner: {
+	    		target: 'topMiddle',
+	    		tooltip: 'bottomMiddle'
+	    	}
+	     },
 	});
 });
  </script>
@@ -241,7 +246,7 @@ input.valid {
 				<br/>
 
 
-					<div id="footer"></div>
+					<a href="http://www.solarpotential.ch/sub/#ueberuns"><div id="footer"></div></a>
 	</div>
 	
 </div>
