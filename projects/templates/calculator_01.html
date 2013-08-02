@@ -131,11 +131,11 @@ $(document).ready(function(){
 		messages: {
 			wohnort: {
 				required: "Bitte tragen Sie einen Wohnort ein",
-				minlength: "Ung&uuml;ltiger Ort"
+				minlength: "Bitte tragen Sie einen Wohnort ein"
 			},
 			strasse: {
 				required: "Bitte tragen Sie eine Strasse ein",
-				minlength: "Ung&uuml;ltiger Ort"
+				minlength: "Bitte tragen Sie eine Strasse ein"
 			},
 		},
 	
@@ -169,21 +169,23 @@ $(document).ready(function(){
 	font-family: Arial, sans-serif;
 	font-size:13px;
 	font-weight:bold;
-	line-height:15px;
+	line-height:13px;
 	padding-bottom:10px;
 	text-align:left;
 }
 input.formerror {
 	  background: url({{STATIC_URL}}/firstpagejuni/error.png) no-repeat right; 
 	  background-color: rgba(0,0,0,0.1);
-	  border: solid 1px #feabab;
+	  border: solid 2px #feabab;
 	  text-align:left;
 }
 input.valid {
 	  background: url({{STATIC_URL}}/firstpagejuni/ok.png) no-repeat right; 
+	  border: solid 2px #11C866;
 	  background-color: rgba(0,0,0,0.1);
 
 }
+
 </style>														
 
 <title>Solarpotential.ch - Kostenlos Ihr Solarpotential bestimmen!</title>
@@ -235,7 +237,7 @@ input.valid {
 
 				<!-- der Submitbutton wird mit jQuery activiert oder deaktiviert -->
 				
-				<p class="smalltextunderbutton">kostenlos und sicher</p>
+				<p class="smalltextunderbutton">Kostenlos und sicher! oder <a href="#" class="erfahremehr">Erfahre&nbsp;mehr</a><span class="oder">Erfahren Sie mehr</span></a></p>
 				</form>
 				<!--
 				<div style="margin-top:50px;">
