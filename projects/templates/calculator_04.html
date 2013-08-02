@@ -50,7 +50,39 @@ $(document).ready(function(){
 
 $(document).ready(function() {
     $(".validateofferteabschicken").each(function() {
-        $(this).validate();
+        $(this).validate({
+      // for the rules, use the id-names of the fields
+      rules: {
+         name: { 
+            required: true,
+            minlength: 2,
+        },
+         email: { 
+            email:true,
+            required: true,
+            minlength: 2,
+        },
+         phone: {
+            required: true,
+            minlength: 8,
+         },
+        },
+        messages: {
+            name: {
+                required: " ",
+                minlength: " "
+            },
+            email: {
+                required: " ", 
+                minlength: " " 
+            },
+        },
+    
+        success: function(element) {
+            element.remove();
+        }
+        
+    });
     });
 });
 
