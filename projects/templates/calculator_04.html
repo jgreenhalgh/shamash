@@ -149,7 +149,7 @@ $(".schliessen").click(function(e){
 
         //creating latlng coordinates of home address
       	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord}}, {{home_lng_coord}});
-
+        console.log(my_home_Latlng)
 	    {% for company in list_of_companies %}
         //creating latlng coordinates of company address
       	var company_Latlng = new google.maps.LatLng({{company.lat_coord}}, {{company.lng_coord}});
