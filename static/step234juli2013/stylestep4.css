@@ -1168,20 +1168,25 @@ height:56px;
 	height:119px;
 }
 
+.box_footer {
+    text-align:center;
+}
+
 .button_popup_step4 {
 
-				float:right;
+				/*float:right;*/
 				display: inline-block;
 				border: 0px;
 				font-family: Arial, "Helvetica", Sans-serif;
 				color: #ffffff;
 				font-size: 20px;
-				padding-top: 7px;
+				padding-top: 10px;
 				padding-right: 40px;
 				padding-bottom: 10px;
 				padding-left: 30px;
-				margin-top: -7px;
-				margin-right: 130px;        /* von Rechts grossen Button verschieben */
+				margin-top: -10px;
+			/*	margin-right: 130px;        /* von Rechts grossen Button verschieben */
+			
 				text-decoration: none;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
