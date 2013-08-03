@@ -163,7 +163,7 @@ $(".schliessen").click(function(e){
         $("#company_li_{{company.id}}").attr("b", 1000000-my_distance/100);
 
         //also adding the country of origin to the product
-        $("#company_li_{{company.id}}").attr("c", parseInt({{company.reference_product.country_of_origin}}, 10););
+        $("#company_li_{{company.id}}").attr("c", parseInt("{{company.reference_product.country_of_origin}}", 10));
 
         {% endfor %}
 
