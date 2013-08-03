@@ -206,20 +206,6 @@ function goBack()
 </script>
 
 
-<!-- QTip CSS + JQuery/File -->
-<link type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.css" />
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.0/jquery.qtip.min.js"></script>
- <script type='text/javascript'>
-$(document).ready(function() {
-	$('[data-tooltip!=""]').qtip({ // Grab all elements with a non-blank data-tooltip attr.
-	    content: {
-	        attr: 'data-tooltip' // Tell qTip2 to look inside this attr for it's content
-	    },
-	    // position the tooltip
-	    position: { my: 'center left', at: 'center right' },
-	});
-});
- </script>
 {% endblock %}
 {% block content %}
 	<div class="container_12" id="headernavtop" >
