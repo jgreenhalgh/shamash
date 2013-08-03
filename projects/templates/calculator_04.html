@@ -147,6 +147,15 @@ $(".schliessen").click(function(e){
 <script type="text/javascript">
     $(document).ready(function () {
 
+        function country_to_rank(country) {
+            if (country = "Deutschland"){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        });
+
         //creating latlng coordinates of home address
       	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord|stringformat:"f" }}, {{home_lng_coord|stringformat:"f"}});
         console.log(my_home_Latlng)
@@ -163,7 +172,7 @@ $(".schliessen").click(function(e){
         $("#company_li_{{company.id}}").attr("b", 1000000-my_distance/100);
 
         //also adding the country of origin to the product
-        $("#company_li_{{company.id}}").attr("c", parseInt("{{company.reference_product.country_of_origin}}", 10));
+        $("#company_li_{{company.id}}").attr("c", country_to_rank("{{company.reference_product.country_of_origin}}"), 10));
 
         {% endfor %}
 
