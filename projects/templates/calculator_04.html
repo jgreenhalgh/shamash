@@ -155,7 +155,7 @@ $(".schliessen").click(function(e){
                 return 20;
             }
         }
-        alert(country_to_rank("China"))
+
         //creating latlng coordinates of home address
       	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord|stringformat:"f" }}, {{home_lng_coord|stringformat:"f"}});
         console.log(my_home_Latlng)
@@ -171,6 +171,7 @@ $(".schliessen").click(function(e){
         //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
         $("#company_li_{{company.id}}").attr("b", 1000000-my_distance/100);
 
+        alert(country_to_rank("{{company.reference_product.country_of_origin}}"));
         //also adding the country of origin to the product
         $("#company_li_{{company.id}}").attr("c", country_to_rank("{{company.reference_product.country_of_origin}}"));
 
