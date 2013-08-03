@@ -149,10 +149,19 @@ $(".schliessen").click(function(e){
 
         function country_to_rank(country) {
             if (country == "China"){
-                return 10;
+                return 1;
+            }
+            else if (country == "Japan"){
+                return 2;
+            }
+            else if (country == "USA"){
+                return 3;
+            }
+            else if (country == "Deutschland"){
+                return 4;
             }
             else{
-                return 20;
+                return 10;
             }
         }
 
