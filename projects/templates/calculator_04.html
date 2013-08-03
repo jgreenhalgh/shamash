@@ -146,32 +146,36 @@ $(".schliessen").click(function(e){
 
 <script type="text/javascript">
     $(document).ready(function () {
-
+        //coding in the order to which the countries of product origin should be ranked
         function country_to_rank(country) {
-            if (country = "China"){
-                return 10;
+            if (country == "China"){
+                return 1;
+            }
+            else if (country == "Japan"){
+                return 2;
+            }
+            else if (country == "USA"){
+                return 3;
+            }
+            else if (country == "Deutschland"){
+                return 4;
             }
             else{
-                return 20;
+                return 10;
             }
         }
 
         //creating latlng coordinates of home address
       	var my_home_Latlng = new google.maps.LatLng({{home_lat_coord|stringformat:"f" }}, {{home_lng_coord|stringformat:"f"}});
-        console.log(my_home_Latlng)
+
 	    {% for company in list_of_companies %}
         //creating latlng coordinates of company address
       	var company_Latlng = new google.maps.LatLng({{company.lat_coord}}, {{company.lng_coord}});
-        console.log(company_Latlng);
-        console.log(my_home_Latlng)
         //calculting distnace of the two addresses 
         var my_distance = google.maps.geometry.spherical.computeDistanceBetween(my_home_Latlng, company_Latlng);
-        console.log(my_distance)
         //the sorting algorithm works by sorting in descending order. When I tried to add 1/my_distance to the attribute
         //the algorithm somehow didn't get it. 10'000-... is a bit of a workaround
         $("#company_li_{{company.id}}").attr("b", 1000000-my_distance/100);
-
-        alert(country_to_rank({{company.reference_product.country_of_origin}}));
         //also adding the country of origin to the product
         $("#company_li_{{company.id}}").attr("c", country_to_rank("{{company.reference_product.country_of_origin}}"));
 

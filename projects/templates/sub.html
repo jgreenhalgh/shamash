@@ -178,7 +178,7 @@ From there on our intuitive process guides the customer from evaluating the cost
 
 		<div class="clear"></div>
 	</div>
-
+ <form method="post" action="/make_contact/">
 	<div class="container_12" id="overviewbg">
 
 
@@ -193,20 +193,20 @@ From there on our intuitive process guides the customer from evaluating the cost
 		<div class="grid_3 wiefunktioniertes">
 			
 			<h4>Name:</h4>
-			<input type="text" />
+			{{form.name}}
 
 		</div>
 
 		<div class="grid_3 wiefunktioniertes">
 			
 			<h4>Email:</h4>
-			<input type="text" />
+			{{form.email}}
 		</div>
 
 		<div class="grid_3 wiefunktioniertes">
 		
 			<h4>Nachricht:</h4>
-			<textarea rows="4" cols="25">
+			{{form.commentary}}
 			</textarea>
 		</div>
 
@@ -221,6 +221,8 @@ From there on our intuitive process guides the customer from evaluating the cost
 		<div class="clear"></div>
 		
 	</div>	
+  	{% csrf_token %}
+	</form >
 	<div class="container_12" id="overviewbgbottom">
 		<div class="grid_12" >
 		
