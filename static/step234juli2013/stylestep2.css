@@ -265,11 +265,11 @@ margin: 10px 150px;
 }
 
 .w5p {
-	/* background: url("0g.png") center center no-repeat; */
+	 background: url("0g.png") center center no-repeat; 
 }
 
 .w5p:hover, .winkelbox.w5p.winkelactive {
-	/* background: url("0.png") center center no-repeat; */
+	 background: url("0.png") center center no-repeat; 
 	background-color: #1cd579;
 }
 
