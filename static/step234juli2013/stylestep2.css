@@ -120,6 +120,10 @@ input[type="radio"] {
 
 
 /* ---------------------- SELECTION WIDGET STEP 2 NEW --------------*/
+.step2_pfeil {
+	position:absolute;
+}
+
 .widgtitlewhitebg {
 
 	background-color: white;
